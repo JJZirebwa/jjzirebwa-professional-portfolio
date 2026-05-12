@@ -23,7 +23,7 @@ I write across scientific, commercial, governance with a focus on clarity, evide
 
 ## Representative outputs
 
-- AI/MedTech Toolkit summary
+- AI Toolkit summary
 - HIE reconstructed case studies
 - dissertation summary
 - module and skills pages

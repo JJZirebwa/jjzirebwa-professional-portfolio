@@ -2,7 +2,7 @@
 
 ## Current handling
 
-This portfolio uses public-safe summary pages that describe the research question, methods, limitations and high-level findings without reproducing restricted material.
+This portfolio uses high-level summary pages that describe the research question, methods, limitations and findings without reproducing restricted material.
 
 ## Why extracts are withheld
 

@@ -13,14 +13,14 @@ const cases = [
   {
     href: '/case-studies/ai-medtech-toolkit/',
     eyebrow: 'AI/MedTech governance',
-    title: 'AI/MedTech Toolkit',
+    title: 'AI Toolkit',
     text: 'Practical internal guidance-support material for advisory work, not formal regulatory or clinical-safety advice.'
   },
   {
     href: '/case-studies/market-intelligence/',
     eyebrow: 'Market and competitors',
     title: 'Market intelligence',
-    text: 'Public-safe reconstruction of market-analysis, competitor-landscape and horizon-scanning work.'
+    text: 'Market-analysis, competitor-landscape and horizon-scanning work shaped around evidence quality, pathway fit and commercial maturity.'
   },
   {
     href: '/case-studies/final-year-project/',
@@ -37,13 +37,13 @@ const cases = [
 ];
 ---
 
-<BaseLayout title="Case studies" description="Selected public-safe healthcare strategy, AI governance and biomedical data case studies.">
+<BaseLayout title="Case studies" description="Selected healthcare strategy, AI governance and biomedical data case studies.">
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Selected work</p>
       <h1>Case studies</h1>
       <p class="summary">
-        These pages are concise public reconstructions of the strongest work in the Markdown portfolio. They focus on role, approach, public-safe outputs, skills demonstrated and publication boundaries.
+        These case studies summarise selected work across healthcare strategy, AI/MedTech governance, market analysis and biomedical data research. I have focused on the problem, my role, the approach and the judgement involved.
       </p>
     </div>
   </section>
@@ -52,8 +52,8 @@ const cases = [
     <div class="page-shell">
       <SectionHeader
         eyebrow="Evidence"
-        title="Public-safe case study set"
-        lead="The case studies keep enough detail to show judgement and working style while excluding confidential source material."
+        title="Selected case studies"
+        lead="Each case study is written for a public reader while respecting confidentiality."
       />
       <div class="grid two">
         {cases.map((item) => <LinkCard {...item} />)}

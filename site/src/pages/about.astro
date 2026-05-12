@@ -3,23 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
 const academicRows = [
-  ['Degree', 'BSc Biomedical Science, Anglia Ruskin University, Cambridge.'],
-  ['Status', 'Final-year student, expected completion in 2026.'],
+  ['Degree', 'BSc (Hons) Biomedical Science, Anglia Ruskin University, Cambridge.'],
+  ['Status', 'Final-year student, expected graduation in July 2026.'],
   ['Placement year', 'Health Innovation East commercial placement, 2024-2025.'],
-  ['Academic record', 'Interim transcript records strong Level 4 and Level 5 performance, a placement-year pass and confirmed Level 6 marks to date. Remaining final-trimester items are pending.']
+  ['Academic record', 'Interim transcript records Level 4 and Level 5 performance, and confirmed Level 6 marks to date. Remaining final-trimester items are pending.']
 ];
 
 const themes = [
   'Biomedical science interpreted through clinical context, data and decision-making.',
   'Healthcare innovation work that connects product claims, evidence quality, pathway fit and stakeholder needs.',
-  'AI/MedTech governance literacy across regulation, evidence standards, data protection, interoperability and post-market risk.',
+  'AI/MedTech governance literacy across regulation, evidence standards, data protection, interoperability, policy and post-market risk.',
   'Governance-bound health-data research with explicit limits around clinical utility and public disclosure.'
 ];
 ---
 
 <BaseLayout
   title="About"
-  description="About Jubileejoy Zirebwa, a final-year Biomedical Science student with healthcare strategy, evidence synthesis and AI/MedTech governance experience."
+  description="About Jubileejoy Zirebwa, a final-year Biomedical Science student with healthcare strategy, evidence synthesis and digital/AI MedTech governance experience."
 >
   <section class="case-hero">
     <div class="page-shell">
@@ -36,7 +36,7 @@ const themes = [
       <SectionHeader
         eyebrow="Working direction"
         title="Biomedical evidence with an adoption lens"
-        lead="I am strongest where scientific information needs to be turned into structured, practical judgement: what the evidence says, what it does not say, where a technology might fit, and what remains uncertain."
+        lead="I am strongest where scientific information needs to be turned into structured, practical judgement covering what the evidence says, what it does not say, where a technology might fit, its financial implications and what remains uncertain."
       />
       <ul class="compact-list">
         {themes.map((theme) => <li>{theme}</li>)}
@@ -49,7 +49,7 @@ const themes = [
       <SectionHeader
         eyebrow="Academic profile"
         title="Biomedical Science grounding"
-        lead="The degree gives the scientific base behind the commercial and governance work: pathology, genetics, microbiology, pharmacology, translational medicine, data interpretation and scientific writing."
+        lead="The degree has given the scientific base behind my commercial and governance work: pathology, genetics, microbiology, pharmacology, translational medicine, data analysis/interpretation and scientific writing."
       />
       <div class="timeline">
         {academicRows.map(([label, text]) => (
@@ -67,13 +67,13 @@ const themes = [
       <div class="prose">
         <h2>Professional experience</h2>
         <p>
-          During my Health Innovation East placement, I worked on NHS-facing commercial health innovation questions across evidence briefs, market intelligence, competitor analysis, adoption logic, business-case support and practical AI/MedTech guidance-support material.
+          During my Health Innovation East placement, I worked on NHS-facing commercial health innovation questions across evidence briefs, market intelligence, competitor analysis, adoption logic, business-case support, pathway evaluation and practical AI/MedTech guidance-support material.
         </p>
       </div>
       <div class="prose">
         <h2>Research and data work</h2>
         <p>
-          My final-year project used secure, genomics-linked hospital trajectory analysis in a Brugada-suspect context. The work is presented as research-only and does not publish raw outputs, counts, figures or clinical-utility claims.
+          My final-year project used secure, genomics-linked hospital trajectory analysis (through machine learning) in a Brugada-suspect cohort. I focus on the research design, governance handling and limitations avoiding overstating clinical use.
         </p>
       </div>
     </div>

@@ -1,4 +1,4 @@
-# AI/MedTech Toolkit
+# AI Toolkit
 
 ## Public-Facing Summary
 

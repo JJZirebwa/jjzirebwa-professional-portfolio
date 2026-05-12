@@ -137,6 +137,11 @@ svg {
   color: var(--ink);
 }
 
+.site-nav a.is-active {
+  background: rgba(15, 106, 102, 0.1);
+  color: var(--ink);
+}
+
 main {
   min-height: 70vh;
 }
@@ -242,6 +247,10 @@ h3 {
   background: rgba(22, 32, 29, 0.08);
   border-color: var(--teal);
   color: var(--ink);
+}
+
+.button:focus-visible {
+  outline-offset: 4px;
 }
 
 .evidence-map {
@@ -362,6 +371,25 @@ a.card:hover {
 
 .card h3 {
   margin-top: 0.2rem;
+}
+
+.skill-card dl {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+}
+
+.skill-card dt {
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 780;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skill-card dd {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
 }
 
 .split {
@@ -506,6 +534,39 @@ a.card:hover {
   background: var(--surface);
 }
 
+.contact-panel-secondary {
+  margin-top: 1rem;
+}
+
+.contact-list {
+  display: grid;
+  gap: 0;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.contact-list li {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 760;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact-list strong {
+  color: var(--ink);
+}
+
 .footer {
   border-top: 1px solid rgba(22, 32, 29, 0.12);
   background: #ecebe4;
@@ -585,6 +646,11 @@ a.card:hover {
   }
 
   .timeline-row {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .contact-list li {
     grid-template-columns: 1fr;
     gap: 0.2rem;
   }

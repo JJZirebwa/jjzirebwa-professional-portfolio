@@ -17,7 +17,7 @@ Final-year Biomedical Science BSc student with experience across healthcare inno
 | Area | Link |
 |---|---|
 | Health Innovation East commercial overview | [Open page](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md) |
-| AI/MedTech Toolkit | [Open page](../professional-experience/health-innovation-east/ai-medtech-toolkit.md) |
+| AI Toolkit | [Open page](../professional-experience/health-innovation-east/ai-medtech-toolkit.md) |
 | Market intelligence and competitor analysis | [Market intelligence](../professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md) / [competitor analysis](../professional-experience/health-innovation-east/competitor-analysis-and-horizon-scanning.md) |
 | Healthcare strategy case studies | [Open page](../projects/healthcare-strategy-case-studies.md) |
 | Final-year project governance | [Open page](../academic/final-year-project/governance-and-limitations.md) |
@@ -25,4 +25,4 @@ Final-year Biomedical Science BSc student with experience across healthcare inno
 
 ## Confidentiality
 
-Some case studies are public-facing reconstructions. Confidential details, internal documents, unpublished data, paid-source exports and proprietary materials have been omitted. Named examples do not imply endorsement.
+Selected examples are summarised at a high level to respect confidentiality. Internal documents, unpublished data, paid-source exports and proprietary materials are not included. Named examples do not imply endorsement.

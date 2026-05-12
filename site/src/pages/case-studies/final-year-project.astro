@@ -4,11 +4,11 @@ import CaseStudyPage from '../../components/CaseStudyPage.astro';
 const sections = [
   {
     heading: 'Context',
-    body: 'My final-year Biomedical Science dissertation used secure, genomics-linked hospital trajectory analysis in a Brugada-suspect context. The work was research-only and not a clinical diagnostic tool.'
+    body: 'This project trained the discipline of working with uncertain biomedical data: defining cohorts carefully, controlling leakage, comparing model families and reporting limits honestly. The research used secure, genomics-linked hospital trajectory analysis in a Brugada-suspect cohort.'
   },
   {
     heading: 'My role',
-    body: 'I worked within approved secure research arrangements, using temporally bounded hospital episode data before the sequencing index date and maintaining clear boundaries around target definitions, leakage control, reproducibility and limitations.'
+    body: 'I worked within approved secure research arrangements, using temporally bounded hospital episode data before the genetic sequencing index date and maintaining clear boundaries around target definitions, leakage control, reproducibility and limitations.'
   },
   {
     heading: 'Approach',
@@ -16,17 +16,18 @@ const sections = [
       'Retrospective machine-learning analysis in a secure research environment.',
       'Governance-controlled Brugada-suspect research cohort with temporal indexing.',
       'Grouped ICD/OPCS and utilisation-style feature reasoning.',
+      'Implementation of logistic regression, random forest and neural networks.',
       'Comparison of baseline model families, including interpretable and non-linear approaches.',
       'Repeated attention to imbalance, instability, calibration limits and disclosure risk.'
     ]
   },
   {
-    heading: 'Outputs / public-safe reconstruction',
-    body: 'The public site presents the research design, governance handling, method discipline and limitations. It does not publish raw outputs or disclosure-sensitive material.'
+    heading: 'Selected outputs',
+    body: 'I describe the research design, governance handling, method discipline and limitations. The public material does not include raw outputs or disclosure-sensitive results.'
   },
   {
     heading: 'What this shows',
-    body: 'This project shows secure health-data research discipline, rare-disease evidence judgement and the ability to report uncertain results without turning them into a clinical success story.'
+    body: 'The project shows how I handle uncertainty. I can build a structured analysis, keep the clinical and data limits visible, and resist turning modest signals into claims the evidence cannot carry.'
   }
 ];
 ---
@@ -34,18 +35,20 @@ const sections = [
 <CaseStudyPage
   title="Final-Year Project"
   kicker="Biomedical data and evidence"
-  summary="A governance-bound Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in a Brugada-suspect research context."
+  summary="A Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in a Brugada-suspect research context."
   sections={sections}
   skills={[
     'secure health-data research',
     'rare-disease evidence judgement',
+    'machine-learning (logistic regression, random forest, neural networks)',
+    'python',
     'feature reasoning',
     'model-evaluation literacy',
     'reproducibility',
     'scientific writing',
-    'claim-boundary discipline'
+    'limitations-led interpretation'
   ]}
-  boundary="No raw exports, participant-level data, small counts, model tables, restricted figures, raw ICD/OPCS tables, dissertation extracts or clinical-utility claims are included."
+  boundary="I describe the design and limitations without publishing restricted data, counts, model tables, dissertation extracts or clinical-utility claims."
   related={[
     { href: '/about/', label: 'Academic profile' },
     { href: '/projects/', label: 'Biomedical data projects' },

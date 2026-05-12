@@ -2,7 +2,7 @@
 
 ## Public-Facing Summary
 
-This page describes a public-safe, high-level workflow for dose-toxicity data handling during the ConsoneAI/DioScor internship.
+This page describes a high-level workflow for dose-toxicity data handling during the ConsoneAI/DioScor internship.
 
 ## Workflow
 

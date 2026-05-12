@@ -3,7 +3,7 @@
 ## Selected work
 
 - [Health Innovation East commercial overview](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md)
-- [AI/MedTech Toolkit](../professional-experience/health-innovation-east/ai-medtech-toolkit.md)
+- [AI Toolkit](../professional-experience/health-innovation-east/ai-medtech-toolkit.md)
 - [Market intelligence and CB Insights](../professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md)
 - [Competitor analysis and horizon scanning](../professional-experience/health-innovation-east/competitor-analysis-and-horizon-scanning.md)
 - [Healthcare strategy case studies](../projects/healthcare-strategy-case-studies.md)

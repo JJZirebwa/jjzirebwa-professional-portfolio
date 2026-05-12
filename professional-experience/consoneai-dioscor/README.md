@@ -8,7 +8,7 @@ I completed a short research internship connected to ConsoneAI/DioScor, supporti
 
 | Page | Focus |
 |---|---|
-| [Research internship overview](research-internship-overview.md) | Role context and public-safe summary. |
+| [Research internship overview](research-internship-overview.md) | Role context and high-level summary. |
 | [Dose-toxicity data workflow](dose-toxicity-data-workflow.md) | Technical workflow without proprietary platform detail. |
 
 ## Publication Note

@@ -1,4 +1,4 @@
-# Website layer
+# Website-ready pages
 
 This folder contains a minimal Markdown surface that can be used for GitHub Pages or as source material for a later Netlify/Astro site.
 

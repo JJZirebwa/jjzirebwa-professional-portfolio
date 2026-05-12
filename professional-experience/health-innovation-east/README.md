@@ -15,7 +15,7 @@ The public pages distinguish between independently authored internal work, co-au
 | Page | Focus |
 |---|---|
 | [Commercial health innovation overview](commercial-health-innovation-overview.md) | Main placement overview. |
-| [AI/MedTech Toolkit](ai-medtech-toolkit.md) | AI governance and practical guidance work. |
+| [AI Toolkit](ai-medtech-toolkit.md) | AI governance and practical guidance work. |
 | [Market intelligence and CB Insights](market-intelligence-and-cb-insights.md) | Horizon scanning and market intelligence. |
 | [Competitor analysis and horizon scanning](competitor-analysis-and-horizon-scanning.md) | Technology landscape comparison. |
 | [Cardisio/QOF adoption logic](cardisio-qof-adoption-logic.md) | Reconstructed AI-ECG adoption case. |

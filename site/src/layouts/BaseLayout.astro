@@ -10,6 +10,11 @@ const pageTitle = title === 'Jubileejoy "JJ" Zirebwa'
   ? title
   : `${title} | Jubileejoy "JJ" Zirebwa`;
 
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => href === '/'
+  ? currentPath === '/'
+  : currentPath.startsWith(href);
+
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about/', label: 'About' },
@@ -27,6 +32,12 @@ const navItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#f7f6f1" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
   </head>
   <body>
@@ -38,7 +49,15 @@ const navItems = [
           <span>Biomedical science | healthcare strategy | evidence</span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
-          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class:list={{ 'is-active': isActive(item.href) }}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
       </div>
     </header>
@@ -47,8 +66,8 @@ const navItems = [
     </main>
     <footer class="footer">
       <div class="footer-shell">
-        <span>Public portfolio site layer. Markdown source archive remains in the repository.</span>
-        <span>Confidential material, raw data and restricted outputs are excluded.</span>
+        <span>Jubileejoy "JJ" Zirebwa</span>
+        <span>Selected examples are summarised at a high level to respect confidentiality.</span>
       </div>
     </footer>
   </body>

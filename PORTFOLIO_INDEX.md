@@ -15,7 +15,7 @@ This is a concise map of the portfolio.
 
 ### AI/MedTech governance
 
-- [AI/MedTech Toolkit](professional-experience/health-innovation-east/ai-medtech-toolkit.md)
+- [AI Toolkit](professional-experience/health-innovation-east/ai-medtech-toolkit.md)
 - [FYP governance and limitations](academic/final-year-project/governance-and-limitations.md)
 - [AI health governance](skills/ai-health-governance.md)
 
@@ -46,6 +46,6 @@ This is a concise map of the portfolio.
 - [Data analysis and Python](skills/data-analysis-and-python.md)
 - [Writing and communication](skills/writing-and-communication.md)
 
-## Publication boundary
+## Public note
 
 This repository contains public-facing summaries only. It does not include raw datasets, dissertation extracts, internal placement documents, paid-source exports, proprietary details or confidential client materials.

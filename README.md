@@ -12,7 +12,7 @@ I work best with biomedical evidence, healthcare adoption and structured analysi
 | Topic | Page |
 |---|---|
 | Commercial healthcare strategy | [Health Innovation East commercial overview](professional-experience/health-innovation-east/commercial-health-innovation-overview.md) |
-| AI/MedTech governance | [AI/MedTech Toolkit](professional-experience/health-innovation-east/ai-medtech-toolkit.md) |
+| AI/MedTech governance | [AI Toolkit](professional-experience/health-innovation-east/ai-medtech-toolkit.md) |
 | Market intelligence and competitor analysis | [Market intelligence and CB Insights](professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md) and [competitor analysis](professional-experience/health-innovation-east/competitor-analysis-and-horizon-scanning.md) |
 | Healthcare strategy case studies | [Healthcare strategy case studies](projects/healthcare-strategy-case-studies.md) |
 | Biomedical data governance | [FYP governance and limitations](academic/final-year-project/governance-and-limitations.md) |
@@ -34,7 +34,7 @@ I work best with biomedical evidence, healthcare adoption and structured analysi
 - Authored practical internal AI/MedTech guidance-support material, with emphasis on evidence, governance, interoperability and risk.
 - Independently developed internal competitor-analysis and QOF strategy materials, while also contributing to co-authored or team-based business-case and adoption work.
 - Completed a final-year Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in a Brugada-suspect context.
-- Built early research/data experience through ConsoneAI/DioScor, mapping dose-toxicity data and structuring public-safe data-preparation outputs.
+- Built early research/data experience through ConsoneAI/DioScor, mapping dose-toxicity data and structuring high-level data-preparation outputs.
 - Maintained a careful, publication-safety-first approach: confidential documents, raw datasets and sensitive counts are not included here.
 
 ## Portfolio navigation
@@ -52,4 +52,4 @@ I work best with biomedical evidence, healthcare adoption and structured analysi
 
 ## Confidentiality note
 
-Case studies are public-facing reconstructions of project work. Confidential details, internal documents, unpublished data, client materials, paid-source exports, proprietary platform details and disclosure-sensitive outputs have been omitted. Named examples do not imply endorsement by any organisation.
+Selected examples are summarised at a high level to respect confidentiality. Internal documents, unpublished data, client materials, paid-source exports, proprietary platform details and disclosure-sensitive outputs are not included. Named examples do not imply endorsement by any organisation.

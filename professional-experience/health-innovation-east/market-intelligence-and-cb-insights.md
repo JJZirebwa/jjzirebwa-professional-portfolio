@@ -10,7 +10,7 @@ Health innovation work often requires fast orientation. Questions about who is i
 
 ## My Contribution
 
-I independently authored some internal market-analysis material and supported repeatable market-intelligence workflows for internal commercial work. This included learning the platform, structuring company searches, organising public-safe outputs and turning market information into clearer summaries.
+I independently authored some internal market-analysis material and supported repeatable market-intelligence workflows for internal commercial work. This included learning the platform, structuring company searches, organising high-level outputs and turning market information into clearer summaries.
 
 ## Methods / Approach
 

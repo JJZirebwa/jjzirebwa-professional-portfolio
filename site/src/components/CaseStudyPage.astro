@@ -18,7 +18,7 @@ interface Props {
   summary: string;
   sections?: CaseSection[];
   skills?: string[];
-  boundary: string;
+  boundary?: string;
   related?: RelatedLink[];
 }
 
@@ -50,13 +50,15 @@ const {
           {skills.map((skill) => <li>{skill}</li>)}
         </ul>
       </div>
-      <div class="note">
-        <h2>Publication boundary</h2>
-        <p>{boundary}</p>
-      </div>
+      {boundary && (
+        <div class="note">
+          <h2>Boundary</h2>
+          <p>{boundary}</p>
+        </div>
+      )}
       {related.length > 0 && (
         <div class="note">
-          <h2>Related pages</h2>
+          <h2>Continue with</h2>
           <ul class="compact-list">
             {related.map((item) => (
               <li><a href={item.href}>{item.label}</a></li>

@@ -1,6 +1,6 @@
 # Deploying the Astro site on Netlify
 
-This folder contains the Netlify-facing Astro site layer. The Markdown portfolio remains the source/archive in the repository root.
+This folder contains the Astro site used for Netlify deployment. The Markdown portfolio remains available in the repository root.
 
 Do not deploy until a final manual safety review has confirmed that the site contains no confidential material, restricted dissertation outputs, raw data, internal documents or private review files.
 
@@ -19,7 +19,7 @@ The build output is written to `site/dist/`.
 
 ## GitHub and Netlify workflow
 
-1. Commit the reviewed repository to GitHub only after the public-safety review is complete.
+1. Commit the reviewed repository to GitHub only after the final manual review is complete.
 2. In Netlify, choose **Add new site** and then **Import an existing project**.
 3. Select the GitHub repository.
 4. Use these build settings:

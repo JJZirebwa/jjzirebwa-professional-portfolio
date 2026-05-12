@@ -6,21 +6,21 @@ import LinkCard from '../components/LinkCard.astro';
 const startingPoints = [
   {
     href: '/case-studies/health-innovation-east/',
-    eyebrow: 'Placement',
+    eyebrow: 'Commercial strategy',
     title: 'Health Innovation East',
-    text: 'One-year commercial placement across NHS-facing innovation, evidence synthesis, pathway thinking and adoption logic.'
+    text: 'A one-year placement working across NHS-facing innovation, evidence, pathway fit and adoption logic.'
   },
   {
     href: '/case-studies/ai-medtech-toolkit/',
-    eyebrow: 'Governance',
-    title: 'AI/MedTech Toolkit',
-    text: 'A practical internal guidance-support resource covering AIaMD/SaMD, evidence, governance, interoperability and risk.'
+    eyebrow: 'AI/MedTech governance',
+    title: 'Governance toolkit',
+    text: 'Internal guidance I authored to turn regulation, evidence, data governance and implementation issues into usable advisory material.'
   },
   {
     href: '/case-studies/market-intelligence/',
-    eyebrow: 'Commercial analysis',
+    eyebrow: 'Market analysis',
     title: 'Market intelligence and competitor analysis',
-    text: 'Public-safe reconstruction of market-intelligence, competitor-landscape and horizon-scanning work.'
+    text: 'Company search, competitor comparison, trend summaries and adoption-readiness work for health innovation contexts.'
   },
   {
     href: '/case-studies/final-year-project/',
@@ -52,16 +52,16 @@ const routes = [
 
 <BaseLayout
   title='Jubileejoy "JJ" Zirebwa'
-  description="Biomedical Science student and early-career healthcare strategy profile with experience across health innovation, AI/MedTech governance and evidence synthesis."
+  description="Biomedical Science, healthcare strategy and evidence-led innovation portfolio for Jubileejoy Zirebwa."
 >
   <section class="hero">
     <div class="page-shell hero-grid">
       <div>
-        <p class="eyebrow">Public professional portfolio</p>
+        <p class="eyebrow">Professional portfolio</p>
         <h1>Jubileejoy "JJ" Zirebwa</h1>
-        <p class="hero-lede">Final-year Biomedical Science student and early-career healthcare strategy profile.</p>
+        <p class="hero-lede">Biomedical science, healthcare strategy and evidence-led innovation.</p>
         <p class="intro-copy">
-          My work sits between biomedical evidence, healthcare adoption and structured commercial analysis. This site brings together a one-year Health Innovation East placement, AI/MedTech governance work, market intelligence, competitor analysis, governance-bound biomedical data research and early computational toxicology experience.
+          I work with biomedical evidence structuring it into clear judgement: what a technology claims, what the evidence supports, where it might fit in a pathway, and what still needs to be tested. My selected work spans AI/MedTech governance, market intelligence, competitor analysis, secure biomedical data research and early computational toxicology.
         </p>
         <div class="action-row">
           <a class="button" href="/case-studies/">View case studies</a>
@@ -76,7 +76,7 @@ const routes = [
         </div>
         <div class="map-node">
           <span>Governance</span>
-          <strong>AI and MedTech adoption boundaries</strong>
+          <strong>AI/MedTech governance and adoption</strong>
         </div>
         <div class="map-node">
           <span>Evidence</span>
@@ -95,7 +95,7 @@ const routes = [
       <SectionHeader
         eyebrow="Start here"
         title="Best starting points"
-        lead="The site is deliberately selective. These pages give the quickest view of the strongest public-safe evidence."
+        lead="Start here for a clear view of how I work across healthcare strategy, AI governance and biomedical evidence."
       />
       <div class="grid two">
         {startingPoints.map((item) => <LinkCard {...item} />)}
@@ -123,7 +123,7 @@ const routes = [
       <SectionHeader
         eyebrow="Selected work"
         title="Case studies"
-        lead="Each case study is a public-facing reconstruction. It preserves the nature of the work while excluding confidential documents, raw data, private assumptions and restricted outputs."
+        lead="The case studies focus on the problem, my role, the approach and the judgement involved. They are written for public reading, with sensitive details kept out."
       />
       <div class="grid three">
         <LinkCard
@@ -135,14 +135,20 @@ const routes = [
         <LinkCard
           href="/case-studies/ai-medtech-toolkit/"
           eyebrow="AI/MedTech"
-          title="Practical governance support"
-          text="Internal guidance-support material translating regulatory, evidence and data-governance considerations into usable advisory material."
+          title="Governance toolkit"
+          text="A practical resource I authored to make AI/MedTech regulation, evidence and governance questions easier to use in advisory work."
         />
         <LinkCard
           href="/case-studies/final-year-project/"
           eyebrow="Biomedical data"
           title="Final-year project"
-          text="Secure genomics-linked hospital trajectory analysis presented with explicit research and publication boundaries."
+          text="Secure genomics-linked hospital trajectory analysis, with emphasis on design discipline, leakage control and honest limits."
+        />
+        <LinkCard
+          href="/contact/"
+          eyebrow="Next step"
+          title="Contact and scope"
+          text="Role interests, location and the best way to get in touch."
         />
       </div>
     </div>
@@ -153,7 +159,7 @@ const routes = [
       <div class="note">
         <h2>Confidentiality note</h2>
         <p>
-          This portfolio excludes raw datasets, dissertation extracts, participant-level information, small counts, internal Health Innovation East documents, CB Insights exports, ConsoneAI/DioScor proprietary material and restricted outputs. Named examples do not imply endorsement by any organisation.
+          Selected examples are summarised at a high level to respect confidentiality. Internal documents, raw data, dissertation extracts and proprietary materials are not included; named examples do not imply endorsement by any organisation.
         </p>
       </div>
     </div>

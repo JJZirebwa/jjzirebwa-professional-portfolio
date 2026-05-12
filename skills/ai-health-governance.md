@@ -6,7 +6,7 @@ I work well with digital and AI-enabled health technology questions by focusing 
 
 ## Evidence base
 
-- Authored HIE AI/MedTech Toolkit guidance-support material.
+- Authored HIE AI Toolkit guidance-support material.
 - Final-year project governance and limitations handling.
 - Exploratory methods boundaries and anti-circularity controls.
 - Cardisio AI-ECG adoption logic.
@@ -26,4 +26,4 @@ I work well with digital and AI-enabled health technology questions by focusing 
 - AI/MedTech guidance-support material
 - governance-bound final-year project write-up
 - claim-boundary notes
-- public-safe exploratory methods page
+- bounded exploratory methods page
