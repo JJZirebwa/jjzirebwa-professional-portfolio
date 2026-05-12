@@ -12,6 +12,13 @@ interface RelatedLink {
   label: string;
 }
 
+interface ContextLogo {
+  src: string;
+  alt: string;
+  label: string;
+  note?: string;
+}
+
 interface Props {
   title: string;
   kicker?: string;
@@ -19,6 +26,7 @@ interface Props {
   sections?: CaseSection[];
   skills?: string[];
   boundary?: string;
+  contextLogo?: ContextLogo;
   related?: RelatedLink[];
 }
 
@@ -29,6 +37,7 @@ const {
   sections = [],
   skills = [],
   boundary,
+  contextLogo,
   related = []
 } = Astro.props as Props;
 ---
@@ -44,6 +53,12 @@ const {
 
   <div class="page-shell case-layout">
     <aside class="case-sidebar" aria-label="Case study summary">
+      {contextLogo && (
+        <div class="note logo-note">
+          <img src={contextLogo.src} alt={contextLogo.alt} loading="lazy" decoding="async" />
+          <p><strong>{contextLogo.label}</strong>{contextLogo.note ? ` ${contextLogo.note}` : ''}</p>
+        </div>
+      )}
       <div class="note">
         <h2>Skills demonstrated</h2>
         <ul class="tag-list">

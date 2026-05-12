@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 
 const {
   title = 'Jubileejoy "JJ" Zirebwa',
@@ -39,6 +40,7 @@ const navItems = [
     <meta name="twitter:card" content="summary" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
+    <GoogleAnalytics />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>

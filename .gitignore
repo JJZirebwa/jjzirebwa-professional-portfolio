@@ -15,5 +15,13 @@ site/node_modules/
 site/dist/
 site/.astro/
 
+# Local environment variables. Keep deployment values in Netlify.
+.env
+.env.local
+.env.*.local
+site/.env
+site/.env.local
+site/.env.*.local
+
 # Local Netlify folder
 .netlify

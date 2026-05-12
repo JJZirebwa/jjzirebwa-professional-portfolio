@@ -1,0 +1,60 @@
+---
+const { name = 'evidence' } = Astro.props;
+
+const paths = {
+  strategy: [
+    'M5 19h14',
+    'M7 16l3-5 4 3 3-7',
+    'M6 6h3',
+    'M15 6h3'
+  ],
+  governance: [
+    'M12 3l7 3v5c0 4.2-2.8 7.9-7 10-4.2-2.1-7-5.8-7-10V6l7-3z',
+    'M9 12l2 2 4-5'
+  ],
+  market: [
+    'M5 19V5',
+    'M5 19h14',
+    'M8 16v-5',
+    'M12 16V8',
+    'M16 16v-8'
+  ],
+  data: [
+    'M6 7c0-1.7 2.7-3 6-3s6 1.3 6 3-2.7 3-6 3-6-1.3-6-3z',
+    'M6 7v5c0 1.7 2.7 3 6 3s6-1.3 6-3V7',
+    'M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5'
+  ],
+  academic: [
+    'M4 6l8-3 8 3-8 3-8-3z',
+    'M7 8v6c1.6 1.4 3.2 2 5 2s3.4-.6 5-2V8',
+    'M20 6v7'
+  ],
+  contact: [
+    'M5 6h14v10H8l-3 3V6z',
+    'M8 10h8',
+    'M8 13h5'
+  ],
+  writing: [
+    'M5 19l4.5-1 9-9a2.1 2.1 0 0 0-3-3l-9 9L5 19z',
+    'M13.5 7.5l3 3'
+  ],
+  research: [
+    'M10 4h4',
+    'M12 4v5l5 8a2 2 0 0 1-1.7 3H8.7A2 2 0 0 1 7 17l5-8',
+    'M9 15h6'
+  ],
+  evidence: [
+    'M7 3h7l3 3v15H7V3z',
+    'M14 3v4h4',
+    'M9 11h6',
+    'M9 15h6',
+    'M9 19h4'
+  ]
+};
+
+const iconPaths = paths[name as keyof typeof paths] ?? paths.evidence;
+---
+
+<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  {iconPaths.map((d) => <path d={d} />)}
+</svg>

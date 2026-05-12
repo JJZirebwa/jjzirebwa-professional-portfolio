@@ -54,7 +54,39 @@ Before promoting any deploy:
 - Check mobile and desktop layouts for readable text, no overlap and clear navigation.
 - Confirm that the wording remains first-person, bounded and recruiter-readable.
 
+## Google Analytics
+
+The Astro layout includes a Google Analytics 4 tag. It is not visible on the website. The current GA4 measurement ID is baked into the analytics component, so Netlify does not need a separate environment variable for analytics to work.
+
+To verify analytics after deployment:
+
+1. Deploy the site preview or production build.
+2. Open the deployed site in a normal browser window.
+3. In Google Analytics, use the Realtime report to confirm that page views are being received. Data can take a short time to appear.
+
+To change the GA4 property later without editing the component, set this Netlify build environment variable:
+
+| Variable | Value |
+|---|---|
+| `PUBLIC_GA_MEASUREMENT_ID` | New `G-XXXXXXXXXX` measurement ID |
+
+For local override testing, copy `site/.env.example` to `site/.env.local`, replace the placeholder value, and run:
+
+```bash
+cd site
+npm run build
+npm run preview
+```
+
+Do not commit `.env.local`. The file is ignored. The GA4 measurement ID is not treated as a secret once the site is built because browser analytics tags expose it in page source and network requests.
+
+Before enabling analytics on the public production site, review whether the site needs a privacy/cookie notice or consent handling. Google Analytics uses cookies for website measurement, so this should be treated as a publication/privacy checklist item rather than a purely technical setting.
+
 ## References
 
 - Astro Netlify deployment guide: <https://docs.astro.build/en/guides/deploy/netlify/>
 - Netlify monorepo build settings: <https://docs.netlify.com/build/configure-builds/monorepos/>
+- Astro environment variables: <https://docs.astro.build/en/guides/environment-variables/>
+- Google Analytics website setup: <https://support.google.com/analytics/answer/9304153>
+- Google tag setup with `gtag.js`: <https://developers.google.com/tag-platform/gtagjs>
+- Google Analytics cookie usage: <https://support.google.com/analytics/answer/11397207>

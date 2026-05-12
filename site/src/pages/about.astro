@@ -46,11 +46,17 @@ const themes = [
 
   <section class="section-band light">
     <div class="page-shell">
-      <SectionHeader
-        eyebrow="Academic profile"
-        title="Biomedical Science grounding"
-        lead="The degree has given the scientific base behind my commercial and governance work: pathology, genetics, microbiology, pharmacology, translational medicine, data analysis/interpretation and scientific writing."
-      />
+      <div class="section-with-logo">
+        <SectionHeader
+          eyebrow="Academic profile"
+          title="Biomedical Science grounding"
+          lead="The degree has given the scientific base behind my commercial and governance work: pathology, genetics, microbiology, pharmacology, translational medicine, data analysis/interpretation and scientific writing."
+        />
+        <div class="institution-mark">
+          <img src="/images/logo-aru.png" alt="Anglia Ruskin University logo" loading="lazy" decoding="async" />
+          <span>Anglia Ruskin University, Cambridge</span>
+        </div>
+      </div>
       <div class="timeline">
         {academicRows.map(([label, text]) => (
           <div class="timeline-row">

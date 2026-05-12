@@ -6,24 +6,28 @@ import LinkCard from '../components/LinkCard.astro';
 const startingPoints = [
   {
     href: '/case-studies/health-innovation-east/',
+    icon: 'strategy',
     eyebrow: 'Commercial strategy',
     title: 'Health Innovation East',
     text: 'A one-year placement working across NHS-facing innovation, evidence, pathway fit and adoption logic.'
   },
   {
     href: '/case-studies/ai-medtech-toolkit/',
+    icon: 'governance',
     eyebrow: 'AI/MedTech governance',
     title: 'Governance toolkit',
     text: 'Internal guidance I authored to turn regulation, evidence, data governance and implementation issues into usable advisory material.'
   },
   {
     href: '/case-studies/market-intelligence/',
+    icon: 'market',
     eyebrow: 'Market analysis',
     title: 'Market intelligence and competitor analysis',
     text: 'Company search, competitor comparison, trend summaries and adoption-readiness work for health innovation contexts.'
   },
   {
     href: '/case-studies/final-year-project/',
+    icon: 'data',
     eyebrow: 'Academic research',
     title: 'Final-year project governance',
     text: 'A governance-bound biomedical data project in a secure genomics-linked research environment.'
@@ -48,6 +52,24 @@ const routes = [
     text: 'Biomedical Science grounding across pathology, genetics, pharmacology, translational medicine and scientific writing.'
   }
 ];
+
+const contextLogos = [
+  {
+    src: '/images/logo-health-innovation-east.webp',
+    alt: 'Health Innovation East logo',
+    label: 'Commercial placement'
+  },
+  {
+    src: '/images/logo-aru.png',
+    alt: 'Anglia Ruskin University logo',
+    label: 'Biomedical Science degree'
+  },
+  {
+    src: '/images/logo-genomics-england.png',
+    alt: 'Genomics England logo',
+    label: 'Secure research context'
+  }
+];
 ---
 
 <BaseLayout
@@ -61,7 +83,7 @@ const routes = [
         <h1>Jubileejoy "JJ" Zirebwa</h1>
         <p class="hero-lede">Biomedical science, healthcare strategy and evidence-led innovation.</p>
         <p class="intro-copy">
-          I work with biomedical evidence structuring it into clear judgement: what a technology claims, what the evidence supports, where it might fit in a pathway, and what still needs to be tested. My selected work spans AI/MedTech governance, market intelligence, competitor analysis, secure biomedical data research and early computational toxicology.
+          I work with biomedical evidence, structuring it into clear judgement: what a technology claims, what the evidence supports, where it might fit in a pathway, and what still needs to be tested. My selected work spans AI/MedTech governance, market intelligence, competitor analysis, secure biomedical data research and early computational toxicology.
         </p>
         <div class="action-row">
           <a class="button" href="/case-studies/">View case studies</a>
@@ -69,23 +91,53 @@ const routes = [
           <a class="button secondary" href="/contact/">Contact</a>
         </div>
       </div>
-      <div class="evidence-map" aria-label="Portfolio evidence map">
-        <div class="map-node">
-          <span>Commercial</span>
-          <strong>NHS-facing health innovation</strong>
+      <div class="hero-visual" aria-label="Portrait and portfolio focus areas">
+        <figure class="portrait-card">
+          <img
+            src="/images/jubileejoy-zirebwa-headshot.jpg"
+            alt="Jubileejoy Zirebwa"
+            width="834"
+            height="960"
+            loading="eager"
+            decoding="async"
+          />
+          <figcaption>
+            <span>Cambridge, UK</span>
+            <strong>Biomedical science with a healthcare strategy lens.</strong>
+          </figcaption>
+        </figure>
+        <div class="evidence-map" aria-label="Portfolio evidence map">
+          <div class="map-node">
+            <span>Commercial</span>
+            <strong>NHS-facing health innovation</strong>
+          </div>
+          <div class="map-node">
+            <span>Governance</span>
+            <strong>AI/MedTech governance and adoption</strong>
+          </div>
+          <div class="map-node">
+            <span>Evidence</span>
+            <strong>Market, competitor and clinical context</strong>
+          </div>
+          <div class="map-node">
+            <span>Data</span>
+            <strong>Secure biomedical research discipline</strong>
+          </div>
         </div>
-        <div class="map-node">
-          <span>Governance</span>
-          <strong>AI/MedTech governance and adoption</strong>
-        </div>
-        <div class="map-node">
-          <span>Evidence</span>
-          <strong>Market, competitor and clinical context</strong>
-        </div>
-        <div class="map-node">
-          <span>Data</span>
-          <strong>Secure biomedical research discipline</strong>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logo-band" aria-label="Selected portfolio contexts">
+    <div class="page-shell logo-band-shell">
+      <span>Selected contexts</span>
+      <div class="logo-row">
+        {contextLogos.map((item) => (
+          <figure>
+            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+            <figcaption>{item.label}</figcaption>
+          </figure>
+        ))}
       </div>
     </div>
   </section>
@@ -128,24 +180,28 @@ const routes = [
       <div class="grid three">
         <LinkCard
           href="/case-studies/health-innovation-east/"
+          icon="strategy"
           eyebrow="Commercial placement"
           title="Health Innovation East"
           text="Commercial health innovation work across evidence, market intelligence, pathway fit and adoption reasoning."
         />
         <LinkCard
           href="/case-studies/ai-medtech-toolkit/"
+          icon="governance"
           eyebrow="AI/MedTech"
           title="Governance toolkit"
           text="A practical resource I authored to make AI/MedTech regulation, evidence and governance questions easier to use in advisory work."
         />
         <LinkCard
           href="/case-studies/final-year-project/"
+          icon="data"
           eyebrow="Biomedical data"
           title="Final-year project"
           text="Secure genomics-linked hospital trajectory analysis, with emphasis on design discipline, leakage control and honest limits."
         />
         <LinkCard
           href="/contact/"
+          icon="contact"
           eyebrow="Next step"
           title="Contact and scope"
           text="Role interests, location and the best way to get in touch."

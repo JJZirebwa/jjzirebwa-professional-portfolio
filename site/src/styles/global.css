@@ -253,6 +253,71 @@ h3 {
   outline-offset: 4px;
 }
 
+.icon {
+  display: block;
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card-icon {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(15, 106, 102, 0.16);
+  border-radius: 8px;
+  background: rgba(15, 106, 102, 0.07);
+  color: var(--teal);
+}
+
+.hero-visual {
+  display: grid;
+  gap: 1rem;
+}
+
+.portrait-card {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 24px 70px rgba(22, 32, 29, 0.11);
+}
+
+.portrait-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: 50% 24%;
+}
+
+.portrait-card figcaption {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem 1rem;
+}
+
+.portrait-card figcaption span {
+  color: var(--clay);
+  font-size: 0.76rem;
+  font-weight: 780;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portrait-card figcaption strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+  line-height: 1.18;
+}
+
 .evidence-map {
   min-height: 430px;
   padding: 1rem;
@@ -263,9 +328,15 @@ h3 {
   align-content: center;
 }
 
+.hero-visual .evidence-map {
+  min-height: 0;
+  padding: 0;
+  border-left: 0;
+}
+
 .map-node {
-  min-height: 142px;
-  padding: 1rem;
+  min-height: 128px;
+  padding: 0.9rem;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
@@ -301,6 +372,56 @@ h3 {
   line-height: 1.18;
 }
 
+.logo-band {
+  border-top: 1px solid rgba(22, 32, 29, 0.1);
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.logo-band-shell {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.logo-band-shell > span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 780;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.logo-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.logo-row figure {
+  min-height: 94px;
+  margin: 0;
+  padding: 0.85rem;
+  border: 1px solid rgba(22, 32, 29, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.68);
+  display: grid;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.logo-row img {
+  width: 100%;
+  max-height: 42px;
+  object-fit: contain;
+}
+
+.logo-row figcaption {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .section-band {
   padding: 4.2rem 0;
   border-top: 1px solid rgba(22, 32, 29, 0.1);
@@ -319,6 +440,40 @@ h3 {
   margin: 0.85rem 0 0;
   color: var(--muted);
   font-size: 1.03rem;
+}
+
+.section-with-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+
+.section-with-logo .section-header {
+  margin-bottom: 0;
+}
+
+.institution-mark {
+  width: min(220px, 34vw);
+  padding: 0.85rem;
+  border: 1px solid rgba(22, 32, 29, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.institution-mark img {
+  max-height: 90px;
+  object-fit: contain;
+}
+
+.institution-mark span {
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .grid {
@@ -344,6 +499,12 @@ h3 {
   border-radius: 8px;
   background: var(--surface);
   text-decoration: none;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.card:focus-within,
+.card:hover {
+  transform: translateY(-1px);
 }
 
 a.card:hover {
@@ -449,6 +610,26 @@ a.card:hover {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.72);
+}
+
+.logo-note {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.logo-note img {
+  width: 100%;
+  max-height: 76px;
+  object-fit: contain;
+  object-position: left center;
+  padding: 0.65rem;
+  border: 1px solid rgba(22, 32, 29, 0.08);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.logo-note p strong {
+  color: var(--ink);
 }
 
 .note h2,
@@ -609,6 +790,14 @@ a.card:hover {
     grid-template-columns: 1fr;
   }
 
+  .section-with-logo {
+    flex-direction: column;
+  }
+
+  .institution-mark {
+    width: min(240px, 100%);
+  }
+
   .case-sidebar {
     position: static;
   }
@@ -623,6 +812,14 @@ a.card:hover {
     border-left: 0;
     border-top: 1px solid var(--line);
     padding: 1rem 0 0;
+  }
+
+  .logo-band-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-row {
+    grid-template-columns: 1fr;
   }
 }
 
