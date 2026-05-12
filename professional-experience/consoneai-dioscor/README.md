@@ -13,4 +13,4 @@ I completed a short research internship connected to ConsoneAI/DioScor, supporti
 
 ## Publication Note
 
-This section is proportionate to a six-week internship. NDA documents, raw datasets, proprietary schemas, platform screenshots, platform-specific architecture and unpublished outputs are not included.
+This section is proportionate to a six-week internship. Confidential documents, raw datasets, proprietary schemas, platform screenshots, platform-specific architecture and unpublished outputs are not included.
