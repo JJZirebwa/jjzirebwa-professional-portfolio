@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const skillGroups = [
+  {
+    title: 'Healthcare commercial strategy',
+    text: 'I connect product claims, market context, evidence quality, stakeholder needs and pathway fit.',
+    evidence: ['Health Innovation East placement', 'competitor-analysis materials', 'QOF/adoption-logic material', 'business-case support']
+  },
+  {
+    title: 'Evidence synthesis',
+    text: 'I find, compare and explain scientific, clinical, policy and market evidence so it can support clearer decisions.',
+    evidence: ['HIE evidence briefs', 'market-analysis material', 'final-year dissertation framing', 'toxicology data mapping']
+  },
+  {
+    title: 'AI health governance',
+    text: 'I work with digital and AI-enabled health technology questions through evidence, safety, regulation, data governance, interoperability, risk and monitoring.',
+    evidence: ['AI/MedTech Toolkit', 'FYP governance handling', 'exploratory methods boundaries', 'AI-ECG adoption logic']
+  },
+  {
+    title: 'Data analysis and Python',
+    text: 'I use structured data handling, cleaning, feature reasoning and Python-supported analysis for bounded biomedical research questions.',
+    evidence: ['final-year project workflows', 'dose-toxicity extraction and cleaning', 'quantitative pharmacology', 'genetics and statistical reasoning']
+  },
+  {
+    title: 'Writing and communication',
+    text: 'I write scientific, commercial and governance material with attention to clarity, audience, evidence boundaries and practical decisions.',
+    evidence: ['guidance-support material', 'public case studies', 'dissertation summary', 'module and skills pages']
+  }
+];
+---
+
+<BaseLayout title="Skills" description="Skill map for healthcare commercial strategy, evidence synthesis, AI health governance, data analysis and writing.">
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">Skills map</p>
+      <h1>Skills</h1>
+      <p class="summary">
+        This page summarises the skills shown across the case studies and Markdown archive. It does not repeat every project detail or claim specialist seniority.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Evidence-backed"
+        title="Core skill areas"
+        lead="The skill claims are intentionally tied to public-safe evidence: placement work, academic research, internship data preparation and written outputs."
+      />
+      <div class="grid two">
+        {skillGroups.map((group) => (
+          <article class="card">
+            <span class="tag">Skill area</span>
+            <h3>{group.title}</h3>
+            <p>{group.text}</p>
+            <ul>
+              {group.evidence.map((item) => <li>{item}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

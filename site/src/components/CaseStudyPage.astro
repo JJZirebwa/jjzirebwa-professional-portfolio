@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface CaseSection {
+  heading: string;
+  body?: string;
+  items?: string[];
+}
+
+interface RelatedLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  kicker?: string;
+  summary: string;
+  sections?: CaseSection[];
+  skills?: string[];
+  boundary: string;
+  related?: RelatedLink[];
+}
+
+const {
+  title,
+  kicker,
+  summary,
+  sections = [],
+  skills = [],
+  boundary,
+  related = []
+} = Astro.props as Props;
+---
+
+<BaseLayout title={title} description={summary}>
+  <section class="case-hero">
+    <div class="page-shell">
+      {kicker && <p class="eyebrow">{kicker}</p>}
+      <h1>{title}</h1>
+      <p class="summary">{summary}</p>
+    </div>
+  </section>
+
+  <div class="page-shell case-layout">
+    <aside class="case-sidebar" aria-label="Case study summary">
+      <div class="note">
+        <h2>Skills demonstrated</h2>
+        <ul class="tag-list">
+          {skills.map((skill) => <li>{skill}</li>)}
+        </ul>
+      </div>
+      <div class="note">
+        <h2>Publication boundary</h2>
+        <p>{boundary}</p>
+      </div>
+      {related.length > 0 && (
+        <div class="note">
+          <h2>Related pages</h2>
+          <ul class="compact-list">
+            {related.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </aside>
+
+    <div class="case-sections">
+      {sections.map((section) => (
+        <section class="case-section">
+          <h2>{section.heading}</h2>
+          {section.body && <p>{section.body}</p>}
+          {section.items && (
+            <ul>
+              {section.items.map((item) => <li>{item}</li>)}
+            </ul>
+          )}
+        </section>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

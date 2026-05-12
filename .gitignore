@@ -1,0 +1,16 @@
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+~$*
+
+# Local audit and handover material. Do not publish.
+review/
+_private/
+private/
+FINAL_REVIEW_NOTES.md
+
+# Local Astro/Netlify build output.
+site/node_modules/
+site/dist/
+site/.astro/

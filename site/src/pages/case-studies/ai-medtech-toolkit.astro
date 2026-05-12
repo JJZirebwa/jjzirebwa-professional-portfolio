@@ -1,0 +1,58 @@
+---
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+
+const sections = [
+  {
+    heading: 'Context',
+    body: 'AI-enabled medical technologies create a translation problem: a product may be technically interesting, but adoption depends on regulation, evidence standards, clinical safety, information governance, interoperability and monitoring after deployment.'
+  },
+  {
+    heading: 'My role',
+    body: 'I authored practical internal AI/MedTech guidance-support material during my Health Innovation East placement. The work was for internal innovation advisory use and was not formal regulatory advice, legal advice or a substitute for specialist clinical-safety review.'
+  },
+  {
+    heading: 'Approach',
+    body: 'I drew on official publications from regulatory and health-system sources, alongside learning from the East of England AI Forum, and translated the material into usable guidance for advisory contexts.',
+    items: [
+      'AI as a medical device and software as a medical device framing.',
+      'MHRA and UKCA regulatory awareness.',
+      'NICE evidence expectations and DTAC considerations.',
+      'DCB0129 and DCB0160 clinical safety awareness.',
+      'Information governance, data protection, interoperability, risk and post-market monitoring.'
+    ]
+  },
+  {
+    heading: 'Outputs / public-safe reconstruction',
+    items: [
+      'Structured guidance-support material.',
+      'Topic summaries and practical explanatory sections.',
+      'Governance-aware framing for innovator support.',
+      'Checklists that helped turn broad AI/MedTech issues into more concrete questions.'
+    ]
+  },
+  {
+    heading: 'What this shows',
+    body: 'This work shows my ability to make AI/MedTech issues understandable while keeping clear boundaries around regulatory, legal and clinical-safety authority.'
+  }
+];
+---
+
+<CaseStudyPage
+  title="AI/MedTech Toolkit"
+  kicker="AI and MedTech governance"
+  summary="A practical internal guidance-support resource translating AI/MedTech regulation, evidence, data governance and implementation considerations into usable advisory material."
+  sections={sections}
+  skills={[
+    'AI-health governance literacy',
+    'regulated-health writing',
+    'evidence standards interpretation',
+    'policy translation',
+    'claim-boundary discipline'
+  ]}
+  boundary="No toolkit screenshots, internal drafts, unpublished source material or confidential Health Innovation East material are included. This page does not present formal regulatory advice."
+  related={[
+    { href: '/case-studies/health-innovation-east/', label: 'Health Innovation East' },
+    { href: '/case-studies/final-year-project/', label: 'Final-year project governance' },
+    { href: '/skills/', label: 'AI governance skills' }
+  ]}
+/>

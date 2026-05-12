@@ -1,0 +1,59 @@
+---
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+
+const sections = [
+  {
+    heading: 'Context',
+    body: 'Health innovation work often needs fast orientation: who is active in a market, how mature the space is, which competitors are credible, how evidence compares and what adoption questions remain open.'
+  },
+  {
+    heading: 'My role',
+    body: 'I used CB Insights and secondary research to support market-intelligence work. I independently authored some internal market-analysis material and developed internal competitor-analysis materials across digital health, diagnostics, AI-enabled tools and MedTech.'
+  },
+  {
+    heading: 'Approach',
+    body: 'The work turned large and often noisy sources into practical decision support for colleagues.',
+    items: [
+      'Company searches and structured company lists.',
+      'Technology categorisation, funding and maturity signals.',
+      'Comparator products, public evidence signals and pathway relevance.',
+      'Regulatory position where public and safe to discuss.',
+      'Interoperability, integration and adoption-risk questions.'
+    ]
+  },
+  {
+    heading: 'Outputs / public-safe reconstruction',
+    items: [
+      'Reusable research views and horizon-scanning summaries.',
+      'Sector snapshots and technology landscape summaries.',
+      'Competitor matrices and stakeholder decision-driver summaries.',
+      'Adoption-readiness framing for internal commercial analysis.'
+    ]
+  },
+  {
+    heading: 'What this shows',
+    body: 'This work shows that I can analyse a technology space in a way that is useful for strategy, not just descriptive research.'
+  }
+];
+---
+
+<CaseStudyPage
+  title="Market Intelligence and Competitor Analysis"
+  kicker="Commercial analysis"
+  summary="A public-safe reconstruction of market-intelligence and competitor-analysis work across health technologies, including company search, horizon scanning, evidence comparison and adoption-readiness framing."
+  sections={sections}
+  skills={[
+    'market intelligence',
+    'competitor analysis',
+    'commercial reasoning',
+    'trend synthesis',
+    'structured comparison',
+    'confidential-source handling'
+  ]}
+  boundary="No CB Insights exports, screenshots, paid-source reports, internal decks, confidential client documents or final commercial decisions are included."
+  related={[
+    { href: '/case-studies/health-innovation-east/', label: 'Health Innovation East' },
+    { href: '/projects/', label: 'Projects' },
+    { href: '/skills/', label: 'Commercial strategy skills' }
+  ]}
+/>

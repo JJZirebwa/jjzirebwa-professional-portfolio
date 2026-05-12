@@ -1,0 +1,57 @@
+---
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+
+const sections = [
+  {
+    heading: 'Context',
+    body: 'The six-week research internship was connected to a dose-toxicity platform context, where animal, human and chemical toxicity evidence needed to be organised into reviewable forms.'
+  },
+  {
+    heading: 'My role',
+    body: 'I supported public-safe toxicology data mapping and structured data-preparation work, without exposing proprietary platform schemas, architecture, datasets or unpublished outputs.'
+  },
+  {
+    heading: 'Approach',
+    items: [
+      'Identify relevant toxicology and chemical data sources for extraction or comparison.',
+      'Review dose-toxicity source fields and terminology differences.',
+      'Organise compound, organism, route, dose-unit, test-type and effect-category information where available.',
+      'Clean missing values, split combined categories and document limitations.',
+      'Map fields to high-level information needs without disclosing proprietary schema.'
+    ]
+  },
+  {
+    heading: 'Outputs / public-safe reconstruction',
+    items: [
+      'Internal mapping notes.',
+      'Organised non-public data outputs.',
+      'Dose-toxicity summaries.',
+      'Presentation-style communication material, excluded from the public site.'
+    ]
+  },
+  {
+    heading: 'What this shows',
+    body: 'The internship shows an early move from biomedical science into data-enabled research, structured data preparation and scientific communication.'
+  }
+];
+---
+
+<CaseStudyPage
+  title="ConsoneAI / DioScor"
+  kicker="Research internship"
+  summary="A short research internship involving high-level toxicology data mapping and structured data-preparation work in a dose-toxicity platform context."
+  sections={sections}
+  skills={[
+    'data extraction',
+    'structured data mapping',
+    'Excel/CSV organisation',
+    'lightweight scripting literacy',
+    'toxicology vocabulary',
+    'data limitations communication'
+  ]}
+  boundary="NDA material, raw datasets, proprietary schemas, platform screenshots, platform-specific architecture and unpublished outputs are excluded. This page does not claim platform validation or drug-discovery efficacy."
+  related={[
+    { href: '/projects/', label: 'Biomedical data and evidence' },
+    { href: '/skills/', label: 'Data skills' }
+  ]}
+/>

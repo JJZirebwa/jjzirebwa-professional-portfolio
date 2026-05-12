@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Jubileejoy "JJ" Zirebwa',
+  description = 'Biomedical Science student and early-career healthcare strategy profile.'
+} = Astro.props;
+
+const pageTitle = title === 'Jubileejoy "JJ" Zirebwa'
+  ? title
+  : `${title} | Jubileejoy "JJ" Zirebwa`;
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about/', label: 'About' },
+  { href: '/case-studies/', label: 'Case studies' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/skills/', label: 'Skills' },
+  { href: '/contact/', label: 'Contact' }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="nav-shell">
+        <a class="brand" href="/" aria-label="Home">
+          <strong>Jubileejoy "JJ" Zirebwa</strong>
+          <span>Biomedical science | healthcare strategy | evidence</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="content">
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="footer-shell">
+        <span>Public portfolio site layer. Markdown source archive remains in the repository.</span>
+        <span>Confidential material, raw data and restricted outputs are excluded.</span>
+      </div>
+    </footer>
+  </body>
+</html>

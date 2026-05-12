@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import LinkCard from '../../components/LinkCard.astro';
+
+const cases = [
+  {
+    href: '/case-studies/health-innovation-east/',
+    eyebrow: 'Commercial placement',
+    title: 'Health Innovation East',
+    text: 'One-year NHS-facing commercial health innovation placement across evidence, market intelligence, pathway fit and adoption reasoning.'
+  },
+  {
+    href: '/case-studies/ai-medtech-toolkit/',
+    eyebrow: 'AI/MedTech governance',
+    title: 'AI/MedTech Toolkit',
+    text: 'Practical internal guidance-support material for advisory work, not formal regulatory or clinical-safety advice.'
+  },
+  {
+    href: '/case-studies/market-intelligence/',
+    eyebrow: 'Market and competitors',
+    title: 'Market intelligence',
+    text: 'Public-safe reconstruction of market-analysis, competitor-landscape and horizon-scanning work.'
+  },
+  {
+    href: '/case-studies/final-year-project/',
+    eyebrow: 'Academic research',
+    title: 'Final-year project',
+    text: 'Secure genomics-linked hospital trajectory analysis with explicit governance, reproducibility and limitations boundaries.'
+  },
+  {
+    href: '/case-studies/consoneai-dioscor/',
+    eyebrow: 'Research internship',
+    title: 'ConsoneAI / DioScor',
+    text: 'High-level toxicology data mapping and structured data-preparation work in a dose-toxicity platform context.'
+  }
+];
+---
+
+<BaseLayout title="Case studies" description="Selected public-safe healthcare strategy, AI governance and biomedical data case studies.">
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">Selected work</p>
+      <h1>Case studies</h1>
+      <p class="summary">
+        These pages are concise public reconstructions of the strongest work in the Markdown portfolio. They focus on role, approach, public-safe outputs, skills demonstrated and publication boundaries.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Evidence"
+        title="Public-safe case study set"
+        lead="The case studies keep enough detail to show judgement and working style while excluding confidential source material."
+      />
+      <div class="grid two">
+        {cases.map((item) => <LinkCard {...item} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

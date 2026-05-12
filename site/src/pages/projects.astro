@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import LinkCard from '../components/LinkCard.astro';
+
+const projectCards = [
+  {
+    href: '/case-studies/health-innovation-east/',
+    eyebrow: 'Strategy',
+    title: 'Healthcare strategy case studies',
+    text: 'A cross-case view of commercial health innovation work across evidence, adoption logic, market context and pathway fit.'
+  },
+  {
+    href: '/case-studies/final-year-project/',
+    eyebrow: 'Research',
+    title: 'Biomedical data and evidence',
+    text: 'Secure health-data research, feature reasoning, model-evaluation limits and governance-aware interpretation.'
+  },
+  {
+    href: '/case-studies/consoneai-dioscor/',
+    eyebrow: 'Data preparation',
+    title: 'Computational toxicology workflow',
+    text: 'High-level dose-toxicity data mapping and structured data-preparation work from a short research internship.'
+  }
+];
+
+const exploratory = [
+  'Provenance-aware biological priors.',
+  'Hypothesis-generation and study-design support.',
+  'Missing-variable discovery and evidence-gap mapping.',
+  'Disproof-first validation, negative controls and ablation testing.',
+  'Clear separation between observed evidence, derived features and augmented assumptions.'
+];
+---
+
+<BaseLayout title="Projects" description="Project themes across healthcare strategy, biomedical data and exploratory evidence-methods thinking.">
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">Project themes</p>
+      <h1>Projects</h1>
+      <p class="summary">
+        The project layer groups the Markdown portfolio into selected public-facing themes: commercial health innovation, biomedical data and evidence, and bounded exploratory methods thinking.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Selected projects"
+        title="Work with public-safe evidence"
+        lead="The strongest project evidence is in the case-study pages. This route keeps the broader project map concise."
+      />
+      <div class="grid three">
+        {projectCards.map((item) => <LinkCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <SectionHeader
+        eyebrow="Exploratory methods"
+        title="Future biological evidence methods"
+        lead="This is included as bounded methods thinking from rare-disease and underpowered research contexts. It is not a product, startup, platform, clinical method, validated model or substitute for patient evidence."
+      />
+      <ul class="compact-list">
+        {exploratory.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

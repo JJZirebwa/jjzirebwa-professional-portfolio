@@ -1,0 +1,3 @@
+# Figure assets
+
+Placeholder

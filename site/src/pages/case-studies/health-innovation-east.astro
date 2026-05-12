@@ -1,0 +1,62 @@
+---
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+
+const sections = [
+  {
+    heading: 'Context',
+    body: 'The placement sat in an NHS-facing commercial innovation environment where technologies had to be understood as products, evidence claims, pathway interventions, stakeholder decisions and adoption risks.'
+  },
+  {
+    heading: 'My role',
+    body: 'My work combined independently authored internal analysis, co-authored work with senior colleagues and support-based contributions.',
+    items: [
+      'Innovator triage and information gathering.',
+      'Evidence appraisal and structured summaries.',
+      'Market intelligence using tools such as CB Insights.',
+      'Competitor landscapes, horizon scans, pathway mapping and adoption logic.',
+      'Business-case support and draft stakeholder-facing summaries.'
+    ]
+  },
+  {
+    heading: 'Approach',
+    body: 'I broke broad innovation questions into practical workstreams: unmet need, evidence base, competitor landscape, pathway fit, stakeholder confidence, governance risks and unresolved data issues.'
+  },
+  {
+    heading: 'Outputs / public-safe reconstruction',
+    items: [
+      'Evidence briefs and structured evidence summaries.',
+      'Competitor comparison packs and technology landscape summaries.',
+      'Market and horizon-scanning summaries.',
+      'AI/MedTech guidance-support material.',
+      'Adoption and value-logic notes.',
+      'Pathway and stakeholder-decision framing.'
+    ]
+  },
+  {
+    heading: 'What this shows',
+    body: 'This experience shows my ability to operate at the boundary between biomedical evidence, product claims, NHS realities and commercial decision-making.'
+  }
+];
+---
+
+<CaseStudyPage
+  title="Health Innovation East"
+  kicker="Commercial health innovation"
+  summary="A one-year placement supporting NHS-facing commercial health innovation work across evidence synthesis, market intelligence, competitor analysis, pathway fit and adoption logic."
+  sections={sections}
+  skills={[
+    'commercial health innovation',
+    'evidence synthesis',
+    'market intelligence',
+    'stakeholder translation',
+    'structured writing',
+    'confidentiality discipline',
+    'AI/MedTech governance'
+  ]}
+  boundary="No internal documents, confidential client materials, paid-source exports, unpublished assumptions or organisation endorsements are included."
+  related={[
+    { href: '/case-studies/ai-medtech-toolkit/', label: 'AI/MedTech Toolkit' },
+    { href: '/case-studies/market-intelligence/', label: 'Market intelligence' },
+    { href: '/skills/', label: 'Skills' }
+  ]}
+/>

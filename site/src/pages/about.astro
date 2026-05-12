@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const academicRows = [
+  ['Degree', 'BSc Biomedical Science, Anglia Ruskin University, Cambridge.'],
+  ['Status', 'Final-year student, expected completion in 2026.'],
+  ['Placement year', 'Health Innovation East commercial placement, 2024-2025.'],
+  ['Academic record', 'Interim transcript records strong Level 4 and Level 5 performance, a placement-year pass and confirmed Level 6 marks to date. Remaining final-trimester items are pending.']
+];
+
+const themes = [
+  'Biomedical science interpreted through clinical context, data and decision-making.',
+  'Healthcare innovation work that connects product claims, evidence quality, pathway fit and stakeholder needs.',
+  'AI/MedTech governance literacy across regulation, evidence standards, data protection, interoperability and post-market risk.',
+  'Governance-bound health-data research with explicit limits around clinical utility and public disclosure.'
+];
+---
+
+<BaseLayout
+  title="About"
+  description="About Jubileejoy Zirebwa, a final-year Biomedical Science student with healthcare strategy, evidence synthesis and AI/MedTech governance experience."
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">Profile</p>
+      <h1>About</h1>
+      <p class="summary">
+        I am a final-year Biomedical Science student at Anglia Ruskin University in Cambridge. My profile combines biomedical science, a full-year commercial health innovation placement, governance-bound data research and early computational toxicology experience.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <SectionHeader
+        eyebrow="Working direction"
+        title="Biomedical evidence with an adoption lens"
+        lead="I am strongest where scientific information needs to be turned into structured, practical judgement: what the evidence says, what it does not say, where a technology might fit, and what remains uncertain."
+      />
+      <ul class="compact-list">
+        {themes.map((theme) => <li>{theme}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Academic profile"
+        title="Biomedical Science grounding"
+        lead="The degree gives the scientific base behind the commercial and governance work: pathology, genetics, microbiology, pharmacology, translational medicine, data interpretation and scientific writing."
+      />
+      <div class="timeline">
+        {academicRows.map(([label, text]) => (
+          <div class="timeline-row">
+            <strong>{label}</strong>
+            <span>{text}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell grid two">
+      <div class="prose">
+        <h2>Professional experience</h2>
+        <p>
+          During my Health Innovation East placement, I worked on NHS-facing commercial health innovation questions across evidence briefs, market intelligence, competitor analysis, adoption logic, business-case support and practical AI/MedTech guidance-support material.
+        </p>
+      </div>
+      <div class="prose">
+        <h2>Research and data work</h2>
+        <p>
+          My final-year project used secure, genomics-linked hospital trajectory analysis in a Brugada-suspect context. The work is presented as research-only and does not publish raw outputs, counts, figures or clinical-utility claims.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

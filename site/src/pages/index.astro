@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import LinkCard from '../components/LinkCard.astro';
+
+const startingPoints = [
+  {
+    href: '/case-studies/health-innovation-east/',
+    eyebrow: 'Placement',
+    title: 'Health Innovation East',
+    text: 'One-year commercial placement across NHS-facing innovation, evidence synthesis, pathway thinking and adoption logic.'
+  },
+  {
+    href: '/case-studies/ai-medtech-toolkit/',
+    eyebrow: 'Governance',
+    title: 'AI/MedTech Toolkit',
+    text: 'A practical internal guidance-support resource covering AIaMD/SaMD, evidence, governance, interoperability and risk.'
+  },
+  {
+    href: '/case-studies/market-intelligence/',
+    eyebrow: 'Commercial analysis',
+    title: 'Market intelligence and competitor analysis',
+    text: 'Public-safe reconstruction of market-intelligence, competitor-landscape and horizon-scanning work.'
+  },
+  {
+    href: '/case-studies/final-year-project/',
+    eyebrow: 'Academic research',
+    title: 'Final-year project governance',
+    text: 'A governance-bound biomedical data project in a secure genomics-linked research environment.'
+  }
+];
+
+const routes = [
+  {
+    title: 'Healthcare commercial strategy',
+    text: 'Evidence briefs, competitor analysis, QOF/adoption logic, pathway fit and business-case support.'
+  },
+  {
+    title: 'AI/MedTech governance',
+    text: 'Regulatory framing, evidence standards, DTAC, clinical safety awareness, information governance and monitoring.'
+  },
+  {
+    title: 'Biomedical data and evidence',
+    text: 'Secure health-data research, feature reasoning, model-evaluation limits and computational toxicology data preparation.'
+  },
+  {
+    title: 'Academic and research profile',
+    text: 'Biomedical Science grounding across pathology, genetics, pharmacology, translational medicine and scientific writing.'
+  }
+];
+---
+
+<BaseLayout
+  title='Jubileejoy "JJ" Zirebwa'
+  description="Biomedical Science student and early-career healthcare strategy profile with experience across health innovation, AI/MedTech governance and evidence synthesis."
+>
+  <section class="hero">
+    <div class="page-shell hero-grid">
+      <div>
+        <p class="eyebrow">Public professional portfolio</p>
+        <h1>Jubileejoy "JJ" Zirebwa</h1>
+        <p class="hero-lede">Final-year Biomedical Science student and early-career healthcare strategy profile.</p>
+        <p class="intro-copy">
+          My work sits between biomedical evidence, healthcare adoption and structured commercial analysis. This site brings together a one-year Health Innovation East placement, AI/MedTech governance work, market intelligence, competitor analysis, governance-bound biomedical data research and early computational toxicology experience.
+        </p>
+        <div class="action-row">
+          <a class="button" href="/case-studies/">View case studies</a>
+          <a class="button secondary" href="/skills/">View skills</a>
+          <a class="button secondary" href="/contact/">Contact</a>
+        </div>
+      </div>
+      <div class="evidence-map" aria-label="Portfolio evidence map">
+        <div class="map-node">
+          <span>Commercial</span>
+          <strong>NHS-facing health innovation</strong>
+        </div>
+        <div class="map-node">
+          <span>Governance</span>
+          <strong>AI and MedTech adoption boundaries</strong>
+        </div>
+        <div class="map-node">
+          <span>Evidence</span>
+          <strong>Market, competitor and clinical context</strong>
+        </div>
+        <div class="map-node">
+          <span>Data</span>
+          <strong>Secure biomedical research discipline</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Start here"
+        title="Best starting points"
+        lead="The site is deliberately selective. These pages give the quickest view of the strongest public-safe evidence."
+      />
+      <div class="grid two">
+        {startingPoints.map((item) => <LinkCard {...item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <SectionHeader
+        eyebrow="Portfolio themes"
+        title="How the work connects"
+        lead="The strongest thread is structured judgement: turning scientific, market and governance information into clearer decisions without overstating the evidence."
+      />
+      <ul class="compact-list">
+        {routes.map((route) => (
+          <li><strong>{route.title}.</strong> {route.text}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Selected work"
+        title="Case studies"
+        lead="Each case study is a public-facing reconstruction. It preserves the nature of the work while excluding confidential documents, raw data, private assumptions and restricted outputs."
+      />
+      <div class="grid three">
+        <LinkCard
+          href="/case-studies/health-innovation-east/"
+          eyebrow="Commercial placement"
+          title="Health Innovation East"
+          text="Commercial health innovation work across evidence, market intelligence, pathway fit and adoption reasoning."
+        />
+        <LinkCard
+          href="/case-studies/ai-medtech-toolkit/"
+          eyebrow="AI/MedTech"
+          title="Practical governance support"
+          text="Internal guidance-support material translating regulatory, evidence and data-governance considerations into usable advisory material."
+        />
+        <LinkCard
+          href="/case-studies/final-year-project/"
+          eyebrow="Biomedical data"
+          title="Final-year project"
+          text="Secure genomics-linked hospital trajectory analysis presented with explicit research and publication boundaries."
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell">
+      <div class="note">
+        <h2>Confidentiality note</h2>
+        <p>
+          This portfolio excludes raw datasets, dissertation extracts, participant-level information, small counts, internal Health Innovation East documents, CB Insights exports, ConsoneAI/DioScor proprietary material and restricted outputs. Named examples do not imply endorsement by any organisation.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
