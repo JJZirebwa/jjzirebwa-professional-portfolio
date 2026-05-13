@@ -3,6 +3,8 @@
 Cambridge, UK  
 Final-year BSc Biomedical Science student at Anglia Ruskin University, with experience across healthcare innovation, evidence synthesis, AI/MedTech governance, biomedical data analysis and commercial strategy.
 
+Live website: <https://jubileejoyzirebwa.com>
+
 ## Positioning
 
 I work best with biomedical evidence, healthcare adoption and structured analysis. My profile combines a Biomedical Science degree, a full-year commercial placement with Health Innovation East, a governance-bound final-year project in a secure genomic research environment and earlier computational toxicology data work with ConsoneAI/DioScor.
