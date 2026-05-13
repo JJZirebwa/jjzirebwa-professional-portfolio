@@ -62,6 +62,8 @@ After deployment, check these URLs:
 
 - `https://jubileejoyzirebwa.com/robots.txt`
 - `https://jubileejoyzirebwa.com/sitemap-index.xml`
+- `https://jubileejoyzirebwa.com/favicon.ico`
+- `https://jubileejoyzirebwa.com/favicon-48x48.png`
 
 To help Google index the site for name searches:
 
@@ -72,6 +74,7 @@ To help Google index the site for name searches:
 5. Wait for DNS propagation, then click **Verify** in Search Console.
 6. Submit `https://jubileejoyzirebwa.com/sitemap-index.xml` in Search Console.
 7. Link to `https://jubileejoyzirebwa.com` from LinkedIn, GitHub and the CV/application materials so Google has consistent identity signals.
+8. Use URL Inspection on `https://jubileejoyzirebwa.com/` and request indexing after favicon changes deploy. Google may take days or weeks to update the search-result favicon even after the file is crawlable.
 
 ## Google Analytics
 

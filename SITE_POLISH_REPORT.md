@@ -24,6 +24,8 @@ The Netlify site is driven by the Astro project in `site/`.
 - Added a styled LinkedIn profile card on the contact page using the supplied profile-badge markup and URL, without loading LinkedIn's external badge script.
 - Reworked the homepage "How the work connects" area into a compact "biological signal to adoption decision" lens that better reflects the biomedical data, governance and commercial strategy profile.
 - Added search-visibility improvements: canonical URLs, Open Graph URLs/images, Twitter metadata, homepage/about Person JSON-LD, Astro sitemap generation and `robots.txt`.
+- Added Google-friendly favicon fallbacks: `.ico`, 48px PNG, 96px PNG, 192px PNG and Apple touch icon.
+- Expanded Person JSON-LD name variants and added a natural About-page sentence for `JJ Zirebwa`, `Jubilee Joy Zirebwa` and `Jubilee-Joy Zirebwa` style searches.
 - Added Playwright and axe-based UI inspection for desktop/mobile checks on the homepage, contact page and skills page.
 - Added a restrained genetics-inspired visual thread to the homepage working-lens section.
 - Moved a stray internal `.code-search` artifact out of the public Astro pages folder.
@@ -70,6 +72,7 @@ The originals remain in an ignored local buffer. The logos are presented as cont
 - Verify page views in the Google Analytics Realtime report after the next deploy.
 - Review whether a privacy/cookie notice or consent handling is needed before using Google Analytics on the production site.
 - Verify `jubileejoyzirebwa.com` in Google Search Console with a DNS TXT record, then submit `https://jubileejoyzirebwa.com/sitemap-index.xml`.
+- After favicon deployment, inspect `https://jubileejoyzirebwa.com/` in Search Console and request indexing so Google can recrawl the favicon links.
 - Review the private blog task queue before starting the future writing section.
 
 ## Independent review
