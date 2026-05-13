@@ -54,6 +54,25 @@ Before promoting any deploy:
 - Check mobile and desktop layouts for readable text, no overlap and clear navigation.
 - Confirm that the wording remains first-person, bounded and recruiter-readable.
 
+## Search visibility
+
+The Astro site is configured with `site = "https://jubileejoyzirebwa.com"` and generates a sitemap during `npm run build`.
+
+After deployment, check these URLs:
+
+- `https://jubileejoyzirebwa.com/robots.txt`
+- `https://jubileejoyzirebwa.com/sitemap-index.xml`
+
+To help Google index the site for name searches:
+
+1. Open Google Search Console.
+2. Add a **Domain property** for `jubileejoyzirebwa.com`.
+3. Choose DNS TXT verification.
+4. Add the TXT record Google gives you in Spaceship DNS, using the same DNS area where the Netlify `A` and `CNAME` records were added.
+5. Wait for DNS propagation, then click **Verify** in Search Console.
+6. Submit `https://jubileejoyzirebwa.com/sitemap-index.xml` in Search Console.
+7. Link to `https://jubileejoyzirebwa.com` from LinkedIn, GitHub and the CV/application materials so Google has consistent identity signals.
+
 ## Google Analytics
 
 The Astro layout includes a Google Analytics 4 tag. It is not visible on the website. The current GA4 measurement ID is baked into the analytics component, so Netlify does not need a separate environment variable for analytics to work.

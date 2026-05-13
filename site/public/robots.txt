@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jubileejoyzirebwa.com/sitemap-index.xml

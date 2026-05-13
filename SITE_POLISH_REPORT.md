@@ -21,6 +21,13 @@ The Netlify site is driven by the Astro project in `site/`.
 - Added SVG line icons across starting-point cards, case-study cards, project cards and skill cards.
 - Added/kept active navigation states, skip-to-content, Open Graph/Twitter metadata, favicon and custom 404 page.
 - Added Google Analytics 4 support using the supplied measurement ID. The tag is not visible in the site UI, and `PUBLIC_GA_MEASUREMENT_ID` can still override the baked-in ID later if needed.
+- Added a styled LinkedIn profile card on the contact page using the supplied profile-badge markup and URL, without loading LinkedIn's external badge script.
+- Reworked the homepage "How the work connects" area into a compact "biological signal to adoption decision" lens that better reflects the biomedical data, governance and commercial strategy profile.
+- Added search-visibility improvements: canonical URLs, Open Graph URLs/images, Twitter metadata, homepage/about Person JSON-LD, Astro sitemap generation and `robots.txt`.
+- Added Playwright and axe-based UI inspection for desktop/mobile checks on the homepage, contact page and skills page.
+- Added a restrained genetics-inspired visual thread to the homepage working-lens section.
+- Moved a stray internal `.code-search` artifact out of the public Astro pages folder.
+- Added a private blog/writing task queue for a future non-published writing section.
 
 ## Public assets added
 
@@ -46,19 +53,24 @@ The originals remain in an ignored local buffer. The logos are presented as cont
 - `npm run build` passed from `site/`.
 - `astro check` reported 0 errors, 0 warnings and 0 hints across 18 Astro files.
 - Astro built 12 pages, including the custom 404 page.
+- Astro generated `sitemap-index.xml` and `sitemap-0.xml`.
 - Internal root-relative links in generated HTML resolve.
 - Generated output contains no private/review/PDF/ORION links and no removed scaffold phrases.
 - The current build includes the Google Analytics tag with the supplied GA4 measurement ID.
 - A previous test build with `PUBLIC_GA_MEASUREMENT_ID=G-TEST12345` confirmed the environment-variable override path; the sample value is not present in the current build output.
+- `npm run test:ui` passed 6 Playwright/axe checks across desktop and mobile Chromium.
 
 ## Remaining manual checks
 
 - Review the homepage image crop and logo strip in a browser at desktop and mobile widths.
+- Review the new homepage working-lens section and contact-page LinkedIn card in a browser at desktop and mobile widths.
 - Confirm that public use of the HIE, ARU and Genomics England logos is acceptable.
 - Confirm the direct email, phone and LinkedIn details on the contact page should remain public.
 - Confirm the Health Innovation East and final-year project logo placements read as context rather than endorsement.
 - Verify page views in the Google Analytics Realtime report after the next deploy.
 - Review whether a privacy/cookie notice or consent handling is needed before using Google Analytics on the production site.
+- Verify `jubileejoyzirebwa.com` in Google Search Console with a DNS TXT record, then submit `https://jubileejoyzirebwa.com/sitemap-index.xml`.
+- Review the private blog task queue before starting the future writing section.
 
 ## Independent review
 

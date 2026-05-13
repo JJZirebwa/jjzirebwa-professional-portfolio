@@ -12,6 +12,39 @@ const pageTitle = title === 'Jubileejoy "JJ" Zirebwa'
   : `${title} | Jubileejoy "JJ" Zirebwa`;
 
 const currentPath = Astro.url.pathname;
+const siteUrl = Astro.site ?? new URL('https://jubileejoyzirebwa.com');
+const canonicalUrl = new URL(currentPath, siteUrl).href;
+const profileImageUrl = new URL('/images/jubileejoy-zirebwa-headshot.jpg', siteUrl).href;
+const includePersonSchema = currentPath === '/' || currentPath === '/about/';
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': `${canonicalUrl}#profile-page`,
+  url: canonicalUrl,
+  name: pageTitle,
+  mainEntity: {
+    '@type': 'Person',
+    '@id': `${new URL('/', siteUrl).href}#jubileejoy-zirebwa`,
+    name: 'Jubileejoy Zirebwa',
+    alternateName: ['JJ Zirebwa', 'Jubileejoy "JJ" Zirebwa', 'Jubileejoy Zirebwa'],
+    url: new URL('/', siteUrl).href,
+    image: profileImageUrl,
+    email: 'mailto:jubileejoyzirebwa@gmail.com',
+    sameAs: [
+      'https://www.linkedin.com/in/jubileejoy-zirebwa-707538140',
+      'https://github.com/JJZirebwa'
+    ],
+    knowsAbout: [
+      'Biomedical science',
+      'Healthcare strategy',
+      'Health innovation',
+      'AI and MedTech governance',
+      'Biomedical data analysis',
+      'Evidence synthesis',
+      'Market intelligence'
+    ]
+  }
+};
 const isActive = (href: string) => href === '/'
   ? currentPath === '/'
   : currentPath.startsWith(href);
@@ -34,12 +67,21 @@ const navItems = [
     <meta name="description" content={description} />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#f7f6f1" />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content='Jubileejoy "JJ" Zirebwa' />
+    <meta property="og:image" content={profileImageUrl} />
+    <meta property="og:image:alt" content="Jubileejoy Zirebwa" />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={profileImageUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
+    {includePersonSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />}
     <GoogleAnalytics />
   </head>
   <body>

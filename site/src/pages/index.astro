@@ -34,22 +34,26 @@ const startingPoints = [
   }
 ];
 
-const routes = [
+const lensSteps = [
   {
-    title: 'Healthcare commercial strategy',
-    text: 'Evidence briefs, competitor analysis, QOF/adoption logic, pathway fit and business-case support.'
+    label: 'Signal',
+    title: 'Biology and clinical context',
+    text: 'Start with the mechanism, patient pathway and the problem a technology claims to solve.'
   },
   {
-    title: 'AI/MedTech governance',
-    text: 'Regulatory framing, evidence standards, DTAC, clinical safety awareness, information governance and monitoring.'
+    label: 'Evidence',
+    title: 'Data, claims and uncertainty',
+    text: 'Separate what the evidence supports from what still depends on assumptions, validation or better data.'
   },
   {
-    title: 'Biomedical data and evidence',
-    text: 'Secure health-data research, feature reasoning, model-evaluation limits and computational toxicology data preparation.'
+    label: 'Governance',
+    title: 'Safety, regulation and trust',
+    text: 'Ask how AI/MedTech, data protection, clinical safety and implementation standards shape responsible adoption.'
   },
   {
-    title: 'Academic and research profile',
-    text: 'Biomedical Science grounding across pathology, genetics, pharmacology, translational medicine and scientific writing.'
+    label: 'Adoption',
+    title: 'Commercial and policy judgement',
+    text: 'Translate evidence into pathway fit, stakeholder value, market readiness and decisions that can be explained clearly.'
   }
 ];
 
@@ -155,18 +159,32 @@ const contextLogos = [
     </div>
   </section>
 
-  <section class="section-band">
-    <div class="page-shell split">
-      <SectionHeader
-        eyebrow="Portfolio themes"
-        title="How the work connects"
-        lead="The strongest thread is structured judgement: turning scientific, market and governance information into clearer decisions without overstating the evidence."
-      />
-      <ul class="compact-list">
-        {routes.map((route) => (
-          <li><strong>{route.title}.</strong> {route.text}</li>
+  <section class="section-band lens-band">
+    <div class="page-shell profile-lens">
+      <div>
+        <p class="eyebrow">Working lens</p>
+        <h2>From biological signal to adoption decision</h2>
+        <p>
+          My work sits between biomedical reasoning, health data, AI/MedTech governance and commercial strategy. This is the lens I use when reading a technology, dataset or evidence story.
+        </p>
+        <div class="gene-thread" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <ol class="lens-track">
+        {lensSteps.map((step) => (
+          <li>
+            <span>{step.label}</span>
+            <strong>{step.title}</strong>
+            <p>{step.text}</p>
+          </li>
         ))}
-      </ul>
+      </ol>
     </div>
   </section>
 
