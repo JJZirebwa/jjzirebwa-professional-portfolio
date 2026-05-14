@@ -1,38 +1,27 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
+import headshot from '../assets/images/jubileejoy-zirebwa-headshot.jpg';
+import logoAru from '../assets/images/logo-aru.png';
+import logoGenomicsEngland from '../assets/images/logo-genomics-england.png';
+import logoHealthInnovationEast from '../assets/images/logo-health-innovation-east.webp';
+import { getCaseStudy } from '../data/caseStudies';
 
-const startingPoints = [
-  {
-    href: '/case-studies/health-innovation-east/',
-    icon: 'strategy',
-    eyebrow: 'Commercial strategy',
-    title: 'Health Innovation East',
-    text: 'A one-year placement working across NHS-facing innovation, evidence, pathway fit and adoption logic.'
-  },
-  {
-    href: '/case-studies/ai-medtech-toolkit/',
-    icon: 'governance',
-    eyebrow: 'AI/MedTech governance',
-    title: 'Governance toolkit',
-    text: 'Internal guidance I authored to turn regulation, evidence, data governance and implementation issues into usable advisory material.'
-  },
-  {
-    href: '/case-studies/market-intelligence/',
-    icon: 'market',
-    eyebrow: 'Market analysis',
-    title: 'Market intelligence and competitor analysis',
-    text: 'Company search, competitor comparison, trend summaries and adoption-readiness work for health innovation contexts.'
-  },
-  {
-    href: '/case-studies/final-year-project/',
-    icon: 'data',
-    eyebrow: 'Academic research',
-    title: 'Final-year project governance',
-    text: 'A governance-bound biomedical data project in a secure genomics-linked research environment.'
-  }
-];
+const healthInnovationEast = getCaseStudy('health-innovation-east');
+const aiToolkit = getCaseStudy('ai-medtech-toolkit');
+const marketIntelligence = getCaseStudy('market-intelligence');
+const finalYearProject = getCaseStudy('final-year-project');
+
+const startingPoints = [healthInnovationEast, aiToolkit, marketIntelligence, finalYearProject].map((item) => ({
+  href: item.href,
+  icon: item.icon,
+  eyebrow: item.eyebrow,
+  title: item.title,
+  text: item.text,
+  meta: item.cardMeta
+}));
 
 const lensSteps = [
   {
@@ -59,17 +48,17 @@ const lensSteps = [
 
 const contextLogos = [
   {
-    src: '/images/logo-health-innovation-east.webp',
+    src: logoHealthInnovationEast,
     alt: 'Health Innovation East logo',
     label: 'Commercial placement'
   },
   {
-    src: '/images/logo-aru.png',
+    src: logoAru,
     alt: 'Anglia Ruskin University logo',
     label: 'Biomedical Science degree'
   },
   {
-    src: '/images/logo-genomics-england.png',
+    src: logoGenomicsEngland,
     alt: 'Genomics England logo',
     label: 'Secure research context'
   }
@@ -87,7 +76,7 @@ const contextLogos = [
         <h1>Jubileejoy "JJ" Zirebwa</h1>
         <p class="hero-lede">Biomedical science, healthcare strategy and evidence-led innovation.</p>
         <p class="intro-copy">
-          I work with biomedical evidence, structuring it into clear judgement: what a technology claims, what the evidence supports, where it might fit in a pathway, and what still needs to be tested. My selected work spans AI/MedTech governance, market intelligence, competitor analysis, secure biomedical data research and early computational toxicology.
+          I work with biomedical evidence aiming to turn it into real healthcare decisions: testing product claims against evidence quality, pathway fit, governance constraints, stakeholder priorities and what still needs to be proved. My strongest public evidence comes from a full-year Health Innovation East placement across innovation triage, market intelligence, competitor analysis, QOF/ICB-aligned adoption work and an internal AI/MedTech toolkit, alongside governance-first Genomics England TRE research and early computational toxicology data mapping.
         </p>
         <div class="action-row">
           <a class="button" href="/case-studies/">View case studies</a>
@@ -97,13 +86,12 @@ const contextLogos = [
       </div>
       <div class="hero-visual" aria-label="Portrait and portfolio focus areas">
         <figure class="portrait-card">
-          <img
-            src="/images/jubileejoy-zirebwa-headshot.jpg"
+          <Image
+            src={headshot}
             alt="Jubileejoy Zirebwa"
-            width="834"
-            height="960"
-            loading="eager"
-            decoding="async"
+            widths={[420, 620, 834]}
+            sizes="(min-width: 901px) 34vw, 100vw"
+            priority
           />
           <figcaption>
             <span>Cambridge, UK</span>
@@ -138,7 +126,7 @@ const contextLogos = [
       <div class="logo-row">
         {contextLogos.map((item) => (
           <figure>
-            <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+            <Image src={item.src} alt={item.alt} widths={[180, 220]} sizes="(min-width: 901px) 18vw, 60vw" />
             <figcaption>{item.label}</figcaption>
           </figure>
         ))}
@@ -197,25 +185,28 @@ const contextLogos = [
       />
       <div class="grid three">
         <LinkCard
-          href="/case-studies/health-innovation-east/"
-          icon="strategy"
-          eyebrow="Commercial placement"
-          title="Health Innovation East"
-          text="Commercial health innovation work across evidence, market intelligence, pathway fit and adoption reasoning."
+          href={healthInnovationEast.href}
+          icon={healthInnovationEast.icon}
+          eyebrow={healthInnovationEast.eyebrow}
+          title={healthInnovationEast.title}
+          text={healthInnovationEast.text}
+          meta={healthInnovationEast.cardMeta}
         />
         <LinkCard
-          href="/case-studies/ai-medtech-toolkit/"
-          icon="governance"
-          eyebrow="AI/MedTech"
-          title="Governance toolkit"
-          text="A practical resource I authored to make AI/MedTech regulation, evidence and governance questions easier to use in advisory work."
+          href={aiToolkit.href}
+          icon={aiToolkit.icon}
+          eyebrow={aiToolkit.eyebrow}
+          title={aiToolkit.title}
+          text={aiToolkit.text}
+          meta={aiToolkit.cardMeta}
         />
         <LinkCard
-          href="/case-studies/final-year-project/"
-          icon="data"
-          eyebrow="Biomedical data"
-          title="Final-year project"
-          text="Secure genomics-linked hospital trajectory analysis, with emphasis on design discipline, leakage control and honest limits."
+          href={finalYearProject.href}
+          icon={finalYearProject.icon}
+          eyebrow={finalYearProject.eyebrow}
+          title={finalYearProject.title}
+          text={finalYearProject.text}
+          meta={finalYearProject.cardMeta}
         />
         <LinkCard
           href="/contact/"
@@ -233,7 +224,7 @@ const contextLogos = [
       <div class="note">
         <h2>Confidentiality note</h2>
         <p>
-          Where appropriate, examples and details summarised to respect protected information accross projects and case studies in my work.
+          Where appropriate, examples and details are summarised to respect protected information across projects and case studies in my work.
         </p>
       </div>
     </div>

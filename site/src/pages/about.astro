@@ -1,12 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
+import logoAru from '../assets/images/logo-aru.png';
 
 const academicRows = [
   ['Degree', 'BSc (Hons) Biomedical Science, Anglia Ruskin University, Cambridge.'],
   ['Status', 'Final-year student, expected graduation in July 2026.'],
   ['Placement year', 'Health Innovation East commercial placement, 2024-2025.'],
-  ['Academic record', 'Interim transcript (available on request) records Level 4 and Level 5 performance, and confirmed Level 6 marks to date. Remaining final-trimester items are pending.']
+  ['Academic trajectory', 'Interim transcript currently supports a First-class trajectory, with final classification still subject to official confirmation.']
 ];
 
 const themes = [
@@ -54,7 +56,7 @@ const themes = [
           lead="The degree has given the scientific base behind my commercial and governance work: pathology, genetics, microbiology, pharmacology, translational medicine, data analysis/interpretation and scientific writing."
         />
         <div class="institution-mark">
-          <img src="/images/logo-aru.png" alt="Anglia Ruskin University logo" loading="lazy" decoding="async" />
+          <Image src={logoAru} alt="Anglia Ruskin University logo" widths={[180, 240]} sizes="(min-width: 901px) 220px, 50vw" />
           <span>Anglia Ruskin University, Cambridge</span>
         </div>
       </div>

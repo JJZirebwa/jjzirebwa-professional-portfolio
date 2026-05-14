@@ -1,5 +1,9 @@
 ---
 import CaseStudyPage from '../../components/CaseStudyPage.astro';
+import logoHealthInnovationEast from '../../assets/images/logo-health-innovation-east.webp';
+import { getCaseStudy } from '../../data/caseStudies';
+
+const caseStudy = getCaseStudy('health-innovation-east');
 
 const sections = [
   {
@@ -8,12 +12,12 @@ const sections = [
   },
   {
     heading: 'My role',
-    body: 'My role combined independently authored internal work, co-authored work with senior colleagues and support-based contributions across live innovation questions.',
+    body: 'My role combined independently owned deliverables with co-authored advisory work. I ran and supported innovator triage and 1-to-1 scoping calls, turned a new CB Insights licence into repeatable horizon-scanning dashboards and live databases, built competitor and QOF-alignment material for Cardisio AI-ECG work, authored the internal AI Toolkit, supported the Charco business case, and helped map innovations against ICB priorities and workstreams.',
     items: [
       'I authored the internal AI Toolkit.',
-      'I drafted QOF strategy material and internal competitor analyses, including major cardisiography analysis.',
-      'I independently authored some CB Insights-informed market analyses',
-      'I co-authored a strategy advisory document with senior colleagues for a Parkinsons management device.',
+      'I built QOF-alignment and competitor-analysis material for Cardisio AI-ECG work.',
+      'I turned CB Insights access into reusable horizon-scanning dashboards and live databases.',
+      'I co-authored advisory work for a Parkinson\'s management device.',
       'I supported and co-authored business-case material, including evidence, pathway and value framing for the same innovation.'
     ]
   },
@@ -40,9 +44,9 @@ const sections = [
 ---
 
 <CaseStudyPage
-  title="Health Innovation East"
+  title={caseStudy.title}
   kicker="Commercial health innovation"
-  summary="A one-year commercial placement working across NHS-facing innovation, evidence synthesis, market intelligence, competitor analysis, pathway fit and adoption logic."
+  summary={caseStudy.summary}
   sections={sections}
   skills={[
     'commercial health innovation',
@@ -53,8 +57,9 @@ const sections = [
     'responsible judgement',
     'AI/MedTech governance'
   ]}
+  facts={caseStudy.facts}
   contextLogo={{
-    src: '/images/logo-health-innovation-east.webp',
+    src: logoHealthInnovationEast,
     alt: 'Health Innovation East logo',
     label: 'Placement context.',
     note: 'One-year commercial placement, 2024-2025.'

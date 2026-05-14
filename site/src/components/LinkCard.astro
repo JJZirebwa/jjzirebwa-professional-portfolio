@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 
-const { href, eyebrow, title, text } = Astro.props;
+const { href, eyebrow, title, text, meta = [] } = Astro.props;
 ---
 
 <a class="card" href={href}>
@@ -9,4 +9,9 @@ const { href, eyebrow, title, text } = Astro.props;
   {eyebrow && <span class="tag">{eyebrow}</span>}
   <h3>{title}</h3>
   <p>{text}</p>
+  {meta.length > 0 && (
+    <ul class="card-meta-list" aria-label={`${title} proof signals`}>
+      {meta.map((item: string) => <li class="meta-tag">{item}</li>)}
+    </ul>
+  )}
 </a>

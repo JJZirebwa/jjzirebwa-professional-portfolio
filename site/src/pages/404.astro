@@ -1,5 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LinkCard from '../components/LinkCard.astro';
+
+const recoveryLinks = [
+  {
+    href: '/case-studies/health-innovation-east/',
+    icon: 'strategy',
+    eyebrow: 'Start here',
+    title: 'Health Innovation East',
+    text: 'The strongest public-safe placement evidence across adoption logic, market intelligence and owned deliverables.'
+  },
+  {
+    href: '/case-studies/final-year-project/',
+    icon: 'data',
+    eyebrow: 'Research',
+    title: 'Final-year project',
+    text: 'Secure biomedical data work with explicit governance and limitations boundaries.'
+  },
+  {
+    href: '/about/',
+    icon: 'academic',
+    eyebrow: 'Profile',
+    title: 'About my profile',
+    text: 'Academic direction, placement context and the wider through-line behind the portfolio.'
+  },
+  {
+    href: '/contact/',
+    icon: 'contact',
+    eyebrow: 'Contact',
+    title: 'Contact and role scope',
+    text: 'The quickest route back if you were looking for a specific role fit or context.'
+  }
+];
 ---
 
 <BaseLayout title="Page not found" description="Page not found in Jubileejoy Zirebwa's professional portfolio.">
@@ -14,6 +46,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a class="button" href="/">Back to home</a>
         <a class="button secondary" href="/case-studies/">View case studies</a>
         <a class="button secondary" href="/contact/">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <div class="section-header">
+        <p class="eyebrow">Recovery</p>
+        <h2>Best places to start</h2>
+        <p>If you arrived from a CV, LinkedIn or an older saved link, these are the strongest routes back into the current portfolio.</p>
+      </div>
+      <div class="grid two">
+        {recoveryLinks.map((item) => <LinkCard {...item} />)}
       </div>
     </div>
   </section>

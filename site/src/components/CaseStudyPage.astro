@@ -1,5 +1,8 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from './Breadcrumbs.astro';
 
 interface CaseSection {
   heading: string;
@@ -12,8 +15,18 @@ interface RelatedLink {
   label: string;
 }
 
+interface CaseFact {
+  label: string;
+  value: string;
+}
+
+interface BreadcrumbItem {
+  href?: string;
+  label: string;
+}
+
 interface ContextLogo {
-  src: string;
+  src: ImageMetadata;
   alt: string;
   label: string;
   note?: string;
@@ -25,6 +38,7 @@ interface Props {
   summary: string;
   sections?: CaseSection[];
   skills?: string[];
+  facts?: CaseFact[];
   boundary?: string;
   contextLogo?: ContextLogo;
   related?: RelatedLink[];
@@ -36,15 +50,34 @@ const {
   summary,
   sections = [],
   skills = [],
+  facts = [],
   boundary,
   contextLogo,
   related = []
 } = Astro.props as Props;
+
+const breadcrumbs: BreadcrumbItem[] = [
+  { href: '/', label: 'Home' },
+  { href: '/case-studies/', label: 'Case studies' },
+  { label: title }
+];
+const siteUrl = Astro.site ?? new URL('https://jubileejoyzirebwa.com');
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, siteUrl).href
+  }))
+};
 ---
 
-<BaseLayout title={title} description={summary}>
+<BaseLayout title={title} description={summary} structuredData={breadcrumbSchema}>
   <section class="case-hero">
     <div class="page-shell">
+      <Breadcrumbs items={breadcrumbs} />
       {kicker && <p class="eyebrow">{kicker}</p>}
       <h1>{title}</h1>
       <p class="summary">{summary}</p>
@@ -55,7 +88,7 @@ const {
     <aside class="case-sidebar" aria-label="Case study summary">
       {contextLogo && (
         <div class="note logo-note">
-          <img src={contextLogo.src} alt={contextLogo.alt} loading="lazy" decoding="async" />
+          <Image src={contextLogo.src} alt={contextLogo.alt} widths={[240]} sizes="240px" />
           <p><strong>{contextLogo.label}</strong>{contextLogo.note ? ` ${contextLogo.note}` : ''}</p>
         </div>
       )}
@@ -84,6 +117,19 @@ const {
     </aside>
 
     <div class="case-sections">
+      {facts.length > 0 && (
+        <section class="case-summary-strip" aria-labelledby="case-summary-title">
+          <h2 id="case-summary-title">Quick scan</h2>
+          <dl class="case-facts">
+            {facts.map((fact) => (
+              <div>
+                <dt>{fact.label}</dt>
+                <dd>{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
       {sections.map((section) => (
         <section class="case-section">
           <h2>{section.heading}</h2>

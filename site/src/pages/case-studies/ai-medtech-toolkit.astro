@@ -1,5 +1,8 @@
 ---
 import CaseStudyPage from '../../components/CaseStudyPage.astro';
+import { getCaseStudy } from '../../data/caseStudies';
+
+const caseStudy = getCaseStudy('ai-medtech-toolkit');
 
 const sections = [
   {
@@ -39,8 +42,8 @@ const sections = [
 
 <CaseStudyPage
   title="AI toolkit"
-  kicker="AI and MedTech Road to adoption and Post-market governance"
-  summary="A practical internal toolkit I authored to turn AI/MedTech regulation, evidence, data governance and implementation considerations into usable advisory guidance."
+  kicker="AI and MedTech adoption and post-market governance"
+  summary={caseStudy.summary}
   sections={sections}
   skills={[
     'AI-health governance literacy',
@@ -49,6 +52,7 @@ const sections = [
     'policy translation',
     'responsible claim framing'
   ]}
+  facts={caseStudy.facts}
   boundary="This describes internal guidance-support work, not formal regulatory or legal advice."
   related={[
     { href: '/case-studies/health-innovation-east/', label: 'Health Innovation East' },

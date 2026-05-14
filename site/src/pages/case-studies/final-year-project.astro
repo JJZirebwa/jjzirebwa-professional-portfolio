@@ -1,5 +1,9 @@
 ---
 import CaseStudyPage from '../../components/CaseStudyPage.astro';
+import logoGenomicsEngland from '../../assets/images/logo-genomics-england.png';
+import { getCaseStudy } from '../../data/caseStudies';
+
+const caseStudy = getCaseStudy('final-year-project');
 
 const sections = [
   {
@@ -23,38 +27,39 @@ const sections = [
   },
   {
     heading: 'Selected outputs',
-    body: 'I describe the research design, governance handling, method discipline and limitations. The public material does not include raw outputs or disclosure-sensitive results.'
+    body: 'I describe the research design, governance handling, method discipline and limitations.'
   },
   {
     heading: 'What this shows',
-    body: 'The project shows how I handle uncertainty. I can build a structured analysis, keep the clinical and data limits visible, and resist turning modest signals into claims the evidence cannot carry.'
+    body: 'The main contribution is not a deployable classifier. It is a biologically and numerically honest account of what hospital trajectories can and cannot reveal in a rare-disease, weak-signal setting. That matters because it shows I can keep model ambition, governance limits, leakage control and claim boundaries aligned rather than forcing a stronger conclusion than the data can support.'
   }
 ];
 ---
 
 <CaseStudyPage
-  title="Final-Year Project"
+  title={caseStudy.title}
   kicker="Biomedical data and evidence"
-  summary="A Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in a Brugada-suspect research context."
+  summary={caseStudy.summary}
   sections={sections}
   skills={[
     'secure health-data research',
     'rare-disease evidence judgement',
     'machine-learning (logistic regression, random forest, neural networks)',
-    'python',
+    'python (SQL, NumPy, Pandas, Scikit-Learn)',
     'feature reasoning',
     'model-evaluation literacy',
     'reproducibility',
     'scientific writing',
     'limitations-led interpretation'
   ]}
+  facts={caseStudy.facts}
   contextLogo={{
-    src: '/images/logo-genomics-england.png',
+    src: logoGenomicsEngland,
     alt: 'Genomics England logo',
     label: 'Research context.',
     note: 'Secure, genomics-linked research environment.'
   }}
-  boundary="I describe the design and limitations without publishing restricted data, counts, model tables, dissertation extracts or clinical-utility claims."
+  boundary="I describe the design and limitations without publishing restricted data, counts or model tables."
   related={[
     { href: '/about/', label: 'Academic profile' },
     { href: '/projects/', label: 'Biomedical data projects' },

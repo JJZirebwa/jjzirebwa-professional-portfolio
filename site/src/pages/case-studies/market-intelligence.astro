@@ -1,5 +1,8 @@
 ---
 import CaseStudyPage from '../../components/CaseStudyPage.astro';
+import { getCaseStudy } from '../../data/caseStudies';
+
+const caseStudy = getCaseStudy('market-intelligence');
 
 const sections = [
   {
@@ -32,7 +35,7 @@ const sections = [
   },
   {
     heading: 'What this shows',
-    body: 'This is strategy work, not just desk research. The point was to make a crowded technology space legible enough to support decisions about evidence quality, adoption logic and commercial maturity.'
+    body: 'I turned noisy market data into reusable decision support: structured company lists, competitor matrices, funding and maturity signals, evidence comparisons, and pathway-fit questions that colleagues could use quickly. The strongest proof here is not that I could research a market once, but that I helped build repeatable market-intelligence capability that made live innovation questions easier to answer.'
   }
 ];
 ---
@@ -40,7 +43,7 @@ const sections = [
 <CaseStudyPage
   title="Market Intelligence and Competitor Analysis"
   kicker="Commercial analysis"
-  summary="Market-intelligence and competitor-analysis work across health technologies, including company search, horizon scanning, evidence comparison and adoption-readiness framing."
+  summary={caseStudy.summary}
   sections={sections}
   skills={[
     'market intelligence',
@@ -50,6 +53,7 @@ const sections = [
     'structured comparison',
     'source discipline'
   ]}
+  facts={caseStudy.facts}
   boundary="I describe the judgement and outputs at a high level. Project specific intricacies and details are not included."
   related={[
     { href: '/case-studies/health-innovation-east/', label: 'Health Innovation East' },

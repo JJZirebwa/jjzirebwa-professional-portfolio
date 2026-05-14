@@ -1,10 +1,12 @@
 ---
 import '../styles/global.css';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
+import headshot from '../assets/images/jubileejoy-zirebwa-headshot.jpg';
 
 const {
   title = 'Jubileejoy "JJ" Zirebwa',
-  description = 'Biomedical Science student and early-career healthcare strategy profile.'
+  description = 'Biomedical Science student and early-career healthcare strategy profile.',
+  structuredData = []
 } = Astro.props;
 
 const pageTitle = title === 'Jubileejoy "JJ" Zirebwa'
@@ -14,7 +16,7 @@ const pageTitle = title === 'Jubileejoy "JJ" Zirebwa'
 const currentPath = Astro.url.pathname;
 const siteUrl = Astro.site ?? new URL('https://jubileejoyzirebwa.com');
 const canonicalUrl = new URL(currentPath, siteUrl).href;
-const profileImageUrl = new URL('/images/jubileejoy-zirebwa-headshot.jpg', siteUrl).href;
+const profileImageUrl = new URL(headshot.src, siteUrl).href;
 const includePersonSchema = currentPath === '/' || currentPath === '/about/';
 const personSchema = {
   '@context': 'https://schema.org',
@@ -53,6 +55,14 @@ const personSchema = {
     ]
   }
 };
+const extraStructuredData = Array.isArray(structuredData)
+  ? structuredData
+  : structuredData
+    ? [structuredData]
+    : [];
+const pageStructuredData = includePersonSchema
+  ? [personSchema, ...extraStructuredData]
+  : extraStructuredData;
 const isActive = (href: string) => href === '/'
   ? currentPath === '/'
   : currentPath.startsWith(href);
@@ -93,7 +103,9 @@ const navItems = [
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <title>{pageTitle}</title>
-    {includePersonSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />}
+    {pageStructuredData.map((schema) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
     <GoogleAnalytics />
   </head>
   <body>

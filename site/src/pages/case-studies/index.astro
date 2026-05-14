@@ -2,44 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import LinkCard from '../../components/LinkCard.astro';
+import { caseStudies } from '../../data/caseStudies';
 
-const cases = [
-  {
-    href: '/case-studies/health-innovation-east/',
-    icon: 'strategy',
-    eyebrow: 'Commercial placement',
-    title: 'Health Innovation East',
-    text: 'One-year NHS-facing commercial health innovation placement across evidence, market intelligence, pathway fit and adoption reasoning.'
-  },
-  {
-    href: '/case-studies/ai-medtech-toolkit/',
-    icon: 'governance',
-    eyebrow: 'AI/MedTech governance',
-    title: 'AI Toolkit',
-    text: 'Practical internal guidance-support material for advisory work, not formal regulatory or clinical-safety advice.'
-  },
-  {
-    href: '/case-studies/market-intelligence/',
-    icon: 'market',
-    eyebrow: 'Market and competitors',
-    title: 'Market intelligence',
-    text: 'Market-analysis, competitor-landscape and horizon-scanning work shaped around evidence quality, pathway fit and commercial maturity.'
-  },
-  {
-    href: '/case-studies/final-year-project/',
-    icon: 'data',
-    eyebrow: 'Academic research',
-    title: 'Final-year project',
-    text: 'Secure genomics-linked hospital trajectory analysis with explicit governance, reproducibility and limitations boundaries.'
-  },
-  {
-    href: '/case-studies/consoneai-dioscor/',
-    icon: 'research',
-    eyebrow: 'Research internship',
-    title: 'ConsoneAI / DioScor',
-    text: 'High-level toxicology data mapping and structured data-preparation work in a dose-toxicity platform context.'
-  }
-];
+const cases = caseStudies.map((item) => ({
+  href: item.href,
+  icon: item.icon,
+  eyebrow: item.eyebrow,
+  title: item.title,
+  text: item.text,
+  meta: item.cardMeta
+}));
 ---
 
 <BaseLayout title="Case studies" description="Selected healthcare strategy, AI governance and biomedical data case studies.">
@@ -58,7 +30,7 @@ const cases = [
       <SectionHeader
         eyebrow="Evidence"
         title="Selected case studies"
-        lead="Each case study is written for a public reader while respecting confidentiality."
+        lead="Each case study is written for a public reader while respecting confidentiality, with fast scan signals for scope, work mode and proof."
       />
       <div class="grid two">
         {cases.map((item) => <LinkCard {...item} />)}

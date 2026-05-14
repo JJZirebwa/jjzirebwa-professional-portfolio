@@ -512,6 +512,10 @@ h3 {
   transform: translateY(-1px);
 }
 
+.card > p {
+  flex: 1;
+}
+
 a.card:hover {
   border-color: rgba(15, 106, 102, 0.48);
   box-shadow: 0 18px 50px rgba(22, 32, 29, 0.08);
@@ -537,6 +541,15 @@ a.card:hover {
 
 .card h3 {
   margin-top: 0.2rem;
+}
+
+.card-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .skill-card dl {
@@ -729,6 +742,41 @@ a.card:hover {
   border-bottom: 1px solid rgba(22, 32, 29, 0.1);
 }
 
+.breadcrumbs {
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.breadcrumbs li + li::before {
+  content: "/";
+  color: rgba(88, 100, 95, 0.7);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+}
+
+.breadcrumbs span[aria-current="page"] {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .case-hero .summary {
   max-width: 820px;
   margin-top: 1.2rem;
@@ -806,6 +854,48 @@ a.card:hover {
 .case-sections {
   display: grid;
   gap: 1.2rem;
+}
+
+.case-summary-strip {
+  padding: 1.1rem;
+  border: 1px solid rgba(15, 106, 102, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(238, 238, 231, 0.82)),
+    var(--surface);
+}
+
+.case-summary-strip h2 {
+  margin-bottom: 0.9rem;
+  font-family: inherit;
+  font-size: 0.98rem;
+}
+
+.case-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.case-facts div {
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(22, 32, 29, 0.1);
+}
+
+.case-facts dt {
+  color: var(--clay);
+  font-size: 0.73rem;
+  font-weight: 780;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-facts dd {
+  margin: 0.35rem 0 0;
+  color: var(--ink);
+  font-size: 0.96rem;
+  line-height: 1.5;
 }
 
 .case-section {
@@ -1031,6 +1121,10 @@ a.card:hover {
 
   .case-sidebar {
     position: static;
+  }
+
+  .case-facts {
+    grid-template-columns: 1fr;
   }
 
   .grid.three,
