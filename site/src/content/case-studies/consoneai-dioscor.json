@@ -1,0 +1,84 @@
+{
+  "order": 5,
+  "slug": "consoneai-dioscor",
+  "icon": "research",
+  "eyebrow": "Research internship",
+  "title": "ConsoneAI / DioScor",
+  "kicker": "Research internship",
+  "summary": "A short research internship involving toxicology data mapping and structured data preparation in a dose-toxicity platform context.",
+  "cardText": "High-level toxicology data mapping and structured data-preparation work in a dose-toxicity platform.",
+  "cardMeta": ["Six-week internship", "Data mapping", "Proprietary context"],
+  "facts": [
+    {
+      "label": "Role",
+      "value": "Research intern supporting toxicology data mapping and structured data preparation."
+    },
+    {
+      "label": "Timeframe",
+      "value": "Six-week internship"
+    },
+    {
+      "label": "Context",
+      "value": "Dose-toxicity platform work kept high level because of proprietary boundaries."
+    },
+    {
+      "label": "Work mode",
+      "value": "Support-based research and data-preparation work."
+    },
+    {
+      "label": "Outputs",
+      "value": "Mapping notes, structured non-public data outputs and a poster presentation."
+    },
+    {
+      "label": "Why it matters",
+      "value": "Shows early data discipline in messy biological evidence contexts."
+    }
+  ],
+  "skills": [
+    "data extraction",
+    "structured data mapping",
+    "Excel/CSV organisation",
+    "lightweight scripting literacy",
+    "toxicology vocabulary",
+    "data limitations communication"
+  ],
+  "boundary": "Confidential material, raw datasets, proprietary schemas and platform architecture are not included.",
+  "visualVariant": "toxicity-workflow",
+  "related": [
+    { "href": "/projects/", "label": "Biomedical data and evidence" },
+    { "href": "/skills/", "label": "Data skills" }
+  ],
+  "sections": [
+    {
+      "heading": "Context",
+      "body": "The six-week research internship was set around a dose-toxicity platform. The value of the work was learning how messy biological and toxicological evidence has to be structured before it can support analysis and have its chemical and biological properties propagated."
+    },
+    {
+      "heading": "My role",
+      "body": "I supported toxicology data mapping and structured data-preparation work, keeping the description here high level because the platform details were proprietary."
+    },
+    {
+      "heading": "Approach",
+      "items": [
+        "Identify relevant toxicology and chemical data sources for extraction or comparison.",
+        "Review dose-toxicity source fields and terminology differences.",
+        "Organise compound, organism, route, dose-unit, test-type and effect-category information where available.",
+        "Clean missing values, split combined categories and document limitations.",
+        "Map fields to high-level information needs."
+      ]
+    },
+    {
+      "heading": "Outputs",
+      "items": [
+        "Internal mapping notes.",
+        "Organised non-public data outputs.",
+        "Dose-toxicity summaries.",
+        "Poster presentation at the Anglia Ruskin PGR Conference 2024"
+      ]
+    },
+    {
+      "heading": "What this shows",
+      "body": "This was an early step from foundational biomedical science into data-enabled research: Python programming, careful extraction, cleaning, mapping and communication."
+    }
+  ]
+}

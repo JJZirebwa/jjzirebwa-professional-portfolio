@@ -1,0 +1,194 @@
+---
+import type { EditorialPanelVariant } from '../data/content';
+
+interface Props {
+  variant: EditorialPanelVariant;
+}
+
+const { variant } = Astro.props as Props;
+---
+
+<figure class={`editorial-panel editorial-panel-${variant}`} data-editorial-variant={variant}>
+  {variant === 'evidence-journey' && (
+    <>
+      <figcaption>
+        <span>Evidence to decision</span>
+        <strong>Claim, proof, pathway, action.</strong>
+      </figcaption>
+      <ol class="visual-steps visual-steps-wide">
+        <li><span>Claim</span><strong>What is being promised?</strong></li>
+        <li><span>Proof</span><strong>What does the evidence support?</strong></li>
+        <li><span>Fit</span><strong>Where does it sit in care?</strong></li>
+        <li><span>Decision</span><strong>What should happen next?</strong></li>
+      </ol>
+      <div class="visual-ribbon" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </>
+  )}
+
+  {variant === 'current-vector' && (
+    <>
+      <figcaption>
+        <span>Current vector</span>
+        <strong>Focus now, direction next.</strong>
+      </figcaption>
+      <div class="vector-field" aria-hidden="true">
+        <span style="--x: 8%; --y: 72%; --r: -18deg;"></span>
+        <span style="--x: 22%; --y: 58%; --r: -12deg;"></span>
+        <span style="--x: 38%; --y: 48%; --r: -5deg;"></span>
+        <span style="--x: 56%; --y: 36%; --r: 2deg;"></span>
+        <span style="--x: 74%; --y: 24%; --r: 8deg;"></span>
+      </div>
+      <ol class="visual-steps compact">
+        <li><span>Now</span><strong>Current focus</strong></li>
+        <li><span>Next</span><strong>Sharper questions</strong></li>
+        <li><span>Route</span><strong>Evidence-led roles</strong></li>
+      </ol>
+    </>
+  )}
+
+  {variant === 'adoption-pathway' && (
+    <>
+      <figcaption>
+        <span>Adoption pathway</span>
+        <strong>How evidence becomes useful in a health system.</strong>
+      </figcaption>
+      <ol class="visual-steps visual-steps-wide">
+        <li><span>Triage</span><strong>Need and product claim</strong></li>
+        <li><span>Evidence</span><strong>Proof and uncertainty</strong></li>
+        <li><span>Market</span><strong>Alternatives and maturity</strong></li>
+        <li><span>Case</span><strong>Value, risk and route</strong></li>
+        <li><span>Adopt</span><strong>Pathway fit</strong></li>
+      </ol>
+      <div class="pathway-road" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </>
+  )}
+
+  {variant === 'market-landscape' && (
+    <>
+      <figcaption>
+        <span>Competitive landscape</span>
+        <strong>Evidence maturity against pathway fit.</strong>
+      </figcaption>
+      <svg class="landscape-chart" viewBox="0 0 420 230" role="img" aria-label="Competitor landscape with evidence maturity and pathway fit axes">
+        <line x1="58" y1="184" x2="360" y2="184" />
+        <line x1="58" y1="184" x2="58" y2="34" />
+        <text x="209" y="216" text-anchor="middle">Evidence maturity</text>
+        <text x="28" y="109" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 28 109)">Pathway fit</text>
+        <path d="M58 116H360M204 34V184" class="chart-grid" />
+        <circle cx="126" cy="140" r="10" />
+        <circle cx="178" cy="94" r="14" />
+        <circle cx="250" cy="118" r="9" />
+        <circle cx="306" cy="66" r="16" class="accent-dot" />
+        <text x="283" y="49" class="chart-label">Strong fit</text>
+        <text x="80" y="166" class="chart-label muted-label">Early signal</text>
+      </svg>
+    </>
+  )}
+
+  {variant === 'governance-lifecycle' && (
+    <>
+      <figcaption>
+        <span>AI/MedTech lifecycle</span>
+        <strong>Governance across development and use.</strong>
+      </figcaption>
+      <ol class="cycle-list">
+        <li style="--i: 0;"><span>Plan</span></li>
+        <li style="--i: 1;"><span>Data</span></li>
+        <li style="--i: 2;"><span>Model</span></li>
+        <li style="--i: 3;"><span>Validate</span></li>
+        <li style="--i: 4;"><span>Monitor</span></li>
+      </ol>
+      <div class="cycle-core">
+        <span>Safety</span>
+        <span>Evidence</span>
+        <span>Accountability</span>
+      </div>
+    </>
+  )}
+
+  {variant === 'genomics-ml-pipeline' && (
+    <>
+      <figcaption>
+        <span>Genomics + ML pipeline</span>
+        <strong>From bounded cohort to limitations-led interpretation.</strong>
+      </figcaption>
+      <div class="genomics-panel">
+        <div class="dna-rail" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ol class="visual-steps compact">
+          <li><span>Cohort</span><strong>Secure TRE boundary</strong></li>
+          <li><span>Features</span><strong>Hospital trajectories</strong></li>
+          <li><span>Models</span><strong>Comparison and leakage control</strong></li>
+          <li><span>Limits</span><strong>Honest signal readout</strong></li>
+        </ol>
+      </div>
+    </>
+  )}
+
+  {variant === 'toxicity-workflow' && (
+    <>
+      <figcaption>
+        <span>Dose-toxicity mapping</span>
+        <strong>Messy assay evidence into structured fields.</strong>
+      </figcaption>
+      <div class="tox-layout">
+        <div class="dose-wells" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <svg class="dose-curve" viewBox="0 0 220 120" role="img" aria-label="Dose response curve">
+          <line x1="40" y1="96" x2="196" y2="96" />
+          <line x1="40" y1="96" x2="40" y2="18" />
+          <path d="M44 88C78 86 94 80 110 60S144 24 192 22" />
+          <text x="118" y="114" text-anchor="middle">Dose</text>
+          <text x="12" y="57" text-anchor="middle" dominant-baseline="middle" transform="rotate(-90 12 57)">Response</text>
+        </svg>
+      </div>
+      <ol class="visual-steps compact">
+        <li><span>Map</span><strong>Dose, endpoint, context</strong></li>
+        <li><span>Structure</span><strong>Reusable data fields</strong></li>
+      </ol>
+    </>
+  )}
+
+  {variant === 'weak-signal-methods' && (
+    <>
+      <figcaption>
+        <span>Weak-signal methods</span>
+        <strong>Find a usable signal without overstating the data.</strong>
+      </figcaption>
+      <svg class="signal-system" viewBox="0 0 440 220" role="img" aria-label="Sparse data filtered through biological priors into clearer candidate signal">
+        <path class="noise-trace" d="M28 122l16-30 14 54 17-42 14 34 18-58 16 70 19-46 18 28" />
+        <rect x="184" y="70" width="74" height="72" rx="10" />
+        <text x="202" y="100">Biology</text>
+        <text x="204" y="122">prior</text>
+        <path class="main-trace" d="M282 124c20 0 28-28 46-28s26 30 44 30 28-18 42-18" />
+        <line x1="160" y1="106" x2="184" y2="106" />
+        <line x1="258" y1="106" x2="282" y2="106" />
+        <text x="36" y="182">Sparse data</text>
+        <text x="292" y="182">Candidate signal</text>
+      </svg>
+      <ol class="visual-steps compact">
+        <li><span>Recover</span><strong>Useful signal</strong></li>
+        <li><span>Prioritise</span><strong>Next measurement</strong></li>
+      </ol>
+    </>
+  )}
+</figure>

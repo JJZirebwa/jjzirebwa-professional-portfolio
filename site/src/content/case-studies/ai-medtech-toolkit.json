@@ -1,0 +1,92 @@
+{
+  "order": 2,
+  "slug": "ai-medtech-toolkit",
+  "icon": "governance",
+  "eyebrow": "AI/MedTech governance",
+  "title": "AI Toolkit",
+  "kicker": "AI and MedTech adoption and post-market governance",
+  "summary": "A practical internal toolkit I authored to turn AI/MedTech regulation, evidence, data governance and implementation considerations into usable advisory guidance.",
+  "cardText": "Practical internal guidance-support material for advisory work, not formal regulatory or clinical-safety advice.",
+  "cardMeta": ["Authored toolkit", "Governance guidance", "Internal advisory"],
+  "homeFeatureOrder": 2,
+  "routeContext": {
+    "order": 2,
+    "title": "AI/MedTech governance exposure",
+    "description": "A first route into governance translation work across evidence standards, clinical safety, information governance and adoption questions.",
+    "meta": ["Toolkit authoring", "Governance translation", "Advisory support"]
+  },
+  "facts": [
+    {
+      "label": "Role",
+      "value": "Author of an internal AI/MedTech toolkit for innovation advisory work."
+    },
+    {
+      "label": "Timeframe",
+      "value": "Placement period, 2024-2025"
+    },
+    {
+      "label": "Context",
+      "value": "Health Innovation East internal governance and advisory support."
+    },
+    {
+      "label": "Work mode",
+      "value": "Independently authored guidance-support material."
+    },
+    {
+      "label": "Outputs",
+      "value": "Topic summaries, checklists and practical governance framing for advisory conversations."
+    },
+    {
+      "label": "Why it matters",
+      "value": "Shows I can translate dense governance requirements into usable decision support."
+    }
+  ],
+  "skills": [
+    "AI-health governance literacy",
+    "regulated-health writing",
+    "evidence standards interpretation",
+    "policy translation",
+    "responsible claim framing"
+  ],
+  "boundary": "This describes internal guidance-support work, not formal regulatory or legal advice.",
+  "visualVariant": "governance-lifecycle",
+  "related": [
+    { "href": "/case-studies/health-innovation-east/", "label": "Health Innovation East" },
+    { "href": "/case-studies/final-year-project/", "label": "Final-year project governance" },
+    { "href": "/skills/", "label": "AI governance skills" }
+  ],
+  "sections": [
+    {
+      "heading": "Context",
+      "body": "AI-enabled medical technologies create a translation problem: a product may be technically interesting, but adoption depends on regulation, evidence standards, clinical safety, information governance, interoperability and monitoring after deployment."
+    },
+    {
+      "heading": "My role",
+      "body": "I authored the toolkit during my Health Innovation East placement. It was practical internal guidance-support material for innovation advisory work, not formal regulatory advice, legal advice or a substitute for specialist clinical-safety review."
+    },
+    {
+      "heading": "Approach",
+      "body": "I drew on official publications from regulatory and health-system sources, alongside learning from the East of England AI Forum, and translated the material into usable guidance for advisory contexts.",
+      "items": [
+        "AI as a medical device and software as a medical device framing.",
+        "MHRA and UKCA regulatory awareness.",
+        "NICE evidence expectations and DTAC considerations.",
+        "DCB0129 and DCB0160 clinical safety awareness.",
+        "Information governance, data protection, interoperability, risk and post-market monitoring."
+      ]
+    },
+    {
+      "heading": "Selected outputs",
+      "items": [
+        "Structured guidance-support material.",
+        "Topic summaries and practical explanatory sections.",
+        "Governance-aware framing for innovator support.",
+        "Checklists that helped turn broad AI/MedTech issues into more concrete questions."
+      ]
+    },
+    {
+      "heading": "What this shows",
+      "body": "The value of the work was translation. I took a dense, fast-moving governance area and turned it into material that could support better questions in advisory conversations."
+    }
+  ]
+}

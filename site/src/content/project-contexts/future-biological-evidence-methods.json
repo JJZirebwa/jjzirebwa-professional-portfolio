@@ -1,0 +1,17 @@
+{
+  "order": 4,
+  "kind": "exploratory-strand",
+  "eyebrow": "Exploratory methods",
+  "title": "Future biological evidence methods",
+  "cardMeta": [],
+  "lead": "Exploratory methods focused on weak-signal recovery. This strand grows out of the final-year project's rare-disease limits: biologically informed, provenance-aware methods for hypothesis generation, study-design support and measurement prioritisation when the data is sparse and the next evidence decision matters.",
+  "boundary": "Concept-stage methods thinking, not a validated platform or clinical tool.",
+  "items": [
+    "Recovering useful signal without pretending sparse data is richer than it is.",
+    "Using biological context to prioritise what to measure next.",
+    "Generating sharper hypotheses and follow-up study designs.",
+    "Stress-testing assumptions with negative controls, ablations and disproof-first checks.",
+    "Keeping observed evidence, derived features and augmented assumptions clearly separate."
+  ],
+  "visualVariant": "weak-signal-methods"
+}

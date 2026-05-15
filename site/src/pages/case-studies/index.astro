@@ -2,14 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import LinkCard from '../../components/LinkCard.astro';
-import { caseStudies } from '../../data/caseStudies';
+import { getCaseStudies, type CaseStudyContent } from '../../data/content';
 
-const cases = caseStudies.map((item) => ({
+interface CaseStudyCard {
+  href: string;
+  icon: CaseStudyContent['icon'];
+  eyebrow: string;
+  title: string;
+  text: string;
+  meta: string[];
+}
+
+const cases: CaseStudyCard[] = (await getCaseStudies()).map((item: CaseStudyContent) => ({
   href: item.href,
   icon: item.icon,
   eyebrow: item.eyebrow,
   title: item.title,
-  text: item.text,
+  text: item.cardText,
   meta: item.cardMeta
 }));
 ---
@@ -30,10 +39,10 @@ const cases = caseStudies.map((item) => ({
       <SectionHeader
         eyebrow="Evidence"
         title="Selected case studies"
-        lead="Each case study is written for a public reader while respecting confidentiality, with fast scan signals for scope, work mode and proof."
+        lead="Each case study is structured for reading while respecting confidentiality, with fast scan signals for scope, work mode and proof."
       />
       <div class="grid two">
-        {cases.map((item) => <LinkCard {...item} />)}
+        {cases.map((item: CaseStudyCard) => <LinkCard {...item} />)}
       </div>
     </div>
   </section>

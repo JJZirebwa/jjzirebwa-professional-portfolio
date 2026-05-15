@@ -1,0 +1,87 @@
+{
+  "order": 3,
+  "slug": "market-intelligence",
+  "icon": "market",
+  "eyebrow": "Market and competitors",
+  "title": "Market intelligence",
+  "pageTitle": "Market Intelligence and Competitor Analysis",
+  "kicker": "Commercial analysis",
+  "summary": "Market-intelligence and competitor-analysis work across health technologies, including company search, horizon scanning, evidence comparison and adoption-readiness framing.",
+  "cardText": "Market-analysis, competitor-landscape and horizon-scanning work shaped around evidence quality, pathway fit and commercial maturity.",
+  "cardMeta": ["Reusable decision support", "Competitor matrices", "CB Insights buildout"],
+  "facts": [
+    {
+      "label": "Role",
+      "value": "Market-intelligence and competitor-analysis support for live innovation questions."
+    },
+    {
+      "label": "Timeframe",
+      "value": "Placement period, 2024-2025"
+    },
+    {
+      "label": "Context",
+      "value": "Health Innovation East commercial innovation and market analysis work."
+    },
+    {
+      "label": "Work mode",
+      "value": "Independently authored analyses and reusable research buildout."
+    },
+    {
+      "label": "Outputs",
+      "value": "Structured company lists, competitor matrices, horizon scans and sector snapshots."
+    },
+    {
+      "label": "Why it matters",
+      "value": "Shows I can turn noisy market evidence into reusable commercial judgement."
+    }
+  ],
+  "skills": [
+    "market intelligence",
+    "competitor analysis",
+    "commercial reasoning",
+    "trend synthesis",
+    "structured comparison",
+    "source discipline"
+  ],
+  "boundary": "I describe the judgement and outputs at a high level. Project specific intricacies and details are not included.",
+  "visualVariant": "market-landscape",
+  "related": [
+    { "href": "/case-studies/health-innovation-east/", "label": "Health Innovation East" },
+    { "href": "/projects/", "label": "Projects" },
+    { "href": "/skills/", "label": "Commercial strategy skills" }
+  ],
+  "sections": [
+    {
+      "heading": "Context",
+      "body": "Commercial health innovation depends on knowing the market quickly and carefully: who is active, what evidence they have, how mature the products are, where competitors sit in the pathway and what adoption questions remain open."
+    },
+    {
+      "heading": "My role",
+      "body": "I used CB Insights and secondary research to support market-intelligence work. I independently authored some internal market analyses and developed competitor-analysis materials across digital health, diagnostics, AI-enabled tools and MedTech."
+    },
+    {
+      "heading": "Approach",
+      "body": "The work turned large and often noisy sources into practical decision support for colleagues.",
+      "items": [
+        "Company searches and structured company lists.",
+        "Technology categorisation, funding and maturity signals.",
+        "Comparator products, public evidence signals and pathway relevance.",
+        "Regulatory position where public and safe to discuss.",
+        "Interoperability, integration and adoption-risk questions."
+      ]
+    },
+    {
+      "heading": "Selected outputs",
+      "items": [
+        "Reusable research views and horizon-scanning summaries.",
+        "Sector snapshots and technology landscape summaries.",
+        "Competitor matrices and stakeholder decision-driver summaries.",
+        "Adoption-readiness framing for internal commercial analysis."
+      ]
+    },
+    {
+      "heading": "What this shows",
+      "body": "I turned noisy market data into reusable decision support: structured company lists, competitor matrices, funding and maturity signals, evidence comparisons, and pathway-fit questions that colleagues could use quickly. The strongest proof here is not that I could research a market once, but that I helped build repeatable market-intelligence capability that made live innovation questions easier to answer."
+    }
+  ]
+}

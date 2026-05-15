@@ -36,11 +36,17 @@ const themes = [
 
   <section class="section-band">
     <div class="page-shell split">
-      <SectionHeader
-        eyebrow="Working direction"
-        title="Biomedical evidence with an adoption lens"
-        lead="I am strongest where scientific information needs to be turned into structured, practical judgement covering what the evidence says, what it does not say, where a technology might fit, its financial implications and what remains uncertain."
-      />
+      <div>
+        <SectionHeader
+          eyebrow="Working direction"
+          title="Biomedical evidence with an adoption lens"
+          lead="I am strongest where scientific information needs to be turned into structured, practical judgement covering what the evidence says, what it does not say, where a technology might fit, its financial implications and what remains uncertain."
+        />
+        <div class="action-row">
+          <a class="button secondary" href="/now/">See what I'm focused on now</a>
+          <a class="button secondary" href="/contact/">Get in touch</a>
+        </div>
+      </div>
       <ul class="compact-list">
         {themes.map((theme) => <li>{theme}</li>)}
       </ul>

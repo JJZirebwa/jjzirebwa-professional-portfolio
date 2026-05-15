@@ -75,6 +75,14 @@ const navItems = [
   { href: '/skills/', label: 'Skills' },
   { href: '/contact/', label: 'Contact' }
 ];
+
+const footerNavItems = [
+  { href: '/now/', label: 'Now' },
+  { href: '/case-studies/', label: 'Case studies' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/skills/', label: 'Skills' },
+  { href: '/contact/', label: 'Contact' }
+];
 ---
 
 <!doctype html>
@@ -134,8 +142,13 @@ const navItems = [
     </main>
     <footer class="footer">
       <div class="footer-shell">
-        <span>Jubileejoy "JJ" Zirebwa</span>
-        <span>Selected work, shared with appropriate confidentiality.</span>
+        <div class="footer-copy">
+          <strong>Jubileejoy "JJ" Zirebwa</strong>
+          <span>Selected work, shared with appropriate confidentiality.</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          {footerNavItems.map((item) => <a href={item.href}>{item.label}</a>)}
+        </nav>
       </div>
     </footer>
   </body>

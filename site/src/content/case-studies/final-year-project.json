@@ -1,0 +1,95 @@
+{
+  "order": 4,
+  "slug": "final-year-project",
+  "icon": "data",
+  "eyebrow": "Academic research",
+  "title": "Final-year project",
+  "kicker": "Biomedical data and evidence",
+  "summary": "A Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in Brugada-suspect research.",
+  "cardText": "Secure genomics-linked hospital trajectory analysis with explicit governance, reproducibility and limitations boundaries.",
+  "cardMeta": ["Secure research exposure", "Leakage-controlled", "Limitations-led"],
+  "homeFeatureOrder": 3,
+  "routeContext": {
+    "order": 3,
+    "title": "Research and data exposure",
+    "description": "A first route into secure biomedical research, weak-signal judgement, feature reasoning and limitations-led interpretation.",
+    "meta": ["Weak-signal research", "Feature reasoning", "Governance discipline"]
+  },
+  "facts": [
+    {
+      "label": "Role",
+      "value": "Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis."
+    },
+    {
+      "label": "Timeframe",
+      "value": "Final-year dissertation, 2025-2026"
+    },
+    {
+      "label": "Context",
+      "value": "Secure, genomics-linked research environment with disclosure and governance constraints."
+    },
+    {
+      "label": "Work mode",
+      "value": "Independently designed and executed within approved research boundaries."
+    },
+    {
+      "label": "Outputs",
+      "value": "Governance-aware methodology, feature reasoning, model comparisons and a limitations-led dissertation account."
+    },
+    {
+      "label": "Why it matters",
+      "value": "Shows research discipline under weak-signal, disclosure-bound conditions."
+    }
+  ],
+  "skills": [
+    "secure health-data research",
+    "rare-disease evidence judgement",
+    "machine-learning (logistic regression, random forest, neural networks)",
+    "python (SQL, NumPy, Pandas, Scikit-Learn)",
+    "feature reasoning",
+    "model-evaluation literacy",
+    "reproducibility",
+    "scientific writing",
+    "limitations-led interpretation"
+  ],
+  "boundary": "I describe the design and limitations without publishing restricted data, counts or model tables.",
+  "visualVariant": "genomics-ml-pipeline",
+  "contextLogoKey": "genomics-england",
+  "contextLogoAlt": "Genomics England logo",
+  "contextLogoLabel": "Research exposure",
+  "contextLogoNote": "Secure, genomics-linked research environment.",
+  "related": [
+    { "href": "/about/", "label": "Academic profile" },
+    { "href": "/projects/", "label": "Biomedical data projects" },
+    { "href": "/case-studies/ai-medtech-toolkit/", "label": "AI/MedTech governance" }
+  ],
+  "sections": [
+    {
+      "heading": "Context",
+      "body": "This project trained the discipline of working with uncertain biomedical data: defining cohorts carefully, controlling leakage, comparing model families and reporting limits honestly. The research used secure, genomics-linked hospital trajectory analysis in a Brugada-suspect cohort."
+    },
+    {
+      "heading": "My role",
+      "body": "I worked within approved secure research arrangements, using temporally bounded hospital episode data before the genetic sequencing index date and maintaining clear boundaries around target definitions, leakage control, reproducibility and limitations."
+    },
+    {
+      "heading": "Approach",
+      "items": [
+        "Retrospective machine-learning analysis in a secure research environment.",
+        "Governance-controlled Brugada-suspect research cohort with temporal indexing.",
+        "Grouped ICD/OPCS and utilisation-style feature reasoning.",
+        "Implementation of logistic regression, random forest and neural networks.",
+        "Comparison of baseline model families, including interpretable and non-linear approaches.",
+        "Repeated attention to imbalance, instability, calibration limits and disclosure risk."
+      ]
+    },
+    {
+      "heading": "Selected outputs",
+      "body": "I describe the research design, governance handling, method discipline and limitations."
+    },
+    {
+      "heading": "What this shows",
+      "body": "The main contribution is not a deployable classifier. It is a biologically and numerically honest account of what hospital trajectories can and cannot reveal in a rare-disease, weak-signal setting. That matters because it shows I can keep model ambition, governance limits, leakage control and claim boundaries aligned rather than forcing a stronger conclusion than the data can support."
+    }
+  ]
+}

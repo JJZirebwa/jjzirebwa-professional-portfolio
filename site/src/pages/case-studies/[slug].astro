@@ -1,0 +1,28 @@
+---
+import CaseStudyPage from '../../components/CaseStudyPage.astro';
+import { getCaseStudies, type CaseStudyContent } from '../../data/content';
+
+export async function getStaticPaths() {
+  const caseStudies = await getCaseStudies();
+
+  return caseStudies.map((caseStudy: CaseStudyContent) => ({
+    params: { slug: caseStudy.slug },
+    props: { caseStudy }
+  }));
+}
+
+const { caseStudy } = Astro.props as { caseStudy: CaseStudyContent };
+---
+
+<CaseStudyPage
+  title={caseStudy.pageTitle}
+  kicker={caseStudy.kicker}
+  summary={caseStudy.summary}
+  sections={caseStudy.sections}
+  skills={caseStudy.skills}
+  facts={caseStudy.facts}
+  boundary={caseStudy.boundary}
+  contextLogo={caseStudy.contextLogo}
+  related={caseStudy.related}
+  visualVariant={caseStudy.visualVariant}
+/>

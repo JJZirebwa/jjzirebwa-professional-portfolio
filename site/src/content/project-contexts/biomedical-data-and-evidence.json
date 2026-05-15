@@ -1,0 +1,10 @@
+{
+  "order": 2,
+  "kind": "card",
+  "icon": "data",
+  "eyebrow": "Research",
+  "title": "Biomedical data and evidence",
+  "href": "/case-studies/final-year-project/",
+  "text": "Secure health-data research, feature reasoning, model-evaluation limits and governance-aware interpretation.",
+  "cardMeta": ["Secure environment", "Weak-signal judgement", "Limitations-led"]
+}

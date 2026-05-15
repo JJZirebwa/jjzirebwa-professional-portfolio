@@ -2,38 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
+import EditorialPanel from '../components/EditorialPanel.astro';
+import { getProjectContextCards, getProjectExploratoryStrand } from '../data/content';
 
-const projectCards = [
-  {
-    href: '/case-studies/health-innovation-east/',
-    icon: 'strategy',
-    eyebrow: 'Strategy',
-    title: 'Healthcare strategy case studies',
-    text: 'A cross-case view of commercial health innovation work across evidence, adoption logic, market context and pathway fit.'
-  },
-  {
-    href: '/case-studies/final-year-project/',
-    icon: 'data',
-    eyebrow: 'Research',
-    title: 'Biomedical data and evidence',
-    text: 'Secure health-data research, feature reasoning, model-evaluation limits and governance-aware interpretation.'
-  },
-  {
-    href: '/case-studies/consoneai-dioscor/',
-    icon: 'research',
-    eyebrow: 'Data preparation',
-    title: 'Computational toxicology workflow',
-    text: 'High-level dose-toxicity data mapping and structured data-preparation work from a short research internship.'
-  }
-];
-
-const exploratory = [
-  'Provenance-aware biological priors.',
-  'Hypothesis-generation and study-design support.',
-  'Missing-variable discovery and evidence-gap mapping.',
-  'Disproof-first validation, negative controls and ablation testing.',
-  'Clear separation between observed evidence, derived features and augmented assumptions.'
-];
+const projectCards = await getProjectContextCards();
+const exploratory = await getProjectExploratoryStrand();
 ---
 
 <BaseLayout title="Projects" description="Project themes across healthcare strategy, biomedical data and exploratory evidence-methods thinking.">
@@ -55,20 +28,26 @@ const exploratory = [
         lead="These project routes show how I approach strategy, data and methods when the evidence is useful but incomplete."
       />
       <div class="grid three">
-        {projectCards.map((item) => <LinkCard {...item} />)}
+        {projectCards.map((item) => <LinkCard {...item} meta={item.cardMeta} />)}
       </div>
     </div>
   </section>
 
   <section class="section-band">
-    <div class="page-shell split">
-      <SectionHeader
-        eyebrow="Exploratory methods"
-        title="Future biological evidence methods"
-        lead="This is included as bounded methods thinking from rare-disease and underpowered research contexts. I am exploring methods to yield useful biological signal in sparse data realities, built on the back of my final year project's work"
-      />
-      <ul class="compact-list">
-        {exploratory.map((item) => <li>{item}</li>)}
+    <div class="page-shell">
+      <div class="split exploratory-layout">
+        <div>
+          <SectionHeader
+            eyebrow={exploratory.eyebrow}
+            title={exploratory.title}
+            lead={exploratory.lead}
+          />
+          <p class="boundary-note">{exploratory.boundary}</p>
+        </div>
+        <EditorialPanel variant={exploratory.visualVariant} />
+      </div>
+      <ul class="compact-list exploratory-list">
+        {exploratory.items.map((item) => <li>{item}</li>)}
       </ul>
     </div>
   </section>

@@ -3,6 +3,13 @@ import AxeBuilder from '@axe-core/playwright';
 
 const pages = [
   { path: '/', name: 'home' },
+  { path: '/now/', name: 'now' },
+  { path: '/projects/', name: 'projects' },
+  { path: '/case-studies/health-innovation-east/', name: 'health-innovation-east' },
+  { path: '/case-studies/ai-medtech-toolkit/', name: 'ai-medtech-toolkit' },
+  { path: '/case-studies/market-intelligence/', name: 'market-intelligence' },
+  { path: '/case-studies/final-year-project/', name: 'final-year-project' },
+  { path: '/case-studies/consoneai-dioscor/', name: 'consoneai-dioscor' },
   { path: '/contact/', name: 'contact' },
   { path: '/skills/', name: 'skills' }
 ];

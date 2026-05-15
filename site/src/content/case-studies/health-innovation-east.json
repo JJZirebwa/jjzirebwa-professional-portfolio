@@ -1,0 +1,100 @@
+{
+  "order": 1,
+  "slug": "health-innovation-east",
+  "icon": "strategy",
+  "eyebrow": "Commercial placement",
+  "title": "Health Innovation East",
+  "kicker": "Commercial health innovation",
+  "summary": "A one-year commercial placement working across NHS-facing innovation, evidence synthesis, market intelligence, competitor analysis, pathway fit and adoption logic.",
+  "cardText": "One-year NHS-facing commercial health innovation placement across evidence, market intelligence, pathway fit and adoption reasoning.",
+  "cardMeta": ["One-year placement", "Owned deliverables", "NHS-facing innovation"],
+  "homeFeatureOrder": 1,
+  "routeContext": {
+    "order": 1,
+    "title": "Healthcare strategy context",
+    "description": "A strong first route into NHS-facing innovation, adoption logic, market intelligence and decision support.",
+    "meta": ["Health Innovation East", "Adoption logic", "Decision-ready analysis"]
+  },
+  "facts": [
+    {
+      "label": "Role",
+      "value": "Commercial health innovation placement work across triage, market intelligence, adoption logic and toolkit authoring."
+    },
+    {
+      "label": "Timeframe",
+      "value": "2024-2025"
+    },
+    {
+      "label": "Context",
+      "value": "Health Innovation East placement in an NHS-facing innovation environment."
+    },
+    {
+      "label": "Work mode",
+      "value": "Independently owned deliverables plus co-authored advisory support."
+    },
+    {
+      "label": "Outputs",
+      "value": "Evidence briefs, competitor packs, market scans, QOF-alignment material and an internal AI Toolkit."
+    },
+    {
+      "label": "Why it matters",
+      "value": "Shows I can turn product, pathway and evidence questions into decision-ready analysis."
+    }
+  ],
+  "skills": [
+    "commercial health innovation",
+    "evidence synthesis",
+    "market intelligence",
+    "stakeholder translation",
+    "structured writing",
+    "responsible judgement",
+    "AI/MedTech governance"
+  ],
+  "boundary": "This is a public-facing account of the work and judgement involved. It is not an endorsement by Health Innovation East, NHS bodies or the named companies.",
+  "visualVariant": "adoption-pathway",
+  "contextLogoKey": "health-innovation-east",
+  "contextLogoAlt": "Health Innovation East logo",
+  "contextLogoLabel": "Placement context.",
+  "contextLogoNote": "One-year commercial placement, 2024-2025.",
+  "related": [
+    { "href": "/case-studies/ai-medtech-toolkit/", "label": "AI Toolkit" },
+    { "href": "/case-studies/market-intelligence/", "label": "Market intelligence" },
+    { "href": "/skills/", "label": "Skills" }
+  ],
+  "sections": [
+    {
+      "heading": "Context",
+      "body": "Health Innovation East gave me a full year inside NHS-facing commercial innovation work. The work was rarely just about whether a technology looked promising. It was about evidence, pathway fit, stakeholder confidence, commercial maturity and the practical route from product claim to adoption decision."
+    },
+    {
+      "heading": "My role",
+      "body": "My role combined independently owned deliverables with co-authored advisory work. I ran and supported innovator triage and 1-to-1 scoping calls, turned a new CB Insights licence into repeatable horizon-scanning dashboards and live databases, built competitor and QOF-alignment material for Cardisio AI-ECG work, authored the internal AI Toolkit, supported the Charco business case, and helped map innovations against ICB priorities and workstreams.",
+      "items": [
+        "I authored the internal AI Toolkit.",
+        "I built QOF-alignment and competitor-analysis material for Cardisio AI-ECG work.",
+        "I turned CB Insights access into reusable horizon-scanning dashboards and live databases.",
+        "I co-authored advisory work for a Parkinson's management device.",
+        "I supported and co-authored business-case material, including evidence, pathway and value framing for the same innovation."
+      ]
+    },
+    {
+      "heading": "Approach",
+      "body": "I learnt to break broad innovation questions into the parts that shape a decision: unmet need, evidence base, competitor landscape, pathway fit, stakeholder confidence, governance risk, data requirements and what evidence would be needed next."
+    },
+    {
+      "heading": "Selected outputs",
+      "items": [
+        "Evidence briefs and structured evidence summaries.",
+        "Competitor comparison packs and technology landscape summaries.",
+        "Market and horizon-scanning summaries.",
+        "AI/MedTech guidance-support material.",
+        "Adoption and value logic notes.",
+        "Pathway and stakeholder-decision framing."
+      ]
+    },
+    {
+      "heading": "What this shows",
+      "body": "This is the clearest professional evidence of how I think: I can work at the boundary between biomedical evidence, product claims, NHS realities and commercial decision-making without flattening one into the other."
+    }
+  ]
+}

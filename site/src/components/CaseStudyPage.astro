@@ -3,6 +3,8 @@ import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
+import EditorialPanel from './EditorialPanel.astro';
+import type { EditorialPanelVariant } from '../data/content';
 
 interface CaseSection {
   heading: string;
@@ -42,6 +44,7 @@ interface Props {
   boundary?: string;
   contextLogo?: ContextLogo;
   related?: RelatedLink[];
+  visualVariant?: EditorialPanelVariant;
 }
 
 const {
@@ -53,7 +56,8 @@ const {
   facts = [],
   boundary,
   contextLogo,
-  related = []
+  related = [],
+  visualVariant
 } = Astro.props as Props;
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -117,6 +121,11 @@ const breadcrumbSchema = {
     </aside>
 
     <div class="case-sections">
+      {visualVariant && (
+        <section class="case-visual-panel">
+          <EditorialPanel variant={visualVariant} />
+        </section>
+      )}
       {facts.length > 0 && (
         <section class="case-summary-strip" aria-labelledby="case-summary-title">
           <h2 id="case-summary-title">Quick scan</h2>

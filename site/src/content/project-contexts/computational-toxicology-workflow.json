@@ -1,0 +1,10 @@
+{
+  "order": 3,
+  "kind": "card",
+  "icon": "research",
+  "eyebrow": "Data preparation",
+  "title": "Computational toxicology workflow",
+  "href": "/case-studies/consoneai-dioscor/",
+  "text": "High-level dose-toxicity data mapping and structured data-preparation work from a short research internship.",
+  "cardMeta": ["Internship context", "Data mapping", "Structured preparation"]
+}

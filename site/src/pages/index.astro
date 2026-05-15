@@ -3,24 +3,32 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
+import EditorialPanel from '../components/EditorialPanel.astro';
 import headshot from '../assets/images/jubileejoy-zirebwa-headshot.jpg';
 import logoAru from '../assets/images/logo-aru.png';
 import logoGenomicsEngland from '../assets/images/logo-genomics-england.png';
 import logoHealthInnovationEast from '../assets/images/logo-health-innovation-east.webp';
-import { getCaseStudy } from '../data/caseStudies';
+import { getHomeContextRoutes, getHomeFeaturedCaseStudies, type CaseStudyContent } from '../data/content';
 
-const healthInnovationEast = getCaseStudy('health-innovation-east');
-const aiToolkit = getCaseStudy('ai-medtech-toolkit');
-const marketIntelligence = getCaseStudy('market-intelligence');
-const finalYearProject = getCaseStudy('final-year-project');
+interface RouteCard {
+  href: string;
+  icon: CaseStudyContent['icon'];
+  eyebrow: string;
+  title: string;
+  text: string;
+  meta: string[];
+}
 
-const startingPoints = [healthInnovationEast, aiToolkit, marketIntelligence, finalYearProject].map((item) => ({
+const featuredCaseStudies = await getHomeFeaturedCaseStudies();
+const contextRoutes = await getHomeContextRoutes();
+
+const startingPoints: RouteCard[] = contextRoutes.map((item: CaseStudyContent) => ({
   href: item.href,
   icon: item.icon,
-  eyebrow: item.eyebrow,
-  title: item.title,
-  text: item.text,
-  meta: item.cardMeta
+  eyebrow: 'Context',
+  title: item.routeContext?.title ?? item.title,
+  text: item.routeContext?.description ?? item.summary,
+  meta: item.routeContext?.meta ?? item.cardMeta
 }));
 
 const lensSteps = [
@@ -76,12 +84,15 @@ const contextLogos = [
         <h1>Jubileejoy "JJ" Zirebwa</h1>
         <p class="hero-lede">Biomedical science, healthcare strategy and evidence-led innovation.</p>
         <p class="intro-copy">
-          I work with biomedical evidence aiming to turn it into real healthcare decisions: testing product claims against evidence quality, pathway fit, governance constraints, stakeholder priorities and what still needs to be proved. My strongest public evidence comes from a full-year Health Innovation East placement across innovation triage, market intelligence, competitor analysis, QOF/ICB-aligned adoption work and an internal AI/MedTech toolkit, alongside governance-first Genomics England TRE research and early computational toxicology data mapping.
+          I’m drawn to the messy middle between evidence and adoption: where you have to ask whether a health innovation actually works, whether it fits the system, who needs to be convinced, what risks need managing, and what evidence is still missing.
+        </p>
+        <p class="intro-copy">
+          My strongest evidence comes from a full-year Health Innovation East placement across innovation triage, market intelligence, competitor analysis, QOF/ICB-aligned adoption work and an internal AI/MedTech toolkit, alongside governance-first Genomics England TRE research and early computational toxicology data mapping.
         </p>
         <div class="action-row">
-          <a class="button" href="/case-studies/">View case studies</a>
-          <a class="button secondary" href="/skills/">View skills</a>
-          <a class="button secondary" href="/contact/">Contact</a>
+          <a class="button" href="/case-studies/health-innovation-east/">Start with strongest evidence</a>
+          <a class="button secondary" href="/now/">See what I'm focused on now</a>
+          <a class="button secondary" href="/contact/">Get in touch</a>
         </div>
       </div>
       <div class="hero-visual" aria-label="Portrait and portfolio focus areas">
@@ -98,24 +109,7 @@ const contextLogos = [
             <strong>Biomedical science with a healthcare strategy lens.</strong>
           </figcaption>
         </figure>
-        <div class="evidence-map" aria-label="Portfolio evidence map">
-          <div class="map-node">
-            <span>Commercial</span>
-            <strong>NHS-facing health innovation</strong>
-          </div>
-          <div class="map-node">
-            <span>Governance</span>
-            <strong>AI/MedTech governance and adoption</strong>
-          </div>
-          <div class="map-node">
-            <span>Evidence</span>
-            <strong>Market, competitor and clinical context</strong>
-          </div>
-          <div class="map-node">
-            <span>Data</span>
-            <strong>Secure biomedical research discipline</strong>
-          </div>
-        </div>
+        <EditorialPanel variant="evidence-journey" />
       </div>
     </div>
   </section>
@@ -137,12 +131,20 @@ const contextLogos = [
   <section class="section-band light">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Start here"
-        title="Best starting points"
-        lead="Start here for a clear view of how I work across healthcare strategy, AI governance and biomedical evidence."
+        eyebrow="Read the work through context"
+        title="Choose a first route through the work"
+        lead="These are useful first routes through the work, not exclusive lanes. Each one gives a strong context for reading the rest of the portfolio and then pulls you back into connected evidence."
       />
       <div class="grid two">
-        {startingPoints.map((item) => <LinkCard {...item} />)}
+        {startingPoints.map((item: RouteCard) => <LinkCard {...item} />)}
+        <LinkCard
+          href="/now/"
+          icon="writing"
+          eyebrow="Current direction"
+          title="What I'm focused on now"
+          text="Current focus areas, active questions and the direction I am trying to sharpen next."
+          meta={['Current focus', 'Open questions', 'Direction']}
+        />
       </div>
     </div>
   </section>
@@ -184,30 +186,16 @@ const contextLogos = [
         lead="The case studies focus on the problem, my role, the approach and the judgement involved. They are written for public reading, with sensitive details kept out."
       />
       <div class="grid three">
-        <LinkCard
-          href={healthInnovationEast.href}
-          icon={healthInnovationEast.icon}
-          eyebrow={healthInnovationEast.eyebrow}
-          title={healthInnovationEast.title}
-          text={healthInnovationEast.text}
-          meta={healthInnovationEast.cardMeta}
-        />
-        <LinkCard
-          href={aiToolkit.href}
-          icon={aiToolkit.icon}
-          eyebrow={aiToolkit.eyebrow}
-          title={aiToolkit.title}
-          text={aiToolkit.text}
-          meta={aiToolkit.cardMeta}
-        />
-        <LinkCard
-          href={finalYearProject.href}
-          icon={finalYearProject.icon}
-          eyebrow={finalYearProject.eyebrow}
-          title={finalYearProject.title}
-          text={finalYearProject.text}
-          meta={finalYearProject.cardMeta}
-        />
+        {featuredCaseStudies.map((item: CaseStudyContent) => (
+          <LinkCard
+            href={item.href}
+            icon={item.icon}
+            eyebrow={item.eyebrow}
+            title={item.title}
+            text={item.cardText}
+            meta={item.cardMeta}
+          />
+        ))}
         <LinkCard
           href="/contact/"
           icon="contact"
@@ -215,6 +203,25 @@ const contextLogos = [
           title="Contact and scope"
           text="Role interests, location and the best way to get in touch."
         />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell">
+      <div class="conversion-panel">
+        <div>
+          <p class="eyebrow">Call to action</p>
+          <h2>Follow the strongest proof, then pull the rest of the portfolio into view</h2>
+          <p>
+            Start with Health Innovation East for my clearest evidence, use <a href="/now/">Now</a> for my present direction and get in touch if you want the fuller picture or role conversation.
+          </p>
+        </div>
+        <div class="action-row">
+          <a class="button" href="/case-studies/health-innovation-east/">Start with strongest evidence</a>
+          <a class="button secondary" href="/now/">See what I'm focused on now</a>
+          <a class="button secondary" href="/contact/">Get in touch</a>
+        </div>
       </div>
     </div>
   </section>
