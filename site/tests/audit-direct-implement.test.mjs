@@ -96,8 +96,13 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(nowHtml, /Questions I am sharpening/);
     assert.match(nowHtml, /Direction I am moving toward/);
     assert.match(nowHtml, /Recent updates/);
+    assert.match(nowHtml, /Portfolio shaped around evidence, direction and contact/);
+    assert.match(nowHtml, /Public case studies added for healthcare innovation and research work/);
+    assert.match(nowHtml, /Future methods interest clarified from final-year research/);
+    assert.doesNotMatch(nowHtml, /backend|pull request|GitHub|build log|development changelog/i);
     assert.match(nowHtml, /Where to go next/);
     assert.match(nowHtml, /data-editorial-variant="current-vector"/);
+    assert.match(nowHtml, /Current trajectory/);
     assert.match(
       aboutHtml,
       /Interim transcript currently supports a First-class trajectory, with final classification still subject to official confirmation\./

@@ -32,17 +32,31 @@ const { variant } = Astro.props as Props;
   {variant === 'current-vector' && (
     <>
       <figcaption>
-        <span>Current vector</span>
-        <strong>Focus now, direction next.</strong>
+        <span>Current trajectory</span>
+        <strong>Focus now, sharper questions, clearer direction.</strong>
       </figcaption>
-      <div class="vector-field" aria-hidden="true">
-        <span style="--x: 8%; --y: 72%; --r: -18deg;"></span>
-        <span style="--x: 22%; --y: 58%; --r: -12deg;"></span>
-        <span style="--x: 38%; --y: 48%; --r: -5deg;"></span>
-        <span style="--x: 56%; --y: 36%; --r: 2deg;"></span>
-        <span style="--x: 74%; --y: 24%; --r: 8deg;"></span>
-      </div>
-      <ol class="visual-steps compact">
+      <svg class="trajectory-chart" viewBox="0 0 440 230" role="img" aria-label="Current focus moving through sharper questions toward clearer evidence-led direction">
+        <defs>
+          <marker id="trajectory-arrow" markerWidth="18" markerHeight="18" refX="16" refY="9" orient="auto" markerUnits="userSpaceOnUse">
+            <path d="M0 0L18 9L0 18Z" />
+          </marker>
+        </defs>
+        <path class="trajectory-guide" d="M48 158C112 150 126 104 188 106S270 134 328 86C350 68 370 58 396 52" />
+        <path class="trajectory-main" d="M48 158C112 150 126 104 188 106S270 134 328 86C350 68 370 58 396 52" marker-end="url(#trajectory-arrow)" />
+        <g class="trajectory-node" transform="translate(48 158)">
+          <circle r="8" />
+          <text x="-20" y="35">Focus</text>
+        </g>
+        <g class="trajectory-node" transform="translate(188 106)">
+          <circle r="8" />
+          <text x="-36" y="-18">Questions</text>
+        </g>
+        <g class="trajectory-node accent-node" transform="translate(328 86)">
+          <circle r="9" />
+          <text x="-28" y="35">Direction</text>
+        </g>
+      </svg>
+      <ol class="trajectory-stages">
         <li><span>Now</span><strong>Current focus</strong></li>
         <li><span>Next</span><strong>Sharper questions</strong></li>
         <li><span>Route</span><strong>Evidence-led roles</strong></li>
