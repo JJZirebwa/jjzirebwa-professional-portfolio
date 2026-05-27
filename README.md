@@ -5,6 +5,16 @@ Final-year BSc Biomedical Science student at Anglia Ruskin University, with expe
 
 Live website: <https://jubileejoyzirebwa.com>
 
+## Local site development
+
+The Astro site uses Node 22, matching the Netlify deployment runtime. From the repository root, use `.nvmrc` or `.node-version` with your Node manager before running site commands:
+
+```bash
+cd site
+npm install
+npm run dev
+```
+
 ## Positioning
 
 I work best with biomedical evidence, healthcare adoption and structured analysis. My profile combines a Biomedical Science degree, a full-year commercial placement with Health Innovation East, a governance-bound final-year project in a secure genomic research environment and earlier computational toxicology data work with ConsoneAI/DioScor.

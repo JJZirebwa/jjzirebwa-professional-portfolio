@@ -9,6 +9,12 @@ review/
 _private/
 private/
 FINAL_REVIEW_NOTES.md
+/*_REPORT.md
+/*_AUDIT.md
+/*_REVIEW.md
+/*_PLAN.md
+/*_NOTES.md
+automation/
 
 # Local Astro/Netlify build output.
 site/node_modules/

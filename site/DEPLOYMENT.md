@@ -6,6 +6,12 @@ Do not deploy until a final manual safety review has confirmed that the site con
 
 ## Local checks
 
+Use Node 22 locally. The repository includes `.nvmrc` and `.node-version` with `22.12.0`, matching the Netlify runtime contract. If Homebrew `node@22` is installed but the generic `node` command points somewhere else, put the versioned binary first for the shell session:
+
+```bash
+export PATH="/opt/homebrew/opt/node@22/bin:$PATH"
+```
+
 From the repository root:
 
 ```bash

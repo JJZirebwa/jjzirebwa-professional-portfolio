@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -45,6 +45,10 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(html, /data-editorial-variant="evidence-journey"/);
     assert.match(html, /Evidence to decision/);
     assert.doesNotMatch(html, /panel-block/);
+    assert.match(html, /<meta property="og:image" content="https:\/\/jubileejoyzirebwa\.com\/og\/home\.png">/);
+    assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+    assert.match(html, /"@type":"WebSite"/);
+    assert.doesNotMatch(html, /"@type":"ProfilePage"/);
   });
 
   await t.test('case-study pages include breadcrumbs, summary facts, ORION copy updates, and editorial variants', () => {
@@ -103,11 +107,14 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(nowHtml, /Where to go next/);
     assert.match(nowHtml, /data-editorial-variant="current-vector"/);
     assert.match(nowHtml, /Current trajectory/);
+    assert.match(nowHtml, /<meta property="og:image" content="https:\/\/jubileejoyzirebwa\.com\/og\/now\.png">/);
     assert.match(
       aboutHtml,
       /Interim transcript currently supports a First-class trajectory, with final classification still subject to official confirmation\./
     );
     assert.match(aboutHtml, /See what I(?:&#39;|')m focused on now/);
+    assert.match(aboutHtml, /"@type":"ProfilePage"/);
+    assert.match(aboutHtml, /"dateModified":"2026-05-27"/);
     assert.match(notFoundHtml, /Best places to start/);
     assert.match(notFoundHtml, /Health Innovation East/);
     assert.match(notFoundHtml, /About my profile/);
@@ -120,5 +127,17 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(projectsHtml, /data-editorial-variant="weak-signal-methods"/);
     assert.match(projectsHtml, /Weak-signal methods/);
     assert.doesNotMatch(projectsHtml, /panel-block/);
+  });
+
+  await t.test('route-specific social images are generated as static PNG files', () => {
+    for (const imagePath of [
+      'og/home.png',
+      'og/now.png',
+      'og/health-innovation-east.png',
+      'og/final-year-project.png'
+    ]) {
+      const imageStats = statSync(path.join(distRoot, imagePath));
+      assert.ok(imageStats.size > 1000, `${imagePath} should be a non-empty generated PNG`);
+    }
   });
 });
