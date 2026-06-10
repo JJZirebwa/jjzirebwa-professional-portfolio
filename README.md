@@ -19,6 +19,14 @@ npm run dev
 
 I work best with biomedical evidence, healthcare adoption and structured analysis. My profile combines a Biomedical Science degree, a full-year commercial placement with Health Innovation East, a governance-bound final-year project in a secure genomic research environment and earlier computational toxicology data work with ConsoneAI/DioScor.
 
+## Current direction
+
+I am sharpening work at the evidence-to-decision boundary: healthcare strategy, health innovation analysis, evidence synthesis, AI/MedTech governance, market intelligence and biomedical data work. The recurring question is how to read messy evidence carefully enough to support practical decisions without overstating what the data, pathway or governance position can prove.
+
+## Best first route
+
+For the quickest read, start with the Health Innovation East commercial overview, then use the AI Toolkit, market-intelligence and final-year project pages to see how the same evidence, governance and decision-support judgement carries across different settings.
+
 ## Best starting points
 
 | Topic | Page |

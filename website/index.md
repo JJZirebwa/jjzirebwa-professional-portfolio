@@ -1,7 +1,7 @@
 # Jubileejoy "JJ" Zirebwa
 
 Cambridge, UK  
-Final-year Biomedical Science BSc student with experience across healthcare innovation, evidence synthesis, AI/MedTech governance, biomedical data analysis and commercial strategy.
+Final-year Biomedical Science BSc student with experience across healthcare innovation, evidence synthesis, AI/MedTech governance, biomedical data analysis, market intelligence and commercial strategy.
 
 ## Focus
 
@@ -11,6 +11,14 @@ Final-year Biomedical Science BSc student with experience across healthcare inno
 - biomedical data analysis
 - rare-disease evidence and genomic medicine
 - market intelligence and competitor analysis
+
+## Current direction
+
+I am focused on work where biomedical evidence has to be interpreted, challenged and translated into strategic, governance-aware or research-grounded action. The strongest thread is the messy middle between evidence and adoption: what a technology claims, what the evidence supports, where it fits in the pathway and what still needs proving before a decision should move.
+
+## Best first route
+
+Start with Health Innovation East for the clearest evidence of NHS-facing commercial innovation work, then use the AI Toolkit, market-intelligence and final-year project pages to see the governance, market and biomedical-data sides of the portfolio.
 
 ## Selected work
 

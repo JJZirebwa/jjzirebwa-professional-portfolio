@@ -1,6 +1,19 @@
 # Portfolio index
 
-This is a concise map of the portfolio.
+This is a concise map of the portfolio, with the strongest first routes pulled forward for GitHub readers.
+
+## Start here
+
+- Strongest evidence: [Health Innovation East commercial overview](professional-experience/health-innovation-east/commercial-health-innovation-overview.md)
+- Current direction: healthcare strategy, evidence synthesis, AI/MedTech governance, market intelligence and biomedical data work
+- Wider navigation: [website mirror index](website/index.md) and [portfolio pages](website/portfolio-pages.md)
+
+## Current direction links
+
+- [Healthcare strategy case studies](projects/healthcare-strategy-case-studies.md)
+- [AI Toolkit](professional-experience/health-innovation-east/ai-medtech-toolkit.md)
+- [Market intelligence and CB Insights](professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md)
+- [Future biological evidence methods](projects/exploratory-methods/future-biological-evidence-methods.md)
 
 ## Selected pages by focus
 
@@ -45,7 +58,3 @@ This is a concise map of the portfolio.
 - [AI health governance](skills/ai-health-governance.md)
 - [Data analysis and Python](skills/data-analysis-and-python.md)
 - [Writing and communication](skills/writing-and-communication.md)
-
-## Public note
-
-This repository contains public-facing summaries only. It does not include raw datasets, dissertation extracts, internal placement documents, paid-source exports, proprietary details or confidential client materials.

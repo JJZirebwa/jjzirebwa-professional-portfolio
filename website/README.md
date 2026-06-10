@@ -1,6 +1,6 @@
 # Website-ready pages
 
-This folder contains a minimal Markdown surface that can be used for GitHub Pages or as source material for a later Netlify/Astro site.
+This folder contains a minimal GitHub-visible Markdown mirror of the live Astro portfolio. It is simpler than the website, but it keeps the public route logic, current-direction framing and strongest evidence links easy to read from GitHub.
 
 ## Files
 
@@ -9,4 +9,4 @@ This folder contains a minimal Markdown surface that can be used for GitHub Page
 
 ## Hosting note
 
-For now, the root `README.md` and `PORTFOLIO_INDEX.md` are the strongest GitHub-facing surfaces. If this becomes a Netlify or Astro site later, use these Markdown files as content sources rather than exposing private notes, review files, raw documents or internal artefacts.
+The live website is built from `site/`. These Markdown files are a public mirror only; keep them high-level and do not add private notes, raw documents, internal artefacts or generated reports.

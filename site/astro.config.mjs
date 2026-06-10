@@ -4,6 +4,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://jubileejoyzirebwa.com',
   output: 'static',
+  prefetch: {
+    prefetchAll: false,
+    defaultStrategy: 'hover'
+  },
   devToolbar: {
     enabled: false
   },

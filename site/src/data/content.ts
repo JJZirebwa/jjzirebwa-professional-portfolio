@@ -47,7 +47,7 @@ export interface CaseStudyContent {
   routeContext?: CaseStudyContextRoute;
   facts: CaseStudyData['facts'];
   skills: string[];
-  boundary: string;
+  boundary?: string;
   visualVariant?: EditorialPanelVariant;
   contextLogo?: {
     src: ImageMetadata;

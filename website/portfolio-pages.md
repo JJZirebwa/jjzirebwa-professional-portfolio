@@ -1,5 +1,16 @@
 # Portfolio pages
 
+## Start here
+
+- [Health Innovation East commercial overview](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md): strongest first route into NHS-facing innovation, adoption logic and decision-support work.
+- [AI Toolkit](../professional-experience/health-innovation-east/ai-medtech-toolkit.md): practical AI/MedTech governance translation.
+- [Market intelligence and CB Insights](../professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md): reusable market and competitor decision support.
+- [Final-year project](../academic/final-year-project/README.md): secure biomedical research, weak-signal judgement and limitations-led interpretation.
+
+## Current direction
+
+The current professional direction is healthcare strategy, health innovation analysis, evidence synthesis, AI/MedTech governance, market intelligence and biomedical data work. The shared thread is evidence-to-decision judgement: reading claims carefully, identifying what is still missing and translating complexity into responsible next steps.
+
 ## Selected work
 
 - [Health Innovation East commercial overview](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md)

@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const editorialVariants = [
   'evidence-journey',
@@ -42,7 +43,7 @@ const caseStudies = defineCollection({
       value: z.string()
     })),
     skills: z.array(z.string()),
-    boundary: z.string(),
+    boundary: z.string().optional(),
     visualVariant: z.enum(editorialVariants).optional(),
     contextLogoKey: z.enum(['health-innovation-east', 'aru', 'genomics-england']).optional(),
     contextLogoAlt: z.string().optional(),

@@ -30,7 +30,8 @@ test('audit direct-implement routes render the expected upgraded content and str
       html,
       /messy middle between evidence and adoption/
     );
-    assert.match(html, /My strongest evidence comes from a full-year Health Innovation East placement/);
+    assert.match(html, /My strongest experience comes from a full-year Health Innovation East placement/);
+    assert.match(html, /href="\/case-studies\/health-innovation-east\/"[^>]*data-astro-prefetch="hover"/);
     assert.match(html, /src="\/_astro\//);
     assert.doesNotMatch(html, /src="\/images\/jubileejoy-zirebwa-headshot\.jpg"/);
     assert.match(
@@ -59,6 +60,10 @@ test('audit direct-implement routes render the expected upgraded content and str
     const consoneHtml = readBuiltPage('case-studies/consoneai-dioscor');
 
     assert.match(hieHtml, /<nav class="breadcrumbs" aria-label="Breadcrumbs">/);
+    assert.match(hieHtml, /<nav class="case-jump-nav" aria-labelledby="case-jump-title">/);
+    assert.match(hieHtml, /href="#context"/);
+    assert.match(hieHtml, /id="my-role"/);
+    assert.match(hieHtml, /href="#what-this-shows"/);
     assert.match(hieHtml, /Role<\/dt>/);
     assert.match(hieHtml, /Outputs<\/dt>/);
     assert.match(hieHtml, /My role combined independently owned deliverables with co-authored advisory work\./);
@@ -81,8 +86,10 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(fypHtml, /Genomics \+ ML pipeline/);
     assert.match(toolkitHtml, /data-editorial-variant="governance-lifecycle"/);
     assert.match(toolkitHtml, /AI\/MedTech lifecycle/);
+    assert.doesNotMatch(toolkitHtml, /<h2>Boundary<\/h2>/);
     assert.match(consoneHtml, /data-editorial-variant="toxicity-workflow"/);
     assert.match(consoneHtml, /Dose-toxicity mapping/);
+    assert.match(hieHtml, /<h2>Boundary<\/h2>/);
     for (const pageHtml of [hieHtml, marketHtml, fypHtml, toolkitHtml, consoneHtml]) {
       assert.doesNotMatch(pageHtml, /panel-block/);
     }
@@ -91,6 +98,7 @@ test('audit direct-implement routes render the expected upgraded content and str
   await t.test('now, about, 404, and projects pages expose the new journey content', () => {
     const nowHtml = readBuiltPage('now');
     const aboutHtml = readBuiltPage('about');
+    const contactHtml = readBuiltPage('contact');
     const notFoundHtml = readBuiltPage('404.html');
     const projectsHtml = readBuiltPage('projects');
 
@@ -105,6 +113,7 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(nowHtml, /Future methods interest clarified from final-year research/);
     assert.doesNotMatch(nowHtml, /backend|pull request|GitHub|build log|development changelog/i);
     assert.match(nowHtml, /Where to go next/);
+    assert.match(nowHtml, /href="\/case-studies\/health-innovation-east\/"[^>]*data-astro-prefetch="hover"/);
     assert.match(nowHtml, /data-editorial-variant="current-vector"/);
     assert.match(nowHtml, /Current trajectory/);
     assert.match(nowHtml, /<meta property="og:image" content="https:\/\/jubileejoyzirebwa\.com\/og\/now\.png">/);
@@ -115,6 +124,9 @@ test('audit direct-implement routes render the expected upgraded content and str
     assert.match(aboutHtml, /See what I(?:&#39;|')m focused on now/);
     assert.match(aboutHtml, /"@type":"ProfilePage"/);
     assert.match(aboutHtml, /"dateModified":"2026-05-27"/);
+    assert.match(contactHtml, /<span>LinkedIn<\/span>/);
+    assert.match(contactHtml, /href="https:\/\/www\.linkedin\.com\/in\/jubileejoy-zirebwa"/);
+    assert.doesNotMatch(contactHtml, /LI-profile-badge|badge-base|linkedin-profile-card/);
     assert.match(notFoundHtml, /Best places to start/);
     assert.match(notFoundHtml, /Health Innovation East/);
     assert.match(notFoundHtml, /About my profile/);

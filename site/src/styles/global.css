@@ -1356,7 +1356,50 @@ a.card:hover {
   line-height: 1.5;
 }
 
+.case-jump-nav {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(22, 32, 29, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.case-jump-nav h2 {
+  margin: 0 0 0.7rem;
+  font-family: inherit;
+  font-size: 0.98rem;
+}
+
+.case-jump-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.case-jump-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.34rem 0.58rem;
+  border: 1px solid rgba(15, 106, 102, 0.16);
+  border-radius: 999px;
+  background: rgba(15, 106, 102, 0.05);
+  color: #254541;
+  font-size: 0.84rem;
+  font-weight: 680;
+  text-decoration: none;
+}
+
+.case-jump-nav a:hover,
+.case-jump-nav a:focus-visible {
+  border-color: rgba(15, 106, 102, 0.42);
+  color: var(--ink);
+}
+
 .case-section {
+  scroll-margin-top: 6.5rem;
   padding: 1.45rem 0;
   border-top: 1px solid rgba(22, 32, 29, 0.12);
 }
@@ -1492,81 +1535,6 @@ a.card:hover {
 
 .contact-list strong {
   color: var(--ink);
-}
-
-.linkedin-panel {
-  max-width: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background:
-    linear-gradient(150deg, rgba(10, 102, 194, 0.09), rgba(255, 255, 255, 0.92) 42%),
-    var(--surface);
-}
-
-.linkedin-profile-card {
-  margin: 1.25rem 0 1rem;
-}
-
-.linkedin-profile-card .LI-simple-link {
-  position: relative;
-  min-height: 92px;
-  padding: 1rem 1rem 1rem 4.6rem;
-  border: 1px solid rgba(10, 102, 194, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.78);
-  color: var(--ink);
-  display: grid;
-  align-content: center;
-  gap: 0.28rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.26rem;
-  font-weight: 560;
-  line-height: 1.1;
-  text-decoration: none;
-  box-shadow: 0 18px 42px rgba(10, 102, 194, 0.08);
-}
-
-.linkedin-profile-card .LI-simple-link::before {
-  content: "in";
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  width: 2.65rem;
-  height: 2.65rem;
-  transform: translateY(-50%);
-  display: grid;
-  place-items: center;
-  border-radius: 7px;
-  background: #0a66c2;
-  color: white;
-  font-family: Arial, sans-serif;
-  font-size: 1.35rem;
-  font-weight: 780;
-  letter-spacing: -0.04em;
-}
-
-.linkedin-profile-card .LI-simple-link::after {
-  content: "Open LinkedIn profile";
-  display: block;
-  color: var(--muted);
-  font-family: inherit;
-  font-size: 0.78rem;
-  font-weight: 720;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.linkedin-profile-card .LI-simple-link:hover,
-.linkedin-profile-card .LI-simple-link:focus-visible {
-  border-color: rgba(10, 102, 194, 0.46);
-  box-shadow: 0 22px 58px rgba(10, 102, 194, 0.13);
-  color: var(--ink);
-}
-
-.linkedin-panel p:last-child {
-  margin: 0;
-  color: var(--muted);
 }
 
 .footer {

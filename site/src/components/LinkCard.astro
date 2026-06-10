@@ -1,10 +1,11 @@
 ---
 import Icon from './Icon.astro';
 
-const { href, eyebrow, title, text, meta = [] } = Astro.props;
+const { href, eyebrow, title, text, meta = [], prefetch = false } = Astro.props;
+const prefetchStrategy = prefetch === true ? 'hover' : prefetch || undefined;
 ---
 
-<a class="card" href={href}>
+<a class="card" href={href} data-astro-prefetch={prefetchStrategy}>
   {Astro.props.icon && <span class="card-icon"><Icon name={Astro.props.icon} /></span>}
   {eyebrow && <span class="tag">{eyebrow}</span>}
   <h3>{title}</h3>

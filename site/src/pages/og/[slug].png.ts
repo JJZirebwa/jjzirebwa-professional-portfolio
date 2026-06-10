@@ -79,7 +79,9 @@ export const GET: APIRoute = ({ props }) => {
     }
   });
 
-  return new Response(renderer.render().asPng(), {
+  const png = new Uint8Array(renderer.render().asPng());
+
+  return new Response(png, {
     headers: {
       'Content-Type': 'image/png',
       'Cache-Control': 'public, max-age=31536000, immutable'

@@ -84,10 +84,10 @@ const contextLogos = [
         <h1>Jubileejoy "JJ" Zirebwa</h1>
         <p class="hero-lede">Biomedical science, healthcare strategy and evidence-led innovation.</p>
         <p class="intro-copy">
-          I’m drawn to the messy middle between evidence and adoption: where you have to ask whether a health innovation actually works, whether it fits the system, who needs to be convinced, what risks need managing, and what evidence is still missing.
+          I’m drawn to the messy middle between evidence and adoption where you have to ask whether a health innovation actually works, if it fits the system, who needs to be convinced, what risks need managing and what evidence is still missing.
         </p>
         <p class="intro-copy">
-          My strongest evidence comes from a full-year Health Innovation East placement across innovation triage, market intelligence, competitor analysis, QOF/ICB-aligned adoption work and an internal AI/MedTech toolkit, alongside governance-first Genomics England TRE research and early computational toxicology data mapping.
+          My strongest experience comes from a full-year Health Innovation East placement across innovation triage, market intelligence, competitor analysis, QOF/ICB-aligned adoption work and an internal AI/MedTech toolkit I created, alongside governance-first Genomics England TRE research and earlier computational toxicology data mapping.
         </p>
         <div class="action-row">
           <a class="button" href="/case-studies/health-innovation-east/">Start with strongest evidence</a>
@@ -136,7 +136,7 @@ const contextLogos = [
         lead="These are some useful first routes through my work. Each one gives context for reading the rest of the portfolio and then navigates back into the connected evidence."
       />
       <div class="grid two">
-        {startingPoints.map((item: RouteCard) => <LinkCard {...item} />)}
+        {startingPoints.map((item: RouteCard) => <LinkCard {...item} prefetch="hover" />)}
         <LinkCard
           href="/now/"
           icon="writing"
@@ -144,6 +144,7 @@ const contextLogos = [
           title="What I'm focused on now"
           text="Current focus areas, active questions and the direction I am trying to sharpen next."
           meta={['Current focus', 'Open questions', 'Direction']}
+          prefetch="hover"
         />
       </div>
     </div>
@@ -194,6 +195,7 @@ const contextLogos = [
             title={item.title}
             text={item.cardText}
             meta={item.cardMeta}
+            prefetch="hover"
           />
         ))}
         <LinkCard
@@ -202,6 +204,7 @@ const contextLogos = [
           eyebrow="Next step"
           title="Contact and scope"
           text="Role interests, location and the best way to get in touch."
+          prefetch="hover"
         />
       </div>
     </div>

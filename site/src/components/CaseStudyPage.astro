@@ -76,6 +76,17 @@ const breadcrumbSchema = {
     item: new URL(item.href ?? Astro.url.pathname, siteUrl).href
   }))
 };
+const slugifySectionHeading = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+const sectionsWithIds = sections.map((section, index) => ({
+  ...section,
+  id: slugifySectionHeading(section.heading) || `section-${index + 1}`
+}));
 ---
 
 <BaseLayout title={title} description={summary} structuredData={breadcrumbSchema}>
@@ -139,8 +150,18 @@ const breadcrumbSchema = {
           </dl>
         </section>
       )}
-      {sections.map((section) => (
-        <section class="case-section">
+      {sectionsWithIds.length > 0 && (
+        <nav class="case-jump-nav" aria-labelledby="case-jump-title">
+          <h2 id="case-jump-title">Jump to</h2>
+          <ul>
+            {sectionsWithIds.map((section) => (
+              <li><a href={`#${section.id}`}>{section.heading}</a></li>
+            ))}
+          </ul>
+        </nav>
+      )}
+      {sectionsWithIds.map((section) => (
+        <section class="case-section" id={section.id}>
           <h2>{section.heading}</h2>
           {section.body && <p>{section.body}</p>}
           {section.items && (

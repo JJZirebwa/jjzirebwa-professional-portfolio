@@ -42,7 +42,7 @@ const cases: CaseStudyCard[] = (await getCaseStudies()).map((item: CaseStudyCont
         lead="Each case study is structured for reading while respecting confidentiality, with fast scan signals for scope, work mode and proof."
       />
       <div class="grid two">
-        {cases.map((item: CaseStudyCard) => <LinkCard {...item} />)}
+        {cases.map((item: CaseStudyCard) => <LinkCard {...item} prefetch="hover" />)}
       </div>
     </div>
   </section>
