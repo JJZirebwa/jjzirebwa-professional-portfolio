@@ -22,7 +22,7 @@ The scripts expect a run folder with dated cohort and hospital episode files usi
 - admitted care, outpatient and emergency-care tables with participant IDs, dates and diagnosis/procedure fields.
 - config files from `config/` to define feature groups, recency policies, target profiles and preprocessing rules.
 
-Use `--run-root`, `--run-dir`, `--cohort-csv`, `--hes-apc-csv`, `--hes-op-csv`, `--hes-ae-csv` or equivalent CLI arguments to point at local placeholder files. Do not hard-code personal paths or restricted data locations.
+Use `--run-root`, `--run-dir`, `--cohort-csv`, `--hes-apc-csv`, `--hes-op-csv`, `--hes-ae-csv` or equivalent CLI arguments to point at local placeholder files.
 
 ## Typical review commands
 
