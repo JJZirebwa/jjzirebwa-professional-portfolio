@@ -1,6 +1,6 @@
 # Biomedical data and evidence
 
-## Public-facing summary
+## Summary
 
 My biomedical data and evidence profile spans academic modules, the final-year project and ConsoneAI/DioScor internship work.
 

@@ -1,0 +1,22 @@
+group_name,group_level,include_in_default_model,include_in_lr_relevant_baseline,min_positive_n_override,rationale,reviewer,review_date
+ventricular_tachyarrhythmia,core,1,1,5,"Ventricular tachyarrhythmia pathway aligned to malignant Brugada trajectories",project_review,2026-03-06
+ventricular_fibrillation_flutter,core,1,1,5,"Ventricular fibrillation/flutter pathway for high-severity electrical instability",project_review,2026-03-06
+cardiac_arrest_history,core,1,1,5,"Cardiac arrest retained as severe hospital-trajectory phenotype without broad death-code mixing",project_review,2026-03-06
+syncope_collapse,core,1,1,10,"Core syncope/collapse phenotype with channelopathy relevance",project_review,2026-03-06
+av_block_any,core,1,1,8,"AV block burden aligned to conduction-slowing biology",project_review,2026-03-06
+bundle_branch_fascicular_iv_block,core,1,1,8,"Bundle/fascicular/intraventricular block burden aligned to conduction pathway",project_review,2026-03-06
+sinus_node_dysfunction,core,1,1,5,"Sinus-node dysfunction retained as mechanistic conduction phenotype",project_review,2026-03-06
+bradycardia_unspecified,core,1,1,5,"Bradycardia retained as complementary conduction phenotype",project_review,2026-03-06
+atrial_fibrillation_flutter,core,1,1,8,"Atrial arrhythmia retained as secondary but relevant electrical phenotype",project_review,2026-03-06
+brugada_or_specified_channelopathy,optional,0,0,3,"Sensitivity-only direct Brugada/channelopathy diagnosis label project_review local validation of specificity",project_review,2026-03-06
+premature_depolarisation,optional,0,0,5,"Sensitivity-only ectopy signal to avoid core-noise inflation",project_review,2026-03-06
+palpitations_only,optional,0,0,8,"Sensitivity-only symptom signal isolated from broad R00 noise",project_review,2026-03-06
+abnormal_ecg_or_cardiac_tests,optional,0,0,5,"Sensitivity-only ECG/work-up pathway",project_review,2026-03-06
+device_presence_cardiac,optional,0,0,5,"Sensitivity-only device-presence proxy due pathway confounding risk",project_review,2026-03-06
+device_followup_management,optional,0,0,5,"Sensitivity-only device follow-up proxy due care-process confounding risk",project_review,2026-03-06
+seizure_like,optional,0,0,10,"Sensitivity-only seizure-like misclassification pathway",project_review,2026-03-06
+chest_pain,optional,0,0,10,"Sensitivity-only symptom burden comparator",project_review,2026-03-06
+orthostatic_syncope,optional,0,0,10,"Sensitivity-only orthostatic syncope discriminator",project_review,2026-03-06
+structural_diff,optional,0,0,10,"Sensitivity-only structural-differential comparator rather than core mechanistic phenotype",project_review,2026-03-06
+febrile_infective_trigger,optional,0,0,10,"Sensitivity-only trigger-context pathway",project_review,2026-03-06
+drug_toxicity_substance,optional,0,0,10,"Sensitivity-only exposure/confounder pathway",project_review,2026-03-06

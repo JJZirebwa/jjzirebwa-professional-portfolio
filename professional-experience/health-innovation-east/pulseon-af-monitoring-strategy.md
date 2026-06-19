@@ -1,6 +1,6 @@
 # PulseOn AF Monitoring Strategy
 
-## Public-Facing Summary
+## Summary
 
 This case study summarises drafted and supported strategy material around atrial fibrillation monitoring, post-stroke risk, pathway gaps, competitor limitations and potential adoption/value logic.
 

@@ -13,23 +13,36 @@ interface CaseStudyCard {
   meta: string[];
 }
 
-const cases: CaseStudyCard[] = (await getCaseStudies()).map((item: CaseStudyContent) => ({
+const allCases = await getCaseStudies();
+const toCard = (item: CaseStudyContent): CaseStudyCard => ({
   href: item.href,
   icon: item.icon,
   eyebrow: item.eyebrow,
   title: item.title,
   text: item.cardText,
   meta: item.cardMeta
-}));
+});
+
+const parentSlugs = ['final-year-project', 'health-innovation-east', 'consoneai-dioscor'];
+const childSlugs = ['ai-medtech-toolkit', 'market-intelligence'];
+const parentCases: CaseStudyCard[] = allCases
+  .filter((item) => parentSlugs.includes(item.slug))
+  .map(toCard);
+const childCases: CaseStudyCard[] = allCases
+  .filter((item) => childSlugs.includes(item.slug))
+  .map((item) => ({
+    ...toCard(item),
+    eyebrow: item.slug === 'ai-medtech-toolkit' ? 'Health Innovation East deliverable' : 'Health Innovation East method'
+  }));
 ---
 
-<BaseLayout title="Case studies" description="Selected healthcare strategy, AI governance and biomedical data case studies.">
+<BaseLayout title="Experience" description="Parent experience pages across biomedical data, health innovation and biomedical research.">
   <section class="case-hero">
     <div class="page-shell">
-      <p class="eyebrow">Selected work</p>
-      <h1>Case studies</h1>
+      <p class="eyebrow">Experience</p>
+      <h1>Parent case studies</h1>
       <p class="summary">
-        These case studies summarise selected work across healthcare strategy, AI/MedTech governance, market analysis and biomedical data research. I have focused on the problem, my role, the approach and the judgement involved.
+        Start here for the substantial experience-level pages: final-year project, Health Innovation East placement and ConsoneAI/DioScor internship. Contained deliverables sit underneath those parent contexts rather than competing with them.
       </p>
     </div>
   </section>
@@ -37,12 +50,25 @@ const cases: CaseStudyCard[] = (await getCaseStudies()).map((item: CaseStudyCont
   <section class="section-band light">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Evidence"
-        title="Selected case studies"
-        lead="Each case study is structured for reading while respecting confidentiality, with fast scan signals for scope, work mode and proof."
+        eyebrow="Parent lane"
+        title="Substantial experience pages"
+        lead="These pages summarise the broader setting, my role, the work delivered and the judgement involved."
       />
       <div class="grid two">
-        {cases.map((item: CaseStudyCard) => <LinkCard {...item} prefetch="hover" />)}
+        {parentCases.map((item: CaseStudyCard) => <LinkCard {...item} prefetch="hover" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Contained work"
+        title="Deliverables and methods linked to parent experiences"
+        lead="These pages are more focused pieces of work. They make most sense when read alongside the parent experience they came from."
+      />
+      <div class="grid two">
+        {childCases.map((item: CaseStudyCard) => <LinkCard {...item} prefetch="hover" />)}
       </div>
     </div>
   </section>

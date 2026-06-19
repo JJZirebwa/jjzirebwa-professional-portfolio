@@ -39,7 +39,7 @@ const wrapText = (text: string, maxLineLength: number) => {
 const textLines = (lines: string[], x: number, y: number, lineHeight: number, fontSize: number, weight = 500) =>
   lines
     .map((line, index) => (
-      `<text x="${x}" y="${y + index * lineHeight}" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="${fontSize}" font-weight="${weight}" fill="#223127">${escapeXml(line)}</text>`
+      `<text x="${x}" y="${y + index * lineHeight}" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="${fontSize}" font-weight="${weight}" fill="#223127">${escapeXml(line)}</text>`
     ))
     .join('');
 
@@ -57,10 +57,10 @@ const renderCardSvg = (card: SocialCard) => {
   <path d="M920 138c68 38 108 86 120 144 12 62-4 124-48 186" fill="none" stroke="#c3a55f" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
   <circle cx="1014" cy="242" r="66" fill="#ffffff" stroke="#9db7a6" stroke-width="10"/>
   <circle cx="1014" cy="242" r="18" fill="#c3a55f"/>
-  <text x="96" y="128" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0" fill="#667568">${escapeXml(card.eyebrow.toUpperCase())}</text>
+  <text x="96" y="128" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="0" fill="#667568">${escapeXml(card.eyebrow.toUpperCase())}</text>
   ${textLines(titleLines, 96, 254, 82, 72, 800)}
   ${textLines(descriptionLines, 96, 410, 44, 34, 500)}
-  <text x="96" y="530" font-family="Inter, Avenir, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#223127">jubileejoyzirebwa.com</text>
+  <text x="96" y="530" font-family="Avenir, Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#223127">jubileejoyzirebwa.com</text>
 </svg>`;
 };
 

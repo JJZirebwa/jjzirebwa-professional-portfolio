@@ -1,5 +1,5 @@
 {
-  "order": 5,
+  "order": 3,
   "slug": "consoneai-dioscor",
   "icon": "research",
   "eyebrow": "Research internship",
@@ -8,6 +8,7 @@
   "summary": "A short research internship involving toxicology data mapping and structured data preparation in a dose-toxicity platform context.",
   "cardText": "High-level toxicology data mapping and structured data-preparation work in a dose-toxicity platform.",
   "cardMeta": ["Six-week internship", "Data mapping", "Proprietary context"],
+  "homeFeatureOrder": 3,
   "facts": [
     {
       "label": "Role",

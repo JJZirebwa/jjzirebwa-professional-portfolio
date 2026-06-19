@@ -1,6 +1,6 @@
 # Commercial Health Innovation Overview
 
-## Public-Facing Summary
+## Summary
 
 One-year placement in NHS-facing commercial health innovation, covering evidence briefs, market intelligence, competitor analysis, pathway and adoption logic, innovator engagement, internal strategy material and draft stakeholder-facing summaries.
 
@@ -35,7 +35,7 @@ The recurring approach was to break broad innovation questions into practical wo
 
 ## Outputs
 
-Public-safe output categories include:
+Output categories covered:
 
 - evidence briefs
 - competitor comparison packs

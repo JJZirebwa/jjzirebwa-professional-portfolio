@@ -13,7 +13,7 @@ export const socialCards = [
     path: '/',
     eyebrow: 'Professional portfolio',
     title: 'Jubileejoy "JJ" Zirebwa',
-    description: 'Biomedical science, healthcare strategy and evidence-led innovation.',
+    description: 'First Class Biomedical Science graduate across genomics, health data science, healthcare innovation and evidence-led strategy.',
     imageAlt: 'Social preview card for Jubileejoy Zirebwa professional portfolio.'
   },
   {
@@ -21,16 +21,24 @@ export const socialCards = [
     path: '/about/',
     eyebrow: 'Profile',
     title: 'About Jubileejoy Zirebwa',
-    description: 'Biomedical science, health innovation placement work, secure research and early toxicology data experience.',
+    description: 'Biomedical Science graduate profile across genomics, applied health data work, healthcare innovation and evidence.',
     imageAlt: 'Social preview card for the About page.'
+  },
+  {
+    slug: 'academic',
+    path: '/academic/',
+    eyebrow: 'Academic profile',
+    title: 'Academic profile',
+    description: 'First Class Biomedical Science record, selected marks and protected transcript access.',
+    imageAlt: 'Social preview card for the academic profile.'
   },
   {
     slug: 'case-studies',
     path: '/case-studies/',
-    eyebrow: 'Selected work',
-    title: 'Case studies',
-    description: 'Healthcare strategy, AI governance, market analysis and biomedical data case studies.',
-    imageAlt: 'Social preview card for selected case studies.'
+    eyebrow: 'Experience',
+    title: 'Parent case studies',
+    description: 'Experience-level pages across final-year project, health innovation placement and biomedical research internship.',
+    imageAlt: 'Social preview card for parent experience case studies.'
   },
   {
     slug: 'health-innovation-east',
@@ -61,7 +69,7 @@ export const socialCards = [
     path: '/case-studies/final-year-project/',
     eyebrow: 'Academic research',
     title: 'Final-year project',
-    description: 'Secure genomics-linked hospital trajectory analysis with governance, reproducibility and limitations boundaries.',
+    description: '83/100 dissertation component, secure genomics-linked hospital trajectory analysis and technical pipeline.',
     imageAlt: 'Social preview card for the final-year project case study.'
   },
   {
@@ -75,17 +83,17 @@ export const socialCards = [
   {
     slug: 'projects',
     path: '/projects/',
-    eyebrow: 'Project themes',
+    eyebrow: 'Projects',
     title: 'Projects',
-    description: 'Connected project routes across healthcare strategy, biomedical data and exploratory evidence-methods thinking.',
-    imageAlt: 'Social preview card for project themes.'
+    description: 'Contained deliverables and methods linked to parent experiences.',
+    imageAlt: 'Social preview card for project deliverables and methods.'
   },
   {
     slug: 'skills',
     path: '/skills/',
     eyebrow: 'Skills',
     title: 'Skills',
-    description: 'Healthcare strategy, evidence synthesis, AI governance, data analysis and clear professional writing.',
+    description: 'Health innovation strategy, evidence synthesis, AI governance, data analysis and clear professional writing.',
     imageAlt: 'Social preview card for skills and working strengths.'
   },
   {
@@ -95,6 +103,22 @@ export const socialCards = [
     title: 'Now',
     description: 'Current focus areas, active questions and the direction Jubileejoy Zirebwa is sharpening next.',
     imageAlt: 'Social preview card for the Now page.'
+  },
+  {
+    slug: 'cv',
+    path: '/cv/',
+    eyebrow: 'CV',
+    title: 'General portfolio CV',
+    description: 'General CV for Biomedical Science, genomics-linked health data work and healthcare innovation roles.',
+    imageAlt: 'Social preview card for the CV page.'
+  },
+  {
+    slug: 'documents',
+    path: '/documents/',
+    eyebrow: 'Documents',
+    title: 'Documents',
+    description: 'Selected public and protected portfolio documents, including CV, transcript and dissertation overview.',
+    imageAlt: 'Social preview card for selected documents.'
   },
   {
     slug: 'contact',

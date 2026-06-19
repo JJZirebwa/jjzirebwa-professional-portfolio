@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
-import EditorialPanel from '../components/EditorialPanel.astro';
 import headshot from '../assets/images/jubileejoy-zirebwa-headshot.jpg';
 import logoAru from '../assets/images/logo-aru.png';
 import logoGenomicsEngland from '../assets/images/logo-genomics-england.png';
@@ -31,68 +30,45 @@ const startingPoints: RouteCard[] = contextRoutes.map((item: CaseStudyContent) =
   meta: item.routeContext?.meta ?? item.cardMeta
 }));
 
-const lensSteps = [
-  {
-    label: 'Signal',
-    title: 'Biology and clinical context',
-    text: 'Start with the mechanism, patient pathway and the problem a technology claims to solve.'
-  },
-  {
-    label: 'Evidence',
-    title: 'Data, claims and uncertainty',
-    text: 'Separate what the evidence supports from what still depends on assumptions, validation or better data.'
-  },
-  {
-    label: 'Governance',
-    title: 'Safety, regulation and trust',
-    text: 'Ask how AI/MedTech, data protection, clinical safety and implementation standards shape responsible adoption.'
-  },
-  {
-    label: 'Adoption',
-    title: 'Commercial and policy judgement',
-    text: 'Translate evidence into pathway fit, stakeholder value, market readiness and decisions that can be explained clearly.'
-  }
-];
-
 const contextLogos = [
   {
     src: logoHealthInnovationEast,
     alt: 'Health Innovation East logo',
-    label: 'Commercial placement'
+    label: 'Health innovation placement'
   },
   {
     src: logoAru,
     alt: 'Anglia Ruskin University logo',
-    label: 'Biomedical Science degree'
+    label: 'First Class Biomedical Science'
   },
   {
     src: logoGenomicsEngland,
     alt: 'Genomics England logo',
-    label: 'Secure research context'
+    label: 'Genomics-linked research'
   }
 ];
 ---
 
 <BaseLayout
   title='Jubileejoy "JJ" Zirebwa'
-  description="Biomedical Science, healthcare strategy and evidence-led innovation portfolio for Jubileejoy Zirebwa."
+  description="First Class Biomedical Science graduate portfolio spanning genomics, health data science, machine learning, healthcare innovation and evidence-led strategy."
 >
   <section class="hero">
     <div class="page-shell hero-grid">
       <div>
         <p class="eyebrow">Professional portfolio</p>
         <h1>Jubileejoy "JJ" Zirebwa</h1>
-        <p class="hero-lede">Biomedical science, healthcare strategy and evidence-led innovation.</p>
+        <p class="hero-lede">First Class Biomedical Science graduate working across genomics, health data science, machine learning and healthcare innovation.</p>
         <p class="intro-copy">
-          I’m drawn to the messy middle between evidence and adoption where you have to ask whether a health innovation actually works, if it fits the system, who needs to be convinced, what risks need managing and what evidence is still missing.
+          My strongest work starts with biomedical evidence and then follows the data, governance and implementation questions that decide whether an analysis or health innovation can be trusted.
         </p>
         <p class="intro-copy">
-          My strongest experience comes from a full-year Health Innovation East placement across innovation triage, market intelligence, competitor analysis, QOF/ICB-aligned adoption work and an internal AI/MedTech toolkit I created, alongside governance-first Genomics England TRE research and earlier computational toxicology data mapping.
+          This portfolio brings together my First-Class Biomedical Science degree, a dissertation component (awarded 83%) using secure genomics-linked hospital trajectory analysis, a full-year Health Innovation East placement, earlier toxicology data work and selected systems-thinking projects.
         </p>
         <div class="action-row">
-          <a class="button" href="/case-studies/health-innovation-east/">Start with strongest evidence</a>
-          <a class="button secondary" href="/now/">See what I'm focused on now</a>
-          <a class="button secondary" href="/contact/">Get in touch</a>
+          <a class="button" href="/case-studies/final-year-project/">Start with the data project</a>
+          <a class="button secondary" href="/academic/">Academic profile</a>
+          <a class="button secondary" href="/cv/">View CV</a>
         </div>
       </div>
       <div class="hero-visual" aria-label="Portrait and portfolio focus areas">
@@ -106,10 +82,9 @@ const contextLogos = [
           />
           <figcaption>
             <span>Cambridge, UK</span>
-            <strong>Biomedical science with a healthcare strategy lens.</strong>
+            <strong>Biomedical science with genomics, data and health innovation evidence.</strong>
           </figcaption>
         </figure>
-        <EditorialPanel variant="evidence-journey" />
       </div>
     </div>
   </section>
@@ -133,49 +108,29 @@ const contextLogos = [
       <SectionHeader
         eyebrow="Read through my work"
         title="Choose a first route through the work"
-        lead="These are some useful first routes through my work. Each one gives context for reading the rest of the portfolio and then navigates back into the connected evidence."
+        lead="Use the route that matches what you want to check: academic evidence, applied data work, healthcare innovation, current direction or documents."
       />
       <div class="grid two">
         {startingPoints.map((item: RouteCard) => <LinkCard {...item} prefetch="hover" />)}
         <LinkCard
-          href="/now/"
+          href="/documents/"
           icon="writing"
+          eyebrow="Documents"
+          title="CV, transcript and project evidence"
+          text="A central place for selected documents, including a general CV, protected transcript and dissertation overview."
+          meta={['CV', 'Academic evidence', 'Project overview']}
+          prefetch="hover"
+        />
+        <LinkCard
+          href="/now/"
+          icon="evidence"
           eyebrow="Current direction"
-          title="What I'm focused on now"
-          text="Current focus areas, active questions and the direction I am trying to sharpen next."
-          meta={['Current focus', 'Open questions', 'Direction']}
+          title="Now"
+          text="A concise snapshot of what I am currently sharpening across biomedical science, genomics-linked data work and health innovation."
+          meta={['Current focus', 'Profile direction']}
           prefetch="hover"
         />
       </div>
-    </div>
-  </section>
-
-  <section class="section-band lens-band">
-    <div class="page-shell profile-lens">
-      <div>
-        <p class="eyebrow">Working lens</p>
-        <h2>From biological signal to adoption decision</h2>
-        <p>
-          My work sits between biomedical reasoning, health data, AI/MedTech governance and commercial strategy. This is the lens I use when reading a technology, dataset or evidence story.
-        </p>
-        <div class="gene-thread" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <ol class="lens-track">
-        {lensSteps.map((step) => (
-          <li>
-            <span>{step.label}</span>
-            <strong>{step.title}</strong>
-            <p>{step.text}</p>
-          </li>
-        ))}
-      </ol>
     </div>
   </section>
 
@@ -183,8 +138,8 @@ const contextLogos = [
     <div class="page-shell">
       <SectionHeader
         eyebrow="Selected work"
-        title="Case studies"
-        lead="The case studies focus on the problem, my role, the approach and the judgement involved. They are written for public reading, with sensitive details kept out."
+        title="Experience"
+        lead="Parent case studies covering the problem, my role, the method and the judgement involved."
       />
       <div class="grid three">
         {featuredCaseStudies.map((item: CaseStudyContent) => (
@@ -215,14 +170,14 @@ const contextLogos = [
       <div class="conversion-panel">
         <div>
           <p class="eyebrow">Call to action</p>
-          <h2>Follow the strongest proof, then pull the rest of the portfolio into view</h2>
+          <h2>Start with the evidence you need</h2>
           <p>
-            Start with Health Innovation East for my clearest evidence, use <a href="/now/">Now</a> for my present direction and get in touch if you want the fuller picture or role conversation.
+            Start with the <a href="/case-studies/final-year-project/">final-year project</a> for genomics-linked data work, use <a href="/case-studies/health-innovation-east/">Health Innovation East</a> for healthcare innovation experience, or go straight to <a href="/documents/">documents</a> for CV and academic evidence.
           </p>
         </div>
         <div class="action-row">
-          <a class="button" href="/case-studies/health-innovation-east/">Start with strongest evidence</a>
-          <a class="button secondary" href="/now/">See what I'm focused on now</a>
+          <a class="button" href="/case-studies/final-year-project/">Final-year project</a>
+          <a class="button secondary" href="/documents/">Documents</a>
           <a class="button secondary" href="/contact/">Get in touch</a>
         </div>
       </div>
@@ -232,9 +187,9 @@ const contextLogos = [
   <section class="section-band">
     <div class="page-shell">
       <div class="note">
-        <h2>Confidentiality note</h2>
+        <h2>What is included here</h2>
         <p>
-          Where appropriate, examples and details are summarised to respect protected information across projects and case studies in my work.
+          The site focuses on work that can be explained clearly: academic evidence, technical method, placement deliverables, research judgement and the documents that support them.
         </p>
       </div>
     </div>

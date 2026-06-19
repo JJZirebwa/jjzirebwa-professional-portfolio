@@ -40,4 +40,4 @@ The project shows how rare-disease evidence work can be technically interesting 
 
 ## Relevance
 
-This project is relevant to healthcare strategy, evidence judgement and biomedical data because it shows how I handle complex evidence under constraints by defining the question, tracing decisions, explaining limitations and resisting unsupported claims.
+This project is relevant to health innovation, evidence judgement and biomedical data because it shows how I handle complex evidence under constraints by defining the question, tracing decisions, explaining limitations and resisting unsupported claims.

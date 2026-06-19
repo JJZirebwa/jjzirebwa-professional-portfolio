@@ -1,19 +1,19 @@
 {
-  "order": 4,
+  "order": 1,
   "slug": "final-year-project",
   "icon": "data",
   "eyebrow": "Academic research",
   "title": "Final-year project",
   "kicker": "Biomedical data and evidence",
-  "summary": "A Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in Brugada-suspect research.",
-  "cardText": "Secure genomics-linked hospital trajectory analysis with explicit governance, reproducibility and limitations boundaries.",
-  "cardMeta": ["Secure research exposure", "Leakage-controlled", "Limitations-led"],
-  "homeFeatureOrder": 3,
+  "summary": "A dissertation component (awarded 83%) using secure, genomics-linked hospital trajectory analysis in Brugada-suspect research.",
+  "cardText": "Governance-aware health data science with cohort construction, ICD/HES-derived features, observability controls and model comparison.",
+  "cardMeta": ["83% dissertation", "Project pipeline", "Governance-aware"],
+  "homeFeatureOrder": 1,
   "routeContext": {
-    "order": 3,
-    "title": "Research and data exposure",
-    "description": "A first route into secure biomedical research, weak-signal judgement, feature reasoning and limitations-led interpretation.",
-    "meta": ["Weak-signal research", "Feature reasoning", "Governance discipline"]
+    "order": 1,
+    "title": "Genomics and health data science",
+    "description": "The strongest route into my applied data work: secure research context, feature engineering, modelling discipline and conservative interpretation.",
+    "meta": ["FYP 83%", "ICD/HES features", "ML baselines"]
   },
   "facts": [
     {
@@ -34,7 +34,7 @@
     },
     {
       "label": "Outputs",
-      "value": "Governance-aware methodology, feature reasoning, model comparisons and a limitations-led dissertation account."
+      "value": "Governance-aware methodology, feature reasoning, model comparisons, project pipeline documentation and a limitations-led dissertation account."
     },
     {
       "label": "Why it matters",
@@ -52,7 +52,7 @@
     "scientific writing",
     "limitations-led interpretation"
   ],
-  "boundary": "I describe the design and limitations without publishing restricted data, counts or model tables.",
+  "boundary": "I describe the design, method and interpretation without publishing restricted data or participant-level material.",
   "visualVariant": "genomics-ml-pipeline",
   "contextLogoKey": "genomics-england",
   "contextLogoAlt": "Genomics England logo",

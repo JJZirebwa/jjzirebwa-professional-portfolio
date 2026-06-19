@@ -1,6 +1,6 @@
 # ConsoneAI / DioScor
 
-## Public-Facing Summary
+## Summary
 
 I completed a short research internship connected to ConsoneAI/DioScor, supporting toxicology data mapping and structured data-preparation work for a dose-toxicity platform context.
 

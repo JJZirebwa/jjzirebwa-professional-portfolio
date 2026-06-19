@@ -1,0 +1,114 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portfolio/tree/main/academic/final-year-project/pipeline';
+---
+
+<BaseLayout
+  title="Documents"
+  description="Selected public and protected documents for Jubileejoy Zirebwa's portfolio."
+  dateModified="2026-06-19"
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">Documents</p>
+      <h1>Selected documents and resources</h1>
+      <p class="summary">
+        A selected set of documents tied to the main portfolio evidence: CV, academic record, dissertation overview and technical project links.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-band light" id="cv">
+    <div class="page-shell document-section">
+      <SectionHeader
+        eyebrow="CV"
+        title="General portfolio CV"
+        lead="A general CV for biomedical science, genomics-linked health data work and healthcare innovation roles."
+      />
+      <div class="document-card">
+        <span class="tag">PDF | Public</span>
+        <h3>Jubileejoy_Zirebwa_CV.pdf</h3>
+        <p>General CV covering Biomedical Science, final-year project, Health Innovation East, ConsoneAI/DioScor and core technical/evidence strengths.</p>
+        <div class="action-row">
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" download>Download</a>
+          <a class="button secondary" href="/cv/">CV page</a>
+        </div>
+      </div>
+      <object class="document-preview" data="/documents/Jubileejoy_Zirebwa_CV.pdf" type="application/pdf" aria-label="CV PDF preview">
+        <p>
+          PDF preview is not available in this browser.
+          <a href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF</a>.
+        </p>
+      </object>
+    </div>
+  </section>
+
+  <section class="section-band" id="academic-evidence">
+    <div class="page-shell document-section">
+      <SectionHeader
+        eyebrow="Academic evidence"
+        title="Transcript"
+        lead="The transcript is intentionally protected because it is an official academic document, not a normal public download."
+      />
+      <div class="document-card">
+        <span class="tag">PDF | Password protected</span>
+        <h3>Final award transcript</h3>
+        <p>Confirms First Class Honours, award date and module marks. Password available to recruiters or academic reviewers on request.</p>
+        <p class="privacy-note">Privacy status: protected. The password is not stored in source code, page content or generated static HTML.</p>
+        <div class="action-row">
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Transcript_password_protected.pdf">Open protected PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Transcript_password_protected.pdf" download>Download</a>
+          <a class="button secondary" href="/academic/">Academic page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light" id="dissertation">
+    <div class="page-shell document-section">
+      <SectionHeader
+        eyebrow="Dissertation"
+        title="Final-year project overview"
+        lead="Overview PDF for the 83% dissertation component and final-year project."
+      />
+      <div class="document-card">
+        <span class="tag">PDF | Public</span>
+        <h3>Dissertation overview</h3>
+        <p>Explains the research question, method design, selected figures, academic result and interpretation boundary for the final-year project.</p>
+        <div class="action-row">
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" download>Download</a>
+          <a class="button secondary" href="/case-studies/final-year-project/">FYP page</a>
+        </div>
+      </div>
+      <object class="document-preview" data="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" type="application/pdf" aria-label="Dissertation overview PDF preview">
+        <p>
+          PDF preview is not available in this browser.
+          <a href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open the dissertation overview PDF</a>.
+        </p>
+      </object>
+    </div>
+  </section>
+
+  <section class="section-band" id="technical">
+    <div class="page-shell document-section">
+      <SectionHeader
+        eyebrow="Technical"
+        title="Final-year project pipeline"
+        lead="GitHub folder showing the feature-build, model-comparison and reporting workflow from the project."
+      />
+      <div class="document-card">
+        <span class="tag">GitHub | Public</span>
+        <h3>Pipeline folder</h3>
+        <p>README, configuration files and Python scripts for cohort construction, feature engineering, observability controls, modelling and output generation.</p>
+        <div class="action-row">
+          <a class="button secondary" href={technicalHref} target="_blank" rel="noreferrer">Open GitHub folder</a>
+          <a class="button secondary" href="/case-studies/final-year-project/">Read FYP page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

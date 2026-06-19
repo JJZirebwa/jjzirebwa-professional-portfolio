@@ -1,6 +1,6 @@
 # Research Internship Overview
 
-## Public-Facing Summary
+## Summary
 
 I supported computational toxicology data preparation during a six-week research internship connected to the DioScor platform by ConsoneAI.
 

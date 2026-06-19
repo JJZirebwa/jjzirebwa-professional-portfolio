@@ -1,6 +1,6 @@
 # Results overview
 
-## Public-facing summary
+## Summary
 
  The project found that hospital-coded trajectory data carries potential to be explored for Brugada-suspect stratification, but the evidence did not justify clinical classification of such a cohort as the exemplar (Brugada Sundrome).
 

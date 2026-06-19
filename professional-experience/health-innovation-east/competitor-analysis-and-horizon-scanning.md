@@ -1,6 +1,6 @@
 # Competitor Analysis and Horizon Scanning
 
-## Public-Facing Summary
+## Summary
 
 I independently developed internal competitor-analysis materials and supported horizon-scanning work across health technologies, comparing products by purpose, evidence, functionality, pathway fit, regulatory position, integration considerations and commercial maturity.
 

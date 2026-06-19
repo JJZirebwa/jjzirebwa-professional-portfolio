@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const selectedMarks = [
+  ['Degree classification', 'First Class Honours', 'Awarded 10 June 2026'],
+  ['Undergraduate Project module', '82, A', '30-credit final-year project module'],
+  ['Dissertation write-up component', '83/100', 'Assessor feedback and ORION evidence matrix'],
+  ['Mathematics for the Biosciences', '91, A', 'Quantitative biological reasoning'],
+  ['General Microbiology', '84, A', 'Microbial systems and infection foundations'],
+  ['Human Pathology', '73, A', 'Disease morphology and systems pathology'],
+  ['Pharmacology and Translational Medicine', '71, A', 'Drug mechanisms, development, clinical translation.']
+];
+---
+
+<BaseLayout
+  title="Academic profile"
+  description="Academic profile for Jubileejoy Zirebwa, First Class Biomedical Science graduate with a governance-aware final-year project."
+  dateModified="2026-06-19"
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">Academic profile</p>
+      <h1>Biomedical Science (Hons)</h1>
+      <p class="summary">
+        I graduated with First Class Honours in BSc (Hons) Biomedical Science from Anglia Ruskin University, Cambridge. The degree sits underneath the genomics, health data science and healthcare innovation work shown elsewhere in the portfolio.
+      </p>
+      <div class="action-row">
+        <a class="button" href="/case-studies/final-year-project/">View final-year project</a>
+        <a class="button secondary" href="/documents/#academic-evidence">Academic documents</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Confirmed record"
+        title="Selected academic evidence"
+      />
+      <dl class="proof-grid">
+        {selectedMarks.map(([label, value, note]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd><strong>{value}</strong><span>{note}</span></dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>Academic emphasis</h2>
+        <p>
+          The degree covered pathology, genetics, pharmacology, microbiology, haematology, immunology, translational medicine, quantitative methods and scientific writing.
+        </p>
+      </div>
+      <div class="document-card compact-document" id="academic-evidence">
+        <span class="tag">Protected PDF</span>
+        <h3>Final award transcript</h3>
+        <p>
+          The transcript is available as a password-protected PDF. I can provide the password to recruiters or academic reviewers on request.
+        </p>
+        <div class="action-row">
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Transcript_password_protected.pdf">Open protected PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Transcript_password_protected.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

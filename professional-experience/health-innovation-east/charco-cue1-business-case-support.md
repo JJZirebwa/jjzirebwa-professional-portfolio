@@ -1,6 +1,6 @@
 # Charco / CUE1 Business-Case Support
 
-## Public-Facing Summary
+## Summary
 
 This case study summarises my co-authored and support-based work around CUE1, a Parkinson's cueing device, with emphasis on evidence synthesis, patient independence, quality of life, pathway fit and adoption logic.
 

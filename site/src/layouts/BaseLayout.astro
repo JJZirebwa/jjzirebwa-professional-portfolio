@@ -6,7 +6,7 @@ import { getSocialCardByPath } from '../data/socialCards';
 
 const {
   title = 'Jubileejoy "JJ" Zirebwa',
-  description = 'Biomedical Science student and early-career healthcare strategy profile.',
+  description = 'First Class Biomedical Science graduate with genomics, health data science, healthcare innovation and evidence-led strategy experience.',
   dateModified,
   structuredData = []
 } = Astro.props;
@@ -51,7 +51,10 @@ const personSchema = {
     ],
     knowsAbout: [
       'Biomedical science',
-      'Healthcare strategy',
+      'Genomics',
+      'Healthcare data science',
+      'Machine learning',
+      'Health innovation strategy',
       'Health innovation',
       'AI and MedTech governance',
       'Biomedical data analysis',
@@ -90,15 +93,20 @@ const isActive = (href: string) => href === '/'
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about/', label: 'About' },
-  { href: '/case-studies/', label: 'Case studies' },
+  { href: '/academic/', label: 'Academic' },
+  { href: '/case-studies/', label: 'Experience' },
   { href: '/projects/', label: 'Projects' },
-  { href: '/skills/', label: 'Skills' },
+  { href: '/cv/', label: 'CV' },
+  { href: '/documents/', label: 'Documents' },
   { href: '/contact/', label: 'Contact' }
 ];
 
 const footerNavItems = [
   { href: '/now/', label: 'Now' },
-  { href: '/case-studies/', label: 'Case studies' },
+  { href: '/academic/', label: 'Academic' },
+  { href: '/cv/', label: 'CV' },
+  { href: '/documents/', label: 'Documents' },
+  { href: '/case-studies/', label: 'Experience' },
   { href: '/projects/', label: 'Projects' },
   { href: '/skills/', label: 'Skills' },
   { href: '/contact/', label: 'Contact' }
@@ -146,7 +154,7 @@ const footerNavItems = [
       <div class="nav-shell">
         <a class="brand" href="/" aria-label="Home">
           <strong>Jubileejoy "JJ" Zirebwa</strong>
-          <span>Biomedical science | healthcare strategy | evidence</span>
+          <span>Biomedical science | Genomics | Health Data</span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
           {navItems.map((item) => (
@@ -168,7 +176,7 @@ const footerNavItems = [
       <div class="footer-shell">
         <div class="footer-copy">
           <strong>Jubileejoy "JJ" Zirebwa</strong>
-          <span>Selected work, shared with appropriate confidentiality.</span>
+          <span>Biomedical science, genomics-linked data work and health innovation.</span>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
           {footerNavItems.map((item) => <a href={item.href} data-astro-prefetch="hover">{item.label}</a>)}

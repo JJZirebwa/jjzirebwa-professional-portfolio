@@ -3,7 +3,6 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const editorialVariants = [
-  'evidence-journey',
   'current-vector',
   'adoption-pathway',
   'market-landscape',

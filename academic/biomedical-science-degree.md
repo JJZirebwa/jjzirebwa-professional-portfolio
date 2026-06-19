@@ -3,7 +3,7 @@
 ## Overview
 
 **Degree:** BSc Biomedical Science, Anglia Ruskin University, Cambridge  
-**Status:** Final-year student, expected completion in 2026  
+**Status:** Completed; First Class Honours awarded on 10 June 2026  
 **Placement year:** Health Innovation East commercial placement, 2024-2025
 
 My degree has given me a broad biomedical science base across microbiology, anatomy, physiology, cell biology, biochemistry, pathology, genetics, metabolism, pharmacology and clinical science. The later stages of the course connect laboratory and mechanistic science to evidence interpretation, translational medicine and health-data research.
@@ -20,15 +20,15 @@ My academic profile is strongest where biomedical science must be interpreted th
 
 ## Confirmed academic record
 
-The interim transcript records strong performance across Level 4 and Level 5, a pass for the placement year, and confirmed Level 6 marks to date. The remaining final-trimester items are still pending.
+The final award transcript confirms First Class Honours. The protected transcript is available through the website documents page.
 
 | Stage | Confirmed record |
 |---|---|
 | Level 4 | Five A grades, including General Microbiology 84, Mathematics for the Biosciences 91, Core Biology 74, Human Anatomy and Physiology 71, and Introduction to Cell Biology and Biochemistry 78. |
 | Level 5 | A grades in Preparation for Research 70, Metabolism and its Control 73, and Principles of Genetics 72; B grades across the remaining marked Level 5 modules. |
 | Placement year | UG Work Placement School of Life Sciences: Pass. |
-| Level 6 to date | Human Pathology 73 A, Pharmacology and Translational Medicine 71 A, Specialist Topics in Biomedical Science 65 B. |
-| Pending | Haematology, Immunology and Transfusion Science; Current Advances in Biomedical Science; final-year project/dissertation. |
+| Level 6 | Human Pathology 73 A, Pharmacology and Translational Medicine 71 A, Specialist Topics in Biomedical Science 65 B, Haematology, Immunology and Transfusion Science 62 B, Current Advances in Biomedical Science 55 C, and Undergraduate Project 82 A. |
+| Degree classification | First Class Honours, awarded 10 June 2026. |
 
 ## Selected modules
 

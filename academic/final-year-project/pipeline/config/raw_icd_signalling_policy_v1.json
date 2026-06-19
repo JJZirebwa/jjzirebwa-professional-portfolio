@@ -1,0 +1,120 @@
+{
+  "policy_id": "raw_icd_signalling_policy_v1",
+  "policy_version": "2026-03-25",
+  "analysis_mode": "raw_icd_signalling",
+  "outer_resampling": {
+    "design": "repeated_stratified_holdout",
+    "test_size": 0.25,
+    "default_seeds": [42, 52, 62, 72, 82],
+    "comparability_note": "Keep participant-level split proportions aligned with the main branch repeated-holdout defaults."
+  },
+  "support_score": {
+    "formula_id": "support_log_product_v1",
+    "formula_text": "s_sup(c) = log10((n_pt(c) + 0.5) * (n_evt(c) + 0.5))",
+    "participant_support_definition": "n_pt(c) = number of distinct training participants with code c present.",
+    "event_volume_definition": "n_evt(c) = event-volume term carried with the code during support screening.",
+    "event_volume_operationalisation_v1": "Current repo artefacts provide binary participant-level code presence plus Stage A global event counts. v1 therefore uses the Stage A event_occurrence_n metadata scaled by the observed training-support ratio as the event-volume term proxy and logs this explicitly in every seed manifest.",
+    "zero_offset": 0.5
+  },
+  "support_threshold_policy": {
+    "policy_id": "empirical_quantile_one_se_v1",
+    "quantile_grid": [
+      0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45,
+      0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85
+    ],
+    "inner_cv_folds": 3,
+    "score_metric": "balanced_accuracy",
+    "selection_rule": "most_strongly_pruning_within_one_standard_error_of_best",
+    "se_rule": "Use the standard error of the candidate with the highest mean inner-CV balanced accuracy."
+  },
+  "target_skew_metric": {
+    "metric_id": "phi_continuity_corrected_v1",
+    "continuity_correction": 0.5,
+    "ranking_key": "abs_phi",
+    "grouping_direction_key": "phi_sign"
+  },
+  "grouping_policy": {
+    "policy_id": "target_concordant_weighted_jaccard_v1",
+    "partition_keys": ["icd_chapter", "phi_sign"],
+    "cooccurrence_similarity": "jaccard",
+    "weighted_similarity_formula": "W(i,j) = J(i,j) * sqrt(abs(phi_i) * abs(phi_j))",
+    "distance_formula": "D(i,j) = 1 - W(i,j)",
+    "clustering": {
+      "method": "agglomerative_hierarchical",
+      "linkage": "average",
+      "cut_rule": "largest_adjacent_gap_midpoint",
+      "small_partition_rule": "For partitions with fewer than 3 codes, keep singleton groups or a single pair group as implied by the linkage structure without forcing extra merges."
+    }
+  },
+  "group_feature_representation": {
+    "version": "v1",
+    "participant_feature": "binary_group_ever",
+    "allow_group_count_features": false,
+    "allow_group_rate_features": false,
+    "retain_group_event_volume_stats": true
+  },
+  "model_family_order": {
+    "primary_model": "lr",
+    "benchmark_models": ["rf", "nn"],
+    "class_weight_mode": "none",
+    "lr": {
+      "penalty": "l2",
+      "solver": "liblinear",
+      "max_iter": 2000
+    },
+    "rf": {
+      "n_estimators": 500,
+      "max_depth": null
+    },
+    "nn": {
+      "hidden_layers": [32, 16],
+      "alpha": 0.001,
+      "learning_rate_init": 0.0005,
+      "max_iter": 1200,
+      "early_stopping": true
+    }
+  },
+  "evaluation_defaults": {
+    "threshold_free_metrics_primary": true,
+    "threshold_policy": "train_balanced_accuracy_min_specificity",
+    "min_specificity_floor": 0.55,
+    "reporting_primary": "median_iqr_across_seeds",
+    "appendix_only": "best_observed_seed_ranking"
+  },
+  "required_root_outputs": [
+    "run_manifest.json",
+    "investigation_control_snapshot.json",
+    "policy_snapshot.json",
+    "summary_metrics_by_seed.csv",
+    "summary_metrics_aggregate.csv",
+    "best_seed_appendix_summary.csv",
+    "all_groups_long.csv",
+    "all_codes_long.csv",
+    "README_run_summary.md"
+  ],
+  "required_seed_outputs": [
+    "seed_manifest.json",
+    "train_test_split_membership.csv",
+    "support_summary.csv",
+    "support_threshold_tuning.csv",
+    "code_phi_summary.csv",
+    "group_definition_table.csv",
+    "code_to_group_mapping.csv",
+    "group_feature_matrix_train.csv",
+    "group_feature_matrix_test.csv",
+    "lr_metrics.json",
+    "rf_metrics.json",
+    "nn_metrics.json",
+    "lr_coefficients.csv"
+  ],
+  "required_plot_outputs": [
+    "support_score_histogram.png",
+    "support_threshold_tuning.png",
+    "top_phi_lollipop.png",
+    "weighted_similarity_heatmap_<chapter>_<sign>.png",
+    "group_feature_prevalence.png",
+    "roc_curves.png",
+    "pr_curves.png",
+    "calibration_curves.png"
+  ]
+}

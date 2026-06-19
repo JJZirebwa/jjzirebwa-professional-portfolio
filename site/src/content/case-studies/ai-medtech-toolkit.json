@@ -8,13 +8,6 @@
   "summary": "A practical internal toolkit I authored to turn AI/MedTech regulation, evidence, data governance and implementation considerations into usable advisory guidance.",
   "cardText": "Practical internal guidance-support material for advisory work, not formal regulatory or clinical-safety advice.",
   "cardMeta": ["Authored toolkit", "Governance guidance", "Internal advisory"],
-  "homeFeatureOrder": 2,
-  "routeContext": {
-    "order": 2,
-    "title": "AI/MedTech governance exposure",
-    "description": "A first route into governance translation work across evidence standards, clinical safety, information governance and adoption questions.",
-    "meta": ["Toolkit authoring", "Governance translation", "Advisory support"]
-  },
   "facts": [
     {
       "label": "Role",

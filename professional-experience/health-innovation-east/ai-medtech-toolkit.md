@@ -1,6 +1,6 @@
 # AI Toolkit
 
-## Public-Facing Summary
+## Summary
 
 I authored a practical internal AI/MedTech guidance resource during a Health Innovation East commercial placement. The work translated regulatory, evidence, data-governance and implementation considerations into usable support material for innovation advisory work.
 

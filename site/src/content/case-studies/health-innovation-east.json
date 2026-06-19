@@ -1,5 +1,5 @@
 {
-  "order": 1,
+  "order": 2,
   "slug": "health-innovation-east",
   "icon": "strategy",
   "eyebrow": "Commercial placement",
@@ -8,10 +8,10 @@
   "summary": "A one-year commercial placement working across NHS-facing innovation, evidence synthesis, market intelligence, competitor analysis, pathway fit and adoption logic.",
   "cardText": "One-year NHS-facing commercial health innovation placement across evidence, market intelligence, pathway fit and adoption reasoning.",
   "cardMeta": ["One-year placement", "Owned deliverables", "NHS-facing innovation"],
-  "homeFeatureOrder": 1,
+  "homeFeatureOrder": 2,
   "routeContext": {
-    "order": 1,
-    "title": "Healthcare strategy context",
+    "order": 2,
+    "title": "Healthcare innovation context",
     "description": "A strong first route into NHS-facing innovation, adoption logic, market intelligence and decision support.",
     "meta": ["Health Innovation East", "Adoption logic", "Decision-ready analysis"]
   },
@@ -50,7 +50,7 @@
     "responsible judgement",
     "AI/MedTech governance"
   ],
-  "boundary": "This is a public-facing account of the work and judgement involved. It is not an endorsement by Health Innovation East, NHS bodies or the named companies.",
+  "boundary": "This is only an account of the work and judgement involved.",
   "visualVariant": "adoption-pathway",
   "contextLogoKey": "health-innovation-east",
   "contextLogoAlt": "Health Innovation East logo",

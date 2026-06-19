@@ -3,19 +3,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
 import EditorialPanel from '../components/EditorialPanel.astro';
-import { getProjectContextCards, getProjectExploratoryStrand } from '../data/content';
+import { getProjectExploratoryStrand } from '../data/content';
 
-const projectCards = await getProjectContextCards();
 const exploratory = await getProjectExploratoryStrand();
+
+const deliverables = [
+  {
+    href: '/case-studies/final-year-project/',
+    icon: 'data' as const,
+    eyebrow: 'Final-year project method',
+    title: 'Exploratory modelling approach',
+    text: 'Cohort construction, ICD/HES-derived feature engineering, observability controls and LR/RF/NN model comparison under a rare-disease evidence boundary.',
+    meta: ['Parent: Final-year project', 'Feature pipeline', 'Model evaluation']
+  },
+  {
+    href: '/case-studies/ai-medtech-toolkit/',
+    icon: 'governance' as const,
+    eyebrow: 'Health Innovation East deliverable',
+    title: 'AI Toolkit',
+    text: 'Internal guidance-support material translating AI/MedTech governance, evidence expectations, clinical safety and data requirements into advisory questions.',
+    meta: ['Parent: HIE placement', 'AI/MedTech governance', 'Toolkit authoring']
+  },
+  {
+    href: '/case-studies/market-intelligence/',
+    icon: 'market' as const,
+    eyebrow: 'Health Innovation East method',
+    title: 'Market intelligence and competitor analysis',
+    text: 'Structured market, competitor and horizon-scanning work for live innovation questions, shaped around evidence quality and pathway fit.',
+    meta: ['Parent: HIE placement', 'CB Insights', 'Decision support']
+  },
+  {
+    href: '/case-studies/consoneai-dioscor/',
+    icon: 'research' as const,
+    eyebrow: 'Internship method',
+    title: 'Computational toxicology data preparation',
+    text: 'Dose-toxicity data mapping and structured preparation work from the ConsoneAI/DioScor research internship.',
+    meta: ['Parent: ConsoneAI/DioScor', 'Data mapping', 'Toxicology context']
+  }
+];
 ---
 
-<BaseLayout title="Projects" description="Project themes across healthcare strategy, biomedical data and exploratory evidence-methods thinking.">
+<BaseLayout title="Projects" description="Contained portfolio projects and methods linked to parent experiences.">
   <section class="case-hero">
     <div class="page-shell">
-      <p class="eyebrow">Project themes</p>
-      <h1>Projects</h1>
+      <p class="eyebrow">Projects</p>
+      <h1>Deliverables and methods</h1>
       <p class="summary">
-        My project work falls into three connected areas: commercial health innovation, biomedical data and evidence, and careful exploratory thinking about future research methods.
+        This page is the contained-work lane. It links focused deliverables and methods back to the larger experiences they came from, so projects do not repeat the parent case studies with different labels.
       </p>
     </div>
   </section>
@@ -23,12 +57,12 @@ const exploratory = await getProjectExploratoryStrand();
   <section class="section-band light">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Selected projects"
-        title="Work with evidence and judgement"
-        lead="These project routes show how I approach strategy, data and methods when the evidence is useful but incomplete."
+        eyebrow="Contained lane"
+        title="Focused project work"
+        lead="Each card is a deliverable, method or technical workstream. The parent context is named in the card metadata."
       />
-      <div class="grid three">
-        {projectCards.map((item) => <LinkCard {...item} meta={item.cardMeta} />)}
+      <div class="grid two">
+        {deliverables.map((item) => <LinkCard {...item} prefetch="hover" />)}
       </div>
     </div>
   </section>
