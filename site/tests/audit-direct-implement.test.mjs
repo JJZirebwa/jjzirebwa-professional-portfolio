@@ -17,135 +17,93 @@ const readBuiltPage = (relativePath) => {
   return readFileSync(filePath, 'utf8');
 };
 
-test('audit direct-implement routes render the expected upgraded content and structure', async (t) => {
+test('refreshed portfolio routes render the graduate, FYP and document surfaces', async (t) => {
   execFileSync('npm', ['run', 'build'], {
     cwd: siteRoot,
     stdio: 'pipe'
   });
 
-  await t.test('home page uses the stronger role-alignment copy, CTA journey, and Astro asset output', () => {
+  await t.test('home page leads with the balanced Biomedical Science graduate positioning', () => {
     const html = readBuiltPage('');
 
-    assert.match(
-      html,
-      /messy middle between evidence and adoption/
-    );
-    assert.match(html, /My strongest experience comes from a full-year Health Innovation East placement/);
-    assert.match(html, /href="\/case-studies\/health-innovation-east\/"[^>]*data-astro-prefetch="hover"/);
-    assert.match(html, /src="\/_astro\//);
-    assert.doesNotMatch(html, /src="\/images\/jubileejoy-zirebwa-headshot\.jpg"/);
-    assert.match(
-      html,
-      /<div class="action-row">\s*<a class="button" href="\/case-studies\/health-innovation-east\/">Start with strongest evidence<\/a>\s*<a class="button secondary" href="\/now\/">See what I(?:&#39;|')m focused on now<\/a>\s*<a class="button secondary" href="\/contact\/">Get in touch<\/a>/
-    );
-    assert.match(html, /Choose a first route through the work/);
-    assert.match(html, /Healthcare strategy context/);
-    assert.match(html, /AI\/MedTech governance exposure/);
-    assert.match(html, /Research and data exposure/);
-    assert.match(html, /What I(?:&#39;|')m focused on now/);
-    assert.match(html, /data-editorial-variant="evidence-journey"/);
-    assert.match(html, /Evidence to decision/);
-    assert.doesNotMatch(html, /panel-block/);
+    assert.match(html, /First Class Biomedical Science graduate/);
+    assert.match(html, /Biomedical science, genomics and health data/);
+    assert.match(html, /href="\/case-studies\/final-year-project\/"/);
+    assert.match(html, /href="\/academic\/"/);
+    assert.match(html, /href="\/documents\/"/);
+    assert.match(html, /Genomics and health data science/);
+    assert.doesNotMatch(html, /data-editorial-variant="evidence-journey"/);
+    assert.doesNotMatch(html, /Evidence to decision/);
+    assert.doesNotMatch(html, /Working lens/);
+    assert.doesNotMatch(html, /healthcare strategy specialist/i);
     assert.match(html, /<meta property="og:image" content="https:\/\/jubileejoyzirebwa\.com\/og\/home\.png">/);
-    assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
     assert.match(html, /"@type":"WebSite"/);
     assert.doesNotMatch(html, /"@type":"ProfilePage"/);
   });
 
-  await t.test('case-study pages include breadcrumbs, summary facts, ORION copy updates, and editorial variants', () => {
-    const hieHtml = readBuiltPage('case-studies/health-innovation-east');
-    const marketHtml = readBuiltPage('case-studies/market-intelligence');
-    const fypHtml = readBuiltPage('case-studies/final-year-project');
-    const toolkitHtml = readBuiltPage('case-studies/ai-medtech-toolkit');
-    const consoneHtml = readBuiltPage('case-studies/consoneai-dioscor');
+  await t.test('final-year project route exposes source-backed evidence without sensitive identifiers', () => {
+    const html = readBuiltPage('case-studies/final-year-project');
 
-    assert.match(hieHtml, /<nav class="breadcrumbs" aria-label="Breadcrumbs">/);
-    assert.match(hieHtml, /<nav class="case-jump-nav" aria-labelledby="case-jump-title">/);
-    assert.match(hieHtml, /href="#context"/);
-    assert.match(hieHtml, /id="my-role"/);
-    assert.match(hieHtml, /href="#what-this-shows"/);
-    assert.match(hieHtml, /Role<\/dt>/);
-    assert.match(hieHtml, /Outputs<\/dt>/);
-    assert.match(hieHtml, /My role combined independently owned deliverables with co-authored advisory work\./);
-    assert.match(hieHtml, /"@type":"BreadcrumbList"/);
-    assert.match(hieHtml, /data-editorial-variant="adoption-pathway"/);
-    assert.match(hieHtml, /Adoption pathway/);
-    assert.match(hieHtml, /Triage/);
-
-    assert.match(
-      marketHtml,
-      /I turned noisy market data into reusable decision support: structured company lists, competitor matrices, funding and maturity signals, evidence comparisons, and pathway-fit questions that colleagues could use quickly\./
-    );
-    assert.match(marketHtml, /data-editorial-variant="market-landscape"/);
-    assert.match(marketHtml, /Competitive landscape/);
-    assert.match(
-      fypHtml,
-      /The main contribution is not a deployable classifier\. It is a biologically and numerically honest account of what hospital trajectories can and cannot reveal in a rare-disease, weak-signal setting\./
-    );
-    assert.match(fypHtml, /data-editorial-variant="genomics-ml-pipeline"/);
-    assert.match(fypHtml, /Genomics \+ ML pipeline/);
-    assert.match(toolkitHtml, /data-editorial-variant="governance-lifecycle"/);
-    assert.match(toolkitHtml, /AI\/MedTech lifecycle/);
-    assert.doesNotMatch(toolkitHtml, /<h2>Boundary<\/h2>/);
-    assert.match(consoneHtml, /data-editorial-variant="toxicity-workflow"/);
-    assert.match(consoneHtml, /Dose-toxicity mapping/);
-    assert.match(hieHtml, /<h2>Boundary<\/h2>/);
-    for (const pageHtml of [hieHtml, marketHtml, fypHtml, toolkitHtml, consoneHtml]) {
-      assert.doesNotMatch(pageHtml, /panel-block/);
-    }
+    assert.match(html, /83\/100/);
+    assert.match(html, /logistic regression/i);
+    assert.match(html, /random forest/i);
+    assert.match(html, /shallow neural network/i);
+    assert.match(html, /observability controls/i);
+    assert.match(html, /Fairness, subgroup and governance considerations/i);
+    assert.match(html, /Jubileejoy_Zirebwa_Dissertation_Overview\.pdf/);
+    assert.match(html, /academic\/final-year-project\/pipeline/);
+    assert.match(html, /feature-domain-summary\.png/);
+    assert.match(html, /sanitised reconstruction/i);
+    assert.doesNotMatch(html, /2208155|SID|\/Users\/|\/home\/|raw patient|account name/i);
   });
 
-  await t.test('now, about, 404, and projects pages expose the new journey content', () => {
-    const nowHtml = readBuiltPage('now');
-    const aboutHtml = readBuiltPage('about');
-    const contactHtml = readBuiltPage('contact');
-    const notFoundHtml = readBuiltPage('404.html');
-    const projectsHtml = readBuiltPage('projects');
+  await t.test('academic, CV and documents routes expose the right protected-document model', () => {
+    const academicHtml = readBuiltPage('academic');
+    const cvHtml = readBuiltPage('cv');
+    const documentsHtml = readBuiltPage('documents');
 
-    assert.match(nowHtml, /<h1>Now<\/h1>/);
-    assert.match(nowHtml, /Last updated/);
-    assert.match(nowHtml, /Current focus/);
-    assert.match(nowHtml, /Questions I am sharpening/);
-    assert.match(nowHtml, /Direction I am moving toward/);
-    assert.match(nowHtml, /Recent updates/);
-    assert.match(nowHtml, /Portfolio shaped around evidence, direction and contact/);
-    assert.match(nowHtml, /Public case studies added for healthcare innovation and research work/);
-    assert.match(nowHtml, /Future methods interest clarified from final-year research/);
-    assert.doesNotMatch(nowHtml, /backend|pull request|GitHub|build log|development changelog/i);
-    assert.match(nowHtml, /Where to go next/);
-    assert.match(nowHtml, /href="\/case-studies\/health-innovation-east\/"[^>]*data-astro-prefetch="hover"/);
-    assert.match(nowHtml, /data-editorial-variant="current-vector"/);
-    assert.match(nowHtml, /Current trajectory/);
-    assert.match(nowHtml, /<meta property="og:image" content="https:\/\/jubileejoyzirebwa\.com\/og\/now\.png">/);
-    assert.match(
-      aboutHtml,
-      /Interim transcript currently supports a First-class trajectory, with final classification still subject to official confirmation\./
-    );
-    assert.match(aboutHtml, /See what I(?:&#39;|')m focused on now/);
-    assert.match(aboutHtml, /"@type":"ProfilePage"/);
-    assert.match(aboutHtml, /"dateModified":"2026-05-27"/);
-    assert.match(contactHtml, /<span>LinkedIn<\/span>/);
-    assert.match(contactHtml, /href="https:\/\/www\.linkedin\.com\/in\/jubileejoy-zirebwa"/);
-    assert.doesNotMatch(contactHtml, /LI-profile-badge|badge-base|linkedin-profile-card/);
-    assert.match(notFoundHtml, /Best places to start/);
-    assert.match(notFoundHtml, /Health Innovation East/);
-    assert.match(notFoundHtml, /About my profile/);
-    assert.match(
-      projectsHtml,
-      /Exploratory methods focused on weak-signal recovery\. This strand grows out of the final-year project(?:&#39;|')s rare-disease limits: biologically informed, provenance-aware methods for hypothesis generation, study-design support and measurement prioritisation when the data is sparse and the next evidence decision matters\./
-    );
-    assert.match(projectsHtml, /Concept-stage methods thinking, not a validated platform or clinical tool\./);
-    assert.equal((projectsHtml.match(/Concept-stage methods thinking, not a validated platform or clinical tool\./g) ?? []).length, 1);
-    assert.match(projectsHtml, /data-editorial-variant="weak-signal-methods"/);
-    assert.match(projectsHtml, /Weak-signal methods/);
-    assert.doesNotMatch(projectsHtml, /panel-block/);
+    assert.match(academicHtml, /First Class Honours awarded on 10 June 2026/);
+    assert.match(academicHtml, /Undergraduate Project/);
+    assert.match(academicHtml, /82, A, 30 credits/);
+    assert.match(academicHtml, /Jubileejoy_Zirebwa_Transcript_password_protected\.pdf/);
+    assert.match(academicHtml, /password protected/i);
+
+    assert.match(cvHtml, /General portfolio CV/);
+    assert.match(cvHtml, /Jubileejoy_Zirebwa_CV\.pdf/);
+    assert.match(cvHtml, /not tailored to one application/i);
+    assert.doesNotMatch(cvHtml, /First-class trajectory|on track|expected first class/i);
+
+    assert.match(documentsHtml, /Document library/);
+    assert.match(documentsHtml, /Privacy status/);
+    assert.match(documentsHtml, /Password-protected transcript/);
+    assert.match(documentsHtml, /Jubileejoy_Zirebwa_Dissertation_Overview\.pdf/);
+    assert.match(documentsHtml, /Jubileejoy_Zirebwa_CV\.pdf/);
+    assert.doesNotMatch(documentsHtml, /password[^<]{0,60}=/i);
+  });
+
+  await t.test('supporting pages keep the graduate/data profile aligned', () => {
+    const aboutHtml = readBuiltPage('about');
+    const caseStudiesHtml = readBuiltPage('case-studies');
+    const contactHtml = readBuiltPage('contact');
+    const skillsHtml = readBuiltPage('skills');
+
+    assert.match(aboutHtml, /First Class Honours/);
+    assert.match(aboutHtml, /genomics-linked health data research/);
+    assert.match(caseStudiesHtml, /biomedical data research, healthcare innovation, AI\/MedTech governance and market analysis/i);
+    assert.match(contactHtml, /biomedical science, genomics-linked health data work/i);
+    assert.match(skillsHtml, /Biomedical data analysis/);
+
+    for (const pageHtml of [aboutHtml, caseStudiesHtml, contactHtml, skillsHtml]) {
+      assert.doesNotMatch(pageHtml, /expected first class|on track|First-class trajectory/i);
+    }
   });
 
   await t.test('route-specific social images are generated as static PNG files', () => {
     for (const imagePath of [
       'og/home.png',
-      'og/now.png',
-      'og/health-innovation-east.png',
+      'og/academic.png',
+      'og/cv.png',
+      'og/documents.png',
       'og/final-year-project.png'
     ]) {
       const imageStats = statSync(path.join(distRoot, imagePath));

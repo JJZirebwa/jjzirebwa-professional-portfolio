@@ -1,6 +1,6 @@
 # Dose-Toxicity Data Workflow
 
-## Public-Facing Summary
+## Summary
 
 This page describes a high-level workflow for dose-toxicity data handling during the ConsoneAI/DioScor internship.
 

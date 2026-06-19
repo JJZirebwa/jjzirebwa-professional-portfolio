@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const githubPipelineHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portfolio/tree/main/academic/final-year-project/pipeline';
+const breadcrumbs = [
+  { href: '/', label: 'Home' },
+  { href: '/case-studies/', label: 'Experience' },
+  { label: 'Final-year project' }
+];
+
+const methodPoints = [
+  'Defined the analysis around a Brugada-suspect research cohort, with pre-sequencing hospital episode records treated as historical trajectory evidence.',
+  'Built participant-level feature tables from admitted care, outpatient and emergency-care sources, using ICD/OPCS groupings, temporal windows and utilisation features.',
+  'Added observability controls so record depth, available history and sparse coding were visible design constraints rather than hidden noise.',
+  'Kept preprocessing behind the train/test split so imputation, scaling and encoding were fitted from training data only.',
+  'Compared logistic regression, random forest and shallow neural-network baselines rather than relying on one model family.',
+  'Used thresholding, repeated split checks, model metrics, feature-effect outputs and subgroup/fairness review to keep the interpretation bounded.'
+];
+
+const sourceFacts = [
+  ['Academic result', 'Dissertation write-up component: 83%. Wider Undergraduate Project module: 82, A, 30 credits.'],
+  ['Project type', 'Undergraduate Biomedical Science final-year project with applied health data science and machine-learning components.'],
+  ['Research context', 'Exploratory Brugada-suspect work using genomics-linked hospital episode material inside an approved secure research environment.'],
+  ['Technical work', 'Cohort logic, ICD/HES-derived feature engineering, observability controls, split-first preprocessing, LR/RF/NN model comparison and output generation.']
+];
+
+const figures = [
+  {
+    src: '/images/fyp/analytical-design.png',
+    alt: 'Analytical design diagram for the final-year project.',
+    caption: 'Analysis design: cohort, hospital-event features, model comparison and interpretation boundary.'
+  },
+  {
+    src: '/images/fyp/cohort-architecture.png',
+    alt: 'Cohort architecture chart from the dissertation overview.',
+    caption: 'Cohort and target architecture used to frame the analysis.'
+  },
+  {
+    src: '/images/fyp/observability-depth.png',
+    alt: 'Observability depth chart showing record-history and code-history coverage.',
+    caption: 'Observability checks made record depth part of the method, not an afterthought.'
+  },
+  {
+    src: '/images/fyp/feature-domain-summary.png',
+    alt: 'Bar chart showing final compact feature-domain structure.',
+    caption: 'Compact feature-domain structure across ventricular severity, conduction, syncope, pathway proxy and observability.'
+  },
+  {
+    src: '/images/fyp/model-performance.png',
+    alt: 'Compact model-family comparison across balanced accuracy, ROC AUC, PR AUC and probability error.',
+    caption: 'Model-family comparison across interpretable, tree-based and shallow neural-network baselines.'
+  },
+  {
+    src: '/images/fyp/rf-feature-stability.png',
+    alt: 'Random forest feature stability chart across repeated splits.',
+    caption: 'Feature-stability review helped test whether signal was stable enough to discuss.'
+  }
+];
+
+const codeSnippets = [
+  {
+    title: 'Cohort and event alignment',
+    note: 'The feature build starts by normalising the cohort index and aligning hospital-event tables to pre-index windows.',
+    code: [
+      'cohort["sequencing_date"] = pd.to_datetime(cohort["sequencing_date"], errors="coerce")',
+      'cohort["sequencing_date_missing"] = cohort["sequencing_date"].isna().astype(int)',
+      'cohort_index = cohort[["participant_id", "sequencing_date"]].drop_duplicates("participant_id")',
+      '',
+      'apc_norm = prepare_hes_events(apc, "admidate", cohort_index, "hes_apc")',
+      'op_norm = prepare_hes_events(op, "apptdate", cohort_index, "hes_op")',
+      'ae_norm = prepare_hes_events(ae, "arrivaldate", cohort_index, "hes_ae")',
+      '',
+      'apc_w_core = filter_window(apc_norm, core_window_years)',
+      'apc_w_recent = filter_window(apc_norm, recent_window_years)'
+    ]
+  },
+  {
+    title: 'Observability controls',
+    note: 'Record depth and service-use density were carried as features and review metadata so sparse history could not disappear inside the model.',
+    code: [
+      'base["exposure_years_core"] = np.where(',
+      '    base["observation_years_preindex"].notna(),',
+      '    np.minimum(base["observation_years_preindex"], core_window_years),',
+      '    np.nan,',
+      ')',
+      'short_history_col = f"short_history_indicator_{core_tag}"',
+      'base[short_history_col] = np.where(',
+      '    base["exposure_years_core"].notna(),',
+      '    (base["exposure_years_core"] < 2.0).astype(float),',
+      '    np.nan,',
+      ')',
+      'observability_covariate_cols = [',
+      '    col for col in ["exposure_years_core", f"total_event_count_{core_tag}", short_history_col]',
+      '    if col in base.columns',
+      ']'
+    ]
+  },
+  {
+    title: 'Split-aware modelling',
+    note: 'The modelling script guards against invalid train/test splits in sparse classes before model fitting.',
+    code: [
+      'class_counts = y.value_counts().sort_index()',
+      'min_class_n = int(class_counts.min()) if not class_counts.empty else 0',
+      'fallback_reasons = []',
+      'if min_class_n < 2:',
+      '    fallback_reasons.append(f"least populated class has {min_class_n} sample(s) (<2)")',
+      '',
+      'use_stratify = len(fallback_reasons) == 0',
+      'stratify_arg = y if use_stratify else None',
+      'split = train_test_split(',
+      '    X, y, pid, test_size=test_size, random_state=rs, stratify=stratify_arg',
+      ')'
+    ]
+  },
+  {
+    title: 'Signal-discovery controls',
+    note: 'Raw-code signal discovery used explicit investigation settings and kept grouped-anchor artefacts out of model inputs.',
+    code: [
+      'if not args.investigation_id:',
+      '    raise RuntimeError("Signal-discovery mode requires --investigation-id.")',
+      'if str(investigation_context.get("screening_mode", "")).strip() != SIGNAL_DISCOVERY_SCREENING_MODE:',
+      '    raise RuntimeError("Signal-discovery training requires raw ICD signal discovery mode.")',
+      '',
+      'if not bool(signal_discovery_context.get("comparison_only_grouped_anchor_artifacts", {}).get("not_model_input")):',
+      '    raise RuntimeError("Grouped-anchor artifacts must remain comparison-only.")',
+      '',
+      'splitter, outer_n_splits, outer_n_repeats = resolve_signal_discovery_outer_splitter(',
+      '    y=y, random_state=int(args.random_state)',
+      ')'
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Final-year project"
+  description="Portfolio case study for Jubileejoy Zirebwa's 83% final-year Biomedical Science dissertation and health data science pipeline."
+  dateModified="2026-06-19"
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <Breadcrumbs items={breadcrumbs} />
+      <p class="eyebrow">Academic research and data analysis</p>
+      <h1>Final-year project</h1>
+      <p class="summary">
+        My dissertation write-up component was awarded 83%. The project used genomics-linked hospital episode material to ask whether historical hospital-coded trajectories could support careful exploratory stratification in a Brugada-suspect research cohort.
+      </p>
+      <div class="action-row">
+        <a class="button" href={githubPipelineHref} target="_blank" rel="noreferrer">View project pipeline</a>
+        <a class="button secondary" href="/documents/#dissertation">Open overview PDF</a>
+        <a class="button secondary" href="/academic/">Academic profile</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Quick scan"
+        title="What the project demonstrates"
+        lead="The strongest signal is the method: cohort construction, feature engineering, leakage control, observability checks, model comparison and disciplined interpretation."
+      />
+      <dl class="proof-grid">
+        {sourceFacts.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>Research question</h2>
+        <p>
+          The project asked whether pre-sequencing hospital-coded trajectories could describe useful signal in a Brugada-suspect cohort, and whether that signal was strong enough to support careful retrospective stratification.
+        </p>
+        <p>
+          In practice, this meant building a feature pipeline around hospital activity, diagnosis/procedure groupings, observability and model evaluation, then being clear about what the analysis could and could not prove.
+        </p>
+      </div>
+      <div class="note">
+        <h2>Interpretation boundary</h2>
+        <p>
+          This was undergraduate academic research, not a clinical decision tool. The value is in the technical workflow and the judgement used around weak, sparse and governance-bound evidence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Methodology"
+        title="Applied health data science workflow"
+      />
+      <ul class="method-list">
+        {methodPoints.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Selected figures"
+        title="Design, observability, features and model checks"
+        lead="These figures show the analysis shape more clearly than a long method paragraph: how the cohort was framed, how observation depth was handled, what features were retained and how model-family comparisons were reviewed."
+      />
+      <div class="figure-grid">
+        {figures.map((figure) => (
+          <figure class="figure-panel">
+            <img src={figure.src} alt={figure.alt} loading="lazy" />
+            <figcaption>{figure.caption}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Code evidence"
+        title="Pipeline excerpts"
+        lead="The repository includes the authored pipeline structure for technical review. These excerpts show the style of implementation behind the page: feature construction, observability handling, split checks and raw-code signal-discovery controls."
+      />
+      <div class="grid two">
+        {codeSnippets.map((snippet) => (
+          <article class="code-window">
+            <h3>{snippet.title}</h3>
+            <pre><code>{snippet.code.join('\n')}</code></pre>
+            <p>{snippet.note}</p>
+          </article>
+        ))}
+      </div>
+      <div class="action-row">
+        <a class="button" href={githubPipelineHref} target="_blank" rel="noreferrer">Open GitHub pipeline folder</a>
+        <a class="button secondary" href="/documents/#technical">See document links</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>What I would discuss in review</h2>
+        <p>
+          The best review conversation would cover cohort definition, target choice, ICD/HES feature engineering, leakage prevention, observability, imbalance-aware evaluation, subgroup/fairness checks and how to communicate weak-signal results without overclaiming.
+        </p>
+      </div>
+      <div class="document-card compact-document" id="dissertation">
+        <span class="tag">PDF</span>
+        <h3>Dissertation overview</h3>
+        <p>Overview PDF for the final-year project, including the research question, method shape, selected figures and result context.</p>
+        <div class="action-row">
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" download>Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

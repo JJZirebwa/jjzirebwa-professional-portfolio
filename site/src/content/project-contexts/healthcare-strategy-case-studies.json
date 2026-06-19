@@ -1,9 +1,9 @@
 {
-  "order": 1,
+  "order": 2,
   "kind": "card",
   "icon": "strategy",
-  "eyebrow": "Strategy",
-  "title": "Healthcare strategy case studies",
+  "eyebrow": "Health innovation",
+  "title": "Health innovation deliverables",
   "href": "/case-studies/health-innovation-east/",
   "text": "A cross-case view of commercial health innovation work across evidence, adoption logic, market context and pathway fit.",
   "cardMeta": ["Health Innovation East", "Adoption logic", "Market intelligence"]

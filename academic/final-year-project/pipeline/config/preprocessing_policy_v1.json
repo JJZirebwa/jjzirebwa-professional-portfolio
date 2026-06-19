@@ -1,0 +1,130 @@
+{
+  "policy_id": "training_aware_preprocessing_v1_2026_03_25",
+  "policy_version": "2026-03-25",
+  "feature_class_rules": {
+    "ordinal_exact_columns": [
+      "imd04_median_5y"
+    ],
+    "duration_exact_columns": [
+      "exposure_years_core"
+    ],
+    "binary_regex": [
+      "^short_history_indicator_"
+    ],
+    "rate_regex": [
+      "_rate_per_year_"
+    ],
+    "continuous_regex": [
+      "_ratio_"
+    ]
+  },
+  "clinically_central_retention": {
+    "feature_meta_families": [
+      "observability_covariate_cols",
+      "recency_cols"
+    ],
+    "exact_columns": [],
+    "regex": []
+  },
+  "missingness_policy": {
+    "numeric_indicator_threshold_lt": 0.3,
+    "numeric_elevated_keep_threshold_lte": 0.6,
+    "categorical_unknown_drop_threshold_lr_gt": 0.5
+  },
+  "categorical_policy": {
+    "unknown_token": "Unknown",
+    "unseen_level_policy": "map_to_unknown",
+    "one_hot_prefix_separator": "__"
+  },
+  "recency_policy": {
+    "sentinel_strategy": "core_window_days_plus_one",
+    "require_missingness_indicator": true,
+    "protect_from_log": true,
+    "protect_from_scaling": true,
+    "protect_from_winsor": true
+  },
+  "log_transform_policy": {
+    "apply_to_model_families": [
+      "lr",
+      "nn"
+    ],
+    "eligible_feature_classes": [
+      "count",
+      "duration",
+      "rate"
+    ],
+    "eligible_regex": [
+      "^total_event_count_"
+    ],
+    "exclude_feature_classes": [
+      "binary",
+      "one_hot",
+      "low_card_categorical",
+      "ordinal",
+      "continuous",
+      "recency"
+    ]
+  },
+  "winsor_policy": {
+    "upper_quantile": 0.995,
+    "apply_to_model_families": {
+      "lr": "post_log",
+      "nn": "post_log",
+      "rf": "raw"
+    },
+    "eligible_feature_classes": [
+      "count",
+      "duration",
+      "rate"
+    ],
+    "eligible_regex": [
+      "^total_event_count_"
+    ],
+    "exclude_feature_classes": [
+      "binary",
+      "one_hot",
+      "low_card_categorical",
+      "ordinal",
+      "recency"
+    ]
+  },
+  "scaling_policy": {
+    "apply_to_model_families": [
+      "lr",
+      "nn"
+    ],
+    "eligible_feature_classes": [
+      "continuous",
+      "ordinal",
+      "count",
+      "duration",
+      "rate"
+    ],
+    "exclude_feature_classes": [
+      "binary",
+      "one_hot",
+      "low_card_categorical",
+      "recency"
+    ]
+  },
+  "model_defaults": {
+    "primary_analysis": {
+      "resampling": "none",
+      "lr_class_weight": "none",
+      "rf_class_weight": "none",
+      "nn_loss": "cross_entropy"
+    },
+    "sensitivity_analysis": {
+      "class_weight_mode": "balanced_only_if_explicitly_requested"
+    }
+  },
+  "evaluation_defaults": {
+    "threshold_policy_default": "train_balanced_accuracy_min_specificity",
+    "min_specificity_floor_default": 0.55,
+    "threshold_selection_scope": "training_only_oof_inner_cv",
+    "threshold_inner_cv_folds": 5,
+    "calibration_enabled_default": false,
+    "calibration_scope": "training_only_fold_internal",
+    "reported_probability_scope": "held_out_only"
+  }
+}

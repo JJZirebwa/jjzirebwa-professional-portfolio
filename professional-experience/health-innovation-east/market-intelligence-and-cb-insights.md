@@ -1,6 +1,6 @@
 # Market Intelligence and CB Insights
 
-## Public-Facing Summary
+## Summary
 
 I used CB Insights and secondary research to support market-intelligence work, organising company searches, structured company lists, trend summaries and reusable research views for internal commercial analysis.
 

@@ -1,6 +1,6 @@
 # Cardisio / QOF Adoption Logic
 
-## Public-Facing Summary
+## Summary
 
 This case study summarises my work around AI-ECG competitor analysis and Quality and Outcomes Framework adoption logic.
 

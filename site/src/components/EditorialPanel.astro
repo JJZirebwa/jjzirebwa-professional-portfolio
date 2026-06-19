@@ -9,30 +9,10 @@ const { variant } = Astro.props as Props;
 ---
 
 <figure class={`editorial-panel editorial-panel-${variant}`} data-editorial-variant={variant}>
-  {variant === 'evidence-journey' && (
-    <>
-      <figcaption>
-        <span>Evidence to decision</span>
-        <strong>Claim, proof, pathway, action.</strong>
-      </figcaption>
-      <ol class="visual-steps visual-steps-wide">
-        <li><span>Claim</span><strong>What is being promised?</strong></li>
-        <li><span>Proof</span><strong>What does the evidence support?</strong></li>
-        <li><span>Fit</span><strong>Where does it sit in care?</strong></li>
-        <li><span>Decision</span><strong>What should happen next?</strong></li>
-      </ol>
-      <div class="visual-ribbon" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </>
-  )}
-
   {variant === 'current-vector' && (
     <>
       <figcaption>
-        <span>Current trajectory</span>
+        <span>Current direction</span>
         <strong>Focus now, sharper questions, clearer direction.</strong>
       </figcaption>
       <svg class="trajectory-chart" viewBox="0 0 440 230" role="img" aria-label="Current focus moving through sharper questions toward clearer evidence-led direction">
@@ -143,7 +123,7 @@ const { variant } = Astro.props as Props;
           <span></span>
         </div>
         <ol class="visual-steps compact">
-          <li><span>Cohort</span><strong>Secure TRE boundary</strong></li>
+          <li><span>Cohort</span><strong>Secure research boundary</strong></li>
           <li><span>Features</span><strong>Hospital trajectories</strong></li>
           <li><span>Models</span><strong>Comparison and leakage control</strong></li>
           <li><span>Limits</span><strong>Honest signal readout</strong></li>

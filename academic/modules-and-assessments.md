@@ -2,7 +2,7 @@
 
 This page gives my compact academic record.
 
-## Confirmed and pending results
+## Final confirmed results
 
 | Module | Level | Mark/grade | Public relevance |
 |---|---:|---|---|
@@ -25,10 +25,10 @@ This page gives my compact academic record.
 | Human Pathology | 6 | 73, A | Histology, disease morphology and systems pathology. |
 | Specialist Topics in Biomedical Science | 6 | 65, B | Forensic pathology, infectious disease, ethics, legal process and genetic disease. |
 | Pharmacology and Translational Medicine | 6 | 71, A | Dose-response reasoning, drug discovery and translational medicine. |
-| Haematology, Immunology and Transfusion Science | 6 | Pending | Blood science, immune mechanisms and MDT-style clinical reasoning. |
-| Current Advances in Biomedical Science | 6 | Pending | Contemporary biomedical research and scientific communication. |
-| Final-year project | 6 | Pending | Secure health-data research, model evaluation, governance and limitations. |
+| Haematology, Immunology and Transfusion Science | 6 | 62, B | Blood science, immune mechanisms and MDT-style clinical reasoning. |
+| Current Advances in Biomedical Science | 6 | 55, C | Contemporary biomedical research and scientific communication. |
+| Final-year project | 6 | 82, A | Secure health-data research, model evaluation, governance and limitations. Dissertation write-up component: 83. |
 
 ## How to read this page
 
-The table shows confirmed interim transcript marks where available and labels the remaining final-trimester items as pending.
+The table shows final award transcript marks. Degree classification: First Class Honours, awarded 10 June 2026.

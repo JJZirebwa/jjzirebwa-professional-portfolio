@@ -5,7 +5,6 @@ import logoGenomicsEngland from '../assets/images/logo-genomics-england.png';
 import logoHealthInnovationEast from '../assets/images/logo-health-innovation-east.webp';
 
 export type EditorialPanelVariant =
-  | 'evidence-journey'
   | 'current-vector'
   | 'adoption-pathway'
   | 'market-landscape'

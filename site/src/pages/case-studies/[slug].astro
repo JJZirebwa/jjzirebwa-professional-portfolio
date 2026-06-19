@@ -3,7 +3,7 @@ import CaseStudyPage from '../../components/CaseStudyPage.astro';
 import { getCaseStudies, type CaseStudyContent } from '../../data/content';
 
 export async function getStaticPaths() {
-  const caseStudies = await getCaseStudies();
+  const caseStudies = (await getCaseStudies()).filter((caseStudy) => caseStudy.slug !== 'final-year-project');
 
   return caseStudies.map((caseStudy: CaseStudyContent) => ({
     params: { slug: caseStudy.slug },

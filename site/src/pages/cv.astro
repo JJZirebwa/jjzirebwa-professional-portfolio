@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+
+const highlights = [
+  'First Class BSc (Hons) Biomedical Science graduate, awarded 10 June 2026.',
+  'Final-year dissertation write-up component awarded 83%; wider Undergraduate Project module recorded as 82, A, 30 credits.',
+  'One-year Health Innovation East commercial placement across evidence, market intelligence, AI/MedTech governance and adoption work.',
+  'Governance-aware Genomics England Research Environment final-year project with a technical pipeline available for review.',
+  'Earlier ConsoneAI / DioScor research internship covering toxicology data mapping and reproducible biomedical data preparation.'
+];
+---
+
+<BaseLayout
+  title="CV"
+  description="General portfolio CV for Jubileejoy Zirebwa."
+  dateModified="2026-06-19"
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <p class="eyebrow">CV</p>
+      <h1>General portfolio CV</h1>
+      <p class="summary">
+        A general CV for biomedical science, genomics-linked health data work, healthcare innovation and evidence-led roles. It is not tailored to one application.
+      </p>
+      <div class="action-row">
+        <a class="button" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+        <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" download>Download CV</a>
+        <a class="button secondary" href="/documents/">Documents</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell cv-layout">
+      <div>
+        <SectionHeader
+          eyebrow="Scan first"
+          title="Current profile"
+        />
+        <ul class="method-list">
+          {highlights.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="document-card compact-document">
+        <span class="tag">PDF</span>
+        <h3>Stable file name</h3>
+        <p><code>Jubileejoy_Zirebwa_CV.pdf</code> is a general CV.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Preview"
+        title="CV PDF"
+        lead="Most browsers can show the PDF below. If yours does not, open the PDF in a new tab."
+      />
+      <object class="document-preview" data="/documents/Jubileejoy_Zirebwa_CV.pdf" type="application/pdf" aria-label="Jubileejoy Zirebwa CV PDF preview">
+        <p>
+          PDF preview is not available in this browser.
+          <a href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF</a>.
+        </p>
+      </object>
+    </div>
+  </section>
+</BaseLayout>

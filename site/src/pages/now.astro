@@ -8,9 +8,9 @@ import { getNowUpdates } from '../data/content';
 const focusAreas = [
   {
     eyebrow: 'Focus 01',
-    title: 'Decision-ready healthcare evidence',
-    text: 'Sharpening the work that tests claims against evidence quality, pathway fit, governance constraints and what still has to be proved before a healthcare decision should move.',
-    meta: ['Evidence quality', 'Pathway fit', 'Decision support']
+    title: 'Biomedical science and genomics-linked data',
+    text: 'Making the final-year project easier to evaluate from cohort logic, ICD/HES-derived features, observability controls, model comparison and clear limits around clinical interpretation. I want to find a reproducible approach to sparse data-handling that the reality of clinical coding and rare disease could benefit from',
+    meta: ['Biomedical Science', 'Genomics-linked data', 'FYP evidence']
   },
   {
     eyebrow: 'Focus 02',
@@ -26,9 +26,9 @@ const focusAreas = [
   },
   {
     eyebrow: 'Focus 04',
-    title: 'Positioning at the evidence-decision boundary',
-    text: 'Building a profile that stays technical enough to read the evidence properly and pragmatic enough to turn that evidence into useful strategic judgement.',
-    meta: ['Healthcare strategy', 'Evidence synthesis', 'Biomedical analysis']
+    title: 'Health innovation strategy without losing the science',
+    text: 'Keeping the Health Innovation East and AI/MedTech governance work visible while making sure the scientific and data-analysis foundation remains the first signal.',
+    meta: ['Health innovation strategy', 'Evidence synthesis', 'Balanced profile']
   }
 ];
 
@@ -40,11 +40,13 @@ const sharpeningQuestions = [
 ];
 
 const directionTags = [
-  'Healthcare strategy',
+  'Biomedical science',
+  'Genomics and health data',
+  'Machine learning baselines',
+  'Health innovation strategy',
   'Health innovation analysis',
   'Evidence synthesis',
-  'AI/MedTech governance',
-  'Biomedical data and research'
+  'AI/MedTech governance'
 ];
 
 const updates = await getNowUpdates();
@@ -66,7 +68,7 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
         <p class="eyebrow">Current direction</p>
         <h1>Now</h1>
         <p class="summary">
-          This page tracks what I am actively sharpening now: where I am moving, what questions I keep returning to and how my strongest evidence connects to the next stage of work.
+          This page tracks what I am actively sharpening now covering where I am moving, what questions I keep returning to and how my strongest evidence connects to the next stage of work.
         </p>
         <p class="status-chip">
           <span>Last updated</span>
@@ -115,13 +117,13 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
   <section class="section-band">
     <div class="page-shell split">
       <SectionHeader
-        eyebrow="Trajectory"
+        eyebrow="Direction"
         title="Direction I am moving toward"
         lead="I am moving toward early-career roles where biomedical evidence has to be interpreted, challenged and translated into strategic, governance-aware or research-grounded action."
       />
       <div class="note">
         <p>
-          In practice this means roles concerned with healthcare strategy, health innovation, evidence synthesis, AI/MedTech governance and biomedical data work. The through-line is the kind of problem: messy evidence, real constraints and a decision that still has to be made properly.
+          In practice this means roles concerned with biomedical evidence, genomics or health data, applied analytics, healthcare innovation, evidence synthesis and AI/MedTech governance. The through-line is the kind of problem: messy evidence, real constraints and a decision that still has to be made properly.
         </p>
         <ul class="tag-list">
           {directionTags.map((item) => <li>{item}</li>)}
@@ -166,21 +168,21 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
       />
       <div class="grid three">
         <LinkCard
-          href="/case-studies/health-innovation-east/"
-          icon="strategy"
-          eyebrow="Strongest evidence"
-          title="Health Innovation East"
-          text="The clearest route into my NHS-facing commercial innovation, adoption logic and decision-support work."
-          meta={['One-year placement', 'Owned deliverables', 'NHS-facing innovation']}
+          href="/case-studies/final-year-project/"
+          icon="data"
+          eyebrow="Data evidence"
+          title="Final-year project"
+          text="The strongest route into my genomics-linked health data work, model comparison and governance-aware interpretation."
+          meta={['83/100 dissertation', 'Project pipeline', 'Governance-aware']}
           prefetch="hover"
         />
         <LinkCard
-          href="/projects/"
-          icon="research"
-          eyebrow="Methods and strands"
-          title="Projects"
-          text="See how the strategy, biomedical data and future-methods strands connect across the wider site."
-          meta={['Project routes', 'Exploratory methods', 'Connected evidence']}
+          href="/documents/"
+          icon="writing"
+          eyebrow="Documents"
+          title="CV and documents"
+          text="Open the general CV, dissertation overview and protected transcript access route."
+          meta={['CV', 'Academic evidence', 'FYP overview']}
           prefetch="hover"
         />
         <LinkCard

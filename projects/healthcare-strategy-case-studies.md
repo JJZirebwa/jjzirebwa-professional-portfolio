@@ -1,8 +1,8 @@
-# Healthcare strategy case studies
+# Health innovation deliverables
 
-## Public-facing summary
+## Summary
 
-My healthcare strategy evidence comes mainly from Health Innovation East, where technology propositions had to be assessed through evidence, market context, stakeholder needs and practical adoption logic.
+My healthcare innovation evidence comes mainly from Health Innovation East, where technology propositions had to be assessed through evidence, market context, stakeholder needs and practical adoption logic.
 
 ## Case-study themes
 

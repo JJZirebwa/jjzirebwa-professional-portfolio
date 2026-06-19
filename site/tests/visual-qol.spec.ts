@@ -3,6 +3,9 @@ import AxeBuilder from '@axe-core/playwright';
 
 const pages = [
   { path: '/', name: 'home' },
+  { path: '/academic/', name: 'academic' },
+  { path: '/cv/', name: 'cv' },
+  { path: '/documents/', name: 'documents' },
   { path: '/now/', name: 'now' },
   { path: '/projects/', name: 'projects' },
   { path: '/case-studies/health-innovation-east/', name: 'health-innovation-east' },

@@ -6,6 +6,13 @@ import Icon from '../components/Icon.astro';
 const skillGroups = [
   {
     icon: 'strategy',
+    skill: 'Biomedical data analysis',
+    where: 'Final-year project workflows, dose-toxicity extraction and cleaning, quantitative pharmacology and genetics/statistical reasoning.',
+    produced: 'Feature-reasoning summaries, model-evaluation interpretation, cleaned tabular outputs and documented limitations.',
+    matters: 'Biomedical data work is strongest when the question, source limits and interpretation rules are clear before analysis begins.'
+  },
+  {
+    icon: 'strategy',
     skill: 'Healthcare commercial strategy',
     where: 'Health Innovation East placement, QOF/adoption work, PulseOn strategy material and Charco/CUE1 business-case support.',
     produced: 'Evidence summaries, adoption logic, pathway framing, stakeholder decision-driver summaries and value reasoning.',
@@ -33,13 +40,6 @@ const skillGroups = [
     matters: 'Commercial decisions need a clear view of who else is active, what evidence they have and how mature the space is.'
   },
   {
-    icon: 'data',
-    skill: 'Biomedical data analysis',
-    where: 'Final-year project workflows, dose-toxicity extraction and cleaning, quantitative pharmacology and genetics/statistical reasoning.',
-    produced: 'Feature-reasoning summaries, model-evaluation interpretation, cleaned tabular outputs and documented limitations.',
-    matters: 'Biomedical data work is strongest when the question, source limits and interpretation rules are clear before analysis begins.'
-  },
-  {
     icon: 'writing',
     skill: 'Writing and communication',
     where: 'Guidance-support material, public case studies, dissertation writing, module assessments and presentation-style internship outputs.',
@@ -49,13 +49,13 @@ const skillGroups = [
 ];
 ---
 
-<BaseLayout title="Skills" description="Evidence-backed skills across healthcare strategy, evidence synthesis, AI governance, market intelligence, biomedical data and writing.">
+<BaseLayout title="Skills" description="Evidence-backed skills across biomedical data, evidence synthesis, AI governance, health innovation strategy, market intelligence and writing.">
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Skills map</p>
       <h1>Skills</h1>
       <p class="summary">
-        My skills are strongest where scientific evidence has to be made useful for a decision: commercial strategy, adoption logic, governance, data interpretation and clear writing.
+        My skills are strongest where biomedical evidence and data have to be made useful without losing the limits: data interpretation, evidence synthesis, governance, adoption logic and clear writing.
       </p>
     </div>
   </section>
@@ -65,7 +65,7 @@ const skillGroups = [
       <SectionHeader
         eyebrow="Evidence-backed"
         title="Core skill areas"
-        lead="Each skill below is tied to work I have actually done, the outputs it supported and why it matters in healthcare innovation."
+        lead="Each skill below is tied to work I have actually done, the outputs it supported and why it matters for biomedical and healthcare work."
       />
       <div class="grid two">
         {skillGroups.map((group) => (
