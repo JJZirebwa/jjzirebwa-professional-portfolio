@@ -1322,6 +1322,11 @@ a.card:hover {
   gap: 1rem;
 }
 
+.code-window {
+  min-width: 0;
+  max-width: 100%;
+}
+
 .code-window,
 .document-card {
   padding: 1rem;
@@ -1336,14 +1341,20 @@ a.card:hover {
 }
 
 .code-window pre {
+  max-width: 100%;
   margin: 0 0 0.85rem;
   padding: 0.9rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-radius: 7px;
   background: #111917;
   color: #f4f7f2;
   font-size: 0.82rem;
   line-height: 1.45;
+}
+
+.code-window code {
+  white-space: pre;
 }
 
 .code-window p,
