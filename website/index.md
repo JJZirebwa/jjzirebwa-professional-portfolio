@@ -1,11 +1,12 @@
 # Jubileejoy "JJ" Zirebwa
 
 Cambridge, UK  
-First Class Biomedical Science graduate with experience across genomics-linked health data science, applied analytics, healthcare innovation, evidence synthesis, AI/MedTech governance, market intelligence and commercial strategy.
+First Class Biomedical Science graduate with experience across clinical informatics, genomics-linked health data science, applied analytics, healthcare innovation, evidence synthesis and market intelligence.
 
 ## Focus
 
 - biomedical science
+- clinical informatics and trial-operations analysis
 - genomics and healthcare data science
 - machine learning and applied analytics
 - evidence synthesis and adoption logic
@@ -16,16 +17,17 @@ First Class Biomedical Science graduate with experience across genomics-linked h
 
 ## Current direction
 
-I am focused on work where biomedical evidence and data have to be interpreted, challenged and translated into research-grounded, governance-aware or strategic action. The strongest thread is careful evidence judgement: what the data supports, what remains uncertain and what should not be claimed.
+My current focus is work where biomedical evidence and data have to be interpreted, challenged and translated into a useful decision. Clinical Informatics is the newest public example, moving from protocol requirements to linked synthetic data, validation checks, operational metrics and an interactive dashboard.
 
 ## Best first route
 
-Start with the final-year project for genomics-linked health data science, then use the Health Innovation East, AI Toolkit and market-intelligence pages to see how the same evidence discipline carries into healthcare innovation.
+Start with the final-year project for genomics-linked health data science and Clinical Informatics for a runnable analyst workflow. Health Innovation East and market intelligence then show how the same evidence discipline carries into decision-ready healthcare innovation analysis.
 
 ## Selected work
 
 | Area | Link |
 |---|---|
+| Clinical Informatics | [Project summary](../projects/clinical-informatics.md) / [repository](https://github.com/JJZirebwa/clinical-informatics) / [dashboard](https://clinical-informatics.streamlit.app) |
 | Final-year project and project pipeline | [Project](../academic/final-year-project/README.md) / [pipeline](../academic/final-year-project/pipeline/README.md) |
 | Academic profile | [Open page](../academic/README.md) |
 | Health Innovation East commercial overview | [Open page](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md) |
@@ -35,6 +37,10 @@ Start with the final-year project for genomics-linked health data science, then 
 | Final-year project governance | [Open page](../academic/final-year-project/governance-and-limitations.md) |
 | Selected documents | [Open page](../documents/README.md) |
 | Full portfolio index | [Open page](../PORTFOLIO_INDEX.md) |
+
+## Contact
+
+Use the [website Contact page](https://jubileejoyzirebwa.com/contact/) for role scope and professional contact.
 
 ## Confidentiality
 

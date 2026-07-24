@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import pageUpdates from './src/data/page-updates.json' with { type: 'json' };
 
 export default defineConfig({
   site: 'https://jubileejoyzirebwa.com',
@@ -11,5 +12,14 @@ export default defineConfig({
   devToolbar: {
     enabled: false
   },
-  integrations: [sitemap()]
+  integrations: [
+    sitemap({
+      serialize(item) {
+        const pathname = new URL(item.url).pathname;
+        const lastmod = pageUpdates[pathname];
+
+        return lastmod ? { ...item, lastmod } : item;
+      }
+    })
+  ]
 });

@@ -12,7 +12,7 @@
   "facts": [
     {
       "label": "Role",
-      "value": "Research intern supporting toxicology data mapping and structured data preparation."
+      "value": "Research intern supporting ECHA field mapping, PubChem dose-toxicity extraction and structured data preparation."
     },
     {
       "label": "Timeframe",
@@ -56,12 +56,12 @@
     },
     {
       "heading": "My role",
-      "body": "I supported toxicology data mapping and structured data-preparation work, keeping the description here high level because the platform details were proprietary."
+      "body": "I supported toxicology data mapping and structured data preparation, including European Chemicals Agency (ECHA) field mapping and PubChem dose-toxicity extraction."
     },
     {
       "heading": "Approach",
       "items": [
-        "Identify relevant toxicology and chemical data sources for extraction or comparison.",
+        "Identify relevant toxicology and chemical data sources, including ECHA and PubChem, for extraction or comparison.",
         "Review dose-toxicity source fields and terminology differences.",
         "Organise compound, organism, route, dose-unit, test-type and effect-category information where available.",
         "Clean missing values, split combined categories and document limitations.",

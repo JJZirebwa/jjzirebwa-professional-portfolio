@@ -1,0 +1,16 @@
+---
+interface Props {
+  items: Array<[label: string, value: string]>;
+}
+
+const { items } = Astro.props;
+---
+
+<dl class="document-metadata">
+  {items.map(([label, value]) => (
+    <div>
+      <dt>{label}</dt>
+      <dd>{value}</dd>
+    </div>
+  ))}
+</dl>

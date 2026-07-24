@@ -3,6 +3,7 @@
 ## Start here
 
 - [Final-year project](../academic/final-year-project/README.md): strongest first route into genomics-linked health data science, feature reasoning, model comparison and limitations-led interpretation.
+- [Clinical Informatics](../projects/clinical-informatics.md): protocol-to-data mapping, linked synthetic tables, validation, operational metrics and a live dashboard.
 - [FYP pipeline](../academic/final-year-project/pipeline/README.md): feature engineering, modelling and reporting workflow for technical review.
 - [AI Toolkit](../professional-experience/health-innovation-east/ai-medtech-toolkit.md): practical AI/MedTech governance translation.
 - [Health Innovation East commercial overview](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md): NHS-facing innovation, adoption logic and evidence work.
@@ -11,7 +12,7 @@
 
 ## Current direction
 
-The current professional direction is biomedical science, genomics-linked health data work, applied analytics, health innovation analysis, evidence synthesis and AI/MedTech governance. The shared thread is evidence judgement: reading claims carefully, identifying what is still missing and translating complexity into responsible next steps.
+The current professional direction includes clinical informatics, biomedical science, genomics-linked health data, applied analytics, health innovation and market intelligence. The shared thread is evidence judgement and the ability to turn complexity into a useful next step.
 
 ## Selected work
 
@@ -30,6 +31,7 @@ The current professional direction is biomedical science, genomics-linked health
 
 ## Projects
 
+- [Clinical Informatics](../projects/clinical-informatics.md)
 - [Health innovation deliverables](../projects/healthcare-strategy-case-studies.md)
 - [Biomedical data and evidence](../projects/biomedical-data-and-evidence.md)
 - [Future biological evidence methods](../projects/exploratory-methods/future-biological-evidence-methods.md)
@@ -49,3 +51,7 @@ The current professional direction is biomedical science, genomics-linked health
 - [AI health governance](../skills/ai-health-governance.md)
 - [Data analysis and Python](../skills/data-analysis-and-python.md)
 - [Writing and communication](../skills/writing-and-communication.md)
+
+## Contact
+
+Use the [website Contact page](https://jubileejoyzirebwa.com/contact/) for role scope and professional contact.

@@ -2,47 +2,43 @@
 
 ## Summary
 
-I used CB Insights and secondary research to support market-intelligence work, organising company searches, structured company lists, trend summaries and reusable research views for internal commercial analysis.
+I built Health Innovation East's CB Insights capability into a repeatable source of market intelligence. The work combined dashboards, live databases and structured research views with secondary evidence that colleagues could use in commercial analysis.
 
 ## Context
 
-Health innovation work often requires fast orientation. Questions about who is in a market, how mature the space is, which competitors are credible, what funding activity suggests and how a technology is positioned against alternatives all determine innovation uptake and progression.
+Health innovation work often begins with a market that is difficult to read. The useful questions concern who is active, how mature the field is, where funding is moving and how a technology compares with credible alternatives. Those signals then need to be read alongside the evidence and the likely NHS pathway.
 
-## My Contribution
+## My contribution
 
-I independently authored some internal market-analysis material and supported repeatable market-intelligence workflows for internal commercial work. This included learning the platform, structuring company searches, organising high-level outputs and turning market information into clearer summaries.
+I learned the platform, designed reusable searches and organised company information into live databases and dashboards. I then turned the results into market summaries, competitor context and research views that could be refreshed rather than rebuilt for each question.
 
-## Methods / Approach
+The capability supported both broad horizon scanning and focused innovator work. It made it easier to move from a company or technology question to a structured view of the field, while keeping the underlying records available for follow-up.
 
-Typical analysis dimensions included:
+## Approach
 
-- technology category
-- company profile
-- funding and maturity signals
-- market or sector trend
-- comparator products
-- evidence or validation position where publicly available
-- relevance to NHS-facing adoption or innovator support
+- Define the technology category and search logic.
+- Organise companies by profile, product and market position.
+- Track funding and maturity signals alongside wider sector trends.
+- Compare products and the available validation evidence.
+- Connect market findings with pathway fit and innovator-support questions.
+- Preserve reusable views so that the analysis can be updated efficiently.
 
 ## Outputs
 
-- structured company lists
-- reusable research views
-- horizon-scanning summaries
-- sector snapshots
-- market and key player funding activity
-- competitor context notes
-- reusable market-intelligence resources
+- Live company databases and structured lists.
+- Dashboards and reusable research views.
+- Horizon-scanning summaries and sector snapshots.
+- Funding activity and market-maturity analysis.
+- Competitor context for specific innovation questions.
 
-## Skills Demonstrated
+## Skills demonstrated
 
-- market intelligence
-- database organisation
-- commercial analysis
-- trend synthesis
-- visual and written communication
-- responsible handling of proprietary sources
+- Market intelligence and database organisation.
+- Commercial analysis and trend synthesis.
+- Search design and evidence appraisal.
+- Visual and written communication.
+- Source discipline across platform and secondary research.
 
-## What This Shows
+## What this shows
 
-This work shows that I can turn large, complex and often noisy market-information sources into practical decision support for colleagues.
+This work shows that I can turn a large and noisy market source into a capability that others can use. The value came from the structure behind the analysis as much as the individual outputs.

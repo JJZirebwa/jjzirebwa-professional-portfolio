@@ -89,6 +89,14 @@ export const socialCards = [
     imageAlt: 'Social preview card for project deliverables and methods.'
   },
   {
+    slug: 'clinical-informatics',
+    path: '/projects/clinical-informatics/',
+    eyebrow: 'Self-directed project',
+    title: 'Clinical Informatics',
+    description: 'Synthetic trial operations from protocol mapping to linked data, validation, metrics and a live dashboard.',
+    imageAlt: 'Social preview card for the Clinical Informatics project.'
+  },
+  {
     slug: 'skills',
     path: '/skills/',
     eyebrow: 'Skills',

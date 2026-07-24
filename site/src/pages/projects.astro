@@ -9,6 +9,14 @@ const exploratory = await getProjectExploratoryStrand();
 
 const deliverables = [
   {
+    href: '/projects/clinical-informatics/',
+    icon: 'data' as const,
+    eyebrow: 'Self-directed project',
+    title: 'Clinical informatics trial operations',
+    text: 'A synthetic study workflow connecting protocol requirements, relational data checks, operational metrics and an interactive dashboard.',
+    meta: ['Synthetic study data', 'Relational validation', 'Streamlit dashboard']
+  },
+  {
     href: '/case-studies/final-year-project/',
     icon: 'data' as const,
     eyebrow: 'Final-year project method',
@@ -43,13 +51,13 @@ const deliverables = [
 ];
 ---
 
-<BaseLayout title="Projects" description="Contained portfolio projects and methods linked to parent experiences.">
+<BaseLayout title="Projects" description="Standalone projects, focused deliverables and technical methods across clinical informatics, biomedical data and health innovation.">
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Projects</p>
       <h1>Deliverables and methods</h1>
       <p class="summary">
-        This page is the contained-work lane. It links focused deliverables and methods back to the larger experiences they came from, so projects do not repeat the parent case studies with different labels.
+        This page brings together standalone projects and the focused methods that sit inside larger experiences. The distinction keeps each piece of work connected to the setting in which it was actually developed.
       </p>
     </div>
   </section>
@@ -59,7 +67,7 @@ const deliverables = [
       <SectionHeader
         eyebrow="Contained lane"
         title="Focused project work"
-        lead="Each card is a deliverable, method or technical workstream. The parent context is named in the card metadata."
+        lead="Clinical Informatics stands as a self-directed project. The other cards name the parent experience that gave each deliverable or method its context."
       />
       <div class="grid two">
         {deliverables.map((item) => <LinkCard {...item} prefetch="hover" />)}

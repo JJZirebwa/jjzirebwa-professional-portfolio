@@ -234,7 +234,7 @@ const codeSnippets = [
         {codeSnippets.map((snippet) => (
           <article class="code-window">
             <h3>{snippet.title}</h3>
-            <pre><code>{snippet.code.join('\n')}</code></pre>
+            <pre tabindex="0" aria-label={`${snippet.title} code excerpt`}><code>{snippet.code.join('\n')}</code></pre>
             <p>{snippet.note}</p>
           </article>
         ))}

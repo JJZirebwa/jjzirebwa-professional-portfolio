@@ -7,10 +7,15 @@
     "node": ">=22.12.0 <23"
   },
   "scripts": {
+    "predev": "node scripts/require-node-22.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/require-node-22.mjs",
     "build": "astro build",
+    "prepreview": "node scripts/require-node-22.mjs",
     "preview": "astro preview",
+    "precheck": "node scripts/require-node-22.mjs",
     "check": "astro check",
+    "pretest:ui": "node scripts/require-node-22.mjs",
     "test:ui": "playwright test",
     "test:ui:update": "playwright test --update-snapshots"
   },

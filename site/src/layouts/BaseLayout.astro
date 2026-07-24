@@ -3,11 +3,11 @@ import '../styles/global.css';
 import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import headshot from '../assets/images/jubileejoy-zirebwa-headshot.jpg';
 import { getSocialCardByPath } from '../data/socialCards';
+import pageUpdates from '../data/page-updates.json';
 
 const {
   title = 'Jubileejoy "JJ" Zirebwa',
   description = 'First Class Biomedical Science graduate with genomics, health data science, healthcare innovation and evidence-led strategy experience.',
-  dateModified,
   structuredData = []
 } = Astro.props;
 
@@ -22,13 +22,21 @@ const profileImageUrl = new URL(headshot.src, siteUrl).href;
 const socialCard = getSocialCardByPath(currentPath);
 const socialImageUrl = new URL(`/og/${socialCard.slug}.png`, siteUrl).href;
 const includePersonSchema = currentPath === '/about/';
+const pageUpdated = pageUpdates[currentPath as keyof typeof pageUpdates];
+const pageUpdatedLabel = pageUpdated
+  ? new Intl.DateTimeFormat('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(new Date(`${pageUpdated}T12:00:00Z`))
+  : undefined;
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
   '@id': `${canonicalUrl}#profile-page`,
   url: canonicalUrl,
   name: pageTitle,
-  ...(dateModified ? { dateModified } : {}),
+  ...(pageUpdated ? { dateModified: pageUpdated } : {}),
   mainEntity: {
     '@type': 'Person',
     '@id': `${new URL('/', siteUrl).href}#jubileejoy-zirebwa`,
@@ -76,6 +84,17 @@ const websiteSchema = {
     name: 'Jubileejoy Zirebwa'
   }
 };
+const webPageSchema = pageUpdated && !includePersonSchema
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': `${canonicalUrl}#web-page`,
+      url: canonicalUrl,
+      name: pageTitle,
+      description,
+      dateModified: pageUpdated
+    }
+  : undefined;
 const extraStructuredData = Array.isArray(structuredData)
   ? structuredData
   : structuredData
@@ -85,23 +104,33 @@ const pageStructuredData = currentPath === '/'
   ? [websiteSchema, ...extraStructuredData]
   : includePersonSchema
   ? [personSchema, ...extraStructuredData]
+  : webPageSchema
+  ? [webPageSchema, ...extraStructuredData]
   : extraStructuredData;
 const isActive = (href: string) => href === '/'
   ? currentPath === '/'
   : currentPath.startsWith(href);
 
-const navItems = [
+const primaryNavItems = [
   { href: '/', label: 'Home' },
-  { href: '/about/', label: 'About' },
-  { href: '/academic/', label: 'Academic' },
   { href: '/case-studies/', label: 'Experience' },
   { href: '/projects/', label: 'Projects' },
   { href: '/cv/', label: 'CV' },
-  { href: '/documents/', label: 'Documents' },
   { href: '/contact/', label: 'Contact' }
 ];
 
+const secondaryNavItems = [
+  { href: '/about/', label: 'About' },
+  { href: '/academic/', label: 'Academic' },
+  { href: '/skills/', label: 'Skills' },
+  { href: '/documents/', label: 'Documents' },
+  { href: '/now/', label: 'Now' }
+];
+
+const secondaryNavIsActive = secondaryNavItems.some((item) => isActive(item.href));
+
 const footerNavItems = [
+  { href: '/about/', label: 'About' },
   { href: '/now/', label: 'Now' },
   { href: '/academic/', label: 'Academic' },
   { href: '/cv/', label: 'CV' },
@@ -152,12 +181,42 @@ const footerNavItems = [
     <a class="skip-link" href="#content">Skip to content</a>
     <header class="site-header">
       <div class="nav-shell">
-        <a class="brand" href="/" aria-label="Home">
-          <strong>Jubileejoy "JJ" Zirebwa</strong>
-          <span>Biomedical science | Genomics | Health Data</span>
-        </a>
-        <nav class="site-nav" aria-label="Primary navigation">
-          {navItems.map((item) => (
+        <div class="nav-primary-row">
+          <a class="brand" href="/" aria-label="Home">
+            <strong>Jubileejoy "JJ" Zirebwa</strong>
+            <span>Biomedical science | Genomics | Health Data</span>
+          </a>
+          <div class="nav-actions">
+            <nav class="site-nav primary-nav" aria-label="Primary navigation">
+              {primaryNavItems.map((item) => (
+                <a
+                  href={item.href}
+                  class:list={{ 'is-active': isActive(item.href) }}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+            <details class:list={['more-nav', { 'has-active-page': secondaryNavIsActive }]}>
+              <summary>More</summary>
+              <nav aria-label="More navigation">
+                {secondaryNavItems.map((item) => (
+                  <a
+                    href={item.href}
+                    class:list={{ 'is-active': isActive(item.href) }}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </nav>
+            </details>
+          </div>
+        </div>
+        <nav class="secondary-nav" aria-label="Explore">
+          <span>Explore</span>
+          {secondaryNavItems.map((item) => (
             <a
               href={item.href}
               class:list={{ 'is-active': isActive(item.href) }}
@@ -171,6 +230,11 @@ const footerNavItems = [
     </header>
     <main id="content">
       <slot />
+      {pageUpdated && pageUpdatedLabel && (
+        <p class="page-updated">
+          Page updated <time datetime={pageUpdated}>{pageUpdatedLabel}</time>
+        </p>
+      )}
     </main>
     <footer class="footer">
       <div class="footer-shell">
@@ -183,5 +247,23 @@ const footerNavItems = [
         </nav>
       </div>
     </footer>
+    <script>
+      const moreNavigation = document.querySelector('.more-nav');
+
+      if (moreNavigation instanceof HTMLDetailsElement) {
+        document.addEventListener('click', (event) => {
+          if (moreNavigation.open && event.target instanceof Node && !moreNavigation.contains(event.target)) {
+            moreNavigation.open = false;
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && moreNavigation.open) {
+            moreNavigation.open = false;
+            moreNavigation.querySelector('summary')?.focus();
+          }
+        });
+      }
+    </script>
   </body>
 </html>

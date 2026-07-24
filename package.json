@@ -1,0 +1,17 @@
+{
+  "name": "jjzirebwa-professional-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0 <23"
+  },
+  "packageManager": "npm@10.9.8",
+  "scripts": {
+    "setup": "npm --prefix site ci",
+    "dev": "npm --prefix site run dev",
+    "check": "npm --prefix site run check",
+    "build": "npm --prefix site run build",
+    "preview": "npm --prefix site run preview",
+    "test:ui": "npm --prefix site run test:ui"
+  }
+}

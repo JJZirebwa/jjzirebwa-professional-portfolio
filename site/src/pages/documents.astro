@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DocumentMetadata from '../components/DocumentMetadata.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
 const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portfolio/tree/main/academic/final-year-project/pipeline';
@@ -8,7 +9,6 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
 <BaseLayout
   title="Documents"
   description="Selected public and protected documents for Jubileejoy Zirebwa's portfolio."
-  dateModified="2026-06-19"
 >
   <section class="case-hero">
     <div class="page-shell">
@@ -30,7 +30,18 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
       <div class="document-card">
         <span class="tag">PDF | Public</span>
         <h3>Jubileejoy_Zirebwa_CV.pdf</h3>
-        <p>General CV covering Biomedical Science, final-year project, Health Innovation East, ConsoneAI/DioScor and core technical/evidence strengths.</p>
+        <p>My general CV brings the main academic, research and healthcare innovation evidence into one page.</p>
+        <DocumentMetadata items={[
+          ['Format', 'PDF'],
+          ['Length', '1 page'],
+          ['File size', '4.5 KB'],
+          ['Updated', '19 June 2026']
+        ]} />
+        <ul class="document-summary-list">
+          <li>First Class Biomedical Science degree and final-year project.</li>
+          <li>Health Innovation East placement and earlier toxicology data work.</li>
+          <li>Technical, evidence and governance strengths in one page.</li>
+        </ul>
         <div class="action-row">
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF</a>
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" download>Download</a>
@@ -51,13 +62,22 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
       <SectionHeader
         eyebrow="Academic evidence"
         title="Transcript"
-        lead="The transcript is intentionally protected because it is an official academic document, not a normal public download."
+        lead="The official academic record confirms the completed degree, award date and module results."
       />
       <div class="document-card">
         <span class="tag">PDF | Password protected</span>
         <h3>Final award transcript</h3>
         <p>Confirms First Class Honours, award date and module marks. Password available to recruiters or academic reviewers on request.</p>
-        <p class="privacy-note">Privacy status: protected. Contact me for the password.</p>
+        <DocumentMetadata items={[
+          ['Access', 'Password protected'],
+          ['File size', '34 KB'],
+          ['Updated', '19 June 2026']
+        ]} />
+        <ul class="document-summary-list">
+          <li>Degree classification and award date.</li>
+          <li>Module results from the completed degree.</li>
+        </ul>
+        <p class="privacy-note">Contact me for the password.</p>
         <div class="action-row">
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Transcript_password_protected.pdf">Open protected PDF</a>
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Transcript_password_protected.pdf" download>Download</a>
@@ -77,7 +97,18 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
       <div class="document-card">
         <span class="tag">PDF | Public</span>
         <h3>Dissertation overview</h3>
-        <p>Explains the research question, method design, selected figures, academic result and interpretation boundary for the final-year project.</p>
+        <p>A concise route through the research question, analytical workflow, selected figures and final interpretation.</p>
+        <DocumentMetadata items={[
+          ['Format', 'PDF'],
+          ['Length', '12 pages'],
+          ['File size', '395 KB'],
+          ['Updated', '19 June 2026']
+        ]} />
+        <ul class="document-summary-list">
+          <li>Research question and cohort design.</li>
+          <li>Feature engineering, observability checks and model comparison.</li>
+          <li>Selected figures and the final interpretation.</li>
+        </ul>
         <div class="action-row">
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF</a>
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" download>Download</a>
