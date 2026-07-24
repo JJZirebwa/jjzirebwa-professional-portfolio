@@ -34,17 +34,20 @@ const contextLogos = [
   {
     src: logoHealthInnovationEast,
     alt: 'Health Innovation East logo',
-    label: 'Health innovation placement'
+    label: 'Health innovation placement',
+    href: '/case-studies/health-innovation-east/'
   },
   {
     src: logoAru,
     alt: 'Anglia Ruskin University logo',
-    label: 'First Class Biomedical Science'
+    label: 'First Class Biomedical Science',
+    href: '/academic/'
   },
   {
     src: logoGenomicsEngland,
     alt: 'Genomics England logo',
-    label: 'Genomics-linked research'
+    label: 'Genomics-linked research',
+    href: '/case-studies/final-year-project/'
   }
 ];
 ---
@@ -63,7 +66,7 @@ const contextLogos = [
           My strongest work starts with biomedical evidence and then follows the data, governance and implementation questions that decide whether an analysis or health innovation can be trusted.
         </p>
         <p class="intro-copy">
-          This portfolio brings together my First-Class Biomedical Science degree, a dissertation component (awarded 83%) using secure genomics-linked hospital trajectory analysis, a full-year Health Innovation East placement, earlier toxicology data work and selected systems-thinking projects.
+          This portfolio brings together my First Class Biomedical Science degree, a dissertation component awarded 83% using secure genomics-linked hospital trajectory analysis, a public Clinical Informatics project, a full-year Health Innovation East placement and earlier toxicology data work.
         </p>
         <div class="action-row">
           <a class="button" href="/case-studies/final-year-project/">Start with the data project</a>
@@ -94,10 +97,18 @@ const contextLogos = [
       <span>Selected contexts</span>
       <div class="logo-row">
         {contextLogos.map((item) => (
-          <figure>
-            <Image src={item.src} alt={item.alt} widths={[180, 220]} sizes="(min-width: 901px) 18vw, 60vw" />
-            <figcaption>{item.label}</figcaption>
-          </figure>
+          <a
+            class="context-card-link"
+            href={item.href}
+            aria-label={item.label}
+            data-astro-prefetch="hover"
+            data-context-card
+          >
+            <figure>
+              <Image src={item.src} alt={item.alt} widths={[180, 220]} sizes="(min-width: 901px) 18vw, 60vw" />
+              <figcaption>{item.label}</figcaption>
+            </figure>
+          </a>
         ))}
       </div>
     </div>
@@ -126,8 +137,8 @@ const contextLogos = [
           icon="evidence"
           eyebrow="Current direction"
           title="Now"
-          text="A concise snapshot of what I am currently sharpening across biomedical science, genomics-linked data work and health innovation."
-          meta={['Current focus', 'Profile direction']}
+          text="A concise snapshot of what I am sharpening across clinical informatics, genomics-linked data, biomedical evidence and health innovation."
+          meta={['Current focus', 'Clinical informatics', 'Profile direction']}
           prefetch="hover"
         />
       </div>
@@ -172,7 +183,7 @@ const contextLogos = [
           <p class="eyebrow">Call to action</p>
           <h2>Start with the evidence you need</h2>
           <p>
-            Start with the <a href="/case-studies/final-year-project/">final-year project</a> for genomics-linked data work, use <a href="/case-studies/health-innovation-east/">Health Innovation East</a> for healthcare innovation experience, or go straight to <a href="/documents/">documents</a> for CV and academic evidence.
+            Start with the <a href="/case-studies/final-year-project/">final-year project</a> for genomics-linked data work, open <a href="/projects/clinical-informatics/">Clinical Informatics</a> for a runnable analyst workflow, use <a href="/case-studies/health-innovation-east/">Health Innovation East</a> for healthcare innovation experience, or go straight to <a href="/documents/">documents</a> for CV and academic evidence.
           </p>
         </div>
         <div class="action-row">
@@ -189,7 +200,7 @@ const contextLogos = [
       <div class="note">
         <h2>What is included here</h2>
         <p>
-          The site focuses on work that can be explained clearly: academic evidence, technical method, placement deliverables, research judgement and the documents that support them.
+          This portfolio focuses on academic evidence, technical methods, placement deliverables, research judgement and contains some of the documents that support them.
         </p>
       </div>
     </div>

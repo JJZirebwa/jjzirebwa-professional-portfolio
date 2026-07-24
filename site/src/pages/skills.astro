@@ -5,6 +5,13 @@ import Icon from '../components/Icon.astro';
 
 const skillGroups = [
   {
+    icon: 'data',
+    skill: 'Clinical informatics and operational data',
+    where: 'Clinical Informatics trial-operations project using a synthetic protocol, linked relational tables and an interactive dashboard.',
+    produced: 'Protocol-to-data mappings, record-level validation issues, site and study metrics, reproducible reports and dashboard views.',
+    matters: 'Operational analysis is more useful when every summary can be traced back to the data relationships, rules and affected records.'
+  },
+  {
     icon: 'strategy',
     skill: 'Biomedical data analysis',
     where: 'Final-year project workflows, dose-toxicity extraction and cleaning, quantitative pharmacology and genetics/statistical reasoning.',
@@ -49,13 +56,13 @@ const skillGroups = [
 ];
 ---
 
-<BaseLayout title="Skills" description="Evidence-backed skills across biomedical data, evidence synthesis, AI governance, health innovation strategy, market intelligence and writing.">
+<BaseLayout title="Skills" description="Evidence-backed skills across clinical informatics, biomedical data, evidence synthesis, health innovation, market intelligence and writing.">
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Skills map</p>
       <h1>Skills</h1>
       <p class="summary">
-        My skills are strongest where biomedical evidence and data have to be made useful without losing the limits: data interpretation, evidence synthesis, governance, adoption logic and clear writing.
+        My skills are strongest where biomedical evidence and data have to become useful to someone else. That includes clinical informatics, data interpretation, evidence synthesis, adoption logic and clear writing.
       </p>
     </div>
   </section>
@@ -65,7 +72,7 @@ const skillGroups = [
       <SectionHeader
         eyebrow="Evidence-backed"
         title="Core skill areas"
-        lead="Each skill below is tied to work I have actually done, the outputs it supported and why it matters for biomedical and healthcare work."
+        lead="Each skill is tied to work I have done, the outputs it supported and why it matters for biomedical and healthcare work."
       />
       <div class="grid two">
         {skillGroups.map((group) => (

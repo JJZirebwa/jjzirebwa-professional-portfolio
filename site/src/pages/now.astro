@@ -4,13 +4,14 @@ import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
 import EditorialPanel from '../components/EditorialPanel.astro';
 import { getNowUpdates } from '../data/content';
+import pageUpdates from '../data/page-updates.json';
 
 const focusAreas = [
   {
     eyebrow: 'Focus 01',
-    title: 'Biomedical science and genomics-linked data',
-    text: 'Making the final-year project easier to evaluate from cohort logic, ICD/HES-derived features, observability controls, model comparison and clear limits around clinical interpretation. I want to find a reproducible approach to sparse data-handling that the reality of clinical coding and rare disease could benefit from',
-    meta: ['Biomedical Science', 'Genomics-linked data', 'FYP evidence']
+    title: 'Clinical informatics and genomics-linked data',
+    text: 'I am using the Clinical Informatics project to practise a reproducible route from protocol requirements to linked data, validation and operational review. The final-year project remains the foundation for my work with clinical coding, sparse data and rare-disease evidence.',
+    meta: ['Clinical informatics', 'Genomics-linked data', 'Reproducible analysis']
   },
   {
     eyebrow: 'Focus 02',
@@ -41,7 +42,10 @@ const sharpeningQuestions = [
 
 const directionTags = [
   'Biomedical science',
+  'Clinical informatics',
   'Genomics and health data',
+  'Analyst roles',
+  'Market intelligence',
   'Machine learning baselines',
   'Health innovation strategy',
   'Health innovation analysis',
@@ -50,7 +54,7 @@ const directionTags = [
 ];
 
 const updates = await getNowUpdates();
-const lastUpdated = updates[0]?.date ?? new Date('2026-05-15');
+const lastUpdated = new Date(`${pageUpdates['/now/']}T12:00:00Z`);
 const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
   day: 'numeric',
   month: 'long',
@@ -68,7 +72,7 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
         <p class="eyebrow">Current direction</p>
         <h1>Now</h1>
         <p class="summary">
-          This page tracks what I am actively sharpening now covering where I am moving, what questions I keep returning to and how my strongest evidence connects to the next stage of work.
+          This page tracks what I am sharpening now, where I am moving, the questions I keep returning to and how my strongest evidence connects to the next stage of work.
         </p>
         <p class="status-chip">
           <span>Last updated</span>
@@ -84,7 +88,7 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
       <SectionHeader
         eyebrow="Present tense"
         title="Current focus"
-        lead="Rather than listing everything I could do, this page highlights the strands I am actively deepening because they best connect to my experience and the work I want to keep doing."
+        lead="These are the strands I am actively deepening because they connect most closely to my experience and the work I want to keep doing."
       />
       <div class="grid two">
         {focusAreas.map((item) => (
@@ -106,7 +110,7 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
       <SectionHeader
         eyebrow="Questions"
         title="Questions I am sharpening"
-        lead="These are the recurring questions behind my work, because answering solves the tension that is found between scientific evidence, method design and practical healthcare judgement."
+        lead="These questions sit between scientific evidence, method design and practical healthcare judgement."
       />
       <ul class="compact-list">
         {sharpeningQuestions.map((item) => <li>{item}</li>)}
@@ -119,11 +123,11 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
       <SectionHeader
         eyebrow="Direction"
         title="Direction I am moving toward"
-        lead="I am moving toward early-career roles where biomedical evidence has to be interpreted, challenged and translated into strategic, governance-aware or research-grounded action."
+        lead="I am moving towards early-career Analyst and Market Intelligence roles, alongside work in biomedical evidence, genomics data, clinical informatics and health innovation."
       />
       <div class="note">
         <p>
-          In practice this means roles concerned with biomedical evidence, genomics or health data, applied analytics, healthcare innovation, evidence synthesis and AI/MedTech governance. The through-line is the kind of problem: messy evidence, real constraints and a decision that still has to be made properly.
+          The work I am drawn to begins with messy evidence and a real decision. I want to analyse the material properly, understand what is still uncertain and turn it into something another person can use.
         </p>
         <ul class="tag-list">
           {directionTags.map((item) => <li>{item}</li>)}
@@ -168,12 +172,12 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
       />
       <div class="grid three">
         <LinkCard
-          href="/case-studies/final-year-project/"
+          href="/projects/clinical-informatics/"
           icon="data"
           eyebrow="Data evidence"
-          title="Final-year project"
-          text="The strongest route into my genomics-linked health data work, model comparison and governance-aware interpretation."
-          meta={['83/100 dissertation', 'Project pipeline', 'Governance-aware']}
+          title="Clinical Informatics"
+          text="A public route through protocol mapping, linked synthetic data, validation checks, operational metrics and the live dashboard."
+          meta={['Relational data', 'Operational analysis', 'Live dashboard']}
           prefetch="hover"
         />
         <LinkCard

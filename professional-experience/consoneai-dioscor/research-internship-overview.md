@@ -2,7 +2,7 @@
 
 ## Summary
 
-I supported computational toxicology data preparation during a six-week research internship connected to the DioScor platform by ConsoneAI.
+I supported computational toxicology data preparation during a six-week research internship connected to the DioScor platform by ConsoneAI. The work included ECHA field mapping and PubChem dose-toxicity extraction.
 
 ## Context
 
@@ -12,8 +12,8 @@ The internship was based in preclinical and translational research, where animal
 
 Contribution areas include:
 
-- mapping public or external toxicology data fields to high-level information needs without exposing proprietary schema
-- reviewing dose-toxicity data sources
+- mapping European Chemicals Agency (ECHA) fields to the dose-toxicity information needed
+- extracting dose-toxicity records from PubChem
 - extracting and organising data into Excel/CSV-style outputs
 - supporting data cleaning and consistency checks
 - using lightweight Python-supported workflows where applicable
@@ -23,7 +23,7 @@ Contribution areas include:
 
 The work required translating inconsistent external data into a more usable structure:
 
-- identify relevant source fields
+- identify relevant ECHA and PubChem source fields
 - compare terminology and grouping differences
 - map fields to high-level categories without exposing proprietary schema
 - clean or split datasets where needed

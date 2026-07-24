@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const repositoryUrl = 'https://github.com/JJZirebwa/clinical-informatics';
+const dashboardUrl = 'https://clinical-informatics.streamlit.app';
+const breadcrumbs = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/', label: 'Projects' },
+  { label: 'Clinical Informatics' }
+];
+const siteUrl = Astro.site ?? new URL('https://jubileejoyzirebwa.com');
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, siteUrl).href
+  }))
+};
+
+const facts = [
+  ['Project type', 'Self-directed clinical informatics demonstration'],
+  ['Scenario', 'Synthetic multicentre Phase II metabolic study'],
+  ['Data model', 'Eight linked trial-operations tables'],
+  ['Workflow', 'Protocol mapping, validation, metrics and dashboard review'],
+  ['Technical stack', 'Python, pandas, pytest, Plotly and Streamlit'],
+  ['Reproducibility', 'Fixed seed, tested builds and GitHub Actions']
+];
+
+const validationAreas = [
+  'Identifier uniqueness and relationships between sites, participants, visits, laboratories, adverse events, queries, deviations and milestones.',
+  'Consent, eligibility, randomisation and visit-window timing.',
+  'Laboratory completeness and plausibility within the performed-visit context.',
+  'Unresolved query age, adverse-event follow-up and milestone timing.',
+  'Record-level issue tables that keep each summary connected to the affected data.'
+];
+
+const dashboardAreas = [
+  'Site progress against illustrative enrolment targets.',
+  'Visit completion, adherence and window misses.',
+  'Unresolved query burden and age.',
+  'Adverse-event follow-up, missingness and validation issues.',
+  'Filtered recalculation from the retained records rather than display-only filtering.'
+];
+---
+
+<BaseLayout
+  title="Clinical Informatics"
+  description="A synthetic trial-operations project moving from protocol requirements to relational data, validation checks, operational metrics and an interactive dashboard."
+  structuredData={breadcrumbSchema}
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <Breadcrumbs items={breadcrumbs} />
+      <p class="eyebrow">Self-directed project</p>
+      <h1>Clinical informatics trial-operations demonstration</h1>
+      <p class="summary">
+        I built a synthetic study workflow that moves from protocol requirements to linked data, record-level checks, operational metrics and an interactive dashboard. It gives me a concrete way to practise the reasoning between clinical data structures and the decisions people need to make from them.
+      </p>
+      <div class="action-row">
+        <a class="button" href={dashboardUrl} target="_blank" rel="noreferrer">Open live dashboard</a>
+        <a class="button secondary" href={repositoryUrl} target="_blank" rel="noreferrer">View GitHub repository</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Quick scan"
+        title="What the project contains"
+        lead="The project uses an invented study scenario and a deterministic synthetic data cut dated 30 June 2026."
+      />
+      <dl class="case-facts">
+        {facts.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>From protocol to linked data</h2>
+        <p>
+          The workflow begins with a study-style protocol and translates its population, visit schedule, assessments and operational questions into fields and relationships. A fixed seed then generates linked site, participant, visit, laboratory, adverse-event, query, protocol-deviation and milestone tables.
+        </p>
+      </div>
+      <div class="prose">
+        <h2>Checks before summaries</h2>
+        <p>
+          Validation happens at record level before the project produces study and site summaries. That ordering matters because a useful metric still needs a clear route back to the records and rules that produced it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell grid two">
+      <div class="note">
+        <h2>Validation areas</h2>
+        <ul class="compact-list">
+          {validationAreas.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="note">
+        <h2>Operational review views</h2>
+        <ul class="compact-list">
+          {dashboardAreas.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <SectionHeader
+        eyebrow="Reproducibility"
+        title="A workflow that can be rerun and inspected"
+        lead="The build regenerates the synthetic tables, reports and figures from the same seed. Tests compare isolated builds and GitHub Actions runs linting, behavioural checks, coverage and the project build."
+      />
+      <div class="note">
+        <h2>What it adds to my portfolio</h2>
+        <p>
+          This project extends my biomedical and health-data foundation into clinical informatics, relational data design and trial-operations analysis. It also shows the kind of analyst work I enjoy most, where a messy operational question has to become a traceable data structure and a useful review view.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

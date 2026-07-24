@@ -2,7 +2,7 @@
 
 ## Summary
 
-I completed a short research internship connected to ConsoneAI/DioScor, supporting toxicology data mapping and structured data-preparation work for a dose-toxicity platform context.
+I completed a short research internship connected to ConsoneAI/DioScor, supporting ECHA field mapping, PubChem dose-toxicity extraction and structured data preparation for a dose-toxicity platform context.
 
 ## Portfolio Pages
 

@@ -2,58 +2,50 @@
 
 ## Summary
 
-One-year placement in NHS-facing commercial health innovation, covering evidence briefs, market intelligence, competitor analysis, pathway and adoption logic, innovator engagement, internal strategy material and draft stakeholder-facing summaries.
+My one-year placement covered NHS-facing commercial health innovation from first scoping through to evidence, market and adoption analysis. I built reusable intelligence resources, authored practical guidance and supported live innovator work.
 
 ## Context
 
-The placement was set in a commercial innovation environment where technologies had to be understood as the products they were, and as evidence claims, pathway interventions, stakeholder decisions and adoption risks.
+The placement sat where product claims meet clinical evidence, care pathways and the decisions needed for adoption. That meant understanding the technology itself while asking how it would fit into real services and what different stakeholders would need from the evidence.
 
-## My Contribution
+## My contribution
 
-My work combined independently authored internal analysis, co-authored work with senior colleagues and support-based contributions across:
+I took direct ownership of the CB Insights buildout, turning the platform into a repeatable market-intelligence capability with dashboards, live databases and reusable research views. I also authored the internal AI Toolkit and contributed across the wider placement work.
 
-- innovator triage and information gathering
-- evidence appraisal and structured summaries
-- market intelligence using tools such as CB Insights
-- competitor landscapes and horizon scans
-- business-case support
-- pathway mapping and adoption logic
-- AI/MedTech governance guidance
-- internal materials and draft stakeholder-facing summaries
+- Ran or supported innovator triage and one-to-one scoping calls.
+- Built competitor landscapes, horizon scans and structured evidence summaries.
+- Examined Cardisio's competitor position and potential alignment with the Quality and Outcomes Framework.
+- Supported business-case work for Charco and its CUE1 device.
+- Mapped ICB priorities and workstreams to relevant innovation questions.
+- Turned AI and MedTech governance material into practical guidance for internal use.
 
-## Methods / Approach
+## Approach
 
-The recurring approach was to break broad innovation questions into practical workstreams:
+I broke broad innovation questions into decisions that could be researched and answered.
 
-- What is the unmet need?
-- What evidence supports the technology?
-- What does the competitor landscape look like?
-- Where would this fit in a pathway?
-- What would NHS stakeholders need to believe before adopting it?
-- What relevance to geographic patch alignments?
-- What risks, governance requirements or data issues remain unresolved?
+- Define the unmet need and the proposed value.
+- Appraise the evidence behind the product claims.
+- Map the competitor landscape, funding signals and market maturity.
+- Place the technology within its likely pathway and stakeholder context.
+- Test the adoption case against NHS priorities, incentives and implementation needs.
+- Record unresolved evidence, governance and data questions for further work.
 
 ## Outputs
 
-Output categories covered:
+- Evidence briefs and competitor comparison packs.
+- Market dashboards, live databases and horizon-scanning summaries.
+- AI and MedTech guidance material.
+- Adoption, value and business-case notes.
+- Pathway and stakeholder decision framing.
 
-- evidence briefs
-- competitor comparison packs
-- market and horizon-scanning summaries
-- AI/MedTech guidance material
-- adoption and value-logic notes
-- pathway and stakeholder-decision framing
+## Skills demonstrated
 
-## Skills Demonstrated
+- Commercial health innovation reasoning.
+- Evidence synthesis and source discipline.
+- Market intelligence and database organisation.
+- Stakeholder translation and structured writing.
+- AI and MedTech governance literacy.
 
-- commercial health innovation reasoning
-- evidence synthesis
-- market intelligence
-- stakeholder translation
-- structured writing
-- confidentiality discipline
-- AI/MedTech governance literacy
+## What this shows
 
-## What This Shows
-
-This experience shows that I can operate at the boundary between biomedical evidence, product claims, NHS realities and commercial decision-making.
+This experience shows how I work when biomedical evidence, product claims and NHS adoption questions have to be considered together. I can move from an open question to a structured analysis, then produce material that colleagues can use in the next decision.

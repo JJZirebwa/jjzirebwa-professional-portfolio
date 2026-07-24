@@ -2,13 +2,20 @@
 
 ## Summary
 
-I completed a one-year commercial placement with Health Innovation East, working around NHS-facing health innovation, evidence synthesis, market intelligence, innovator support and adoption logic.
+I completed a one-year commercial placement with Health Innovation East. My work connected biomedical evidence and commercial analysis with the practical questions that shape NHS adoption.
 
 ## Placement context
 
-Health Innovation East works at the interface between innovators, NHS needs and practical adoption. My placement evidence fits health innovation, consulting, commercial analysis, evidence and AI-governance work because it involved turning technical and clinical information into clearer decision-useful material.
+Health Innovation East works with innovators and NHS partners to help worthwhile technologies move towards use. I contributed to that work through evidence appraisal, market intelligence, innovator support, adoption analysis and AI and MedTech governance.
 
-The public pages distinguish between independently authored internal work, co-authored work with senior colleagues and support-based contributions. They do not imply final commercial decision authority, regulatory advice, reimbursement validation or endorsement by Health Innovation East, NHS bodies, clients or innovators.
+## What I worked on
+
+- Innovator triage and one-to-one scoping calls.
+- A repeatable CB Insights market-intelligence capability built around dashboards and live databases.
+- Competitor and QOF-alignment work for Cardisio.
+- The internal AI Toolkit for innovation advisory work.
+- Business-case support for Charco and its CUE1 device.
+- ICB mapping to connect workstreams with regional priorities.
 
 ## Portfolio pages
 
@@ -21,7 +28,3 @@ The public pages distinguish between independently authored internal work, co-au
 | [Cardisio/QOF adoption logic](cardisio-qof-adoption-logic.md) | Reconstructed AI-ECG adoption case. |
 | [PulseOn AF monitoring strategy](pulseon-af-monitoring-strategy.md) | Reconstructed AF monitoring strategy case. |
 | [Charco/CUE1 business-case support](charco-cue1-business-case-support.md) | Reconstructed Parkinson's device business-case support. |
-
-## Confidentiality note
-
-This section does not contain internal HIE documents, client files, CB Insights exports, screenshots, business-case drafts or confidential correspondence.
