@@ -2,163 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import LinkCard from '../components/LinkCard.astro';
-import EditorialPanel from '../components/EditorialPanel.astro';
-import { getNowUpdates } from '../data/content';
-import pageUpdates from '../data/page-updates.json';
-
-const focusAreas = [
-  {
-    eyebrow: 'Focus 01',
-    title: 'Clinical informatics and genomics-linked data',
-    text: 'I am using the Clinical Informatics project to practise a reproducible route from protocol requirements to linked data, validation and operational review. The final-year project remains the foundation for my work with clinical coding, sparse data and rare-disease evidence.',
-    meta: ['Clinical informatics', 'Genomics-linked data', 'Reproducible analysis']
-  },
-  {
-    eyebrow: 'Focus 02',
-    title: 'Weak-signal biomedical methods',
-    text: 'Pushing the final-year project logic further into methods thinking for sparse data, study-design support, measurement prioritisation and disciplined hypothesis generation.',
-    meta: ['Weak-signal recovery', 'Method discipline', 'Measurement priorities']
-  },
-  {
-    eyebrow: 'Focus 03',
-    title: 'AI/MedTech governance that can actually be used',
-    text: 'Continuing the translation work between regulation, evidence standards, clinical safety, information governance and the practical questions that shape adoption conversations.',
-    meta: ['Governance translation', 'Clinical safety', 'Adoption questions']
-  },
-  {
-    eyebrow: 'Focus 04',
-    title: 'Health innovation strategy without losing the science',
-    text: 'Keeping the Health Innovation East and AI/MedTech governance work visible while making sure the scientific and data-analysis foundation remains the first signal.',
-    meta: ['Health innovation strategy', 'Evidence synthesis', 'Balanced profile']
-  }
-];
-
-const sharpeningQuestions = [
-  'How do you recover useful signal in sparse biomedical data without pretending the evidence is stronger than it is?',
-  'What makes an AI/MedTech evidence story credible enough for real pathway and adoption conversations?',
-  'How should commercial health innovation work separate strong proof, plausible promise and unresolved validation gaps?',
-  'Which judgement steps can be made more repeatable without flattening the biological, clinical or governance rationale that still matters?'
-];
-
-const directionTags = [
-  'Biomedical science',
-  'Clinical informatics',
-  'Genomics and health data',
-  'Analyst roles',
-  'Market intelligence',
-  'Machine learning baselines',
-  'Health innovation strategy',
-  'Health innovation analysis',
-  'Evidence synthesis',
-  'AI/MedTech governance'
-];
-
-const updates = await getNowUpdates();
-const lastUpdated = new Date(`${pageUpdates['/now/']}T12:00:00Z`);
-const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
-  day: 'numeric',
-  month: 'long',
-  year: 'numeric'
-}).format(lastUpdated);
 ---
 
 <BaseLayout
-  title="Now"
-  description="My current focus, active questions and present direction."
+  title="Current work"
+  description="Current work and the evidence that supports it."
 >
   <section class="case-hero">
-    <div class="page-shell now-hero-grid">
+    <div class="page-shell">
       <div>
-        <p class="eyebrow">Current direction</p>
-        <h1>Now</h1>
+        <p class="eyebrow">Current work</p>
+        <h1>Current work</h1>
         <p class="summary">
-          This page tracks what I am sharpening now, where I am moving, the questions I keep returning to and how my strongest evidence connects to the next stage of work.
+          I am building on clinical informatics, genomics-linked health data and healthcare innovation work. Each link below leads to the work itself and the evidence behind it.
         </p>
-        <p class="status-chip">
-          <span>Last updated</span>
-          <strong>{lastUpdatedLabel}</strong>
-        </p>
-      </div>
-      <EditorialPanel variant="current-vector" />
-    </div>
-  </section>
-
-  <section class="section-band">
-    <div class="page-shell">
-      <SectionHeader
-        eyebrow="Present tense"
-        title="Current focus"
-        lead="These are the strands I am actively deepening because they connect most closely to my experience and the work I want to keep doing."
-      />
-      <div class="grid two">
-        {focusAreas.map((item) => (
-          <article class="card focus-card">
-            <span class="tag">{item.eyebrow}</span>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-            <ul class="card-meta-list" aria-label={`${item.title} focus signals`}>
-              {item.meta.map((entry) => <li class="meta-tag">{entry}</li>)}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-band light">
-    <div class="page-shell split">
-      <SectionHeader
-        eyebrow="Questions"
-        title="Questions I am sharpening"
-        lead="These questions sit between scientific evidence, method design and practical healthcare judgement."
-      />
-      <ul class="compact-list">
-        {sharpeningQuestions.map((item) => <li>{item}</li>)}
-      </ul>
-    </div>
-  </section>
-
-  <section class="section-band">
-    <div class="page-shell split">
-      <SectionHeader
-        eyebrow="Direction"
-        title="Direction I am moving toward"
-        lead="I am moving towards early-career Analyst and Market Intelligence roles, alongside work in biomedical evidence, genomics data, clinical informatics and health innovation."
-      />
-      <div class="note">
-        <p>
-          The work I am drawn to begins with messy evidence and a real decision. I want to analyse the material properly, understand what is still uncertain and turn it into something another person can use.
-        </p>
-        <ul class="tag-list">
-          {directionTags.map((item) => <li>{item}</li>)}
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-band light">
-    <div class="page-shell">
-      <SectionHeader
-        eyebrow="Recent movement"
-        title="Recent updates"
-        lead="Selective profile and portfolio updates, written for people reading the work and tracking how the public evidence is developing."
-      />
-      <div class="now-update-list">
-        {updates.map((item) => (
-          <article class="note now-update-card">
-            <p class="update-meta">
-              <time datetime={item.date.toISOString()}>{new Intl.DateTimeFormat('en-GB', {
-                day: 'numeric',
-                month: 'short',
-                year: 'numeric'
-              }).format(item.date)}</time>
-              <span>{item.category}</span>
-            </p>
-            <h3>{item.title}</h3>
-            <p>{item.summary}</p>
-            {item.href && <a href={item.href}>Open related page</a>}
-          </article>
-        ))}
       </div>
     </div>
   </section>
@@ -166,20 +23,50 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
   <section class="section-band">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Next routes"
-        title="Where to go next"
-        lead="Use this page to understand my current focus, then return to the strongest evidence and the rest of the site."
+        eyebrow="Work in view"
+        title="Current evidence"
+        lead="The latest self-directed project sits alongside the completed work that informs it."
       />
       <div class="grid three">
         <LinkCard
           href="/projects/clinical-informatics/"
           icon="data"
-          eyebrow="Data evidence"
+          eyebrow="Self-directed project"
           title="Clinical Informatics"
-          text="A public route through protocol mapping, linked synthetic data, validation checks, operational metrics and the live dashboard."
+          text="A synthetic trial-operations demonstration covering protocol mapping, linked data checks, operational metrics and an interactive dashboard."
           meta={['Relational data', 'Operational analysis', 'Live dashboard']}
           prefetch="hover"
         />
+        <LinkCard
+          href="/case-studies/final-year-project/"
+          icon="data"
+          eyebrow="Final-year project"
+          title="Genomics-linked health data research"
+          text="Rare-disease cohort construction, feature engineering and model comparison with clear observability limits."
+          meta={['ICD and HES data', 'Feature pipeline', 'Model evaluation']}
+          prefetch="hover"
+        />
+        <LinkCard
+          href="/case-studies/health-innovation-east/"
+          icon="market"
+          eyebrow="Health Innovation East"
+          title="Healthcare innovation evidence"
+          text="Research and advisory work on evidence, governance and adoption questions for health technology."
+          meta={['Evidence review', 'AI and MedTech', 'Decision support']}
+          prefetch="hover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Further detail"
+        title="Evidence to explore"
+        lead="The case studies and documents give the fuller context, methods and boundaries for this work."
+      />
+      <div class="grid three">
         <LinkCard
           href="/documents/"
           icon="writing"
@@ -194,8 +81,8 @@ const lastUpdatedLabel = new Intl.DateTimeFormat('en-GB', {
           icon="contact"
           eyebrow="Conversation"
           title="Contact"
-          text="Use the contact page for role scope, location and the best way to start a conversation."
-          meta={['Cambridge, UK', 'Role interests', 'Professional contact']}
+          text="Get in touch about the work, a role or a potential collaboration."
+          meta={['Cambridge, UK', 'Professional contact']}
           prefetch="hover"
         />
       </div>

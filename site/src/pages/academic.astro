@@ -11,18 +11,45 @@ const selectedMarks = [
   ['Human Pathology', '73, A', 'Disease morphology and systems pathology'],
   ['Pharmacology and Translational Medicine', '71, A', 'Drug mechanisms, development, clinical translation.']
 ];
+
+const laboratoryAreas = [
+  {
+    title: 'Microbiology',
+    modules: 'General Microbiology',
+    practice: 'Aseptic technique and culture handling, agar preparation, streak and spread plating, Gram staining, oxidase and catalase testing, disk diffusion, colony counting and CFU/ml calculations.',
+    evidence: 'The assessed practical series used a mock food-poisoning investigation, with an unknown organism identified from the combined culture, staining and biochemical evidence.'
+  },
+  {
+    title: 'DNA manipulation and protein expression',
+    modules: 'Laboratory Techniques in DNA Manipulation',
+    practice: 'Micropipetting, solution preparation, PCR, agarose gel electrophoresis, spin-column purification, restriction digestion, ligation, plating, colony PCR, clone-screening logic and SDS-PAGE interpretation.',
+    evidence: 'The module combined a repeated cloning workflow with a laboratory report and an assessed in-class practical covering pipetting, gel loading, weighing and molar-solution preparation.'
+  },
+  {
+    title: 'Diagnostic pathology',
+    modules: 'Diagnostic Techniques in Pathology',
+    practice: 'Specimen-reception and LIMS exercises, microbiology practicals, indirect ELISA with a standard curve and plate-reader measurement, and H&E and Papanicolaou staining.',
+    evidence: 'The work followed practical protocols and introduced controls, result interpretation, quality systems and the boundaries set by SOPs and fitness to practise.'
+  },
+  {
+    title: 'Microscopy and biochemistry',
+    modules: 'Human Anatomy and Physiology; Introduction to Cell Biology and Biochemistry',
+    practice: 'Light microscopy across multiple magnifications, graticule calibration, oil immersion, tissue observation, enzyme assays and protein purification.',
+    evidence: 'Microscopy and laboratory-skills components were assessed, while the biochemistry module used a six-part laboratory-report sequence alongside practical teaching.'
+  }
+];
 ---
 
 <BaseLayout
   title="Academic profile"
-  description="Academic profile for Jubileejoy Zirebwa, First Class Biomedical Science graduate with a governance-aware final-year project."
+  description="Academic profile for Jubileejoy Zirebwa, a First Class Biomedical Science graduate with practical laboratory, diagnostic and genomics-linked research experience."
 >
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Academic profile</p>
       <h1>Biomedical Science (Hons)</h1>
       <p class="summary">
-        I graduated with First Class Honours in BSc (Hons) Biomedical Science from Anglia Ruskin University, Cambridge. The degree sits underneath the genomics, health data science and healthcare innovation work shown elsewhere in the portfolio.
+        I graduated with First Class Honours in BSc (Hons) Biomedical Science from Anglia Ruskin University, Cambridge. The degree included practical laboratory training across microbiology, molecular biology, diagnostic pathology, histology and biochemistry, alongside the genomics, health data science and healthcare innovation work shown elsewhere in the portfolio.
       </p>
       <div class="action-row">
         <a class="button" href="/case-studies/final-year-project/">View final-year project</a>
@@ -45,6 +72,44 @@ const selectedMarks = [
           </div>
         ))}
       </dl>
+    </div>
+  </section>
+
+  <section class="section-band" id="laboratory-practice">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Degree practicals"
+        title="Practical laboratory work"
+        lead="Supervised and assessed degree practicals gave me repeated experience of culture work, molecular methods, diagnostic workflows, microscopy and biochemical measurement."
+      />
+      <div class="grid two">
+        {laboratoryAreas.map((area) => (
+          <article class="card skill-card">
+            <span class="tag">Supervised degree practicals</span>
+            <h3>{area.title}</h3>
+            <dl>
+              <div>
+                <dt>Module evidence</dt>
+                <dd>{area.modules}</dd>
+              </div>
+              <div>
+                <dt>Methods used</dt>
+                <dd>{area.practice}</dd>
+              </div>
+              <div>
+                <dt>How it was evidenced</dt>
+                <dd>{area.evidence}</dd>
+              </div>
+            </dl>
+          </article>
+        ))}
+      </div>
+      <div class="note">
+        <h2>How I describe this experience</h2>
+        <p>
+          These methods come from supervised and assessed degree practicals rather than professional laboratory employment. I have kept simulated and computational exercises out of the hands-on list.
+        </p>
+      </div>
     </div>
   </section>
 

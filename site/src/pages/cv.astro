@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DocumentMetadata from '../components/DocumentMetadata.astro';
+import NewTabCue from '../components/NewTabCue.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
 const highlights = [
@@ -24,7 +25,7 @@ const highlights = [
         A general CV for biomedical science, genomics-linked health data work, healthcare innovation and evidence-led roles. It is not tailored to one application.
       </p>
       <div class="action-row">
-        <a class="button" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+        <a class="button" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF <NewTabCue /></a>
         <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" download>Download CV</a>
         <a class="button secondary" href="/documents/">Documents</a>
       </div>
@@ -65,7 +66,7 @@ const highlights = [
       <object class="document-preview" data="/documents/Jubileejoy_Zirebwa_CV.pdf" type="application/pdf" aria-label="Jubileejoy Zirebwa CV PDF preview">
         <p>
           PDF preview is not available in this browser.
-          <a href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF</a>.
+          <a href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF <NewTabCue /></a>.
         </p>
       </object>
     </div>

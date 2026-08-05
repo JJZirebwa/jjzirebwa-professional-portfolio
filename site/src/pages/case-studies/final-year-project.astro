@@ -1,7 +1,15 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import NewTabCue from '../../components/NewTabCue.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
+import analyticalDesign from '../../assets/images/fyp/analytical-design.png';
+import cohortArchitecture from '../../assets/images/fyp/cohort-architecture.png';
+import observabilityDepth from '../../assets/images/fyp/observability-depth.png';
+import featureDomainSummary from '../../assets/images/fyp/feature-domain-summary.png';
+import modelPerformance from '../../assets/images/fyp/model-performance.png';
+import rfFeatureStability from '../../assets/images/fyp/rf-feature-stability.png';
 
 const githubPipelineHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portfolio/tree/main/academic/final-year-project/pipeline';
 const breadcrumbs = [
@@ -28,32 +36,32 @@ const sourceFacts = [
 
 const figures = [
   {
-    src: '/images/fyp/analytical-design.png',
+    src: analyticalDesign,
     alt: 'Analytical design diagram for the final-year project.',
     caption: 'Analysis design: cohort, hospital-event features, model comparison and interpretation boundary.'
   },
   {
-    src: '/images/fyp/cohort-architecture.png',
+    src: cohortArchitecture,
     alt: 'Cohort architecture chart from the dissertation overview.',
     caption: 'Cohort and target architecture used to frame the analysis.'
   },
   {
-    src: '/images/fyp/observability-depth.png',
+    src: observabilityDepth,
     alt: 'Observability depth chart showing record-history and code-history coverage.',
     caption: 'Observability checks made record depth part of the method, not an afterthought.'
   },
   {
-    src: '/images/fyp/feature-domain-summary.png',
+    src: featureDomainSummary,
     alt: 'Bar chart showing final compact feature-domain structure.',
     caption: 'Compact feature-domain structure across ventricular severity, conduction, syncope, pathway proxy and observability.'
   },
   {
-    src: '/images/fyp/model-performance.png',
+    src: modelPerformance,
     alt: 'Compact model-family comparison across balanced accuracy, ROC AUC, PR AUC and probability error.',
     caption: 'Model-family comparison across interpretable, tree-based and shallow neural-network baselines.'
   },
   {
-    src: '/images/fyp/rf-feature-stability.png',
+    src: rfFeatureStability,
     alt: 'Random forest feature stability chart across repeated splits.',
     caption: 'Feature-stability review helped test whether signal was stable enough to discuss.'
   }
@@ -148,7 +156,7 @@ const codeSnippets = [
         My dissertation write-up component was awarded 83%. The project used genomics-linked hospital episode material to ask whether historical hospital-coded trajectories could support careful exploratory stratification in a Brugada-suspect research cohort.
       </p>
       <div class="action-row">
-        <a class="button" href={githubPipelineHref} target="_blank" rel="noreferrer">View project pipeline</a>
+        <a class="button" href={githubPipelineHref} target="_blank" rel="noreferrer">View project pipeline <NewTabCue /></a>
         <a class="button secondary" href="/documents/#dissertation">Open overview PDF</a>
         <a class="button secondary" href="/academic/">Academic profile</a>
       </div>
@@ -215,7 +223,7 @@ const codeSnippets = [
       <div class="figure-grid">
         {figures.map((figure) => (
           <figure class="figure-panel">
-            <img src={figure.src} alt={figure.alt} loading="lazy" />
+            <Image src={figure.src} alt={figure.alt} widths={[480, 760, 1120]} sizes="(min-width: 901px) 50vw, 100vw" />
             <figcaption>{figure.caption}</figcaption>
           </figure>
         ))}
@@ -240,7 +248,7 @@ const codeSnippets = [
         ))}
       </div>
       <div class="action-row">
-        <a class="button" href={githubPipelineHref} target="_blank" rel="noreferrer">Open GitHub pipeline folder</a>
+        <a class="button" href={githubPipelineHref} target="_blank" rel="noreferrer">Open GitHub pipeline folder <NewTabCue /></a>
         <a class="button secondary" href="/documents/#technical">See document links</a>
       </div>
     </div>
@@ -259,7 +267,7 @@ const codeSnippets = [
         <h3>Dissertation overview</h3>
         <p>Overview PDF for the final-year project, including the research question, method shape, selected figures and result context.</p>
         <div class="action-row">
-          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF <NewTabCue /></a>
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" download>Download</a>
         </div>
       </div>

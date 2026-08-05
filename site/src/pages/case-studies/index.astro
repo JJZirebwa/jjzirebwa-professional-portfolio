@@ -36,13 +36,13 @@ const childCases: CaseStudyCard[] = allCases
   }));
 ---
 
-<BaseLayout title="Experience" description="Parent experience pages across biomedical data, health innovation and biomedical research.">
+<BaseLayout title="Experience" description="Case studies across biomedical data, health innovation and biomedical research.">
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Experience</p>
-      <h1>Parent case studies</h1>
+      <h1>Case studies</h1>
       <p class="summary">
-        Start here for the substantial experience-level pages: final-year project, Health Innovation East placement and ConsoneAI/DioScor internship. Contained deliverables sit underneath those parent contexts rather than competing with them.
+        Start here for the broader experience pages covering the final-year project, Health Innovation East placement and ConsoneAI/DioScor internship. Focused work is grouped with the experience that gave it context.
       </p>
     </div>
   </section>
@@ -50,9 +50,9 @@ const childCases: CaseStudyCard[] = allCases
   <section class="section-band light">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Parent lane"
-        title="Substantial experience pages"
-        lead="These pages summarise the broader setting, my role, the work delivered and the judgement involved."
+        eyebrow="Experience overview"
+        title="Broader experience"
+        lead="These pages set out the setting, my contribution, the work delivered and the judgement involved."
       />
       <div class="grid two">
         {parentCases.map((item: CaseStudyCard) => <LinkCard {...item} prefetch="hover" />)}
@@ -63,9 +63,9 @@ const childCases: CaseStudyCard[] = allCases
   <section class="section-band">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Contained work"
-        title="Deliverables and methods linked to parent experiences"
-        lead="These pages are more focused pieces of work. They make most sense when read alongside the parent experience they came from."
+        eyebrow="Focused work"
+        title="Deliverables and methods"
+        lead="These pages cover focused pieces of work and link back to the experience in which they were developed."
       />
       <div class="grid two">
         {childCases.map((item: CaseStudyCard) => <LinkCard {...item} prefetch="hover" />)}
