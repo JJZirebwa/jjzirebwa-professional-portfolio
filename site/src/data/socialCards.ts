@@ -13,7 +13,7 @@ export const socialCards = [
     path: '/',
     eyebrow: 'Professional portfolio',
     title: 'Jubileejoy "JJ" Zirebwa',
-    description: 'First Class Biomedical Science graduate across genomics, health data science, healthcare innovation and evidence-led strategy.',
+    description: 'First Class Biomedical Science graduate with practical laboratory training and work across genomics, health data science and healthcare innovation.',
     imageAlt: 'Social preview card for Jubileejoy Zirebwa professional portfolio.'
   },
   {
@@ -29,16 +29,16 @@ export const socialCards = [
     path: '/academic/',
     eyebrow: 'Academic profile',
     title: 'Academic profile',
-    description: 'First Class Biomedical Science record, selected marks and protected transcript access.',
+    description: 'First Class Biomedical Science record with module-backed laboratory practice, selected marks and protected transcript access.',
     imageAlt: 'Social preview card for the academic profile.'
   },
   {
     slug: 'case-studies',
     path: '/case-studies/',
     eyebrow: 'Experience',
-    title: 'Parent case studies',
-    description: 'Experience-level pages across final-year project, health innovation placement and biomedical research internship.',
-    imageAlt: 'Social preview card for parent experience case studies.'
+    title: 'Case studies',
+    description: 'Broader experience across a final-year project, health innovation placement and biomedical research internship.',
+    imageAlt: 'Social preview card for the case studies page.'
   },
   {
     slug: 'health-innovation-east',
@@ -85,7 +85,7 @@ export const socialCards = [
     path: '/projects/',
     eyebrow: 'Projects',
     title: 'Projects',
-    description: 'Contained deliverables and methods linked to parent experiences.',
+    description: 'Standalone projects and focused work, with the original experience kept clear.',
     imageAlt: 'Social preview card for project deliverables and methods.'
   },
   {
@@ -101,16 +101,16 @@ export const socialCards = [
     path: '/skills/',
     eyebrow: 'Skills',
     title: 'Skills',
-    description: 'Health innovation strategy, evidence synthesis, AI governance, data analysis and clear professional writing.',
+    description: 'Laboratory and diagnostic practice, clinical informatics, biomedical data, evidence synthesis and health innovation.',
     imageAlt: 'Social preview card for skills and working strengths.'
   },
   {
     slug: 'now',
     path: '/now/',
-    eyebrow: 'Current direction',
-    title: 'Now',
-    description: 'Current focus areas, active questions and the direction Jubileejoy Zirebwa is sharpening next.',
-    imageAlt: 'Social preview card for the Now page.'
+    eyebrow: 'Current work',
+    title: 'Current work',
+    description: 'Current clinical informatics work alongside the completed research and health innovation evidence that informs it.',
+    imageAlt: 'Social preview card for the Current work page.'
   },
   {
     slug: 'cv',
@@ -133,8 +133,8 @@ export const socialCards = [
     path: '/contact/',
     eyebrow: 'Contact',
     title: 'Contact',
-    description: 'Role scope, location and professional contact details for Jubileejoy Zirebwa.',
-    imageAlt: 'Social preview card for contact and role scope.'
+    description: 'Location and professional contact details for Jubileejoy Zirebwa.',
+    imageAlt: 'Social preview card for the Contact page.'
   }
 ] satisfies SocialCard[];
 

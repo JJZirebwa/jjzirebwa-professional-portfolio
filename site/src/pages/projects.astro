@@ -22,7 +22,7 @@ const deliverables = [
     eyebrow: 'Final-year project method',
     title: 'Exploratory modelling approach',
     text: 'Cohort construction, ICD/HES-derived feature engineering, observability controls and LR/RF/NN model comparison under a rare-disease evidence boundary.',
-    meta: ['Parent: Final-year project', 'Feature pipeline', 'Model evaluation']
+    meta: ['Final-year project context', 'Feature pipeline', 'Model evaluation']
   },
   {
     href: '/case-studies/ai-medtech-toolkit/',
@@ -30,7 +30,7 @@ const deliverables = [
     eyebrow: 'Health Innovation East deliverable',
     title: 'AI Toolkit',
     text: 'Internal guidance-support material translating AI/MedTech governance, evidence expectations, clinical safety and data requirements into advisory questions.',
-    meta: ['Parent: HIE placement', 'AI/MedTech governance', 'Toolkit authoring']
+    meta: ['HIE placement context', 'AI/MedTech governance', 'Toolkit authoring']
   },
   {
     href: '/case-studies/market-intelligence/',
@@ -38,7 +38,7 @@ const deliverables = [
     eyebrow: 'Health Innovation East method',
     title: 'Market intelligence and competitor analysis',
     text: 'Structured market, competitor and horizon-scanning work for live innovation questions, shaped around evidence quality and pathway fit.',
-    meta: ['Parent: HIE placement', 'CB Insights', 'Decision support']
+    meta: ['HIE placement context', 'CB Insights', 'Decision support']
   },
   {
     href: '/case-studies/consoneai-dioscor/',
@@ -46,7 +46,7 @@ const deliverables = [
     eyebrow: 'Internship method',
     title: 'Computational toxicology data preparation',
     text: 'Dose-toxicity data mapping and structured preparation work from the ConsoneAI/DioScor research internship.',
-    meta: ['Parent: ConsoneAI/DioScor', 'Data mapping', 'Toxicology context']
+    meta: ['Internship context', 'Data mapping', 'Toxicology context']
   }
 ];
 ---
@@ -55,9 +55,9 @@ const deliverables = [
   <section class="case-hero">
     <div class="page-shell">
       <p class="eyebrow">Projects</p>
-      <h1>Deliverables and methods</h1>
+      <h1>Projects and focused work</h1>
       <p class="summary">
-        This page brings together standalone projects and the focused methods that sit inside larger experiences. The distinction keeps each piece of work connected to the setting in which it was actually developed.
+        This page brings together standalone projects and focused methods from larger experiences. Each card makes its original setting clear.
       </p>
     </div>
   </section>
@@ -65,9 +65,9 @@ const deliverables = [
   <section class="section-band light">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Contained lane"
+        eyebrow="Project work"
         title="Focused project work"
-        lead="Clinical Informatics stands as a self-directed project. The other cards name the parent experience that gave each deliverable or method its context."
+        lead="Clinical Informatics is a self-directed project. The other cards identify the experience that gave each deliverable or method its context."
       />
       <div class="grid two">
         {deliverables.map((item) => <LinkCard {...item} prefetch="hover" />)}

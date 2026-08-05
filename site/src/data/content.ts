@@ -77,14 +77,6 @@ export interface ProjectExploratoryStrand {
   visualVariant: EditorialPanelVariant;
 }
 
-export interface NowUpdate {
-  date: Date;
-  category: string;
-  title: string;
-  summary: string;
-  href?: string;
-}
-
 const byOrder = <T extends { order: number }>(left: T, right: T) => left.order - right.order;
 
 const normalizeCaseStudy = ({ data }: CaseStudyEntry): CaseStudyContent => ({
@@ -173,8 +165,3 @@ export const getProjectExploratoryStrand = async (): Promise<ProjectExploratoryS
     visualVariant: strand.data.visualVariant
   };
 };
-
-export const getNowUpdates = async (): Promise<NowUpdate[]> =>
-  (await getCollection('now-updates'))
-    .map((entry) => entry.data)
-    .sort((left, right) => right.date.getTime() - left.date.getTime());

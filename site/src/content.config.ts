@@ -81,22 +81,7 @@ const projectContexts = defineCollection({
   })
 });
 
-const nowUpdates = defineCollection({
-  loader: glob({
-    base: './src/content/now-updates',
-    pattern: '**/*.json'
-  }),
-  schema: z.object({
-    date: z.coerce.date(),
-    title: z.string(),
-    summary: z.string(),
-    href: z.string().optional(),
-    category: z.string()
-  })
-});
-
 export const collections = {
   'case-studies': caseStudies,
-  'project-contexts': projectContexts,
-  'now-updates': nowUpdates
+  'project-contexts': projectContexts
 };

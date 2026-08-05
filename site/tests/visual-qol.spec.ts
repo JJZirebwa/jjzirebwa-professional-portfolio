@@ -32,24 +32,29 @@ for (const pageInfo of pages) {
       const candidates = Array.from(document.querySelectorAll('a, button, h1, h2, h3, p, li, .card, .contact-panel'));
       const visible = candidates
         .map((element) => {
-          const rect = element.getBoundingClientRect();
-          return { element, rect };
+          const rects = Array.from(element.getClientRects()).filter((rect) => rect.width > 0 && rect.height > 0);
+          return { element, rects };
         })
-        .filter(({ rect }) => rect.width > 0 && rect.height > 0);
+        .filter(({ rects }) => rects.length > 0);
 
       const overlaps: string[] = [];
       for (let index = 0; index < visible.length; index += 1) {
         for (let next = index + 1; next < visible.length; next += 1) {
-          const a = visible[index].rect;
-          const b = visible[next].rect;
-          const intersects = a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+          const first = visible[index];
+          const second = visible[next];
+          if (first.element.contains(second.element) || second.element.contains(first.element)) continue;
+
+          const intersects = first.rects.some((a) => second.rects.some((b) =>
+            a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top
+          ));
           if (!intersects) continue;
 
-          const aContainsB = a.left <= b.left && a.right >= b.right && a.top <= b.top && a.bottom >= b.bottom;
-          const bContainsA = b.left <= a.left && b.right >= a.right && b.top <= a.top && b.bottom >= a.bottom;
-          if (!aContainsB && !bContainsA) {
-            overlaps.push(`${visible[index].element.tagName} overlaps ${visible[next].element.tagName}`);
-          }
+          const describe = (element: Element) => {
+            const label = (element.getAttribute('aria-label') ?? element.textContent ?? '').trim().replace(/\s+/g, ' ').slice(0, 60);
+            const href = element instanceof HTMLAnchorElement ? ` ${element.getAttribute('href') ?? ''}` : '';
+            return `${element.tagName}${href}${label ? ` “${label}”` : ''}`;
+          };
+          overlaps.push(`${describe(first.element)} overlaps ${describe(second.element)}`);
         }
       }
       return overlaps.slice(0, 5);
@@ -92,7 +97,7 @@ test('adaptive navigation exposes secondary routes on desktop and through More o
     await moreNavigation.locator('summary').click();
     await expect(moreNavigation).toHaveAttribute('open', '');
 
-    for (const label of ['About', 'Academic', 'Skills', 'Documents', 'Now']) {
+    for (const label of ['About', 'Academic', 'Skills', 'Documents', 'Current work']) {
       await expect(moreNavigation.getByRole('link', { name: label, exact: true })).toBeVisible();
     }
 
@@ -103,7 +108,7 @@ test('adaptive navigation exposes secondary routes on desktop and through More o
     await expect(secondaryNavigation).toBeVisible();
     await expect(moreNavigation).toBeHidden();
 
-    for (const label of ['About', 'Academic', 'Skills', 'Documents', 'Now']) {
+    for (const label of ['About', 'Academic', 'Skills', 'Documents', 'Current work']) {
       await expect(secondaryNavigation.getByRole('link', { name: label, exact: true })).toBeVisible();
     }
   }

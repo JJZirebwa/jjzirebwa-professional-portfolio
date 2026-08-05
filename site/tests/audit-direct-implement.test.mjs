@@ -17,6 +17,42 @@ const readBuiltPage = (relativePath) => {
   return readFileSync(filePath, 'utf8');
 };
 
+test('current-work and discovery pages keep evidence ahead of portfolio administration', () => {
+  const nowSource = readFileSync(path.join(siteRoot, 'src/pages/now.astro'), 'utf8');
+  const contactSource = readFileSync(path.join(siteRoot, 'src/pages/contact.astro'), 'utf8');
+  const caseStudiesSource = readFileSync(path.join(siteRoot, 'src/pages/case-studies/index.astro'), 'utf8');
+  const projectsSource = readFileSync(path.join(siteRoot, 'src/pages/projects.astro'), 'utf8');
+  const socialCardsSource = readFileSync(path.join(siteRoot, 'src/data/socialCards.ts'), 'utf8');
+
+  assert.match(nowSource, /title="Current work"/);
+  assert.match(nowSource, /<h1>Current work<\/h1>/);
+  assert.match(nowSource, /Clinical Informatics/);
+  for (const removedTerm of [
+    'focusAreas',
+    'sharpeningQuestions',
+    'directionTags',
+    'Present tense',
+    'public route',
+    'public evidence',
+    'for readers',
+    'tracking development',
+    'Analyst roles',
+    'Market intelligence'
+  ]) {
+    assert.doesNotMatch(nowSource, new RegExp(removedTerm, 'i'));
+  }
+
+  assert.match(contactSource, /open to conversations/i);
+  assert.doesNotMatch(contactSource, /open to early-career Analyst and Market Intelligence roles/i);
+  assert.doesNotMatch(caseStudiesSource, /Parent lane|Contained work|parent experience/i);
+  assert.doesNotMatch(projectsSource, /Contained lane|parent experience/i);
+  assert.doesNotMatch(socialCardsSource, /Parent case studies|Contained deliverables|parent experience|active questions|role scope/i);
+  const homeSource = readFileSync(path.join(siteRoot, 'src/pages/index.astro'), 'utf8');
+  assert.match(homeSource, /title="Current work"/);
+  assert.doesNotMatch(homeSource, /what I am sharpening|Profile direction|Parent case studies|Role interests/i);
+  assert.doesNotMatch(readFileSync(path.join(siteRoot, 'src/content.config.ts'), 'utf8'), /now-updates/);
+});
+
 test('refreshed portfolio routes render the graduate, FYP and document surfaces', async (t) => {
   execFileSync('npm', ['run', 'build'], {
     cwd: siteRoot,
@@ -59,7 +95,8 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(html, /subgroup\/fairness review/i);
     assert.match(html, /Jubileejoy_Zirebwa_Dissertation_Overview\.pdf/);
     assert.match(html, /academic\/final-year-project\/pipeline/);
-    assert.match(html, /feature-domain-summary\.png/);
+    assert.match(html, /\/_astro\/feature-domain-summary\.[^" ]+\.webp/);
+    assert.match(html, /srcset="[^"]*feature-domain-summary[^"]*480w[^"]*760w[^"]*1120w/);
     assert.match(html, /Applied health data science workflow/i);
     assert.doesNotMatch(html, /2208155|\bSID\b|\/Users\/|\/home\/|raw patient|account name/i);
   });
@@ -111,17 +148,22 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.doesNotMatch(aboutHtml, /award confirmed[^<]*July 2026/i);
     assert.match(aboutHtml, /genomics-linked health data research/);
     assert.match(caseStudiesHtml, /final-year project, Health Innovation East placement and ConsoneAI\/DioScor internship/i);
-    assert.match(contactHtml, /Analyst and Market Intelligence roles/i);
+    assert.match(caseStudiesHtml, /Broader experience/i);
+    assert.doesNotMatch(caseStudiesHtml, /Parent lane|Contained work|parent experience/i);
+    assert.match(contactHtml, /open to conversations/i);
     assert.match(contactHtml, /biomedical evidence, genomics-linked data/i);
     assert.doesNotMatch(contactHtml, /governance roles/i);
-    assert.match(contactHtml, /Page updated <time datetime="2026-07-24">24 July 2026<\/time>/);
+    assert.match(contactHtml, /Page updated <time datetime="2026-08-05">5 August 2026<\/time>/);
     assert.match(skillsHtml, /Clinical informatics and operational data/);
     assert.match(skillsHtml, /Biomedical data analysis/);
     assert.match(projectsHtml, /Clinical informatics trial operations/);
     assert.match(projectsHtml, /href="\/projects\/clinical-informatics\/"/);
-    assert.match(nowHtml, /Clinical Informatics project published/);
-    assert.match(nowHtml, /24 Jul 2026/);
-    assert.match(nowHtml, /"dateModified":"2026-07-24"/);
+    assert.match(projectsHtml, /Focused project work/);
+    assert.doesNotMatch(projectsHtml, /Contained lane|parent experience/i);
+    assert.match(nowHtml, /Current work/);
+    assert.match(nowHtml, /Clinical Informatics/);
+    assert.doesNotMatch(nowHtml, /Recent updates|Present tense|Analyst roles|Market intelligence/i);
+    assert.match(nowHtml, /"dateModified":"2026-08-05"/);
 
     for (const pageHtml of [aboutHtml, caseStudiesHtml, contactHtml, skillsHtml]) {
       assert.doesNotMatch(pageHtml, /expected first class|on track|First-class trajectory/i);
@@ -135,7 +177,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(html, /Eight linked trial-operations tables/);
     assert.match(html, /https:\/\/github\.com\/JJZirebwa\/clinical-informatics/);
     assert.match(html, /https:\/\/clinical-informatics\.streamlit\.app/);
-    assert.match(html, /"dateModified":"2026-07-24"/);
+    assert.match(html, /"dateModified":"2026-08-05"/);
     assert.match(html, /\/og\/clinical-informatics\.png/);
     assert.doesNotMatch(html, /\/Users\/|private\/regular_audits|task queue|implementation note/i);
   });
@@ -150,7 +192,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     for (const label of ['Home', 'Experience', 'Projects', 'CV', 'Contact']) {
       assert.match(primaryNavigation, new RegExp(`>\\s*${label}\\s*<`));
     }
-    for (const label of ['About', 'Academic', 'Skills', 'Documents', 'Now']) {
+    for (const label of ['About', 'Academic', 'Skills', 'Documents', 'Current work']) {
       assert.match(secondaryNavigation, new RegExp(`>\\s*${label}\\s*<`));
       assert.match(moreNavigation, new RegExp(`>\\s*${label}\\s*<`));
     }
@@ -166,8 +208,8 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.doesNotMatch(documentsHtml, /"dateModified"/);
     assert.match(cvHtml, /<dt>Updated<\/dt>\s*<dd>19 June 2026<\/dd>/);
     assert.match(documentsHtml, /<dt>Updated<\/dt>\s*<dd>19 June 2026<\/dd>/);
-    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/now\/<\/loc><lastmod>2026-07-24T00:00:00\.000Z<\/lastmod>/);
-    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/projects\/clinical-informatics\/<\/loc><lastmod>2026-07-24T00:00:00\.000Z<\/lastmod>/);
+    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/now\/<\/loc><lastmod>2026-08-05T00:00:00\.000Z<\/lastmod>/);
+    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/projects\/clinical-informatics\/<\/loc><lastmod>2026-08-05T00:00:00\.000Z<\/lastmod>/);
   });
 
   await t.test('route-specific social images are generated as static PNG files', () => {

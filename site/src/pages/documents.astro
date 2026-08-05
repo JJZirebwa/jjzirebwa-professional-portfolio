@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import DocumentMetadata from '../components/DocumentMetadata.astro';
+import NewTabCue from '../components/NewTabCue.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 
 const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portfolio/tree/main/academic/final-year-project/pipeline';
@@ -43,7 +44,7 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
           <li>Technical, evidence and governance strengths in one page.</li>
         </ul>
         <div class="action-row">
-          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open PDF <NewTabCue /></a>
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_CV.pdf" download>Download</a>
           <a class="button secondary" href="/cv/">CV page</a>
         </div>
@@ -51,7 +52,7 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
       <object class="document-preview" data="/documents/Jubileejoy_Zirebwa_CV.pdf" type="application/pdf" aria-label="CV PDF preview">
         <p>
           PDF preview is not available in this browser.
-          <a href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF</a>.
+          <a href="/documents/Jubileejoy_Zirebwa_CV.pdf" target="_blank" rel="noreferrer">Open the CV PDF <NewTabCue /></a>.
         </p>
       </object>
     </div>
@@ -110,7 +111,7 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
           <li>Selected figures and the final interpretation.</li>
         </ul>
         <div class="action-row">
-          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF</a>
+          <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open PDF <NewTabCue /></a>
           <a class="button secondary" href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" download>Download</a>
           <a class="button secondary" href="/case-studies/final-year-project/">FYP page</a>
         </div>
@@ -118,7 +119,7 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
       <object class="document-preview" data="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" type="application/pdf" aria-label="Dissertation overview PDF preview">
         <p>
           PDF preview is not available in this browser.
-          <a href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open the dissertation overview PDF</a>.
+          <a href="/documents/Jubileejoy_Zirebwa_Dissertation_Overview.pdf" target="_blank" rel="noreferrer">Open the dissertation overview PDF <NewTabCue /></a>.
         </p>
       </object>
     </div>
@@ -136,7 +137,7 @@ const technicalHref = 'https://github.com/JJZirebwa/jjzirebwa-professional-portf
         <h3>Pipeline folder</h3>
         <p>README, configuration files and Python scripts for cohort construction, feature engineering, observability controls, modelling and output generation.</p>
         <div class="action-row">
-          <a class="button secondary" href={technicalHref} target="_blank" rel="noreferrer">Open GitHub folder</a>
+          <a class="button secondary" href={technicalHref} target="_blank" rel="noreferrer">Open GitHub folder <NewTabCue /></a>
           <a class="button secondary" href="/case-studies/final-year-project/">Read FYP page</a>
         </div>
       </div>

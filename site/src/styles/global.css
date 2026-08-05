@@ -60,6 +60,18 @@ svg {
   height: auto;
 }
 
+.new-tab-cue {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -231,7 +243,7 @@ svg {
   display: grid;
   border: 1px solid rgba(22, 32, 29, 0.14);
   border-radius: 6px;
-  background: var(--paper);
+  background: var(--surface);
   box-shadow: 0 14px 34px rgba(22, 32, 29, 0.14);
 }
 

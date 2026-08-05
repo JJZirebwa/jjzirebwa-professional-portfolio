@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import NewTabCue from '../../components/NewTabCue.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 
 const repositoryUrl = 'https://github.com/JJZirebwa/clinical-informatics';
@@ -62,8 +63,8 @@ const dashboardAreas = [
         I built a synthetic study workflow that moves from protocol requirements to linked data, record-level checks, operational metrics and an interactive dashboard. It gives me a concrete way to practise the reasoning between clinical data structures and the decisions people need to make from them.
       </p>
       <div class="action-row">
-        <a class="button" href={dashboardUrl} target="_blank" rel="noreferrer">Open live dashboard</a>
-        <a class="button secondary" href={repositoryUrl} target="_blank" rel="noreferrer">View GitHub repository</a>
+        <a class="button" href={dashboardUrl} target="_blank" rel="noreferrer">Open live dashboard <NewTabCue /></a>
+        <a class="button secondary" href={repositoryUrl} target="_blank" rel="noreferrer">View GitHub repository <NewTabCue /></a>
       </div>
     </div>
   </section>
