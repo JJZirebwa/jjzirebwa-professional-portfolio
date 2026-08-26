@@ -9,56 +9,72 @@ const skillGroups = [
     skill: 'Laboratory and diagnostic practice',
     where: 'Supervised and assessed degree practicals across microbiology, DNA manipulation, diagnostic pathology, anatomy, histology and biochemistry.',
     produced: 'Microbial isolation and identification, PCR and clone-screening workflows, indirect ELISA, H&E and cytology staining, microscopy measurements, enzyme assays and protein-purification work. Equipment included micropipettes, a thermocycler, gel apparatus, a microcentrifuge, a plate reader and light microscopes.',
-    matters: 'A laboratory result is only useful when the sample handling, method, controls, measurements and limits remain clear.'
+    matters: 'A laboratory result is only useful when the sample handling, method, controls, measurements and limits remain clear.',
+    supportingHref: '/academic/#laboratory-practice',
+    supportingLabel: 'View laboratory practice'
   },
   {
     icon: 'data',
     skill: 'Clinical informatics and operational data',
     where: 'Clinical Informatics trial-operations project using a synthetic protocol, linked relational tables and an interactive dashboard.',
     produced: 'Protocol-to-data mappings, record-level validation issues, site and study metrics, reproducible reports and dashboard views.',
-    matters: 'Operational analysis is more useful when every summary can be traced back to the data relationships, rules and affected records.'
+    matters: 'Operational analysis is more useful when every summary can be traced back to the data relationships, rules and affected records.',
+    supportingHref: '/projects/clinical-informatics/',
+    supportingLabel: 'View Clinical Informatics project'
   },
   {
     icon: 'strategy',
     skill: 'Biomedical data analysis',
     where: 'Final-year project workflows, dose-toxicity extraction and cleaning, quantitative pharmacology and genetics/statistical reasoning.',
     produced: 'Feature-reasoning summaries, model-evaluation interpretation, cleaned tabular outputs and documented limitations.',
-    matters: 'Biomedical data work is strongest when the question, source limits and interpretation rules are clear before analysis begins.'
+    matters: 'Biomedical data work is strongest when the question, source limits and interpretation rules are clear before analysis begins.',
+    supportingHref: '/case-studies/final-year-project/',
+    supportingLabel: 'Read final-year project'
   },
   {
     icon: 'strategy',
     skill: 'Healthcare commercial strategy',
     where: 'Health Innovation East placement, QOF/adoption work, PulseOn strategy material and Charco/CUE1 business-case support.',
     produced: 'Evidence summaries, adoption logic, pathway framing, stakeholder decision-driver summaries and value reasoning.',
-    matters: 'Good strategy work has to connect clinical need, evidence quality, market context and the realities of adoption.'
+    matters: 'Good strategy work has to connect clinical need, evidence quality, market context and the realities of adoption.',
+    supportingHref: '/case-studies/health-innovation-east/',
+    supportingLabel: 'View Health Innovation East case study'
   },
   {
     icon: 'evidence',
     skill: 'Evidence synthesis',
     where: 'HIE evidence briefs, market-analysis material, final-year dissertation framing and toxicology data mapping.',
     produced: 'Structured evidence tables, limitations-first summaries, source-to-claim mapping and clear written recommendations.',
-    matters: 'Evidence only helps when the strength, limits and relevance of each claim are visible.'
+    matters: 'Evidence only helps when the strength, limits and relevance of each claim are visible.',
+    supportingHref: '/case-studies/final-year-project/',
+    supportingLabel: 'Review research evidence'
   },
   {
     icon: 'governance',
     skill: 'AI/MedTech governance',
     where: 'AI Toolkit, final-year project governance handling, exploratory methods boundaries and AI-ECG adoption logic.',
     produced: 'Practical guidance-support material, governance framing, claim limits and adoption questions.',
-    matters: 'AI health tools need more than technical performance. They need evidence, safety, data governance, interoperability and monitoring.'
+    matters: 'AI health tools need more than technical performance. They need evidence, safety, data governance, interoperability and monitoring.',
+    supportingHref: '/case-studies/ai-medtech-toolkit/',
+    supportingLabel: 'View AI/MedTech Toolkit'
   },
   {
     icon: 'market',
     skill: 'Market intelligence and competitor analysis',
     where: 'CB Insights-supported market intelligence, secondary research and competitor-analysis materials across health technologies.',
     produced: 'Structured company lists, trend summaries, competitor matrices and adoption-readiness framing.',
-    matters: 'Commercial decisions need a clear view of who else is active, what evidence they have and how mature the space is.'
+    matters: 'Commercial decisions need a clear view of who else is active, what evidence they have and how mature the space is.',
+    supportingHref: '/case-studies/market-intelligence/',
+    supportingLabel: 'View market intelligence case study'
   },
   {
     icon: 'writing',
     skill: 'Writing and communication',
     where: 'Guidance-support material, public case studies, dissertation writing, module assessments and presentation-style internship outputs.',
     produced: 'Concise summaries, advisory material, case-study narratives, limitations sections and decision-focused tables.',
-    matters: 'The work only lands if a reader can see the point, trust the limits and understand what should happen next.'
+    matters: 'The work only lands if a reader can see the point, trust the limits and understand what should happen next.',
+    supportingHref: '/documents/',
+    supportingLabel: 'View selected documents'
   }
 ];
 ---
@@ -101,6 +117,7 @@ const skillGroups = [
                 <dd>{group.matters}</dd>
               </div>
             </dl>
+            <a class="skill-proof-link" href={group.supportingHref}>{group.supportingLabel}</a>
           </article>
         ))}
       </div>

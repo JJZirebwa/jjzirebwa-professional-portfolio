@@ -6,6 +6,7 @@ First Class Biomedical Science graduate with experience across clinical informat
 ## Focus
 
 - biomedical science
+- practical laboratory and diagnostic work from supervised degree practicals
 - clinical informatics and trial-operations analysis
 - genomics and healthcare data science
 - machine learning and applied analytics
@@ -30,6 +31,7 @@ Start with the final-year project for genomics-linked health data science and Cl
 | Clinical Informatics | [Project summary](../projects/clinical-informatics.md) / [repository](https://github.com/JJZirebwa/clinical-informatics) / [dashboard](https://clinical-informatics.streamlit.app) |
 | Final-year project and project pipeline | [Project](../academic/final-year-project/README.md) / [pipeline](../academic/final-year-project/pipeline/README.md) |
 | Academic profile | [Open page](../academic/README.md) |
+| Practical laboratory work | [View supervised degree practicals](../academic/biomedical-science-degree.md#practical-laboratory-work) |
 | Health Innovation East commercial overview | [Open page](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md) |
 | AI Toolkit | [Open page](../professional-experience/health-innovation-east/ai-medtech-toolkit.md) |
 | Market intelligence and competitor analysis | [Market intelligence](../professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md) / [competitor analysis](../professional-experience/health-innovation-east/competitor-analysis-and-horizon-scanning.md) |

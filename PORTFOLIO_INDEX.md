@@ -7,6 +7,7 @@ This is a concise map of the portfolio, with the strongest first routes pulled f
 - Strongest data evidence: [Final-year project](academic/final-year-project/README.md) and [project pipeline](academic/final-year-project/pipeline/README.md)
 - Clinical informatics: [project summary](projects/clinical-informatics.md), [public repository](https://github.com/JJZirebwa/clinical-informatics) and [live dashboard](https://clinical-informatics.streamlit.app)
 - Academic foundation: [Biomedical Science degree](academic/biomedical-science-degree.md)
+- Practical laboratory work: [supervised and assessed degree practicals](academic/biomedical-science-degree.md#practical-laboratory-work)
 - Current direction: clinical informatics, biomedical science, genomics-linked health data, applied analytics, health innovation and market intelligence
 - Wider navigation: [website mirror index](website/index.md) and [portfolio pages](website/portfolio-pages.md)
 
@@ -49,6 +50,7 @@ This is a concise map of the portfolio, with the strongest first routes pulled f
 ### Academic and research profile
 
 - [Biomedical Science degree](academic/biomedical-science-degree.md)
+- [Practical laboratory work](academic/biomedical-science-degree.md#practical-laboratory-work)
 - [Modules and assessments](academic/modules-and-assessments.md)
 - [Dissertation summary](academic/final-year-project/dissertation-summary.md)
 - [Selected documents](documents/README.md)
@@ -61,6 +63,7 @@ This is a concise map of the portfolio, with the strongest first routes pulled f
 
 ## Skills
 
+- [Laboratory and diagnostic practice](academic/biomedical-science-degree.md#practical-laboratory-work)
 - [Healthcare commercial strategy](skills/healthcare-commercial-strategy.md)
 - [Evidence synthesis](skills/evidence-synthesis.md)
 - [AI health governance](skills/ai-health-governance.md)

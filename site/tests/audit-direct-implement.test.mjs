@@ -117,10 +117,10 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(cvHtml, /General portfolio CV/);
     assert.match(cvHtml, /Jubileejoy_Zirebwa_CV\.pdf/);
     assert.match(cvHtml, /not tailored to one application/i);
-    assert.match(cvHtml, /1 page/);
-    assert.match(cvHtml, /4\.5 KB/);
+    assert.match(cvHtml, /3 pages/);
+    assert.match(cvHtml, /122 KB/);
     assert.match(cvHtml, /<dt>Updated<\/dt>/);
-    assert.match(cvHtml, /<dd>19 June 2026<\/dd>/);
+    assert.match(cvHtml, /<dd>26 August 2026<\/dd>/);
     assert.doesNotMatch(cvHtml, /First-class trajectory|on track|expected first class/i);
 
     assert.match(documentsHtml, /Selected documents and resources/);
@@ -156,6 +156,19 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(contactHtml, /Page updated <time datetime="2026-08-05">5 August 2026<\/time>/);
     assert.match(skillsHtml, /Clinical informatics and operational data/);
     assert.match(skillsHtml, /Biomedical data analysis/);
+    const supportingWorkLinks = [...skillsHtml.matchAll(
+      /<a class="skill-proof-link" href="([^"]+)">([^<]+)<\/a>/g
+    )].map((match) => ({ href: match[1], label: match[2].trim() }));
+    assert.deepEqual(supportingWorkLinks, [
+      { href: '/academic/#laboratory-practice', label: 'View laboratory practice' },
+      { href: '/projects/clinical-informatics/', label: 'View Clinical Informatics project' },
+      { href: '/case-studies/final-year-project/', label: 'Read final-year project' },
+      { href: '/case-studies/health-innovation-east/', label: 'View Health Innovation East case study' },
+      { href: '/case-studies/final-year-project/', label: 'Review research evidence' },
+      { href: '/case-studies/ai-medtech-toolkit/', label: 'View AI/MedTech Toolkit' },
+      { href: '/case-studies/market-intelligence/', label: 'View market intelligence case study' },
+      { href: '/documents/', label: 'View selected documents' }
+    ]);
     assert.match(projectsHtml, /Clinical informatics trial operations/);
     assert.match(projectsHtml, /href="\/projects\/clinical-informatics\/"/);
     assert.match(projectsHtml, /Focused project work/);
@@ -206,7 +219,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
 
     assert.doesNotMatch(cvHtml, /"dateModified"/);
     assert.doesNotMatch(documentsHtml, /"dateModified"/);
-    assert.match(cvHtml, /<dt>Updated<\/dt>\s*<dd>19 June 2026<\/dd>/);
+    assert.match(cvHtml, /<dt>Updated<\/dt>\s*<dd>26 August 2026<\/dd>/);
     assert.match(documentsHtml, /<dt>Updated<\/dt>\s*<dd>19 June 2026<\/dd>/);
     assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/now\/<\/loc><lastmod>2026-08-05T00:00:00\.000Z<\/lastmod>/);
     assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/projects\/clinical-informatics\/<\/loc><lastmod>2026-08-05T00:00:00\.000Z<\/lastmod>/);
