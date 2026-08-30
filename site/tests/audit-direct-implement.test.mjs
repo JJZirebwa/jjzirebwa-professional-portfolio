@@ -314,7 +314,8 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     const rootPackage = JSON.parse(readFileSync(rootPackagePath, 'utf8'));
     const sitePackage = JSON.parse(readFileSync(path.join(siteRoot, 'package.json'), 'utf8'));
 
-    assert.equal(rootPackage.engines.node, '>=22.12.0 <23');
+    assert.equal(rootPackage.engines.node, '>=22.19.0 <23');
+    assert.equal(sitePackage.engines.node, '>=22.19.0 <23');
     assert.equal(rootPackage.scripts.dev, 'npm --prefix site run dev');
     assert.equal(rootPackage.scripts.check, 'npm --prefix site run check');
     assert.equal(rootPackage.scripts.build, 'npm --prefix site run build');
@@ -328,7 +329,9 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
   await t.test('site commands reject unsupported Node versions before Astro starts', async () => {
     const { findDuplicateDependencyDirectories, isSupportedNodeVersion } = await import('../scripts/require-node-22.mjs');
 
-    assert.equal(isSupportedNodeVersion('22.12.0'), true);
+    assert.equal(isSupportedNodeVersion('22.12.0'), false);
+    assert.equal(isSupportedNodeVersion('22.18.0'), false);
+    assert.equal(isSupportedNodeVersion('22.19.0'), true);
     assert.equal(isSupportedNodeVersion('22.23.0'), true);
     assert.equal(isSupportedNodeVersion('22.11.0'), false);
     assert.equal(isSupportedNodeVersion('23.0.0'), false);

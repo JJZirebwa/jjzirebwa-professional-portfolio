@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.12.0 <23"
+    "node": ">=22.19.0 <23"
   },
   "scripts": {
     "predev": "node scripts/require-node-22.mjs",
