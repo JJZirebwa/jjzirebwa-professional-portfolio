@@ -5,7 +5,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 const selectedMarks = [
   ['Degree classification', 'First Class Honours', 'Awarded 10 June 2026'],
   ['Undergraduate Project module', '82, A', '30-credit final-year project module'],
-  ['Dissertation write-up component', '83/100', 'Assessor feedback and ORION evidence matrix'],
+  ['Dissertation write-up component', '83/100', 'Assessed dissertation and module result'],
   ['Mathematics for the Biosciences', '91, A', 'Quantitative biological reasoning'],
   ['General Microbiology', '84, A', 'Microbial systems and infection foundations'],
   ['Human Pathology', '73, A', 'Disease morphology and systems pathology'],
@@ -53,7 +53,7 @@ const laboratoryAreas = [
       </p>
       <div class="action-row">
         <a class="button" href="/case-studies/final-year-project/">View final-year project</a>
-        <a class="button secondary" href="/documents/#academic-evidence">Academic documents</a>
+        <a class="button secondary" href="/documents/#academic-record">Academic documents</a>
       </div>
     </div>
   </section>
@@ -62,7 +62,7 @@ const laboratoryAreas = [
     <div class="page-shell">
       <SectionHeader
         eyebrow="Confirmed record"
-        title="Selected academic evidence"
+        title="Selected academic results"
       />
       <dl class="proof-grid">
         {selectedMarks.map(([label, value, note]) => (
@@ -89,7 +89,7 @@ const laboratoryAreas = [
             <h3>{area.title}</h3>
             <dl>
               <div>
-                <dt>Module evidence</dt>
+                <dt>Assessed work</dt>
                 <dd>{area.modules}</dd>
               </div>
               <div>
@@ -121,7 +121,7 @@ const laboratoryAreas = [
           The degree covered pathology, genetics, pharmacology, microbiology, haematology, immunology, translational medicine, quantitative methods and scientific writing.
         </p>
       </div>
-      <div class="document-card compact-document" id="academic-evidence">
+      <div class="document-card compact-document" id="academic-record">
         <span class="tag">Protected PDF</span>
         <h3>Final award transcript</h3>
         <p>

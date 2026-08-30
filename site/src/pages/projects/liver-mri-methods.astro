@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import NewTabCue from '../../components/NewTabCue.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const repositoryUrl = 'https://github.com/JJZirebwa/liver-mri-methods';
+const breadcrumbs = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/', label: 'Projects' },
+  { label: 'Liver MRI Methods' }
+];
+const siteUrl = Astro.site ?? new URL('https://jubileejoyzirebwa.com');
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, siteUrl).href
+  }))
+};
+
+const facts = [
+  ['Project type', 'Self-directed computational imaging methods project'],
+  ['Dataset', 'LiverHccSeg multiphasic MRI: 17 examinations with whole-liver annotations'],
+  ['Current release', 'Version 0.1.0, preserving the first study as a reproducible baseline'],
+  ['Methods', 'Geometry audit, registration inspection, voxel-level DCE features and a small 2D U-Net'],
+  ['Technical stack', 'Python, NumPy, pandas, scikit-learn, SimpleITK and PyTorch'],
+  ['Reproducibility', 'Versioned configuration, synthetic tests, result parity checks and published checksums']
+];
+
+const workflowSteps = [
+  'Audit phase availability, orientation, spacing and physical grids before comparing voxels across scans.',
+  'Place displayed phases and masks on the arterial physical grid and inspect registration rather than assuming matching array indices represent the same tissue.',
+  'Separate patients before fitting a logistic voxel classifier using four declared dynamic-contrast signal features.',
+  'Run a fixed three-epoch, four-channel 2D U-Net smoke test and review its predictions alongside its numerical scores.',
+  'Preserve the failed baseline, configuration and result tables so later debugging studies extend the record instead of rewriting it.'
+];
+---
+
+<BaseLayout
+  title="Liver MRI Methods"
+  description="A reproducible multiphasic liver MRI methods project covering image geometry, registration inspection, dynamic-contrast features and segmentation debugging."
+  structuredData={breadcrumbSchema}
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <Breadcrumbs items={breadcrumbs} />
+      <p class="eyebrow">Computational imaging methods</p>
+      <h1>Liver MRI Methods</h1>
+      <p class="summary">
+        I built this project to understand what changes when methods developed for patient-level clinical data meet multiphasic MRI. Patient separation still matters, but image geometry, registration and annotation choices begin shaping the measurement before a model sees it.
+      </p>
+      <div class="action-row">
+        <a class="button" href={repositoryUrl} target="_blank" rel="noreferrer">View GitHub repository <NewTabCue /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Quick scan"
+        title="What the first study contains"
+        lead="The first version works through the measurement problems before treating model complexity as the main question."
+      />
+      <dl class="case-facts">
+        {facts.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>Start with the image measurement</h2>
+        <p>
+          The public LiverHccSeg dataset provides pre-contrast, arterial, portal-venous and delayed MRI phases. The workflow checks their physical geometry and moves every displayed phase and mask onto a common arterial grid. That step makes spatial correspondence something to establish, rather than something the array shape is allowed to imply.
+        </p>
+      </div>
+      <div class="prose">
+        <h2>Inspect registration before modelling</h2>
+        <p>
+          I compared the dataset-supplied registration with a seeded rigid SimpleITK baseline on three examinations. The supplied images had the higher in-liver mutual-information score in seven of nine comparisons, but I kept the conclusion narrow: that numerical ordering is useful for inspection and is not anatomical validation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Workflow"
+        title="A versioned baseline that can be challenged"
+        lead="Each stage exposes a decision that later studies can test without overwriting the original run."
+      />
+      <ul class="method-list">
+        {workflowSteps.map((step) => <li>{step}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>What the modelling showed</h2>
+        <p>
+          The logistic baseline could rank tumour regions strongly while labelling too much liver. The U-Net produced apparently stronger overlap for one held-out case, but the evaluation units differed and the images told the more important story: broad liver-shaped predictions and false positives in a declared negative examination.
+        </p>
+      </div>
+      <div class="note">
+        <h2>Why the failed model stays in the project</h2>
+        <p>
+          The failure made the next experiment clearer. Before making the network larger, the project now needs to test target construction, slice balance and the ways the manual liver mask may have created a shortcut. Keeping that result visible is more useful than presenting the training run as a successful segmentation model.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell split">
+      <SectionHeader
+        eyebrow="Reproducibility"
+        title="Code, tests and result records"
+        lead="The repository includes reusable code, versioned settings, method notes, small result tables, checksums and tests that run without downloading the imaging dataset."
+      />
+      <div class="note">
+        <h2>Next questions</h2>
+        <p>
+          The next studies will begin with an overfit-one-batch control, tumour-target and slice-balance checks, and comparisons between full liver-zeroed fields, crops and an explicit mask channel. Registration work will add anatomical measures before stronger model comparisons are attempted.
+        </p>
+        <div class="action-row">
+          <a class="button secondary" href={repositoryUrl} target="_blank" rel="noreferrer">Open the project <NewTabCue /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

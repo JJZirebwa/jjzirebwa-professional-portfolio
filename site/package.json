@@ -22,12 +22,13 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^6.3.1"
+    "astro": "^7.2.9"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.62.1",
-    "typescript": "^5.9.3"
+    "pdfjs-dist": "5.4.624",
+    "typescript": "^6.0.3"
   }
 }

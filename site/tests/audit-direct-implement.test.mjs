@@ -4,6 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getDocument } from 'pdfjs-dist/legacy/build/pdf.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const siteRoot = path.resolve(__dirname, '..');
@@ -15,6 +16,17 @@ const readBuiltPage = (relativePath) => {
     : path.join(distRoot, relativePath, 'index.html');
 
   return readFileSync(filePath, 'utf8');
+};
+
+const extractPdfText = async (filePath) => {
+  const document = await getDocument({ data: new Uint8Array(readFileSync(filePath)) }).promise;
+  const pages = [];
+  for (let pageNumber = 1; pageNumber <= document.numPages; pageNumber += 1) {
+    const page = await document.getPage(pageNumber);
+    const content = await page.getTextContent();
+    pages.push(content.items.map((item) => 'str' in item ? item.str : '').join(' '));
+  }
+  return pages.join('\n');
 };
 
 test('current-work and discovery pages keep evidence ahead of portfolio administration', () => {
@@ -48,7 +60,7 @@ test('current-work and discovery pages keep evidence ahead of portfolio administ
   assert.doesNotMatch(projectsSource, /Contained lane|parent experience/i);
   assert.doesNotMatch(socialCardsSource, /Parent case studies|Contained deliverables|parent experience|active questions|role scope/i);
   const homeSource = readFileSync(path.join(siteRoot, 'src/pages/index.astro'), 'utf8');
-  assert.match(homeSource, /title="Current work"/);
+  assert.match(homeSource, /title="Recent technical work"/);
   assert.doesNotMatch(homeSource, /what I am sharpening|Profile direction|Parent case studies|Role interests/i);
   assert.doesNotMatch(readFileSync(path.join(siteRoot, 'src/content.config.ts'), 'utf8'), /now-updates/);
 });
@@ -62,6 +74,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
   await t.test('home page leads with the balanced Biomedical Science graduate positioning', () => {
     const html = readBuiltPage('');
 
+    assert.equal((html.match(/<body>/g) ?? []).length, 1, 'the built page should contain one body element');
     assert.match(html, /First Class Biomedical Science graduate/);
     assert.match(html, /Biomedical science \| Genomics \| Health Data/);
     assert.match(html, /href="\/case-studies\/final-year-project\/"/);
@@ -98,7 +111,43 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(html, /\/_astro\/feature-domain-summary\.[^" ]+\.webp/);
     assert.match(html, /srcset="[^"]*feature-domain-summary[^"]*480w[^"]*760w[^"]*1120w/);
     assert.match(html, /Applied health data science workflow/i);
+    assert.match(html, /mutual information/i);
+    assert.match(html, /stopping decision/i);
+    assert.match(html, /did not support/i);
     assert.doesNotMatch(html, /2208155|\bSID\b|\/Users\/|\/home\/|raw patient|account name/i);
+  });
+
+  await t.test('recent standalone projects have accurate public routes and repositories', () => {
+    const mriHtml = readBuiltPage('projects/liver-mri-methods');
+    const rnaSeqHtml = readBuiltPage('projects/rnaseq-service-workflow');
+    const projectsHtml = readBuiltPage('projects');
+    const nowHtml = readBuiltPage('now');
+
+    assert.match(mriHtml, /Liver MRI Methods/);
+    assert.match(mriHtml, /multiphasic/i);
+    assert.match(mriHtml, /registration/i);
+    assert.match(mriHtml, /https:\/\/github\.com\/JJZirebwa\/liver-mri-methods/);
+    assert.doesNotMatch(mriHtml, /\/Users\/|private\/regular_audits|ORION\/projects/i);
+
+    assert.match(rnaSeqHtml, /Reproducible RNA-seq Service Workflow/);
+    assert.match(rnaSeqHtml, /GSE52778/);
+    assert.match(rnaSeqHtml, /processed counts/i);
+    assert.match(rnaSeqHtml, /~ cell \+ dex/);
+    assert.match(rnaSeqHtml, /https:\/\/github\.com\/JJZirebwa\/gse52778-rnaseq-service-workflow/);
+    assert.doesNotMatch(rnaSeqHtml, /\/Users\/|private\/regular_audits|ORION\/projects/i);
+
+    for (const html of [projectsHtml, nowHtml]) {
+      assert.match(html, /href="\/projects\/liver-mri-methods\/"/);
+      assert.match(html, /href="\/projects\/rnaseq-service-workflow\/"/);
+    }
+    assert.ok(
+      projectsHtml.indexOf('/projects/liver-mri-methods/') < projectsHtml.indexOf('/projects/clinical-informatics/'),
+      'Liver MRI Methods should appear before established project work'
+    );
+    assert.ok(
+      nowHtml.indexOf('/projects/rnaseq-service-workflow/') < nowHtml.indexOf('/projects/clinical-informatics/'),
+      'RNA-seq workflow should appear before established project work'
+    );
   });
 
   await t.test('academic, CV and documents routes expose the right protected-document model', () => {
@@ -120,7 +169,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(cvHtml, /3 pages/);
     assert.match(cvHtml, /122 KB/);
     assert.match(cvHtml, /<dt>Updated<\/dt>/);
-    assert.match(cvHtml, /<dd>26 August 2026<\/dd>/);
+    assert.match(cvHtml, /<dd>30 August 2026<\/dd>/);
     assert.doesNotMatch(cvHtml, /First-class trajectory|on track|expected first class/i);
 
     assert.match(documentsHtml, /Selected documents and resources/);
@@ -131,6 +180,23 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(documentsHtml, /395 KB/);
     assert.match(documentsHtml, /34 KB/);
     assert.doesNotMatch(documentsHtml, /password[^<]{0,60}=/i);
+  });
+
+  await t.test('public output omits analytics, personal telephone data and the withdrawn CV mark', async () => {
+    const publicPages = [
+      readBuiltPage(''),
+      readBuiltPage('contact'),
+      readBuiltPage('cv'),
+      readBuiltPage('documents')
+    ].join('\n');
+    const cvPath = path.join(siteRoot, 'public/documents/Jubileejoy_Zirebwa_CV.pdf');
+    const cvText = await extractPdfText(cvPath);
+
+    assert.doesNotMatch(publicPages, /G-FXRKLYT5HY|googletagmanager\.com\/gtag\/js/i);
+    assert.doesNotMatch(publicPages, /\+44\s*7359\s*454994|tel:\+447359454994/i);
+    assert.match(cvText, /Promoter-linked clinical signal audit/i);
+    assert.doesNotMatch(cvText, /Overall mark\s+70\.17%/i);
+    assert.doesNotMatch(cvText, /\+44\s*7359\s*454994/i);
   });
 
   await t.test('supporting pages keep the graduate/data profile aligned', () => {
@@ -151,9 +217,9 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(caseStudiesHtml, /Broader experience/i);
     assert.doesNotMatch(caseStudiesHtml, /Parent lane|Contained work|parent experience/i);
     assert.match(contactHtml, /open to conversations/i);
-    assert.match(contactHtml, /biomedical evidence, genomics-linked data/i);
+    assert.match(contactHtml, /biomedical science, genomics-linked data, clinical informatics and health innovation/i);
     assert.doesNotMatch(contactHtml, /governance roles/i);
-    assert.match(contactHtml, /Page updated <time datetime="2026-08-05">5 August 2026<\/time>/);
+    assert.match(contactHtml, /Page updated <time datetime="2026-08-30">30 August 2026<\/time>/);
     assert.match(skillsHtml, /Clinical informatics and operational data/);
     assert.match(skillsHtml, /Biomedical data analysis/);
     const supportingWorkLinks = [...skillsHtml.matchAll(
@@ -164,7 +230,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
       { href: '/projects/clinical-informatics/', label: 'View Clinical Informatics project' },
       { href: '/case-studies/final-year-project/', label: 'Read final-year project' },
       { href: '/case-studies/health-innovation-east/', label: 'View Health Innovation East case study' },
-      { href: '/case-studies/final-year-project/', label: 'Review research evidence' },
+      { href: '/case-studies/final-year-project/', label: 'Read final-year project' },
       { href: '/case-studies/ai-medtech-toolkit/', label: 'View AI/MedTech Toolkit' },
       { href: '/case-studies/market-intelligence/', label: 'View market intelligence case study' },
       { href: '/documents/', label: 'View selected documents' }
@@ -176,7 +242,7 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
     assert.match(nowHtml, /Current work/);
     assert.match(nowHtml, /Clinical Informatics/);
     assert.doesNotMatch(nowHtml, /Recent updates|Present tense|Analyst roles|Market intelligence/i);
-    assert.match(nowHtml, /"dateModified":"2026-08-05"/);
+    assert.match(nowHtml, /"dateModified":"2026-08-30"/);
 
     for (const pageHtml of [aboutHtml, caseStudiesHtml, contactHtml, skillsHtml]) {
       assert.doesNotMatch(pageHtml, /expected first class|on track|First-class trajectory/i);
@@ -219,10 +285,12 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
 
     assert.doesNotMatch(cvHtml, /"dateModified"/);
     assert.doesNotMatch(documentsHtml, /"dateModified"/);
-    assert.match(cvHtml, /<dt>Updated<\/dt>\s*<dd>26 August 2026<\/dd>/);
+    assert.match(cvHtml, /<dt>Updated<\/dt>\s*<dd>30 August 2026<\/dd>/);
     assert.match(documentsHtml, /<dt>Updated<\/dt>\s*<dd>19 June 2026<\/dd>/);
-    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/now\/<\/loc><lastmod>2026-08-05T00:00:00\.000Z<\/lastmod>/);
+    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/now\/<\/loc><lastmod>2026-08-30T00:00:00\.000Z<\/lastmod>/);
     assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/projects\/clinical-informatics\/<\/loc><lastmod>2026-08-05T00:00:00\.000Z<\/lastmod>/);
+    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/projects\/liver-mri-methods\/<\/loc><lastmod>2026-08-30T00:00:00\.000Z<\/lastmod>/);
+    assert.match(sitemap, /<loc>https:\/\/jubileejoyzirebwa\.com\/projects\/rnaseq-service-workflow\/<\/loc><lastmod>2026-08-30T00:00:00\.000Z<\/lastmod>/);
   });
 
   await t.test('route-specific social images are generated as static PNG files', () => {
@@ -232,7 +300,9 @@ test('refreshed portfolio routes render the graduate, FYP and document surfaces'
       'og/cv.png',
       'og/documents.png',
       'og/final-year-project.png',
-      'og/clinical-informatics.png'
+      'og/clinical-informatics.png',
+      'og/liver-mri-methods.png',
+      'og/rnaseq-service-workflow.png'
     ]) {
       const imageStats = statSync(path.join(distRoot, imagePath));
       assert.ok(imageStats.size > 1000, `${imagePath} should be a non-empty generated PNG`);

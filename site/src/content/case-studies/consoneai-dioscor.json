@@ -46,7 +46,7 @@
   "boundary": "Confidential material, raw datasets, proprietary schemas and platform architecture are not included.",
   "visualVariant": "toxicity-workflow",
   "related": [
-    { "href": "/projects/", "label": "Biomedical data and evidence" },
+    { "href": "/projects/", "label": "Biomedical data projects" },
     { "href": "/skills/", "label": "Data skills" }
   ],
   "sections": [

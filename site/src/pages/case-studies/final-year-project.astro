@@ -19,7 +19,7 @@ const breadcrumbs = [
 ];
 
 const methodPoints = [
-  'Defined the analysis around a Brugada-suspect research cohort, with pre-sequencing hospital episode records treated as historical trajectory evidence.',
+  'Defined the analysis around a Brugada-suspect research cohort, using pre-sequencing hospital episode records to describe each participant’s observed clinical history.',
   'Built participant-level feature tables from admitted care, outpatient and emergency-care sources, using ICD/OPCS groupings, temporal windows and utilisation features.',
   'Added observability controls so record depth, available history and sparse coding were visible design constraints rather than hidden noise.',
   'Kept preprocessing behind the train/test split so imputation, scaling and encoding were fitted from training data only.',
@@ -193,9 +193,9 @@ const codeSnippets = [
         </p>
       </div>
       <div class="note">
-        <h2>Interpretation boundary</h2>
+        <h2>What the result means</h2>
         <p>
-          This was undergraduate academic research, not a clinical decision tool. The value is in the technical workflow and the judgement used around weak, sparse and governance-bound evidence.
+          The available hospital record supported a careful exploratory analysis, but not reliable individual classification. The strongest outcome was the workflow itself and the judgement used to recognise when sparse, unevenly observed signal was not strong enough to carry a larger claim.
         </p>
       </div>
     </div>
@@ -210,6 +210,27 @@ const codeSnippets = [
       <ul class="method-list">
         {methodPoints.map((point) => <li>{point}</li>)}
       </ul>
+    </div>
+  </section>
+
+  <section class="section-band" id="mutual-information-continuation">
+    <div class="page-shell split">
+      <div class="prose">
+        <p class="eyebrow">Research continuation</p>
+        <h2>Testing a second hospital-code representation</h2>
+        <p>
+          After the dissertation, I returned to one narrower question: had the grouped HES representation hidden a small amount of promoter-linked signal that a different encoding could expose? I set up a staged mutual information screen rather than opening an unrestricted feature search.
+        </p>
+        <p>
+          The first stage tested individual binary hospital-code features with family-wise error control. None passed the declared threshold. The second stage then asked a more practical question: did any complete binary representation improve group-aware prediction beyond a prevalence-only reference? The average log-loss gains were negative, both for HES alone and when the declared nuisance variables were included.
+        </p>
+      </div>
+      <div class="note">
+        <h2>The stopping decision</h2>
+        <p>
+          The result did not support progressing to the planned dosage screen. I closed the lane at that point rather than expanding the search until something looked interesting. The useful outcome was a tested negative result and a clearer limit on what this version of the clinical record could add.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -234,7 +255,7 @@ const codeSnippets = [
   <section class="section-band light">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Code evidence"
+        eyebrow="Implementation"
         title="Pipeline excerpts"
         lead="The repository includes the authored pipeline structure for technical review. These excerpts show the style of implementation behind the page: feature construction, observability handling, split checks and raw-code signal-discovery controls."
       />

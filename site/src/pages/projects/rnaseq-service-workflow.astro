@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import NewTabCue from '../../components/NewTabCue.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const repositoryUrl = 'https://github.com/JJZirebwa/gse52778-rnaseq-service-workflow';
+const breadcrumbs = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/', label: 'Projects' },
+  { label: 'RNA-seq Service Workflow' }
+];
+const siteUrl = Astro.site ?? new URL('https://jubileejoyzirebwa.com');
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbs.map((item, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: item.label,
+    item: new URL(item.href ?? Astro.url.pathname, siteUrl).href
+  }))
+};
+
+const facts = [
+  ['Project type', 'Self-directed bioinformatics service-workflow exercise'],
+  ['Public dataset', 'GSE52778 through the Bioconductor airway package'],
+  ['Analysis unit', 'Eight processed-count samples forming four untreated/treated cell-line pairs'],
+  ['Model', '~ cell + dex, reporting treated versus untreated'],
+  ['Workflow', 'Intake validation, paired DESeq2 analysis, result checks and handover bundle'],
+  ['Reproducibility', 'Nextflow DSL2, pinned Bioconductor container, provenance hashes and CI-tested validators']
+];
+
+const stages = [
+  {
+    title: '1. Validate the service intake',
+    text: 'The first process checks that the sample sheet contains exactly eight unique samples, four complete untreated/treated pairs, the correct accession and the declared processed-count input type.'
+  },
+  {
+    title: '2. Run the paired analysis',
+    text: 'DESeq2 fits the declared ~ cell + dex design, applies a fixed low-count rule and reports the dexamethasone-treated versus untreated contrast while controlling for the four cell-line pairs.'
+  },
+  {
+    title: '3. Check the result contract',
+    text: 'A separate validator checks result columns, adjusted-p-value filtering, model metadata and the expected positive CRISPLD2 direction so a reversed contrast or incomplete handoff is caught explicitly.'
+  },
+  {
+    title: '4. Build the handover',
+    text: 'The final process assembles result tables, QC plots, metadata, session information, interpretation notes and a provenance manifest containing software versions and SHA-256 hashes.'
+  }
+];
+---
+
+<BaseLayout
+  title="Reproducible RNA-seq Service Workflow"
+  description="A Nextflow DSL2 service workflow for paired DESeq2 analysis of the public GSE52778 airway dataset, with validated intake, result contracts and a reproducible handover."
+  structuredData={breadcrumbSchema}
+>
+  <section class="case-hero">
+    <div class="page-shell">
+      <Breadcrumbs items={breadcrumbs} />
+      <p class="eyebrow">Bioinformatics workflow</p>
+      <h1>Reproducible RNA-seq Service Workflow</h1>
+      <p class="summary">
+        I built a compact Nextflow workflow around a paired differential-expression question in the public GSE52778 airway dataset. The emphasis is the complete service path: a precise intake, an explicit statistical design, checked outputs and a handover another person can inspect.
+      </p>
+      <div class="action-row">
+        <a class="button" href={repositoryUrl} target="_blank" rel="noreferrer">View GitHub repository <NewTabCue /></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Quick scan"
+        title="A paired analysis with a declared contract"
+        lead="The workflow begins with the processed counts distributed through Bioconductor and keeps the biological question, pairing and contrast visible from intake to handover."
+      />
+      <dl class="case-facts">
+        {facts.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd>{value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Service path"
+        title="Four stages from intake to handover"
+        lead="Nextflow makes the dependency between stages explicit while each validator keeps a separate, readable contract."
+      />
+      <div class="grid two">
+        {stages.map((stage) => (
+          <article class="note">
+            <h2>{stage.title}</h2>
+            <p>{stage.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell split">
+      <div class="prose">
+        <h2>Why the pairing matters</h2>
+        <p>
+          The samples come from four cell lines measured once untreated and once after dexamethasone treatment. Using <code>~ cell + dex</code> keeps those baseline differences in the model instead of treating eight related measurements as independent samples.
+        </p>
+      </div>
+      <div class="prose">
+        <h2>What the workflow starts from</h2>
+        <p>
+          This project begins with processed gene counts from the <code>airway</code> package. Raw FASTQ quality control, alignment and quantification would be a separate upstream service, so they are not implied by the current workflow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band">
+    <div class="page-shell split">
+      <SectionHeader
+        eyebrow="Reproducibility"
+        title="The handover is part of the analysis"
+        lead="The project records the dataset accession, Git commit, container references, package versions and file hashes alongside the result tables and plots."
+      />
+      <div class="note">
+        <h2>What this project adds</h2>
+        <p>
+          It extends my biomedical data work into a service-style bioinformatics workflow where the analysis is only one part of the job. Intake quality, contrast direction, result completeness and a usable handover all need to survive review as well.
+        </p>
+        <div class="action-row">
+          <a class="button secondary" href={repositoryUrl} target="_blank" rel="noreferrer">Open the workflow <NewTabCue /></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

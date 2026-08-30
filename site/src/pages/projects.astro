@@ -9,6 +9,22 @@ const exploratory = await getProjectExploratoryStrand();
 
 const deliverables = [
   {
+    href: '/projects/liver-mri-methods/',
+    icon: 'research' as const,
+    eyebrow: 'Computational imaging methods',
+    title: 'Liver MRI Methods',
+    text: 'A reproducible multiphasic MRI study covering image geometry, registration inspection, dynamic-contrast features and a model failure that now guides the next debugging work.',
+    meta: ['Multiphasic MRI', 'Registration', 'Segmentation debugging']
+  },
+  {
+    href: '/projects/rnaseq-service-workflow/',
+    icon: 'data' as const,
+    eyebrow: 'Bioinformatics workflow',
+    title: 'Reproducible RNA-seq Service Workflow',
+    text: 'A Nextflow DSL2 service exercise taking a paired public RNA-seq question from validated intake through DESeq2, checked results and a provenance-rich handover.',
+    meta: ['Nextflow DSL2', 'Paired DESeq2', 'Reproducible handover']
+  },
+  {
     href: '/projects/clinical-informatics/',
     icon: 'data' as const,
     eyebrow: 'Self-directed project',
@@ -21,8 +37,8 @@ const deliverables = [
     icon: 'data' as const,
     eyebrow: 'Final-year project method',
     title: 'Exploratory modelling approach',
-    text: 'Cohort construction, ICD/HES-derived feature engineering, observability controls and LR/RF/NN model comparison under a rare-disease evidence boundary.',
-    meta: ['Final-year project context', 'Feature pipeline', 'Model evaluation']
+    text: 'Cohort construction, ICD/HES-derived feature engineering, model comparison and a staged mutual-information continuation that stopped when the data did not support further searching.',
+    meta: ['Final-year project context', 'Feature pipeline', 'Stopping rules']
   },
   {
     href: '/case-studies/ai-medtech-toolkit/',
@@ -67,7 +83,7 @@ const deliverables = [
       <SectionHeader
         eyebrow="Project work"
         title="Focused project work"
-        lead="Clinical Informatics is a self-directed project. The other cards identify the experience that gave each deliverable or method its context."
+        lead="The first three cards are independent technical projects. The remaining cards identify the experience that gave each deliverable or method its context."
       />
       <div class="grid two">
         {deliverables.map((item) => <LinkCard {...item} prefetch="hover" />)}
