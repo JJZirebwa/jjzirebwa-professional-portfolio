@@ -10,6 +10,8 @@ const pages = [
   { path: '/now/', name: 'now' },
   { path: '/projects/', name: 'projects' },
   { path: '/projects/clinical-informatics/', name: 'clinical-informatics' },
+  { path: '/projects/liver-mri-methods/', name: 'liver-mri-methods' },
+  { path: '/projects/rnaseq-service-workflow/', name: 'rnaseq-service-workflow' },
   { path: '/case-studies/health-innovation-east/', name: 'health-innovation-east' },
   { path: '/case-studies/ai-medtech-toolkit/', name: 'ai-medtech-toolkit' },
   { path: '/case-studies/market-intelligence/', name: 'market-intelligence' },

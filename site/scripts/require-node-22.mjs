@@ -4,7 +4,7 @@ import { existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const minimumMinor = 12;
+const minimumMinor = 19;
 
 export const isSupportedNodeVersion = (version) => {
   const match = /^(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)/.exec(version);
@@ -51,7 +51,7 @@ const run = () => {
     console.error(
       [
         `Unsupported Node version ${currentVersion}.`,
-        'This portfolio requires Node 22.12.0 or newer within the Node 22 release line.',
+        'This portfolio requires Node 22.19.0 or newer within the Node 22 release line.',
         'From the repository root, run `nvm use` and then repeat the npm command.'
       ].join('\n')
     );

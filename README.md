@@ -1,7 +1,7 @@
 # Jubileejoy "JJ" Zirebwa
 
 Cambridge, UK  
-First Class BSc (Hons) Biomedical Science graduate from Anglia Ruskin University, Cambridge, with intersecting experience across clinical informatics, genomics-linked health data science, applied machine learning, healthcare innovation, evidence synthesis and market intelligence.
+First Class BSc (Hons) Biomedical Science graduate from Anglia Ruskin University, Cambridge, with practical laboratory training and experience across clinical informatics, genomics-linked health data science, applied machine learning, healthcare innovation, evidence synthesis and market intelligence.
 
 Live website: <https://jubileejoyzirebwa.com>
 
@@ -27,7 +27,7 @@ My current focus includes clinical informatics, genomics and healthcare data, ap
 
 ## Best first route
 
-For the quickest read, start with the final-year project and Clinical Informatics, then use the Health Innovation East and market-intelligence pages to see how the same evidence judgement carries into healthcare innovation settings.
+For the quickest read, start with the [practical laboratory record](academic/biomedical-science-degree.md#practical-laboratory-work), final-year project or Clinical Informatics. Health Innovation East and the market-intelligence pages then show how the same evidence judgement carries into healthcare innovation settings.
 
 ## Best starting points
 
@@ -36,6 +36,7 @@ For the quickest read, start with the final-year project and Clinical Informatic
 | Clinical informatics and trial operations | [Clinical Informatics](projects/clinical-informatics.md), [repository](https://github.com/JJZirebwa/clinical-informatics) and [live dashboard](https://clinical-informatics.streamlit.app) |
 | Genomics-linked health data science | [Final-year project](academic/final-year-project/README.md) and [project pipeline](academic/final-year-project/pipeline/README.md) |
 | Academic profile | [Biomedical Science degree](academic/biomedical-science-degree.md) and [modules](academic/modules-and-assessments.md) |
+| Practical laboratory and diagnostic evidence | [Supervised degree practicals](academic/biomedical-science-degree.md#practical-laboratory-work) and [skills map](skills/README.md) |
 | Health innovation placement | [Health Innovation East commercial overview](professional-experience/health-innovation-east/commercial-health-innovation-overview.md) |
 | AI/MedTech governance | [AI Toolkit](professional-experience/health-innovation-east/ai-medtech-toolkit.md) |
 | Market intelligence and competitor analysis | [Market intelligence and CB Insights](professional-experience/health-innovation-east/market-intelligence-and-cb-insights.md) and [competitor analysis](professional-experience/health-innovation-east/competitor-analysis-and-horizon-scanning.md) |
@@ -47,7 +48,7 @@ For the quickest read, start with the final-year project and Clinical Informatic
 | Area | What this portfolio shows |
 |---|---|
 | Clinical informatics and operational data | Protocol-to-data mapping, linked synthetic tables, record-level validation, operational metrics and an interactive dashboard. |
-| Biomedical science | First Class Honours degree, selected module strengths and a final-year project rooted in biomedical evidence. |
+| Biomedical science | First Class Honours degree, supervised and assessed laboratory practicals, selected module strengths and a final-year project rooted in biomedical evidence. |
 | Genomics and healthcare data science | Secure genomics-linked hospital trajectory analysis, cohort logic, ICD/HES-derived feature engineering and model comparison. |
 | Machine learning and applied analytics | Logistic regression, random forest and shallow neural-network baseline comparison with training-aware preprocessing and conservative interpretation. |
 | Healthcare innovation and strategy | NHS-facing innovation work, business-case support, pathway evaluation and adoption logic. |
@@ -61,6 +62,7 @@ For the quickest read, start with the final-year project and Clinical Informatic
 
 - Completed a one-year Health Innovation East commercial placement supporting NHS-facing health innovation work.
 - Graduated with First Class Honours in BSc (Hons) Biomedical Science; final-year dissertation write-up component awarded 83%.
+- Completed supervised and assessed degree practicals across microbiology, DNA manipulation, diagnostic pathology, microscopy and biochemistry.
 - Authored practical internal AI/MedTech guidance-support material, with emphasis on evidence, governance, interoperability and risk.
 - Independently developed internal competitor-analysis and QOF strategy materials, while also contributing to co-authored or team-based business-case and adoption work.
 - Completed a final-year Biomedical Science dissertation using secure, genomics-linked hospital trajectory analysis in a Brugada-suspect context.

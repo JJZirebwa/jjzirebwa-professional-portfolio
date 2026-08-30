@@ -1,8 +1,11 @@
 {
   "/about/": "2026-07-24",
-  "/contact/": "2026-08-05",
-  "/now/": "2026-08-05",
-  "/projects/": "2026-08-05",
+  "/contact/": "2026-08-30",
+  "/now/": "2026-08-30",
+  "/projects/": "2026-08-30",
   "/projects/clinical-informatics/": "2026-08-05",
-  "/skills/": "2026-08-05"
+  "/projects/liver-mri-methods/": "2026-08-30",
+  "/projects/rnaseq-service-workflow/": "2026-08-30",
+  "/case-studies/final-year-project/": "2026-08-30",
+  "/skills/": "2026-08-12"
 }

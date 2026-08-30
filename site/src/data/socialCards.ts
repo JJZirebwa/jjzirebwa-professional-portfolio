@@ -21,7 +21,7 @@ export const socialCards = [
     path: '/about/',
     eyebrow: 'Profile',
     title: 'About Jubileejoy Zirebwa',
-    description: 'Biomedical Science graduate profile across genomics, applied health data work, healthcare innovation and evidence.',
+    description: 'Biomedical Science graduate profile across genomics, applied health data work and healthcare innovation.',
     imageAlt: 'Social preview card for the About page.'
   },
   {
@@ -97,6 +97,22 @@ export const socialCards = [
     imageAlt: 'Social preview card for the Clinical Informatics project.'
   },
   {
+    slug: 'liver-mri-methods',
+    path: '/projects/liver-mri-methods/',
+    eyebrow: 'Computational imaging methods',
+    title: 'Liver MRI Methods',
+    description: 'Multiphasic MRI geometry, registration inspection, dynamic-contrast features and segmentation debugging in a reproducible first study.',
+    imageAlt: 'Social preview card for the Liver MRI Methods project.'
+  },
+  {
+    slug: 'rnaseq-service-workflow',
+    path: '/projects/rnaseq-service-workflow/',
+    eyebrow: 'Bioinformatics workflow',
+    title: 'RNA-seq Service Workflow',
+    description: 'A paired GSE52778 Nextflow and DESeq2 workflow with validated intake, checked results and a reproducible handover.',
+    imageAlt: 'Social preview card for the RNA-seq Service Workflow project.'
+  },
+  {
     slug: 'skills',
     path: '/skills/',
     eyebrow: 'Skills',
@@ -109,7 +125,7 @@ export const socialCards = [
     path: '/now/',
     eyebrow: 'Current work',
     title: 'Current work',
-    description: 'Current clinical informatics work alongside the completed research and health innovation evidence that informs it.',
+    description: 'Recent work across multiphasic MRI, reproducible RNA-seq and a final genomics-linked health data continuation.',
     imageAlt: 'Social preview card for the Current work page.'
   },
   {

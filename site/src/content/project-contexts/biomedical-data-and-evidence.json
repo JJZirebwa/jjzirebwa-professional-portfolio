@@ -3,7 +3,7 @@
   "kind": "card",
   "icon": "data",
   "eyebrow": "Research",
-  "title": "Biomedical data and evidence",
+  "title": "Biomedical data and research",
   "href": "/case-studies/final-year-project/",
   "text": "Genomics-linked health data research, ICD/HES-derived feature reasoning, model-evaluation limits and governance-aware interpretation.",
   "cardMeta": ["Genomics-linked FYP", "Feature reasoning", "Project pipeline"]

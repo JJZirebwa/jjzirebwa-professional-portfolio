@@ -1,13 +1,12 @@
 ---
 import '../styles/global.css';
-import GoogleAnalytics from '../components/GoogleAnalytics.astro';
 import headshot from '../assets/images/jubileejoy-zirebwa-headshot.jpg';
 import { getSocialCardByPath } from '../data/socialCards';
 import pageUpdates from '../data/page-updates.json';
 
 const {
   title = 'Jubileejoy "JJ" Zirebwa',
-  description = 'First Class Biomedical Science graduate with genomics, health data science, healthcare innovation and evidence-led strategy experience.',
+  description = 'First Class Biomedical Science graduate with experience across genomics, health data science and healthcare innovation.',
   structuredData = []
 } = Astro.props;
 
@@ -175,7 +174,6 @@ const footerNavItems = [
     {pageStructuredData.map((schema) => (
       <script is:inline type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
-    <GoogleAnalytics />
   </head>
   <body>
     <a class="skip-link" href="#content">Skip to content</a>

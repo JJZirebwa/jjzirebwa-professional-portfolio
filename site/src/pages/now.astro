@@ -6,7 +6,7 @@ import LinkCard from '../components/LinkCard.astro';
 
 <BaseLayout
   title="Current work"
-  description="Current work and the evidence that supports it."
+  description="Recent computational imaging, bioinformatics and genomics-linked health data work."
 >
   <section class="case-hero">
     <div class="page-shell">
@@ -14,7 +14,7 @@ import LinkCard from '../components/LinkCard.astro';
         <p class="eyebrow">Current work</p>
         <h1>Current work</h1>
         <p class="summary">
-          I am building on clinical informatics, genomics-linked health data and healthcare innovation work. Each link below leads to the work itself and the evidence behind it.
+          My most recent work has moved through multiphasic MRI, a reproducible RNA-seq service workflow and a final follow-on question from my genomics-linked dissertation. Each project is available here with the method and result that shaped what came next.
         </p>
       </div>
     </div>
@@ -23,9 +23,48 @@ import LinkCard from '../components/LinkCard.astro';
   <section class="section-band">
     <div class="page-shell">
       <SectionHeader
-        eyebrow="Work in view"
-        title="Current evidence"
-        lead="The latest self-directed project sits alongside the completed work that informs it."
+        eyebrow="Most recent"
+        title="Recent technical work"
+        lead="Three projects with different data, but the same interest in making the analysis inspectable before its conclusions are made ambitious."
+      />
+      <div class="grid three">
+        <LinkCard
+          href="/projects/liver-mri-methods/"
+          icon="research"
+          eyebrow="Computational imaging methods"
+          title="Liver MRI Methods"
+          text="A multiphasic MRI baseline that treats geometry, registration and visual model review as part of the measurement rather than preparation around it."
+          meta={['Multiphasic MRI', 'Registration', 'Model debugging']}
+          prefetch="hover"
+        />
+        <LinkCard
+          href="/projects/rnaseq-service-workflow/"
+          icon="data"
+          eyebrow="Bioinformatics workflow"
+          title="Reproducible RNA-seq Service Workflow"
+          text="A paired GSE52778 analysis orchestrated with Nextflow from intake checks through DESeq2, result validation and a reusable handover."
+          meta={['Nextflow DSL2', 'Paired DESeq2', 'Provenance']}
+          prefetch="hover"
+        />
+        <LinkCard
+          href="/case-studies/final-year-project/#mutual-information-continuation"
+          icon="data"
+          eyebrow="Final-year project continuation"
+          title="Testing a second HES representation"
+          text="A staged mutual-information and predictive screen that asked whether alternative hospital-code representations recovered useful signal, then stopped when they did not."
+          meta={['Mutual information', 'Group-aware testing', 'Stopping rules']}
+          prefetch="hover"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-band light">
+    <div class="page-shell">
+      <SectionHeader
+        eyebrow="Related work"
+        title="Established projects and experience"
+        lead="Earlier work that remains useful context for the current technical projects."
       />
       <div class="grid three">
         <LinkCard
@@ -38,51 +77,21 @@ import LinkCard from '../components/LinkCard.astro';
           prefetch="hover"
         />
         <LinkCard
-          href="/case-studies/final-year-project/"
-          icon="data"
-          eyebrow="Final-year project"
-          title="Genomics-linked health data research"
-          text="Rare-disease cohort construction, feature engineering and model comparison with clear observability limits."
-          meta={['ICD and HES data', 'Feature pipeline', 'Model evaluation']}
-          prefetch="hover"
-        />
-        <LinkCard
           href="/case-studies/health-innovation-east/"
           icon="market"
           eyebrow="Health Innovation East"
-          title="Healthcare innovation evidence"
-          text="Research and advisory work on evidence, governance and adoption questions for health technology."
-          meta={['Evidence review', 'AI and MedTech', 'Decision support']}
+          title="Healthcare innovation work"
+          text="Research and advisory work on evaluation, governance and adoption questions for health technology."
+          meta={['Evaluation', 'AI and MedTech', 'Decision support']}
           prefetch="hover"
         />
-      </div>
-    </div>
-  </section>
-
-  <section class="section-band light">
-    <div class="page-shell">
-      <SectionHeader
-        eyebrow="Further detail"
-        title="Evidence to explore"
-        lead="The case studies and documents give the fuller context, methods and boundaries for this work."
-      />
-      <div class="grid three">
         <LinkCard
           href="/documents/"
           icon="writing"
           eyebrow="Documents"
-          title="CV and documents"
+          title="CV and selected documents"
           text="Open the general CV, dissertation overview and protected transcript access route."
-          meta={['CV', 'Academic evidence', 'FYP overview']}
-          prefetch="hover"
-        />
-        <LinkCard
-          href="/contact/"
-          icon="contact"
-          eyebrow="Conversation"
-          title="Contact"
-          text="Get in touch about the work, a role or a potential collaboration."
-          meta={['Cambridge, UK', 'Professional contact']}
+          meta={['CV', 'Academic record', 'FYP overview']}
           prefetch="hover"
         />
       </div>

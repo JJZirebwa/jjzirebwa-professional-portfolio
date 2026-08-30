@@ -4,6 +4,7 @@
 
 - [Final-year project](../academic/final-year-project/README.md): strongest first route into genomics-linked health data science, feature reasoning, model comparison and limitations-led interpretation.
 - [Clinical Informatics](../projects/clinical-informatics.md): protocol-to-data mapping, linked synthetic tables, validation, operational metrics and a live dashboard.
+- [Practical laboratory work](../academic/biomedical-science-degree.md#practical-laboratory-work): supervised and assessed degree practicals across microbiology, molecular methods, diagnostic pathology, microscopy and biochemistry.
 - [FYP pipeline](../academic/final-year-project/pipeline/README.md): feature engineering, modelling and reporting workflow for technical review.
 - [AI Toolkit](../professional-experience/health-innovation-east/ai-medtech-toolkit.md): practical AI/MedTech governance translation.
 - [Health Innovation East commercial overview](../professional-experience/health-innovation-east/commercial-health-innovation-overview.md): NHS-facing innovation, adoption logic and evidence work.
@@ -40,12 +41,14 @@ The current professional direction includes clinical informatics, biomedical sci
 
 - [Academic profile](../academic/README.md)
 - [Biomedical Science degree](../academic/biomedical-science-degree.md)
+- [Practical laboratory work](../academic/biomedical-science-degree.md#practical-laboratory-work)
 - [Modules and assessments](../academic/modules-and-assessments.md)
 - [Final-year project](../academic/final-year-project/README.md)
 - [Documents](../documents/README.md)
 
 ## Skills
 
+- [Laboratory and diagnostic practice](../academic/biomedical-science-degree.md#practical-laboratory-work)
 - [Healthcare commercial strategy](../skills/healthcare-commercial-strategy.md)
 - [Evidence synthesis](../skills/evidence-synthesis.md)
 - [AI health governance](../skills/ai-health-governance.md)

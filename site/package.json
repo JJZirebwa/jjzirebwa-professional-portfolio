@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.12.0 <23"
+    "node": ">=22.19.0 <23"
   },
   "scripts": {
     "predev": "node scripts/require-node-22.mjs",
@@ -22,12 +22,13 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@resvg/resvg-js": "^2.6.2",
-    "astro": "^6.3.1"
+    "astro": "^7.2.9"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@axe-core/playwright": "^4.11.3",
-    "@playwright/test": "^1.60.0",
-    "typescript": "^5.9.3"
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
+    "pdfjs-dist": "5.4.624",
+    "typescript": "^6.0.3"
   }
 }

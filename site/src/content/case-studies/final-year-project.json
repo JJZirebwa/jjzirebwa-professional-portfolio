@@ -4,7 +4,7 @@
   "icon": "data",
   "eyebrow": "Academic research",
   "title": "Final-year project",
-  "kicker": "Biomedical data and evidence",
+  "kicker": "Biomedical data and research",
   "summary": "A dissertation component (awarded 83%) using secure, genomics-linked hospital trajectory analysis in Brugada-suspect research.",
   "cardText": "Governance-aware health data science with cohort construction, ICD/HES-derived features, observability controls and model comparison.",
   "cardMeta": ["83% dissertation", "Project pipeline", "Governance-aware"],
